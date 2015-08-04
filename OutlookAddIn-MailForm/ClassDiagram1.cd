@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OutlookAddIn_MailForm.DerrToolsRibbon1" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACYAAAAACAAAAAAECCgAAACAAABAAAoACAKAABBAIA=</HashCode>
+      <FileName>Derr-Tools.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.ThisRibbonCollection" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.Mangel" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABIQgAUAACQAAEAARAGBAAADAEAEgADIAABADBBAkQI=</HashCode>
+      <FileName>Mangel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.Schadensmeldung" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAAAAAAAACAAAACAAAJgAAAQECAAAAAAAA=</HashCode>
+      <FileName>Schadensmeldung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.ThisAddIn" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAwAACQCBAAEQAgAQAAgFgAAAAAABAQAAgAIAAAACg=</HashCode>
+      <FileName>ThisAddIn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.Globals" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAgAgAAAAgAAAAAAIAAAAAAAAAAAgAAAAAACAAAAgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.ThisFormRegionCollection" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.WindowFormRegionCollection" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.WOWI_Mandant" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAwAAAAJABAAAQAAAAAgCQBgAAAAAAAEABFA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.WoWi_WirtschEinhDataSet" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAwAAAAJABAAAQAAAAAgCQBgAAAAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.Properties.Settings" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAACAAAAAAAIAAAAAABAQAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.WOWI_MandantTableAdapters.MandantTableAdapter" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlookAddIn_MailForm.WOWI_MandantTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAABABAEBAAAAMEAgAAACgAAAAAQAAAAAhAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

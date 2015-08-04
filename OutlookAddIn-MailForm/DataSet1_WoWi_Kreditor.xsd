@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1_WoWi_Kreditor" targetNamespace="http://tempuri.org/DataSet1_WoWi_Kreditor.xsd" xmlns:mstns="http://tempuri.org/DataSet1_WoWi_Kreditor.xsd" xmlns="http://tempuri.org/DataSet1_WoWi_Kreditor.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionStringWoWiODBC" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionStringWoWiODBC (Settings)" PropertyReference="ApplicationSettings.OutlookAddIn_MailForm.Properties.Settings.GlobalReference.Default.ConnectionStringWoWiODBC" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Kreditor-KontoTableAdapter" GeneratorDataComponentClassName="Kreditor_KontoTableAdapter" Name="Kreditor-Konto" UserDataComponentName="Kreditor-KontoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionStringWoWiODBC (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT PUB."Kreditor-Konto".Unternehmen, PUB."Kreditor-Konto".Kontonummer, PUB."Kreditor-Konto".Kontobezeichnung, PUB.Adresse.Name1, PUB.Adresse.Name2, 
+                  PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.PlzPostf, PUB.Adresse.Postfach, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Telefax, 
+                  PUB.Adresse.AdressNr, PUB.Adresse.Vermerk1, PUB.Adresse.Vermerk2, PUB.Adresse.Telefon2, PUB.Adresse.Vorwahl2, PUB.Adresse.VorwahlFax, PUB.Adresse.Ort, 
+                  PUB.Adresse.EMail, PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil, PUB.Adresse.InternetURL, PUB.Adresse.PostfachStaat, PUB.Adresse.PostfachPLZ, 
+                  PUB.Adresse.PostfachOrt, PUB."Kreditor-Konto".MandantNr
+FROM     PUB."Kreditor-Konto", PUB.Adresse
+WHERE  PUB."Kreditor-Konto".Kontonummer = PUB.Adresse.AdressNr
+ORDER BY PUB."Kreditor-Konto".Kontobezeichnung</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Unternehmen" DataSetColumn="Unternehmen" />
+              <Mapping SourceColumn="Kontonummer" DataSetColumn="Kontonummer" />
+              <Mapping SourceColumn="Kontobezeichnung" DataSetColumn="Kontobezeichnung" />
+              <Mapping SourceColumn="Name1" DataSetColumn="Name1" />
+              <Mapping SourceColumn="Name2" DataSetColumn="Name2" />
+              <Mapping SourceColumn="Strasse" DataSetColumn="Strasse" />
+              <Mapping SourceColumn="PlzOrt" DataSetColumn="PlzOrt" />
+              <Mapping SourceColumn="PlzPostf" DataSetColumn="PlzPostf" />
+              <Mapping SourceColumn="Postfach" DataSetColumn="Postfach" />
+              <Mapping SourceColumn="Vorwahl1" DataSetColumn="Vorwahl1" />
+              <Mapping SourceColumn="Telefon1" DataSetColumn="Telefon1" />
+              <Mapping SourceColumn="Telefax" DataSetColumn="Telefax" />
+              <Mapping SourceColumn="AdressNr" DataSetColumn="AdressNr" />
+              <Mapping SourceColumn="Vermerk1" DataSetColumn="Vermerk1" />
+              <Mapping SourceColumn="Vermerk2" DataSetColumn="Vermerk2" />
+              <Mapping SourceColumn="Telefon2" DataSetColumn="Telefon2" />
+              <Mapping SourceColumn="Vorwahl2" DataSetColumn="Vorwahl2" />
+              <Mapping SourceColumn="VorwahlFax" DataSetColumn="VorwahlFax" />
+              <Mapping SourceColumn="Ort" DataSetColumn="Ort" />
+              <Mapping SourceColumn="EMail" DataSetColumn="EMail" />
+              <Mapping SourceColumn="VorwahlMobil" DataSetColumn="VorwahlMobil" />
+              <Mapping SourceColumn="TelefonMobil" DataSetColumn="TelefonMobil" />
+              <Mapping SourceColumn="InternetURL" DataSetColumn="InternetURL" />
+              <Mapping SourceColumn="PostfachStaat" DataSetColumn="PostfachStaat" />
+              <Mapping SourceColumn="PostfachPLZ" DataSetColumn="PostfachPLZ" />
+              <Mapping SourceColumn="PostfachOrt" DataSetColumn="PostfachOrt" />
+              <Mapping SourceColumn="MandantNr" DataSetColumn="MandantNr" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1_WoWi_Kreditor" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet1_WoWi_Kreditor" msprop:Generator_UserDSName="DataSet1_WoWi_Kreditor">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Kreditor-Konto" msprop:Generator_TableClassName="_Kreditor_KontoDataTable" msprop:Generator_TableVarName="_tableKreditor_Konto" msprop:Generator_RowChangedName="_Kreditor_KontoRowChanged" msprop:Generator_TablePropName="_Kreditor_Konto" msprop:Generator_RowDeletingName="_Kreditor_KontoRowDeleting" msprop:Generator_RowChangingName="_Kreditor_KontoRowChanging" msprop:Generator_RowEvHandlerName="_Kreditor_KontoRowChangeEventHandler" msprop:Generator_RowDeletedName="_Kreditor_KontoRowDeleted" msprop:Generator_RowClassName="_Kreditor_KontoRow" msprop:Generator_UserTableName="Kreditor-Konto" msprop:Generator_RowEvArgName="_Kreditor_KontoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Unternehmen" msprop:Generator_ColumnVarNameInTable="columnUnternehmen" msprop:Generator_ColumnPropNameInRow="Unternehmen" msprop:Generator_ColumnPropNameInTable="UnternehmenColumn" msprop:Generator_UserColumnName="Unternehmen" type="xs:int" minOccurs="0" />
+              <xs:element name="Kontonummer" msprop:Generator_ColumnVarNameInTable="columnKontonummer" msprop:Generator_ColumnPropNameInRow="Kontonummer" msprop:Generator_ColumnPropNameInTable="KontonummerColumn" msprop:Generator_UserColumnName="Kontonummer" type="xs:int" minOccurs="0" />
+              <xs:element name="Kontobezeichnung" msprop:Generator_ColumnVarNameInTable="columnKontobezeichnung" msprop:Generator_ColumnPropNameInRow="Kontobezeichnung" msprop:Generator_ColumnPropNameInTable="KontobezeichnungColumn" msprop:Generator_UserColumnName="Kontobezeichnung" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnName1" msprop:Generator_ColumnPropNameInRow="Name1" msprop:Generator_ColumnPropNameInTable="Name1Column" msprop:Generator_UserColumnName="Name1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnName2" msprop:Generator_ColumnPropNameInRow="Name2" msprop:Generator_ColumnPropNameInTable="Name2Column" msprop:Generator_UserColumnName="Name2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Strasse" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnStrasse" msprop:Generator_ColumnPropNameInRow="Strasse" msprop:Generator_ColumnPropNameInTable="StrasseColumn" msprop:Generator_UserColumnName="Strasse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlzOrt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPlzOrt" msprop:Generator_ColumnPropNameInRow="PlzOrt" msprop:Generator_ColumnPropNameInTable="PlzOrtColumn" msprop:Generator_UserColumnName="PlzOrt" type="xs:int" minOccurs="0" />
+              <xs:element name="PlzPostf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPlzPostf" msprop:Generator_ColumnPropNameInRow="PlzPostf" msprop:Generator_ColumnPropNameInTable="PlzPostfColumn" msprop:Generator_UserColumnName="PlzPostf" type="xs:int" minOccurs="0" />
+              <xs:element name="Postfach" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPostfach" msprop:Generator_ColumnPropNameInRow="Postfach" msprop:Generator_ColumnPropNameInTable="PostfachColumn" msprop:Generator_UserColumnName="Postfach" type="xs:int" minOccurs="0" />
+              <xs:element name="Vorwahl1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVorwahl1" msprop:Generator_ColumnPropNameInRow="Vorwahl1" msprop:Generator_ColumnPropNameInTable="Vorwahl1Column" msprop:Generator_UserColumnName="Vorwahl1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefon1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTelefon1" msprop:Generator_ColumnPropNameInRow="Telefon1" msprop:Generator_ColumnPropNameInTable="Telefon1Column" msprop:Generator_UserColumnName="Telefon1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefax" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTelefax" msprop:Generator_ColumnPropNameInRow="Telefax" msprop:Generator_ColumnPropNameInTable="TelefaxColumn" msprop:Generator_UserColumnName="Telefax" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdressNr" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAdressNr" msprop:Generator_ColumnPropNameInRow="AdressNr" msprop:Generator_ColumnPropNameInTable="AdressNrColumn" msprop:Generator_UserColumnName="AdressNr" type="xs:int" minOccurs="0" />
+              <xs:element name="Vermerk1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVermerk1" msprop:Generator_ColumnPropNameInRow="Vermerk1" msprop:Generator_ColumnPropNameInTable="Vermerk1Column" msprop:Generator_UserColumnName="Vermerk1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Vermerk2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVermerk2" msprop:Generator_ColumnPropNameInRow="Vermerk2" msprop:Generator_ColumnPropNameInTable="Vermerk2Column" msprop:Generator_UserColumnName="Vermerk2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefon2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTelefon2" msprop:Generator_ColumnPropNameInRow="Telefon2" msprop:Generator_ColumnPropNameInTable="Telefon2Column" msprop:Generator_UserColumnName="Telefon2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Vorwahl2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVorwahl2" msprop:Generator_ColumnPropNameInRow="Vorwahl2" msprop:Generator_ColumnPropNameInTable="Vorwahl2Column" msprop:Generator_UserColumnName="Vorwahl2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VorwahlFax" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVorwahlFax" msprop:Generator_ColumnPropNameInRow="VorwahlFax" msprop:Generator_ColumnPropNameInTable="VorwahlFaxColumn" msprop:Generator_UserColumnName="VorwahlFax" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ort" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOrt" msprop:Generator_ColumnPropNameInRow="Ort" msprop:Generator_ColumnPropNameInTable="OrtColumn" msprop:Generator_UserColumnName="Ort" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMail" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEMail" msprop:Generator_ColumnPropNameInRow="EMail" msprop:Generator_ColumnPropNameInTable="EMailColumn" msprop:Generator_UserColumnName="EMail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VorwahlMobil" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVorwahlMobil" msprop:Generator_ColumnPropNameInRow="VorwahlMobil" msprop:Generator_ColumnPropNameInTable="VorwahlMobilColumn" msprop:Generator_UserColumnName="VorwahlMobil" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TelefonMobil" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTelefonMobil" msprop:Generator_ColumnPropNameInRow="TelefonMobil" msprop:Generator_ColumnPropNameInTable="TelefonMobilColumn" msprop:Generator_UserColumnName="TelefonMobil" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InternetURL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInternetURL" msprop:Generator_ColumnPropNameInRow="InternetURL" msprop:Generator_ColumnPropNameInTable="InternetURLColumn" msprop:Generator_UserColumnName="InternetURL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PostfachStaat" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPostfachStaat" msprop:Generator_ColumnPropNameInRow="PostfachStaat" msprop:Generator_ColumnPropNameInTable="PostfachStaatColumn" msprop:Generator_UserColumnName="PostfachStaat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PostfachPLZ" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPostfachPLZ" msprop:Generator_ColumnPropNameInRow="PostfachPLZ" msprop:Generator_ColumnPropNameInTable="PostfachPLZColumn" msprop:Generator_UserColumnName="PostfachPLZ" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PostfachOrt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPostfachOrt" msprop:Generator_ColumnPropNameInRow="PostfachOrt" msprop:Generator_ColumnPropNameInTable="PostfachOrtColumn" msprop:Generator_UserColumnName="PostfachOrt" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MandantNr" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMandantNr" msprop:Generator_ColumnPropNameInRow="MandantNr" msprop:Generator_ColumnPropNameInTable="MandantNrColumn" msprop:Generator_UserColumnName="MandantNr" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI onLoad="Ribbon_Load" xmlns="http://schemas.microsoft.com/office/2006/01/customui">
+    <ribbon>
+        <tabs>
+            <tab idMso="TabAddIns" />
+            <tab id="tab2" label="DERR TOOLS">
+                <group id="DerrTool_HSM_RibbonGroup" label="HSM">
+                    <button id="btn_schadensmeldung" onAction="btn_schadensmeldung_Click" label="Schadensmeldung" size="large" />
+                </group>
+                <group id="AbtIII" label="Abt III">
+                    <button id="buttonMangelruege" onAction="buttonMangelruege_Click" label="Mängelrüge" size="large" />
+                </group>
+                <group id="groupEinstellungen" label="Einstellungen">
+                    <button id="button6" onAction="button6_Click" label="Settings" size="large" />
+                </group>
+            </tab>
+        </tabs>
+    </ribbon>
+</customUI>

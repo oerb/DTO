@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--
+    This section defines project-level properties.
+
+    AssemblyName
+      Name of the output assembly.
+    Configuration
+      Specifies a default value for debug.
+    OutputType
+      Must be "Library" for VSTO.
+    Platform
+      Specifies what CPU the output of this project can run on.
+    NoStandardLibraries
+      Set to "false" for VSTO.
+    RootNamespace
+      In C#, this specifies the namespace given to new files. In VB, all objects are
+      wrapped in this namespace at runtime.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{797A1075-2A1F-4675-97A0-D8CF97C464C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>OutlookAddIn_MailForm</RootNamespace>
+    <AssemblyName>OutlookAddIn-MailForm</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DefineConstants>VSTO40</DefineConstants>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>publish\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>en</TargetCulture>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <ProductName>OutlookAddIn-MailForm</ProductName>
+    <PublisherName />
+    <SupportUrl />
+    <FriendlyName>OutlookAddIn-MailForm</FriendlyName>
+    <OfficeApplicationDescription />
+    <LoadBehavior>3</LoadBehavior>
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010-Tools für Office-Laufzeit %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <!--
+      OfficeApplication
+        Add-in host application
+    -->
+    <OfficeApplication>Outlook</OfficeApplication>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Debug" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Release" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section specifies references for the project.
+  -->
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="DTsaperionVBNETLib">
+      <HintPath>..\..\DTsaperionVBNETLib\DTsaperionVBNETLib\bin\Debug\DTsaperionVBNETLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Outlook, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Outlook.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <!--
+    This section defines the user source files that are part of the project.
+     
+    A "Compile" element specifies a source file to compile.
+    An "EmbeddedResource" element specifies an .resx file for embedded resources.
+    A "None" element specifies a file that is not to be passed to the compiler (for instance, 
+    a text file or XML file).
+    The "AppDesigner" element specifies the directory where the application properties files
+    can be found.
+  -->
+  <ItemGroup>
+    <Compile Include="Database1DataSetNewMSGTYPE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSetNewMSGTYPE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet_MSGtyp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet_MSGtyp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet_MSGTYPES.cs">
+      <DependentUpon>Database1DataSet_MSGTYPES.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Database1DataSet_MSGTYPES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet_MSGTYPES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1Wohnung.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1Wohnung.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1xyMieter.cs">
+      <DependentUpon>DataSet1xyMieter.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1xyMieter.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1xyMieter.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1_WoWi_Haus.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1_WoWi_Haus.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1_WoWi_Kreditor.cs">
+      <DependentUpon>DataSet1_WoWi_Kreditor.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1_WoWi_Kreditor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1_WoWi_Kreditor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1_WoWi_Mandant.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1_WoWi_Mandant.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1_WoWi_Objekte.cs">
+      <DependentUpon>DataSet1_WoWi_Objekte.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1_WoWi_Objekte.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1_WoWi_Objekte.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_helphtmlfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_helphtmlfile.Designer.cs">
+      <DependentUpon>Frm_helphtmlfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MSG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MSG.Designer.cs">
+      <DependentUpon>Frm_MSG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_New_MSGTYPE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_New_MSGTYPE.Designer.cs">
+      <DependentUpon>Frm_New_MSGTYPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Search.Designer.cs">
+      <DependentUpon>Frm_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ServerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ServerSettings.Designer.cs">
+      <DependentUpon>Frm_ServerSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Settings.Designer.cs">
+      <DependentUpon>Frm_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_UserSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_UserSettings.Designer.cs">
+      <DependentUpon>Frm_UserSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mangel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mangel.Designer.cs">
+      <DependentUpon>Mangel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbon.cs">
+      <XmlRibbon>true</XmlRibbon>
+    </Compile>
+    <Compile Include="saperionDataSet_Dokuart_DokuKZ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>saperionDataSet_Dokuart_DokuKZ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="WOWI_Mandant.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WOWI_Mandant.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WoWi_WirtschEinhDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WoWi_WirtschEinhDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Frm_helphtmlfile.resx">
+      <DependentUpon>Frm_helphtmlfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MSG.resx">
+      <DependentUpon>Frm_MSG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_New_MSGTYPE.resx">
+      <DependentUpon>Frm_New_MSGTYPE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_search.resx">
+      <DependentUpon>Frm_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ServerSettings.resx">
+      <DependentUpon>Frm_ServerSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Settings.resx">
+      <DependentUpon>Frm_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_UserSettings.resx">
+      <DependentUpon>Frm_UserSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mangel.resx">
+      <DependentUpon>Mangel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Derr-Tools.resx">
+      <DependentUpon>Derr-Tools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schadensmeldung.resx">
+      <DependentUpon>Schadensmeldung.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Database1DataSetNewMSGTYPE.xsc">
+      <DependentUpon>Database1DataSetNewMSGTYPE.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSetNewMSGTYPE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSetNewMSGTYPE.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSetNewMSGTYPE.xss">
+      <DependentUpon>Database1DataSetNewMSGTYPE.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet_MSGtyp.xsc">
+      <DependentUpon>Database1DataSet_MSGtyp.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet_MSGtyp.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet_MSGtyp.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet_MSGtyp.xss">
+      <DependentUpon>Database1DataSet_MSGtyp.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet_MSGTYPES.xsc">
+      <DependentUpon>Database1DataSet_MSGTYPES.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet_MSGTYPES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet_MSGTYPES.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet_MSGTYPES.xss">
+      <DependentUpon>Database1DataSet_MSGTYPES.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1Wohnung.xsc">
+      <DependentUpon>DataSet1Wohnung.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1Wohnung.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1Wohnung.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1Wohnung.xss">
+      <DependentUpon>DataSet1Wohnung.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1xyMieter.xsc">
+      <DependentUpon>DataSet1xyMieter.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1xyMieter.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1xyMieter.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1xyMieter.xss">
+      <DependentUpon>DataSet1xyMieter.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_WoWi_Haus.xsc">
+      <DependentUpon>DataSet1_WoWi_Haus.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_WoWi_Haus.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1_WoWi_Haus.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1_WoWi_Haus.xss">
+      <DependentUpon>DataSet1_WoWi_Haus.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_WoWi_Kreditor.xsc">
+      <DependentUpon>DataSet1_WoWi_Kreditor.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_WoWi_Kreditor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1_WoWi_Kreditor.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1_WoWi_Kreditor.xss">
+      <DependentUpon>DataSet1_WoWi_Kreditor.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_WoWi_Mandant.xsc">
+      <DependentUpon>DataSet1_WoWi_Mandant.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_WoWi_Mandant.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1_WoWi_Mandant.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1_WoWi_Mandant.xss">
+      <DependentUpon>DataSet1_WoWi_Mandant.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_WoWi_Objekte.xsc">
+      <DependentUpon>DataSet1_WoWi_Objekte.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_WoWi_Objekte.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1_WoWi_Objekte.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1_WoWi_Objekte.xss">
+      <DependentUpon>DataSet1_WoWi_Objekte.xsd</DependentUpon>
+    </None>
+    <None Include="OutlookAddIn-MailForm_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Derr-Tools.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Derr-Tools.Designer.cs">
+      <DependentUpon>Derr-Tools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schadensmeldung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schadensmeldung.Designer.cs">
+      <DependentUpon>Schadensmeldung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThisAddIn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="Resources\address_book_blue.png" />
+    <None Include="Resources\applications-blue.png" />
+    <None Include="Resources\arrow-circle-double-135.png" />
+    <None Include="Resources\arrow-circle-double.png" />
+    <None Include="Resources\arrow_circle_double_135.png" />
+    <None Include="Resources\asterisk-yellow.png" />
+    <None Include="Resources\book-open.png" />
+    <None Include="Resources\building-low.png" />
+    <None Include="Resources\card__plus.png" />
+    <None Include="Resources\disk-black.png" />
+    <None Include="Resources\disk-return.png" />
+    <None Include="Resources\disk-small-black.png" />
+    <None Include="Resources\document.png" />
+    <None Include="Resources\edit-list.png" />
+    <None Include="Resources\exclamation-button.png" />
+    <None Include="Resources\exclamation.png" />
+    <None Include="Resources\funnel.png" />
+    <None Include="Resources\hammer-screwdriver.png" />
+    <Resource Include="Resources\Helpdocs\wowi_ODBC_Connectionstring.mht">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Resources\Helpdocs\SaperionSQL_ConnectionString.mht" />
+    <None Include="Resources\information_frame.png" />
+    <None Include="Resources\magnifier--exclamation.png" />
+    <None Include="Resources\magnifier-left.png" />
+    <None Include="Resources\magnifier-medium.png" />
+    <None Include="Resources\magnifier-zoom-out.png" />
+    <None Include="Resources\magnifier-zoom.png" />
+    <None Include="Resources\magnifier.png" />
+    <None Include="Resources\magnifier_medium.png" />
+    <None Include="Resources\magnifier_medium_left.png" />
+    <None Include="Resources\magnifier__plus.png" />
+    <None Include="Resources\mail--arrow.png" />
+    <None Include="Resources\mail-medium.png" />
+    <None Include="Resources\mail-open.png" />
+    <None Include="Resources\mail-send.png" />
+    <None Include="Resources\mail-share.png" />
+    <None Include="Resources\mail.png" />
+    <None Include="Resources\mail_open.png" />
+    <None Include="Resources\minus-button.png" />
+    <None Include="Resources\minus_octagon.png" />
+    <None Include="Resources\new.png" />
+    <None Include="Resources\pencil-small.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\plus-button.png" />
+    <None Include="Resources\plus-circle-frame.png" />
+    <None Include="Resources\plus-circle.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\question-button.png" />
+    <None Include="Resources\spectacle.png" />
+    <None Include="Resources\star--plus.png" />
+    <None Include="Resources\star-empty.png" />
+    <None Include="Resources\star-small.png" />
+    <None Include="Resources\star.png" />
+    <None Include="saperionDataSet_Dokuart_DokuKZ.xsc">
+      <DependentUpon>saperionDataSet_Dokuart_DokuKZ.xsd</DependentUpon>
+    </None>
+    <None Include="saperionDataSet_Dokuart_DokuKZ.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>saperionDataSet_Dokuart_DokuKZ.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="saperionDataSet_Dokuart_DokuKZ.xss">
+      <DependentUpon>saperionDataSet_Dokuart_DokuKZ.xsd</DependentUpon>
+    </None>
+    <None Include="ThisAddIn.Designer.xml">
+      <DependentUpon>ThisAddIn.cs</DependentUpon>
+    </None>
+    <Compile Include="ThisAddIn.Designer.cs">
+      <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+    <None Include="WOWI_Mandant.xsc">
+      <DependentUpon>WOWI_Mandant.xsd</DependentUpon>
+    </None>
+    <None Include="WOWI_Mandant.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WOWI_Mandant.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WOWI_Mandant.xss">
+      <DependentUpon>WOWI_Mandant.xsd</DependentUpon>
+    </None>
+    <None Include="WoWi_WirtschEinhDataSet.xsc">
+      <DependentUpon>WoWi_WirtschEinhDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WoWi_WirtschEinhDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WoWi_WirtschEinhDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WoWi_WirtschEinhDataSet.xss">
+      <DependentUpon>WoWi_WirtschEinhDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ribbon.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+    <Content Include="Resources\book_open.ico" />
+    <Content Include="Resources\browser_window_settings-32.png" />
+    <Content Include="Resources\disk_black.ico" />
+    <Content Include="Resources\disk_small_black.ico" />
+    <Content Include="Resources\document_text_settings-32.png" />
+    <Content Include="Resources\funnel.ico" />
+    <Content Include="Resources\Iconset1\1438712733_mail.ico" />
+    <Content Include="Resources\Iconset1\1438712751_message.ico" />
+    <Content Include="Resources\Iconset1\1438712846_mail_edit.ico" />
+    <Content Include="Resources\Iconset1\1438712863_open-mail.ico" />
+    <Content Include="Resources\Iconset1\1438712876_empty_inbox.ico" />
+    <Content Include="Resources\Iconset1\1438712888_mail_accept.ico" />
+    <Content Include="Resources\Iconset1\1438712902_mail_add.ico" />
+    <Content Include="Resources\Iconset1\1438712907_mail_fwd.ico" />
+    <Content Include="Resources\Iconset1\1438712963_document_text.ico" />
+    <Content Include="Resources\Iconset1\1438712972_document_text_edit.ico" />
+    <Content Include="Resources\Iconset1\1438712979_website.ico" />
+    <Content Include="Resources\Iconset1\1438712985_document_text_add.ico" />
+    <Content Include="Resources\magnifier.ico" />
+    <Content Include="Resources\magnifier_medium.ico" />
+    <Content Include="Resources\magnifier_medium_left.ico" />
+    <Content Include="Resources\magnifier__exclamation.ico" />
+    <Content Include="Resources\magnifier__plus.ico" />
+    <Content Include="Resources\mail_open.ico" />
+    <Content Include="Resources\mail__arrow.ico" />
+    <Content Include="Resources\new.ico" />
+    <Content Include="Resources\pencil.ico" />
+    <Content Include="Resources\plus_circle.ico" />
+    <Content Include="Resources\server_settings-32.png" />
+    <Content Include="Resources\Streamline-75-64.png" />
+    <None Include="Resources\Save_big.ico" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>OutlookAddIn-MailForm_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>60556197766A52D6718DC67B8BB98504FF3855BE</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <!-- Include the build rules for a C# project. -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- Include additional build rules for an Office application add-in. -->
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- This section defines VSTO properties that describe the host-changeable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="Outlook" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Outlook" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\15.0\Outlook\InstallRoot\Path#outlook.exe" AddItemTemplatesGuid="{A58A78EB-1C92-4DDD-80CF-E8BD872ABFC4}" />
+        <Host Name="Outlook" GeneratedCodeNamespace="OutlookAddIn_MailForm" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
