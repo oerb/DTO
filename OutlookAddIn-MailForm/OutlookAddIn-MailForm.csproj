@@ -420,7 +420,6 @@
     </None>
     <None Include="DataSet1xyMieter.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1xyMieter.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="DataSet1xyMieter.xss">

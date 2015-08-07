@@ -109,6 +109,22 @@ namespace OutlookAddIn_MailForm
             set { this.txt_Mieter.Text = value.ToString(); }
         }
 
+        public int wohnung
+        {
+            get
+            {
+                if (this.txt_wohnung.Text != "")
+                {
+                    return int.Parse(this.txt_wohnung.Text);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set { this.txt_wohnung.Text = value.ToString(); }
+        }
+
         #endregion
 
 

@@ -15,13 +15,21 @@ namespace OutlookAddIn_MailForm
 
         #region Properties
 
+        // getter var for switching the BindingSources filled by Instantiation
         private string _btn_typ;
 
-
+        // Inheriting the calling Parent Form for recalls
+        // TODO: use MdiParent instead
+        // https://msdn.microsoft.com/de-de/library/system.windows.forms.containercontrol.parentform%28v=vs.110%29.aspx
+        private Frm_MSG _ParentForm;
+        public new Frm_MSG ParentForm
+        {
+            get { return _ParentForm; }
+            set { _ParentForm = value; }
+        }
 
         #endregion 
-
-           
+          
         public Frm_Search(string btn_typ)
         {
             InitializeComponent();
@@ -31,14 +39,6 @@ namespace OutlookAddIn_MailForm
 
         }
         
-        // Inheriting the calling Parent Form for recalls
-        private Frm_MSG _ParentForm;
-        public new Frm_MSG ParentForm
-        {
-            get { return _ParentForm; }
-            set { _ParentForm = value; }
-        }
-
         // Prefilling the Gridviewtable by what ist chosen in Frm_MSG.cs
         private void Frm_Search_Load(object sender, EventArgs e)
         {           
@@ -97,6 +97,7 @@ namespace OutlookAddIn_MailForm
                     }
                 case "wo":
                     {
+                        this.fill_dgv_with_Wohnung();
                         break;
                     }
                 case "mi":
@@ -128,7 +129,7 @@ namespace OutlookAddIn_MailForm
             this.Close();
         }
 
-        // Filling selected Data to Parentform
+        // Fill selected Data to ParentForm
         private void setData_to_ParentForm()
         {
             // Setting Data to Frm_MSG.cs bei the GridView Click
@@ -171,7 +172,7 @@ namespace OutlookAddIn_MailForm
                     }
                 case "wo":
                     {
-                        //this.ParentForm.txt_we = dgv_TableSelect.SelectedRows[0].Cells[0].Value.ToString();
+                        this.ParentForm.wohnung = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;                        
                         break;
                     }
                 case "mi":
@@ -235,20 +236,25 @@ namespace OutlookAddIn_MailForm
         private void fill_dgv_with_Mieter()
         {
             // Progress ist limitating the RowCount so it need to be filtered high
-            if (this.ParentForm.mandant != 0 && this.ParentForm.objekt !=0)
+            if (this.ParentForm.mandant != 0 && this.ParentForm.objekt != 0 && this.ParentForm.HausNr == 0
+                 && this.ParentForm.wohnung == 0)
             {
-                //xyMieterBindingSource.Filter = "Unternehmen = " + this.ParentForm.mandant;
-                //this.dgv_TableSelect.DataSource = xyMieterBindingSource;
                 this.dgv_TableSelect.DataSource = xyMieterBindingSource;
-                //DateTime jahresbeginn = new DateTime(2015, 1, 1);
-
                 this.xyMieterTableAdapter.FillByIDS(dataSet1xyMieter.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt);
             }
-            else if (this.ParentForm.mandant !=0 && this.ParentForm.objekt !=0 && this.ParentForm.HausNr !=0)
+            else if (this.ParentForm.mandant !=0 && this.ParentForm.objekt !=0 && this.ParentForm.HausNr !=0 
+                && this.ParentForm.wohnung ==0)
             {
                 this.dgv_TableSelect.DataSource = xyMieterBindingSource;
                 this.xyMieterTableAdapter.FillBy_Haus_Unt_WE(dataSet1xyMieter.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt,
                     this.ParentForm.HausNr);
+            }
+            else if (this.ParentForm.mandant != 0 && this.ParentForm.objekt != 0 && this.ParentForm.HausNr != 0
+                 && this.ParentForm.wohnung != 0)
+            {
+                this.dgv_TableSelect.DataSource = xyMieterBindingSource;
+                this.xyMieterTableAdapter.FillBy_WoHaUnWe(dataSet1xyMieter.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt,
+                    this.ParentForm.HausNr, this.ParentForm.wohnung);
             }
             else
             {
@@ -263,6 +269,16 @@ namespace OutlookAddIn_MailForm
             this.lbl_2.Text = "Name2 suchen";
             this.lbl_2.Visible = true;
             this.btn_search.Visible = true;
+        }
+
+        private void fill_dgv_with_Wohnung()
+        {
+            if (this.ParentForm.mandant !=0 && this.ParentForm.objekt !=0 && this.ParentForm.HausNr !=0)
+            {
+                this.dgv_TableSelect.DataSource = wohnungBindingSource;
+                this.wohnungTableAdapter.Fill_by_BaUnWeHa(dataSet1Wohnung.Wohnung,
+                    this.ParentForm.objekt, this.ParentForm.HausNr, this.ParentForm.mandant);
+            }
         }
 
         private void fill_AdressenToolStripButton_Click(object sender, EventArgs e)
@@ -280,7 +296,7 @@ namespace OutlookAddIn_MailForm
 
         #endregion
 
-        // Search by Textboxesinput after Button clicked
+        // Search by Textboxesinput after Button Search was clicked
         private void btn_search_Click(object sender, EventArgs e)
         {
             switch (_btn_typ)
@@ -314,7 +330,6 @@ namespace OutlookAddIn_MailForm
                     }
             }
         }
-
 
     }
 }

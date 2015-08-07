@@ -279,15 +279,7 @@ namespace OutlookAddIn_MailForm {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class WohnungDataTable : global::System.Data.TypedTableBase<WohnungRow> {
             
-            private global::System.Data.DataColumn columnMandantNr;
-            
             private global::System.Data.DataColumn columnWohnNr;
-            
-            private global::System.Data.DataColumn columnWE;
-            
-            private global::System.Data.DataColumn columnHausNr;
-            
-            private global::System.Data.DataColumn columnUnternehmen;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -324,41 +316,9 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MandantNrColumn {
-                get {
-                    return this.columnMandantNr;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn WohnNrColumn {
                 get {
                     return this.columnWohnNr;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WEColumn {
-                get {
-                    return this.columnWE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HausNrColumn {
-                get {
-                    return this.columnHausNr;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UnternehmenColumn {
-                get {
-                    return this.columnUnternehmen;
                 }
             }
             
@@ -399,14 +359,10 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WohnungRow AddWohnungRow(int MandantNr, int WohnNr, int WE, int HausNr, int Unternehmen) {
+            public WohnungRow AddWohnungRow(int WohnNr) {
                 WohnungRow rowWohnungRow = ((WohnungRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        MandantNr,
-                        WohnNr,
-                        WE,
-                        HausNr,
-                        Unternehmen};
+                        WohnNr};
                 rowWohnungRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowWohnungRow);
                 return rowWohnungRow;
@@ -429,46 +385,15 @@ namespace OutlookAddIn_MailForm {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnMandantNr = base.Columns["MandantNr"];
                 this.columnWohnNr = base.Columns["WohnNr"];
-                this.columnWE = base.Columns["WE"];
-                this.columnHausNr = base.Columns["HausNr"];
-                this.columnUnternehmen = base.Columns["Unternehmen"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnMandantNr = new global::System.Data.DataColumn("MandantNr", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMandantNr);
                 this.columnWohnNr = new global::System.Data.DataColumn("WohnNr", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWohnNr);
-                this.columnWE = new global::System.Data.DataColumn("WE", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWE);
-                this.columnHausNr = new global::System.Data.DataColumn("HausNr", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHausNr);
-                this.columnUnternehmen = new global::System.Data.DataColumn("Unternehmen", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUnternehmen);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnMandantNr}, false));
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
-                                this.columnWohnNr}, false));
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint3", new global::System.Data.DataColumn[] {
-                                this.columnWE}, false));
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint4", new global::System.Data.DataColumn[] {
-                                this.columnHausNr}, false));
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint5", new global::System.Data.DataColumn[] {
-                                this.columnUnternehmen}, false));
-                this.columnMandantNr.AllowDBNull = false;
-                this.columnMandantNr.Unique = true;
                 this.columnWohnNr.AllowDBNull = false;
-                this.columnWohnNr.Unique = true;
-                this.columnWE.AllowDBNull = false;
-                this.columnWE.Unique = true;
-                this.columnHausNr.AllowDBNull = false;
-                this.columnHausNr.Unique = true;
-                this.columnUnternehmen.AllowDBNull = false;
-                this.columnUnternehmen.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -611,56 +536,12 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int MandantNr {
-                get {
-                    return ((int)(this[this.tableWohnung.MandantNrColumn]));
-                }
-                set {
-                    this[this.tableWohnung.MandantNrColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int WohnNr {
                 get {
                     return ((int)(this[this.tableWohnung.WohnNrColumn]));
                 }
                 set {
                     this[this.tableWohnung.WohnNrColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int WE {
-                get {
-                    return ((int)(this[this.tableWohnung.WEColumn]));
-                }
-                set {
-                    this[this.tableWohnung.WEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int HausNr {
-                get {
-                    return ((int)(this[this.tableWohnung.HausNrColumn]));
-                }
-                set {
-                    this[this.tableWohnung.HausNrColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Unternehmen {
-                get {
-                    return ((int)(this[this.tableWohnung.UnternehmenColumn]));
-                }
-                set {
-                    this[this.tableWohnung.UnternehmenColumn] = value;
                 }
             }
         }
@@ -824,11 +705,7 @@ namespace OutlookAddIn_MailForm.DataSet1WohnungTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Wohnung";
-            tableMapping.ColumnMappings.Add("MandantNr", "MandantNr");
             tableMapping.ColumnMappings.Add("WohnNr", "WohnNr");
-            tableMapping.ColumnMappings.Add("WE", "WE");
-            tableMapping.ColumnMappings.Add("HausNr", "HausNr");
-            tableMapping.ColumnMappings.Add("Unternehmen", "Unternehmen");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -845,8 +722,8 @@ namespace OutlookAddIn_MailForm.DataSet1WohnungTableAdapters {
             this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MandantNr, WohnNr, WE, HausNr, Unternehmen\r\nFROM     PUB.Wohnung\r\nWHERE  (" +
-                "MandantNr = 1) AND (WE = ?) AND (HausNr = ?) AND (Unternehmen = ?)";
+            this._commandCollection[0].CommandText = "SELECT WohnNr\r\nFROM     PUB.xyWohnung\r\nWHERE  (MandantNr = 1) AND (WE = ?) AND (H" +
+                "ausNr = ?) AND (Unternehmen = ?) AND (xyGeloescht = 0)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("WE", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WE", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("HausNr", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HausNr", global::System.Data.DataRowVersion.Current, false, null));

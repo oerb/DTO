@@ -1773,7 +1773,7 @@ namespace OutlookAddIn_MailForm.DataSet1xyMieterTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[3];
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[4];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT PUB.xyMieter.AdressNr, PUB.xyMieter.WohnNr, PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.Adresse.Ort, PUB.Adresse.Strasse, PUB.Adresse.EMail, 
@@ -1811,11 +1811,27 @@ ORDER BY PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.xyMieter.Folgenummer";
 FROM     PUB.xyMieter, PUB.Adresse
 WHERE  PUB.xyMieter.AdressNr = PUB.Adresse.AdressNr AND (PUB.xyMieter.AdressNr <> 9999999) AND (PUB.xyMieter.xyBearbeiter <> '""Ess, Ess""') AND 
                   (PUB.xyMieter.xyGeloescht <> - 1) AND (PUB.xyMieter.AbrechnenBeko <> '""N""') AND (PUB.xyMieter.Vertragadressnr <> 0) AND (PUB.xyMieter.MandantNr = 1) AND 
-                  (PUB.xyMieter.Unternehmen = ?) AND (PUB.xyMieter.WE = ?)
+                  (PUB.xyMieter.Unternehmen = ?) AND (PUB.xyMieter.WE = ?) AND (PUB.xyMieter.HausNr = ?) AND (PUB.xyMieter.WohnNr = ?)
 ORDER BY PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.xyMieter.Folgenummer";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("WE", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WE", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("HausNr", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HausNr", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("WohnNr", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WohnNr", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT PUB.xyMieter.AdressNr, PUB.xyMieter.WohnNr, PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.Adresse.Ort, PUB.Adresse.Strasse, PUB.Adresse.EMail, 
+                  PUB.xyMieter.Folgenummer, PUB.xyMieter.Auszugsdatum, PUB.xyMieter.Einzugsdatum, PUB.Adresse.PlzOrt, PUB.Adresse.PlzPostf, PUB.Adresse.Postfach, 
+                  PUB.Adresse.Gebname, PUB.Adresse.Geschlecht, PUB.Adresse.VPName1, PUB.Adresse.VPName2, PUB.Adresse.Postleitzahl, PUB.Adresse.Ortname, PUB.xyMieter.HausNr, 
+                  PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.WE, PUB.xyMieter.Vertragadressnr
+FROM     PUB.xyMieter, PUB.Adresse
+WHERE  PUB.xyMieter.AdressNr = PUB.Adresse.AdressNr AND (PUB.xyMieter.AdressNr <> 9999999) AND (PUB.xyMieter.xyBearbeiter <> '""Ess, Ess""') AND 
+                  (PUB.xyMieter.xyGeloescht <> - 1) AND (PUB.xyMieter.AbrechnenBeko <> '""N""') AND (PUB.xyMieter.Vertragadressnr <> 0) AND (PUB.xyMieter.MandantNr = 1) AND 
+                  (PUB.xyMieter.Unternehmen = ?) AND (PUB.xyMieter.WE = ?)
+ORDER BY PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.xyMieter.Folgenummer";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("WE", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WE", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1888,8 +1904,40 @@ ORDER BY PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.xyMieter.Folgenummer";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByIDS(DataSet1xyMieter.xyMieterDataTable dataTable, global::System.Nullable<int> Unternehmen, global::System.Nullable<int> WE) {
+        public virtual int FillBy_WoHaUnWe(DataSet1xyMieter.xyMieterDataTable dataTable, int Unternehmen, int WE, int HausNr, int WohnNr) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(WE));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(HausNr));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(WohnNr));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1xyMieter.xyMieterDataTable GetDataBy1_WoHaUnWe(int Unternehmen, int WE, int HausNr, int WohnNr) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(WE));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(HausNr));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(WohnNr));
+            DataSet1xyMieter.xyMieterDataTable dataTable = new DataSet1xyMieter.xyMieterDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByIDS(DataSet1xyMieter.xyMieterDataTable dataTable, global::System.Nullable<int> Unternehmen, global::System.Nullable<int> WE) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((Unternehmen.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen.Value));
             }
@@ -1914,7 +1962,7 @@ ORDER BY PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.xyMieter.Folgenummer";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataSet1xyMieter.xyMieterDataTable GetDataBy(global::System.Nullable<int> Unternehmen, global::System.Nullable<int> WE) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((Unternehmen.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen.Value));
             }
