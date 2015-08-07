@@ -93,10 +93,7 @@
             this.dgv_TableSelect.RowTemplate.Height = 24;
             this.dgv_TableSelect.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_TableSelect.Size = new System.Drawing.Size(471, 295);
-            this.dgv_TableSelect.TabIndex = 0;
-            this.dgv_TableSelect.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_TableSelect_CellClick);
-            this.dgv_TableSelect.SelectionChanged += new System.EventHandler(this.dgv_TableSelect_SelectionChanged);
-            this.dgv_TableSelect.Click += new System.EventHandler(this.dgv_TableSelect_Click);
+            this.dgv_TableSelect.TabIndex = 0;            
             this.dgv_TableSelect.DoubleClick += new System.EventHandler(this.dgv_TableSelect_DoubleClick);
             // 
             // btn_select
@@ -133,8 +130,7 @@
             // mandantBindingSource
             // 
             this.mandantBindingSource.DataMember = "Mandant";
-            this.mandantBindingSource.DataSource = this.dataSet1_WoWi_Mandant;
-            this.mandantBindingSource.CurrentItemChanged += new System.EventHandler(this.tableBindingSource_CurrentItemChanged);
+            this.mandantBindingSource.DataSource = this.dataSet1_WoWi_Mandant;            
             // 
             // mandantTableAdapter
             // 
@@ -162,8 +158,7 @@
             // tableBindingSource
             // 
             this.tableBindingSource.DataMember = "Table";
-            this.tableBindingSource.DataSource = this.database1DataSet_MSGtyp;
-            this.tableBindingSource.CurrentItemChanged += new System.EventHandler(this.tableBindingSource_CurrentItemChanged);
+            this.tableBindingSource.DataSource = this.database1DataSet_MSGtyp;            
             // 
             // tableTableAdapter
             // 
@@ -221,7 +216,7 @@
             this.btn_search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Visible = false;
-            this.btn_search.Click += new System.EventHandler(this.button1_Click);
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // dataSet1_WoWi_Kreditor
             // 

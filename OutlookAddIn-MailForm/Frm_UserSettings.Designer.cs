@@ -105,6 +105,7 @@
             this.chb_auto_archiving.TabIndex = 1;
             this.chb_auto_archiving.Text = "MSG Automatisch Archivieren";
             this.chb_auto_archiving.UseVisualStyleBackColor = true;
+            this.chb_auto_archiving.CheckedChanged += new System.EventHandler(this.chb_auto_archiving_CheckedChanged);
             // 
             // tabPage2
             // 

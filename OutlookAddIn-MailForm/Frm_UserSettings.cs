@@ -45,5 +45,10 @@ namespace OutlookAddIn_MailForm
             Properties.Settings.Default.uVorgangKZ = this.cmb_vorgangkz.Text;
             Properties.Settings.Default.Save();
         }
+
+        private void chb_auto_archiving_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

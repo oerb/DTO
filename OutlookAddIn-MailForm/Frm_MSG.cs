@@ -112,7 +112,6 @@ namespace OutlookAddIn_MailForm
         #endregion
 
 
-
         // One search Buttonhandler 
         // btn_typ: "ma" (Mandant), "kr" (Kreditor), "ob" Objekt, "ha" Haus, 
         // "we" WE, "me" MSGtyp
@@ -135,11 +134,12 @@ namespace OutlookAddIn_MailForm
                 { btn_typ = "mi"; }
             else
                 { btn_typ = "none"; }
-
+            // Open Form 
             Frm_Search frm_Search = new Frm_Search(btn_typ);
-            frm_Search.ParentForm = this;
+            // frm_Search.MdiParent = this;
+            frm_Search.ParentForm = this; // TODO: Replace this by FormClass inherited MdiParent
             //DialogResult result = frm_Search.ShowDialog();
-            frm_Search.Show();
+            frm_Search.Show(); // TODO: Do not know what is better to use. Show or ShowDialog ... test it
         }
 
         private void btn_create_MSG_Click(object sender, EventArgs e)

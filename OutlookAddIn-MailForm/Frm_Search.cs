@@ -12,7 +12,16 @@ namespace OutlookAddIn_MailForm
 {
     public partial class Frm_Search : Form
     {
+
+        #region Properties
+
         private string _btn_typ;
+
+
+
+        #endregion 
+
+           
         public Frm_Search(string btn_typ)
         {
             InitializeComponent();
@@ -21,35 +30,24 @@ namespace OutlookAddIn_MailForm
             _btn_typ = btn_typ;
 
         }
+        
         // Inheriting the calling Parent Form for recalls
         private Frm_MSG _ParentForm;
-
         public new Frm_MSG ParentForm
         {
             get { return _ParentForm; }
             set { _ParentForm = value; }
         }
 
-        private void mandantBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // ######## Prefilling the Gridviewtable by what ist chosen in Frm_MSG.cs
+        // Prefilling the Gridviewtable by what ist chosen in Frm_MSG.cs
         private void Frm_Search_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dataSet1xyMieter.xyMieter' table. You can move, or remove it, as needed.
-            // this.xyMieterTableAdapter.Fill(this.dataSet1xyMieter.xyMieter);
-            // TODO: This line of code loads data into the 'dataSet1Wohnung.Wohnung' table. You can move, or remove it, as needed.
-            //this.wohnungTableAdapter.Fill(this.dataSet1Wohnung.Wohnung);
-            
-            // select the Databinding
+        {           
+            // select the Databinding by _btn_type from Instantiation
             switch (_btn_typ)
             {
                 case "ma":
                     {
-                        this.dgv_TableSelect.DataSource = mandantBindingSource;
-        
+                        this.dgv_TableSelect.DataSource = mandantBindingSource;        
                         this.mandantTableAdapter.Fill(this.dataSet1_WoWi_Mandant.Mandant);
                         break;
                     }
@@ -116,35 +114,21 @@ namespace OutlookAddIn_MailForm
             
         }
 
-        private void dgv_TableSelect_SelectionChanged(object sender, EventArgs e)
-        {
-            //this.ParentForm.filelocation = dgv_TableSelect
-        }
-
-        private void tableBindingSource_CurrentItemChanged(object sender, EventArgs e)
-        {
-           
-            
-        }
-
-        private void dgv_TableSelect_Click(object sender, EventArgs e)
-        {
-
-            // How To Get Data aut of a selected Row:
-            // MessageBox.Show(dgv_TableSelect.SelectedRows[0].Cells[0].Value.ToString());
-        }
-
-        private void dgv_TableSelect_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
+        // select TableItem, Fill it to Parent and Close Form
         private void dgv_TableSelect_DoubleClick(object sender, EventArgs e)
         {
             setData_to_ParentForm();
             this.Close();
         }
 
+        // select TableItem, Fill it to Parent and Close Form
+        private void btn_select_Click(object sender, EventArgs e)
+        {
+            setData_to_ParentForm();
+            this.Close();
+        }
+
+        // Filling selected Data to Parentform
         private void setData_to_ParentForm()
         {
             // Setting Data to Frm_MSG.cs bei the GridView Click
@@ -214,27 +198,7 @@ namespace OutlookAddIn_MailForm
             //}
         }
 
-        private void btn_select_Click(object sender, EventArgs e)
-        {
-            setData_to_ParentForm();
-            this.Close();
-        }
-
-        private void fill_AdressenToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.kreditor_KontoTableAdapter.Fill(this.dataSet1_WoWi_Kreditor._Kreditor_Konto);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        #region Filter Definition
-
+        // TODO: Not in Use - Do I need this?
         private void txt_filer1_TextChanged(object sender, EventArgs e)
         {
             switch (_btn_typ)
@@ -246,9 +210,7 @@ namespace OutlookAddIn_MailForm
                     }
             }
         }
-
-        #endregion
-
+         
         #region TableFillFuncitons_Seperated
 
         private void fill_dgv_with_Kerditor()
@@ -303,10 +265,23 @@ namespace OutlookAddIn_MailForm
             this.btn_search.Visible = true;
         }
 
+        private void fill_AdressenToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.kreditor_KontoTableAdapter.Fill(this.dataSet1_WoWi_Kreditor._Kreditor_Konto);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
         #endregion
 
-        // TODO: RENAME to btn_search
-        private void button1_Click(object sender, EventArgs e)
+        // Search by Textboxesinput after Button clicked
+        private void btn_search_Click(object sender, EventArgs e)
         {
             switch (_btn_typ)
             {
