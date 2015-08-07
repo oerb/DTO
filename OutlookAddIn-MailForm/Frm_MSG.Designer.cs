@@ -296,9 +296,9 @@
             this.lbl_kreditor_txt.AutoSize = true;
             this.lbl_kreditor_txt.Location = new System.Drawing.Point(302, 46);
             this.lbl_kreditor_txt.Name = "lbl_kreditor_txt";
-            this.lbl_kreditor_txt.Size = new System.Drawing.Size(46, 17);
+            this.lbl_kreditor_txt.Size = new System.Drawing.Size(30, 17);
             this.lbl_kreditor_txt.TabIndex = 36;
-            this.lbl_kreditor_txt.Text = "label1";
+            this.lbl_kreditor_txt.Text = "K-0";
             this.lbl_kreditor_txt.Visible = false;
             // 
             // lbl_objekt_txt
@@ -420,9 +420,9 @@
             this.lbl_mieter_txt.AutoSize = true;
             this.lbl_mieter_txt.Location = new System.Drawing.Point(302, 158);
             this.lbl_mieter_txt.Name = "lbl_mieter_txt";
-            this.lbl_mieter_txt.Size = new System.Drawing.Size(46, 17);
+            this.lbl_mieter_txt.Size = new System.Drawing.Size(32, 17);
             this.lbl_mieter_txt.TabIndex = 48;
-            this.lbl_mieter_txt.Text = "label1";
+            this.lbl_mieter_txt.Text = "M-0";
             this.lbl_mieter_txt.Visible = false;
             // 
             // btn_mieter

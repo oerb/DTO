@@ -37,16 +37,6 @@ namespace OutlookAddIn_MailForm
            
         }
 
-        private void button2_Click(object sender, RibbonControlEventArgs e)
-        {
-            
-        }
-
-        private void button4_Click(object sender, RibbonControlEventArgs e)
-        {
-
-        }
-
         private void button6_Click(object sender, RibbonControlEventArgs e)
         {
             //CreateMailItem();
@@ -54,11 +44,10 @@ namespace OutlookAddIn_MailForm
             DialogResult result = frm_settings.ShowDialog();
         }
 
+        // TODO: Exclude from Project - was just for testing
         private void buttonMangelruege_Click(object sender, RibbonControlEventArgs e)
         {
-            //openTestForm();
-            
-
+            //openTestForm();          
         }
 
         private void openTestForm()
@@ -106,8 +95,11 @@ namespace OutlookAddIn_MailForm
                 Outlook.MailItem myStorageItem = (Outlook.MailItem)application.Session.OpenSharedItem(frm_MSG.filelocation);
                 myMailItem.HTMLBody = myStorageItem.HTMLBody;
                 // Parsing a nice Subject String out of the Form
-                string subject = frm_MSG.mandant.ToString() + "/" + frm_MSG.txt_objekt.Text + "/" +
-                    frm_MSG.HausNr.ToString() + " : " + frm_MSG.kreditor.ToString() + " - " +
+                string subject = frm_MSG.mandant.ToString() + "/ " + frm_MSG.txt_objekt.Text + "/ " +
+                    frm_MSG.HausNr.ToString()  + "/ " + frm_MSG.wohnung.ToString() 
+                    + " : " + frm_MSG.Mieter.ToString() + " - " +
+                    frm_MSG.lbl_mieter_txt.Text +
+                    " : " + frm_MSG.kreditor.ToString() + " - " +
                     frm_MSG.lbl_kreditor_txt.Text + " : " + myStorageItem.Subject + " : " +
                     frm_MSG.txb_Subject.Text;
                 myMailItem.Subject = subject;
