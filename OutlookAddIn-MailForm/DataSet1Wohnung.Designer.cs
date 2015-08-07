@@ -845,16 +845,23 @@ namespace OutlookAddIn_MailForm.DataSet1WohnungTableAdapters {
             this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \"MandantNr\", \"WohnNr\", \"WE\", \"HausNr\", \"Unternehmen\" FROM \"PUB\".\"Wohnung\"";
+            this._commandCollection[0].CommandText = "SELECT MandantNr, WohnNr, WE, HausNr, Unternehmen\r\nFROM     PUB.Wohnung\r\nWHERE  (" +
+                "MandantNr = 1) AND (WE = ?) AND (HausNr = ?) AND (Unternehmen = ?)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("WE", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WE", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("HausNr", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HausNr", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1Wohnung.WohnungDataTable dataTable) {
+        public virtual int Fill_by_BaUnWeHa(DataSet1Wohnung.WohnungDataTable dataTable, int WE, int HausNr, int Unternehmen) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(WE));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(HausNr));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Unternehmen));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -866,8 +873,11 @@ namespace OutlookAddIn_MailForm.DataSet1WohnungTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1Wohnung.WohnungDataTable GetData() {
+        public virtual DataSet1Wohnung.WohnungDataTable GetData_by_BaUnWeHa(int WE, int HausNr, int Unternehmen) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(WE));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(HausNr));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Unternehmen));
             DataSet1Wohnung.WohnungDataTable dataTable = new DataSet1Wohnung.WohnungDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

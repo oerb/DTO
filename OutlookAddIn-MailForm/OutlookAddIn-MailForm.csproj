@@ -29,21 +29,21 @@
     <AssemblyName>OutlookAddIn-MailForm</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>\\server10\VerzeichnisQ\Administrator\Software\DTO\</PublishUrl>
     <InstallUrl />
-    <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <TargetCulture>de</TargetCulture>
+    <ApplicationVersion>0.0.0.3</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <IsWebBootstrapper>False</IsWebBootstrapper>
-    <ProductName>OutlookAddIn-MailForm</ProductName>
-    <PublisherName />
-    <SupportUrl />
-    <FriendlyName>OutlookAddIn-MailForm</FriendlyName>
-    <OfficeApplicationDescription />
+    <ProductName>DTO</ProductName>
+    <PublisherName>Björn Leppin</PublisherName>
+    <SupportUrl>https://github.com/oerb/DTO</SupportUrl>
+    <FriendlyName>DTO</FriendlyName>
+    <OfficeApplicationDescription>Outlookaddin to Generate E-Mails and Archive them by use of Wowi%27cs 4.0 and Saperion</OfficeApplicationDescription>
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
   <ItemGroup>
@@ -205,6 +205,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet_MSGTYPES.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet1Wohnung.cs">
+      <DependentUpon>DataSet1Wohnung.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataSet1Wohnung.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -252,6 +256,10 @@
     </Compile>
     <Compile Include="Frm_helphtmlfile.Designer.cs">
       <DependentUpon>Frm_helphtmlfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MailMain.cs" />
+    <Compile Include="Frm_MailMain.Designer.cs">
+      <DependentUpon>Frm_MailMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_MSG.cs">
       <SubType>Form</SubType>
@@ -324,6 +332,9 @@
     </Compile>
     <EmbeddedResource Include="Frm_helphtmlfile.resx">
       <DependentUpon>Frm_helphtmlfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MailMain.resx">
+      <DependentUpon>Frm_MailMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_MSG.resx">
       <DependentUpon>Frm_MSG.cs</DependentUpon>
@@ -550,6 +561,9 @@
     <None Include="saperionDataSet_Dokuart_DokuKZ.xss">
       <DependentUpon>saperionDataSet_Dokuart_DokuKZ.xsd</DependentUpon>
     </None>
+    <None Include="test1.ofs" />
+    <None Include="test11.ofs" />
+    <None Include="test12.ofs" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.cs</DependentUpon>
     </None>
@@ -645,8 +659,8 @@
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Outlook" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Outlook" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\15.0\Outlook\InstallRoot\Path#outlook.exe" AddItemTemplatesGuid="{A58A78EB-1C92-4DDD-80CF-E8BD872ABFC4}" />
-        <Host Name="Outlook" GeneratedCodeNamespace="OutlookAddIn_MailForm" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+        <Host Name="Outlook" GeneratedCodeNamespace="OutlookAddIn_MailForm" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="6C6174AD6EFF11E0D33A91A52D75283C8AC7B0DF" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>

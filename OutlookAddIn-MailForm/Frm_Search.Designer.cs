@@ -53,12 +53,12 @@
             this.kreditorKontoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kreditor_KontoTableAdapter = new OutlookAddIn_MailForm.DataSet1_WoWi_KreditorTableAdapters.Kreditor_KontoTableAdapter();
             this.dataSet1_WoWi_Kreditor1 = new OutlookAddIn_MailForm.DataSet1_WoWi_Kreditor();
-            this.dataSet1Wohnung = new OutlookAddIn_MailForm.DataSet1Wohnung();
-            this.wohnungBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wohnungTableAdapter = new OutlookAddIn_MailForm.DataSet1WohnungTableAdapters.WohnungTableAdapter();
             this.dataSet1xyMieter = new OutlookAddIn_MailForm.DataSet1xyMieter();
             this.xyMieterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.xyMieterTableAdapter = new OutlookAddIn_MailForm.DataSet1xyMieterTableAdapters.xyMieterTableAdapter();
+            this.dataSet1Wohnung = new OutlookAddIn_MailForm.DataSet1Wohnung();
+            this.wohnungBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wohnungTableAdapter = new OutlookAddIn_MailForm.DataSet1WohnungTableAdapters.WohnungTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TableSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Objekte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wirtschaftseinheitBindingSource)).BeginInit();
@@ -71,10 +71,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Kreditor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kreditorKontoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Kreditor1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1Wohnung)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wohnungBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1xyMieter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xyMieterBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1Wohnung)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wohnungBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_TableSelect
@@ -242,20 +242,6 @@
             this.dataSet1_WoWi_Kreditor1.DataSetName = "DataSet1_WoWi_Kreditor";
             this.dataSet1_WoWi_Kreditor1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataSet1Wohnung
-            // 
-            this.dataSet1Wohnung.DataSetName = "DataSet1Wohnung";
-            this.dataSet1Wohnung.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // wohnungBindingSource
-            // 
-            this.wohnungBindingSource.DataMember = "Wohnung";
-            this.wohnungBindingSource.DataSource = this.dataSet1Wohnung;
-            // 
-            // wohnungTableAdapter
-            // 
-            this.wohnungTableAdapter.ClearBeforeFill = true;
-            // 
             // dataSet1xyMieter
             // 
             this.dataSet1xyMieter.DataSetName = "DataSet1xyMieter";
@@ -269,6 +255,20 @@
             // xyMieterTableAdapter
             // 
             this.xyMieterTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataSet1Wohnung
+            // 
+            this.dataSet1Wohnung.DataSetName = "DataSet1Wohnung";
+            this.dataSet1Wohnung.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // wohnungBindingSource
+            // 
+            this.wohnungBindingSource.DataMember = "Wohnung";
+            this.wohnungBindingSource.DataSource = this.dataSet1Wohnung;
+            // 
+            // wohnungTableAdapter
+            // 
+            this.wohnungTableAdapter.ClearBeforeFill = true;
             // 
             // Frm_Search
             // 
@@ -299,10 +299,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Kreditor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kreditorKontoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Kreditor1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1Wohnung)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wohnungBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1xyMieter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xyMieterBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1Wohnung)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wohnungBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

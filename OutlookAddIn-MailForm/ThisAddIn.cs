@@ -47,7 +47,8 @@ namespace OutlookAddIn_MailForm
 
         private void actionOnEmailSend(object Item, ref bool Cancel)
         {
-
+            // Send E-Mail with or with out archiving 
+            // and if ask for archiving or not 
             if (Properties.Settings.Default.autoarchiving)
             {
                 if (this.ArchivingAktive)
@@ -66,6 +67,8 @@ namespace OutlookAddIn_MailForm
                     {
                         saveMailtoSaperion();
                     }
+                    // Set archiving back to Standard
+                    this.ArchivingAktive = false;
                 } 
             }
         }

@@ -56,6 +56,13 @@ namespace OutlookAddIn_MailForm
 
         private void buttonMangelruege_Click(object sender, RibbonControlEventArgs e)
         {
+            //openTestForm();
+            
+
+        }
+
+        private void openTestForm()
+        {
             //opens Mängelrüge dialog form
             Mangel ma = new Mangel();
             DialogResult result = ma.ShowDialog();
@@ -72,9 +79,10 @@ namespace OutlookAddIn_MailForm
                 {
                     MessageBox.Show("Error: CreateMailItem in Derr-Tools.cs Failed !!!");
                 }
-                
+
             }
         }
+
         private void CreateMailItem()
         {
             Outlook.Application application = Globals.ThisAddIn.Application;

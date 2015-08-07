@@ -69,6 +69,7 @@
             this.btn_schadensmeldung.Image = global::OutlookAddIn_MailForm.Properties.Resources._1438712863_open_mail;
             this.btn_schadensmeldung.Label = "Meldung";
             this.btn_schadensmeldung.Name = "btn_schadensmeldung";
+            this.btn_schadensmeldung.ScreenTip = "Eine neu Meldung mit Archivfilterinformation generieren.";
             this.btn_schadensmeldung.ShowImage = true;
             this.btn_schadensmeldung.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_schadensmeldung_Click);
             // 
@@ -77,6 +78,7 @@
             this.RibGroup_Development.Items.Add(this.buttonMangelruege);
             this.RibGroup_Development.Label = "Development";
             this.RibGroup_Development.Name = "RibGroup_Development";
+            this.RibGroup_Development.Visible = false;
             // 
             // buttonMangelruege
             // 
@@ -101,6 +103,7 @@
             this.btn_Settings.Image = ((System.Drawing.Image)(resources.GetObject("btn_Settings.Image")));
             this.btn_Settings.Label = "MSG Typen";
             this.btn_Settings.Name = "btn_Settings";
+            this.btn_Settings.ScreenTip = "Meldungstypen Erstellen und mit E-Mail-Vorlagen verknüpfen.";
             this.btn_Settings.ShowImage = true;
             this.btn_Settings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button6_Click);
             // 
@@ -109,6 +112,7 @@
             this.btn_ServerSettings.Image = ((System.Drawing.Image)(resources.GetObject("btn_ServerSettings.Image")));
             this.btn_ServerSettings.Label = "Server";
             this.btn_ServerSettings.Name = "btn_ServerSettings";
+            this.btn_ServerSettings.ScreenTip = "WoWi und Saperion Serververbindung konfigurieren.";
             this.btn_ServerSettings.ShowImage = true;
             this.btn_ServerSettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_ServerSettings_Click);
             // 
@@ -117,6 +121,7 @@
             this.btn_usersettings.Image = ((System.Drawing.Image)(resources.GetObject("btn_usersettings.Image")));
             this.btn_usersettings.Label = "Benutzer";
             this.btn_usersettings.Name = "btn_usersettings";
+            this.btn_usersettings.ScreenTip = "Benutzereinstellungen wie z..B. Standard DokuArt";
             this.btn_usersettings.ShowImage = true;
             this.btn_usersettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_usersettings_Click);
             // 
