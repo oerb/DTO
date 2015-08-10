@@ -174,6 +174,7 @@
             this.txt_wohnung.Name = "txt_wohnung";
             this.txt_wohnung.Size = new System.Drawing.Size(100, 22);
             this.txt_wohnung.TabIndex = 24;
+            this.txt_wohnung.TextChanged += new System.EventHandler(this.txt_wohnung_TextChanged);
             // 
             // txt_meldungstyp
             // 
@@ -225,6 +226,7 @@
             this.btn_wohnung.TabIndex = 29;
             this.btn_wohnung.Text = "?";
             this.btn_wohnung.UseVisualStyleBackColor = true;
+            this.btn_wohnung.Visible = false;
             this.btn_wohnung.Click += new System.EventHandler(this.btn_search_click);
             // 
             // btn_MSGtyp

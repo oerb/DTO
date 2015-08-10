@@ -289,5 +289,10 @@ namespace OutlookAddIn_MailForm
             // cmd_Dokuart and cmd_DokuKZ
             this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART); 
         }
+
+        private void txt_wohnung_TextChanged(object sender, EventArgs e)
+        {
+            this.wohnung = Convert.ToInt32(this.txt_wohnung.Text);
+        }
     }
 }

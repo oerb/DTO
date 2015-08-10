@@ -14,7 +14,7 @@
     private Microsoft.Office.Interop.Outlook.OlkCommandButton cmd_Haus;
     private Microsoft.Office.Interop.Outlook.OlkCommandButton cmd_Wohnung;
     private Microsoft.Office.Interop.Outlook.OlkCommandButton cmd_Mieter;
-    private Microsoft.Office.Interop.Outlook.OlkCommandButton cmd_Kreditor;
+    //private Microsoft.Office.Interop.Outlook.OlkCommandButton cmd_Kreditor;
     private Microsoft.Office.Interop.Outlook.OlkTextBox txtUnternehmen;
     private Microsoft.Office.Interop.Outlook.OlkLabel lbl_Unternehmen;
     private Microsoft.Office.Interop.Outlook.OlkTextBox txtWE;

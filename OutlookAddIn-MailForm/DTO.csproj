@@ -26,7 +26,7 @@
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>OutlookAddIn_MailForm</RootNamespace>
-    <AssemblyName>OutlookAddIn-MailForm</AssemblyName>
+    <AssemblyName>DTO</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <IsWebBootstrapper>False</IsWebBootstrapper>
@@ -223,6 +223,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1xyMieter.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet1xyMieter2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1xyMieter.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1_WoWi_Haus.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -250,15 +255,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1_WoWi_Objekte.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet1_WOWI_SEARCH.cs">
-      <DependentUpon>DataSet1_WOWI_SEARCH.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DataSet1_WOWI_SEARCH.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1_WOWI_SEARCH.xsd</DependentUpon>
     </Compile>
     <Compile Include="Frm_helphtmlfile.cs">
       <SubType>Form</SubType>
@@ -372,8 +368,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Derr-Tools.resx">
-      <DependentUpon>Derr-Tools.cs</DependentUpon>
+    <EmbeddedResource Include="DTO_Ribbon.resx">
+      <DependentUpon>DTO_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Schadensmeldung.resx">
       <DependentUpon>Schadensmeldung.cs</DependentUpon>
@@ -430,6 +426,7 @@
     <None Include="DataSet1xyMieter.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>DataSet1xyMieter2.Designer.cs</LastGenOutput>
     </None>
     <None Include="DataSet1xyMieter.xss">
       <DependentUpon>DataSet1xyMieter.xsd</DependentUpon>
@@ -478,17 +475,6 @@
     <None Include="DataSet1_WoWi_Objekte.xss">
       <DependentUpon>DataSet1_WoWi_Objekte.xsd</DependentUpon>
     </None>
-    <None Include="DataSet1_WOWI_SEARCH.xsc">
-      <DependentUpon>DataSet1_WOWI_SEARCH.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1_WOWI_SEARCH.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1_WOWI_SEARCH.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet1_WOWI_SEARCH.xss">
-      <DependentUpon>DataSet1_WOWI_SEARCH.xsd</DependentUpon>
-    </None>
     <None Include="OutlookAddIn-MailForm_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -499,11 +485,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Derr-Tools.cs">
+    <Compile Include="DTO_Ribbon.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Derr-Tools.Designer.cs">
-      <DependentUpon>Derr-Tools.cs</DependentUpon>
+    <Compile Include="DTO_Ribbon.Designer.cs">
+      <DependentUpon>DTO_Ribbon.cs</DependentUpon>
     </Compile>
     <Compile Include="Schadensmeldung.cs">
       <SubType>Form</SubType>

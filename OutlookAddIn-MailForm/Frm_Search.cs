@@ -239,22 +239,22 @@ namespace OutlookAddIn_MailForm
             if (this.ParentForm.mandant != 0 && this.ParentForm.objekt != 0 && this.ParentForm.HausNr == 0
                  && this.ParentForm.wohnung == 0)
             {
-                this.dgv_TableSelect.DataSource = xyMieterBindingSource;
-                this.xyMieterTableAdapter.FillByIDS(dataSet1xyMieter.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt);
+                this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
+                this.xyMieterTableAdapterWoWiSearch.FillByUnWe(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt);  
             }
             else if (this.ParentForm.mandant !=0 && this.ParentForm.objekt !=0 && this.ParentForm.HausNr !=0 
                 && this.ParentForm.wohnung ==0)
             {
-                this.dgv_TableSelect.DataSource = xyMieterBindingSource;
-                this.xyMieterTableAdapter.FillBy_Haus_Unt_WE(dataSet1xyMieter.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt,
-                    this.ParentForm.HausNr);
+                this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
+                this.xyMieterTableAdapterWoWiSearch.FillByUnWeHa(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt,
+                    this.ParentForm.HausNr);  
             }
             else if (this.ParentForm.mandant != 0 && this.ParentForm.objekt != 0 && this.ParentForm.HausNr != 0
                  && this.ParentForm.wohnung != 0)
             {
-                this.dgv_TableSelect.DataSource = xyMieterBindingSource;
-                this.xyMieterTableAdapter.FillBy_WoHaUnWe(dataSet1xyMieter.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt,
-                    this.ParentForm.HausNr, this.ParentForm.wohnung);
+                this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
+                this.xyMieterTableAdapterWoWiSearch.FillbyUnWeHaWo(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt,
+                    this.ParentForm.wohnung,this.ParentForm.HausNr);  
             }
             else
             {
