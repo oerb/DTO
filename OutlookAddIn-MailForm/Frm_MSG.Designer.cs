@@ -140,9 +140,9 @@
             this.lbl_Wohnung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Wohnung.Location = new System.Drawing.Point(12, 120);
             this.lbl_Wohnung.Name = "lbl_Wohnung";
-            this.lbl_Wohnung.Size = new System.Drawing.Size(98, 25);
+            this.lbl_Wohnung.Size = new System.Drawing.Size(39, 25);
             this.lbl_Wohnung.TabIndex = 20;
-            this.lbl_Wohnung.Text = "Wohnung";
+            this.lbl_Wohnung.Text = "NE";
             // 
             // txt_Mandant
             // 
@@ -451,9 +451,9 @@
             this.lbl_Mieter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Mieter.Location = new System.Drawing.Point(12, 151);
             this.lbl_Mieter.Name = "lbl_Mieter";
-            this.lbl_Mieter.Size = new System.Drawing.Size(66, 25);
+            this.lbl_Mieter.Size = new System.Drawing.Size(121, 25);
             this.lbl_Mieter.TabIndex = 45;
-            this.lbl_Mieter.Text = "Mieter";
+            this.lbl_Mieter.Text = "Mieter (Adr.)";
             // 
             // Frm_MSG
             // 

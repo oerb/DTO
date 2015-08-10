@@ -26,7 +26,7 @@
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>OutlookAddIn_MailForm</RootNamespace>
-    <AssemblyName>OutlookAddIn-MailForm</AssemblyName>
+    <AssemblyName>DTO</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <IsWebBootstrapper>False</IsWebBootstrapper>
@@ -34,7 +34,7 @@
     <PublishUrl>\\server10\VerzeichnisQ\Administrator\Software\DTO\</PublishUrl>
     <InstallUrl />
     <TargetCulture>de</TargetCulture>
-    <ApplicationVersion>0.0.0.3</ApplicationVersion>
+    <ApplicationVersion>0.0.0.4</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
