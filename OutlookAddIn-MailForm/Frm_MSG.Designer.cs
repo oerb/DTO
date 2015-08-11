@@ -502,7 +502,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meldung";
             this.Load += new System.EventHandler(this.Frm_MSG_Load);
-            this.Click += new System.EventHandler(this.btn_search_click);
             ((System.ComponentModel.ISupportInitialize)(this.wOWIDOKARTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSetDokuartDokuKZBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSet_Dokuart_DokuKZ)).EndInit();

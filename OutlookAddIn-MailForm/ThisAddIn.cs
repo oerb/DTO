@@ -83,14 +83,39 @@ namespace OutlookAddIn_MailForm
             //                     AdresseNr As Integer, DokuArt As String,
             //                     VorgangKZ As String, Vorname As String,
             //                     Name As String)
-            
+
+
+            try
+            {
+                // TODO: Get this out of Try ?? or make some Better 
+                // infos Message in a Case of Fail
+                // The DTsaperionVBNETLib was not found after Clientinstallation
+                // but do not respond anything so ich put this in Try to catch
+                // Infos
                 Archivieren DtSap = new Archivieren();
                 //string newfilelocation = System.Uri.UnescapeDataString(filelocaiton);
-                MailItem.SaveAs(@"E:\Projekte\Development\TEST\mail.msg");
-                filelocaiton = @"E:\Projekte\Development\TEST\mail.msg";
+                // Fails here???? old code follows
+                MailItem.SaveAs(@"C:\Install\DTO\mail.msg");
+                filelocaiton = @"C:\Install\DTO\mail.msg";
+                //string path = @"%USERPROFILE%\AppData\Local\DTO\mail.msg";
+                //string filepath = Environment.ExpandEnvironmentVariables(path);
+                //MessageBox.Show(filepath);
+                //MailItem.SaveAs(filepath);
+                //filelocaiton = filepath;
                 string Subject = MailItem.Subject;
+                //TODO: remove this TEST
+                //MessageBox.Show(DtSap.GetType().ToString());
+                //DtSap.test();
+                //END
                 DtSap.saveDokument(filelocaiton, Mandant, Unternehmen, WE, HausNr, Wohnung, AdresseNr,
-                    DokuArt, VorgangKZ, Vorname, Name, Sachberarbeiter, Subject);   
+                    DokuArt, VorgangKZ, Vorname, Name, Sachberarbeiter, Subject);  
+            }
+            catch (System.Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                throw;
+            }
+ 
             
         }
         #region Von VSTO generierter Code

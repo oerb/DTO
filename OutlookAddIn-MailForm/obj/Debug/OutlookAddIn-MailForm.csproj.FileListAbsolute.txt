@@ -27,3 +27,5 @@ C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\Outl
 C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\DTO.g.resources
 C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\DTO.dll
 C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\DTO.pdb
+C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\bin\Debug\App_Data\Database1.mdf
+C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\bin\Debug\App_Data\Database1_log.ldf
