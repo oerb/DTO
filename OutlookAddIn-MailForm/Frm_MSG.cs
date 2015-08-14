@@ -34,7 +34,7 @@ namespace OutlookAddIn_MailForm
                         return 0;
                     }
                 }
-            set { this.txt_Mandant.Text = value.ToString(); }
+            set { this.txt_Mandant.Text = value.ToString(); this.lbl_mandant_txt.Text = ""; }
         }
 
         public int kreditor
@@ -50,7 +50,7 @@ namespace OutlookAddIn_MailForm
                     return 0;
                 }
             }
-            set { this.txt_kreditor.Text = value.ToString(); }
+            set { this.txt_kreditor.Text = value.ToString(); this.lbl_kreditor_txt.Text = ""; }
         }
 
         public int objekt
@@ -66,7 +66,7 @@ namespace OutlookAddIn_MailForm
                     return 0;
                 }
             }
-            set { this.txt_objekt.Text = value.ToString(); }
+            set { this.txt_objekt.Text = value.ToString(); this.lbl_objekt_txt.Text = ""; }
         }
 
         private string _eMail;
@@ -90,7 +90,7 @@ namespace OutlookAddIn_MailForm
                     return 0;
                 }
             }
-            set { this.txt_haus.Text = value.ToString(); }
+            set { this.txt_haus.Text = value.ToString(); this.lbl_haus_txt.Text = ""; }
         }
 
         public int Mieter
@@ -277,7 +277,7 @@ namespace OutlookAddIn_MailForm
             }
             catch
             {
-                this.txt_objekt.Text = null;
+                this.txt_haus.Text = null;
                 MessageBox.Show("HausNr. muss eine Zahl sein");
             }
         }
@@ -292,7 +292,37 @@ namespace OutlookAddIn_MailForm
 
         private void txt_wohnung_TextChanged(object sender, EventArgs e)
         {
-            this.wohnung = Convert.ToInt32(this.txt_wohnung.Text);
+            //this.wohnung = Convert.ToInt32(this.txt_wohnung.Text);
+            // Set Global HausNr for Archiving Function
+            try
+            {
+                if (this.txt_wohnung.Text != "")
+                {
+                    this.wohnung = int.Parse(this.txt_wohnung.Text);
+                    Globals.ThisAddIn.Wohnung = this.wohnung;
+                }
+            }
+            catch
+            {
+                this.wohnung = 0;
+                MessageBox.Show("NE. muss eine Zahl sein");
+            }
+        }
+
+        // clear all Info-lables behind Textboxes
+        // TODO: Rename this to clear_Formdata
+        public void clear_parentform_data()
+        {
+            this.HausNr = 0;
+            this.objekt = 0;
+            this.kreditor = 0;
+            this.wohnung = 0;
+            this.Mieter = 0;           
+        }
+
+        private void btn_clearform_Click(object sender, EventArgs e)
+        {
+            clear_parentform_data();
         }
     }
 }

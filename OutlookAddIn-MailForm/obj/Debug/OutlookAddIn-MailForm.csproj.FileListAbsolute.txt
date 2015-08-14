@@ -29,3 +29,5 @@ C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\Outl
 C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\DTO.pdb
 C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\bin\Debug\App_Data\Database1.mdf
 C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\bin\Debug\App_Data\Database1_log.ldf
+C:\Users\leppin\Documents\Visual Studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
+C:\Users\leppin\Documents\Visual Studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\bin\Debug\Microsoft.Office.Tools.Outlook.v4.0.Utilities.xml

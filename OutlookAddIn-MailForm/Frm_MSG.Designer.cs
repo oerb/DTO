@@ -71,6 +71,7 @@
             this.btn_mieter = new System.Windows.Forms.Button();
             this.txt_Mieter = new System.Windows.Forms.TextBox();
             this.lbl_Mieter = new System.Windows.Forms.Label();
+            this.btn_clearform = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIDOKARTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSetDokuartDokuKZBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSet_Dokuart_DokuKZ)).BeginInit();
@@ -455,11 +456,22 @@
             this.lbl_Mieter.TabIndex = 45;
             this.lbl_Mieter.Text = "Mieter (Adr.)";
             // 
+            // btn_clearform
+            // 
+            this.btn_clearform.Location = new System.Drawing.Point(17, 333);
+            this.btn_clearform.Name = "btn_clearform";
+            this.btn_clearform.Size = new System.Drawing.Size(148, 32);
+            this.btn_clearform.TabIndex = 49;
+            this.btn_clearform.Text = "Form 0 setzen";
+            this.btn_clearform.UseVisualStyleBackColor = true;
+            this.btn_clearform.Click += new System.EventHandler(this.btn_clearform_Click);
+            // 
             // Frm_MSG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 377);
+            this.Controls.Add(this.btn_clearform);
             this.Controls.Add(this.lbl_mieter_txt);
             this.Controls.Add(this.btn_mieter);
             this.Controls.Add(this.txt_Mieter);
@@ -554,5 +566,6 @@
         private System.Windows.Forms.Button btn_mieter;
         public System.Windows.Forms.TextBox txt_Mieter;
         private System.Windows.Forms.Label lbl_Mieter;
+        private System.Windows.Forms.Button btn_clearform;
     }
 }
