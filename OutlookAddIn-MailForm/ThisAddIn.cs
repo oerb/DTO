@@ -23,9 +23,8 @@ namespace OutlookAddIn_MailForm
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
         }
-
-        // Public Properties
-        #region
+        
+        #region publicProperties
 
         public string filelocaiton;
         public int Mandant = 0;
@@ -118,6 +117,7 @@ namespace OutlookAddIn_MailForm
  
             
         }
+
         #region Von VSTO generierter Code
 
         /// <summary>

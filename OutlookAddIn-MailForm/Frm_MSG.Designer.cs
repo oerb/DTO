@@ -288,9 +288,9 @@
             this.lbl_mandant_txt.AutoSize = true;
             this.lbl_mandant_txt.Location = new System.Drawing.Point(302, 15);
             this.lbl_mandant_txt.Name = "lbl_mandant_txt";
-            this.lbl_mandant_txt.Size = new System.Drawing.Size(46, 17);
+            this.lbl_mandant_txt.Size = new System.Drawing.Size(41, 17);
             this.lbl_mandant_txt.TabIndex = 35;
-            this.lbl_mandant_txt.Text = "label1";
+            this.lbl_mandant_txt.Text = "UN-0";
             this.lbl_mandant_txt.Visible = false;
             // 
             // lbl_kreditor_txt
@@ -308,9 +308,9 @@
             this.lbl_objekt_txt.AutoSize = true;
             this.lbl_objekt_txt.Location = new System.Drawing.Point(302, 75);
             this.lbl_objekt_txt.Name = "lbl_objekt_txt";
-            this.lbl_objekt_txt.Size = new System.Drawing.Size(46, 17);
+            this.lbl_objekt_txt.Size = new System.Drawing.Size(43, 17);
             this.lbl_objekt_txt.TabIndex = 37;
-            this.lbl_objekt_txt.Text = "label1";
+            this.lbl_objekt_txt.Text = "WE-0";
             this.lbl_objekt_txt.Visible = false;
             // 
             // lbl_haus_txt
@@ -318,9 +318,9 @@
             this.lbl_haus_txt.AutoSize = true;
             this.lbl_haus_txt.Location = new System.Drawing.Point(302, 102);
             this.lbl_haus_txt.Name = "lbl_haus_txt";
-            this.lbl_haus_txt.Size = new System.Drawing.Size(46, 17);
+            this.lbl_haus_txt.Size = new System.Drawing.Size(39, 17);
             this.lbl_haus_txt.TabIndex = 38;
-            this.lbl_haus_txt.Text = "label1";
+            this.lbl_haus_txt.Text = "Ha-0";
             this.lbl_haus_txt.Visible = false;
             // 
             // lbl_wo_txt
@@ -328,9 +328,9 @@
             this.lbl_wo_txt.AutoSize = true;
             this.lbl_wo_txt.Location = new System.Drawing.Point(302, 130);
             this.lbl_wo_txt.Name = "lbl_wo_txt";
-            this.lbl_wo_txt.Size = new System.Drawing.Size(46, 17);
+            this.lbl_wo_txt.Size = new System.Drawing.Size(40, 17);
             this.lbl_wo_txt.TabIndex = 39;
-            this.lbl_wo_txt.Text = "label1";
+            this.lbl_wo_txt.Text = "NE-0";
             this.lbl_wo_txt.Visible = false;
             // 
             // lbl_me_txt
@@ -338,9 +338,9 @@
             this.lbl_me_txt.AutoSize = true;
             this.lbl_me_txt.Location = new System.Drawing.Point(302, 184);
             this.lbl_me_txt.Name = "lbl_me_txt";
-            this.lbl_me_txt.Size = new System.Drawing.Size(46, 17);
+            this.lbl_me_txt.Size = new System.Drawing.Size(65, 17);
             this.lbl_me_txt.TabIndex = 40;
-            this.lbl_me_txt.Text = "label1";
+            this.lbl_me_txt.Text = "ME-typ-0";
             this.lbl_me_txt.Visible = false;
             // 
             // cmb_dokuart

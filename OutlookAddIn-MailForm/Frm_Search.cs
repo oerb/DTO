@@ -148,9 +148,10 @@ namespace OutlookAddIn_MailForm
                 case "ob":
                     {
                         this.ParentForm.txt_objekt.Text = dgv_TableSelect.SelectedRows[0].Cells[0].Value.ToString();
-                        string Text = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
-                        Text += ", " + dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString();
-                        Text += ", " + dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString();
+                        //string Text = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
+                        //Text += ", " + dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString();
+                        //Text += ", " + dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString();
+                        string Text = dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString(); //simpler for use in  subject
                         this.ParentForm.lbl_objekt_txt.Text = Text;
                         this.ParentForm.lbl_objekt_txt.Visible = true;
                         break;
@@ -187,10 +188,16 @@ namespace OutlookAddIn_MailForm
                         this.ParentForm.lbl_mieter_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[6].Value.ToString();
                         this.ParentForm.eMail = dgv_TableSelect.SelectedRows[0].Cells[17].Value.ToString(); 
                         this.ParentForm.lbl_mieter_txt.Visible = true;
-                        this.ParentForm.objekt = (int)dgv_TableSelect.SelectedRows[0].Cells[3].Value;
-                        this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[2].Value;
-                        this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[1].Value;
+                        this.ParentForm.objekt = (int)dgv_TableSelect.SelectedRows[0].Cells[4].Value;
+                        this.ParentForm.lbl_objekt_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[13].Value.ToString();
+                        this.ParentForm.lbl_objekt_txt.Visible = true;
+                        this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[3].Value;
+                        this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[2].Value;
+                        this.ParentForm.lbl_haus_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[8].Value.ToString();
+                        this.ParentForm.lbl_haus_txt.Visible = true;
                         this.ParentForm.wohnung = (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value;
+                        this.ParentForm.lbl_wo_txt.Text = "";
+                        this.ParentForm.lbl_wo_txt.Visible = true;                        
                         break;
                     }
                 case "me":

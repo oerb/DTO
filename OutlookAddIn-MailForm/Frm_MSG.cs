@@ -109,6 +109,7 @@ namespace OutlookAddIn_MailForm
             set { this.txt_Mieter.Text = value.ToString(); this.lbl_Wohnung.Text = ""; }
         }
 
+        // NE = wohnung
         public int wohnung
         {
             get
@@ -303,7 +304,7 @@ namespace OutlookAddIn_MailForm
             }
             catch
             {
-                this.wohnung = 0;
+                this.txt_wohnung.Text = null;
                 MessageBox.Show("NE. muss eine Zahl sein");
             }
         }

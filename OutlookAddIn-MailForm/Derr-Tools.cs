@@ -94,13 +94,30 @@ namespace OutlookAddIn_MailForm
                 // load a Outlook Predesign by an Outlook Filetyp MSG
                 Outlook.MailItem myStorageItem = (Outlook.MailItem)application.Session.OpenSharedItem(frm_MSG.filelocation);
                 myMailItem.HTMLBody = myStorageItem.HTMLBody;
+                // proof if Kreditor or Mieter is Set an Preset the String Var in common
+                string kreditor = "";
+                if(frm_MSG.kreditor != 0)
+                {
+                    kreditor = " : " + frm_MSG.kreditor.ToString() + " - " +
+                    frm_MSG.lbl_kreditor_txt.Text;
+                }
+                string mieter = "";
+                if(frm_MSG.Mieter != 0)
+                {
+                    mieter = " : " + frm_MSG.Mieter.ToString() + " - " +
+                    frm_MSG.lbl_mieter_txt.Text;
+                }
+                string wohnung = "";
+                if (frm_MSG.wohnung != 0)
+                {
+                    wohnung = "/ " + frm_MSG.wohnung.ToString() + " - " + frm_MSG.txt_objekt.Text + " - " +
+                        frm_MSG.lbl_haus_txt.Text;
+                }
                 // Parsing a nice Subject String out of the Form
-                string subject = frm_MSG.mandant.ToString() + "/ " + frm_MSG.txt_objekt.Text + "/ " +
-                    frm_MSG.HausNr.ToString()  + "/ " + frm_MSG.wohnung.ToString() 
-                    + " : " + frm_MSG.Mieter.ToString() + " - " +
-                    frm_MSG.lbl_mieter_txt.Text +
-                    " : " + frm_MSG.kreditor.ToString() + " - " +
-                    frm_MSG.lbl_kreditor_txt.Text + " : " + myStorageItem.Subject + " : " +
+                string subject = "UN/WE/HA/WO:"+ frm_MSG.mandant.ToString() + "/ " + frm_MSG.txt_objekt.Text + "/ " +
+                    frm_MSG.HausNr.ToString()  + wohnung
+                     + mieter + kreditor +
+                     " : " + myStorageItem.Subject + " : " +
                     frm_MSG.txb_Subject.Text;
                 myMailItem.Subject = subject;
                 myMailItem.To = frm_MSG.eMail;
