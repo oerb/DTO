@@ -48,7 +48,7 @@ namespace OutlookAddIn_MailForm
             }
         }
         public bool ArchivingAktive = false;
-        public DateTime datum1 = new DateTime(2015, 1, 1);
+        public DateTime datum1 = DateTime.Now;
         public DateTime datum2 = DateTime.Now;
         
         #endregion

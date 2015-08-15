@@ -342,5 +342,15 @@ namespace OutlookAddIn_MailForm
                 MessageBox.Show("Mieter. muss eine Zahl sein");
             }
         }
+
+        private void dtp_Datum1_ValueChanged(object sender, EventArgs e)
+        {
+            Globals.ThisAddIn.datum1 = this.dtp_Datum1.Value;
+        }
+
+        private void dtp_Datum2_ValueChanged(object sender, EventArgs e)
+        {
+            Globals.ThisAddIn.datum2 = this.dtp_Datum2.Value;
+        }
     }
 }

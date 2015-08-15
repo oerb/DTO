@@ -158,8 +158,8 @@ namespace OutlookAddIn_MailForm
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Datum1]", datum1);          
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Datum2]", datum2 );
             // TODO: Remove this Helper MSGBox
-            string msgtext = "Datum1 ist: " + datum1 + " Datum2 ist: " + datum2 + " AdresseNr: " + adr;
-            MessageBox.Show(msgtext);
+            //string msgtext = "Datum1 ist: " + datum1 + " Datum2 ist: " + datum2 + " AdresseNr: " + adr;
+            //MessageBox.Show(msgtext);
             return myMailItem;
         }
 

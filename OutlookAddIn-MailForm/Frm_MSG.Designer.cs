@@ -72,6 +72,10 @@
             this.txt_Mieter = new System.Windows.Forms.TextBox();
             this.lbl_Mieter = new System.Windows.Forms.Label();
             this.btn_clearform = new System.Windows.Forms.Button();
+            this.dtp_Datum1 = new System.Windows.Forms.DateTimePicker();
+            this.lbl_Datum1 = new System.Windows.Forms.Label();
+            this.lbl_Datum2 = new System.Windows.Forms.Label();
+            this.dtp_Datum2 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIDOKARTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSetDokuartDokuKZBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSet_Dokuart_DokuKZ)).BeginInit();
@@ -245,7 +249,7 @@
             this.btn_create_MSG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_create_MSG.Image = ((System.Drawing.Image)(resources.GetObject("btn_create_MSG.Image")));
             this.btn_create_MSG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_create_MSG.Location = new System.Drawing.Point(445, 320);
+            this.btn_create_MSG.Location = new System.Drawing.Point(445, 373);
             this.btn_create_MSG.Name = "btn_create_MSG";
             this.btn_create_MSG.Size = new System.Drawing.Size(208, 46);
             this.btn_create_MSG.TabIndex = 31;
@@ -458,19 +462,60 @@
             // 
             // btn_clearform
             // 
-            this.btn_clearform.Location = new System.Drawing.Point(17, 333);
+            this.btn_clearform.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_clearform.Location = new System.Drawing.Point(540, 9);
             this.btn_clearform.Name = "btn_clearform";
-            this.btn_clearform.Size = new System.Drawing.Size(148, 32);
+            this.btn_clearform.Size = new System.Drawing.Size(113, 45);
             this.btn_clearform.TabIndex = 49;
             this.btn_clearform.Text = "Form 0 setzen";
             this.btn_clearform.UseVisualStyleBackColor = true;
             this.btn_clearform.Click += new System.EventHandler(this.btn_clearform_Click);
             // 
+            // dtp_Datum1
+            // 
+            this.dtp_Datum1.Location = new System.Drawing.Point(98, 337);
+            this.dtp_Datum1.Name = "dtp_Datum1";
+            this.dtp_Datum1.Size = new System.Drawing.Size(200, 22);
+            this.dtp_Datum1.TabIndex = 50;
+            this.dtp_Datum1.ValueChanged += new System.EventHandler(this.dtp_Datum1_ValueChanged);
+            // 
+            // lbl_Datum1
+            // 
+            this.lbl_Datum1.AutoSize = true;
+            this.lbl_Datum1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Datum1.Location = new System.Drawing.Point(12, 334);
+            this.lbl_Datum1.Name = "lbl_Datum1";
+            this.lbl_Datum1.Size = new System.Drawing.Size(80, 25);
+            this.lbl_Datum1.TabIndex = 51;
+            this.lbl_Datum1.Text = "Datum1";
+            // 
+            // lbl_Datum2
+            // 
+            this.lbl_Datum2.AutoSize = true;
+            this.lbl_Datum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Datum2.Location = new System.Drawing.Point(12, 370);
+            this.lbl_Datum2.Name = "lbl_Datum2";
+            this.lbl_Datum2.Size = new System.Drawing.Size(80, 25);
+            this.lbl_Datum2.TabIndex = 53;
+            this.lbl_Datum2.Text = "Datum2";
+            // 
+            // dtp_Datum2
+            // 
+            this.dtp_Datum2.Location = new System.Drawing.Point(98, 373);
+            this.dtp_Datum2.Name = "dtp_Datum2";
+            this.dtp_Datum2.Size = new System.Drawing.Size(200, 22);
+            this.dtp_Datum2.TabIndex = 52;
+            this.dtp_Datum2.ValueChanged += new System.EventHandler(this.dtp_Datum2_ValueChanged);
+            // 
             // Frm_MSG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 377);
+            this.ClientSize = new System.Drawing.Size(675, 431);
+            this.Controls.Add(this.lbl_Datum2);
+            this.Controls.Add(this.dtp_Datum2);
+            this.Controls.Add(this.lbl_Datum1);
+            this.Controls.Add(this.dtp_Datum1);
             this.Controls.Add(this.btn_clearform);
             this.Controls.Add(this.lbl_mieter_txt);
             this.Controls.Add(this.btn_mieter);
@@ -508,7 +553,6 @@
             this.Controls.Add(this.lbl_Mandant);
             this.Controls.Add(this.lbl_meldungstyp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(683, 422);
             this.MinimumSize = new System.Drawing.Size(683, 422);
             this.Name = "Frm_MSG";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -567,5 +611,9 @@
         public System.Windows.Forms.TextBox txt_Mieter;
         private System.Windows.Forms.Label lbl_Mieter;
         private System.Windows.Forms.Button btn_clearform;
+        private System.Windows.Forms.DateTimePicker dtp_Datum1;
+        private System.Windows.Forms.Label lbl_Datum1;
+        private System.Windows.Forms.Label lbl_Datum2;
+        private System.Windows.Forms.DateTimePicker dtp_Datum2;
     }
 }
