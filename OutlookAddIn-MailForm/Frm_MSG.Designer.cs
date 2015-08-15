@@ -444,6 +444,7 @@
             this.txt_Mieter.Name = "txt_Mieter";
             this.txt_Mieter.Size = new System.Drawing.Size(100, 22);
             this.txt_Mieter.TabIndex = 46;
+            this.txt_Mieter.TextChanged += new System.EventHandler(this.txt_Mieter_TextChanged);
             // 
             // lbl_Mieter
             // 

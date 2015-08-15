@@ -161,7 +161,9 @@ namespace OutlookAddIn_MailForm
                         this.ParentForm.kreditor = (int)dgv_TableSelect.SelectedRows[0].Cells[1].Value;
                         this.ParentForm.lbl_kreditor_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
                         this.ParentForm.lbl_kreditor_txt.Visible = true;
-                        this.ParentForm.eMail = dgv_TableSelect.SelectedRows[0].Cells[19].Value.ToString();                        
+                        this.ParentForm.eMail = dgv_TableSelect.SelectedRows[0].Cells[19].Value.ToString();
+                        Globals.ThisAddIn.Vorname = dgv_TableSelect.SelectedRows[0].Cells[4].Value.ToString();
+                        Globals.ThisAddIn.Name = dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString();
                         break;
                     }
                 case "ha":
@@ -197,7 +199,11 @@ namespace OutlookAddIn_MailForm
                         this.ParentForm.lbl_haus_txt.Visible = true;
                         this.ParentForm.wohnung = (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value;
                         this.ParentForm.lbl_wo_txt.Text = "";
-                        this.ParentForm.lbl_wo_txt.Visible = true;                        
+                        this.ParentForm.lbl_wo_txt.Visible = true;    
+                        // Get/Set Name2 from Adresse to ParenForm
+                        Globals.ThisAddIn.Vorname = dgv_TableSelect.SelectedRows[0].Cells[7].Value.ToString();
+                        Globals.ThisAddIn.Name = dgv_TableSelect.SelectedRows[0].Cells[6].Value.ToString();
+                        Globals.ThisAddIn.FolgeNr = (int)dgv_TableSelect.SelectedRows[0].Cells[16].Value;
                         break;
                     }
                 case "me":

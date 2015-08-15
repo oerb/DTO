@@ -324,5 +324,23 @@ namespace OutlookAddIn_MailForm
         {
             clear_parentform_data();
         }
+
+        private void txt_Mieter_TextChanged(object sender, EventArgs e)
+        {
+            // Set Global Mieter for Archiving Function
+            try
+            {
+                if (this.txt_Mieter.Text != "")
+                {
+                    this.Mieter = int.Parse(this.txt_Mieter.Text);
+                    Globals.ThisAddIn.AdresseNr = this.Mieter;
+                }
+            }
+            catch
+            {
+                this.txt_Mieter.Text = null;
+                MessageBox.Show("Mieter. muss eine Zahl sein");
+            }
+        }
     }
 }

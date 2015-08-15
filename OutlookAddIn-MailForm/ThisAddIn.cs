@@ -37,6 +37,7 @@ namespace OutlookAddIn_MailForm
         public string VorgangKZ = "DT_Mail";
         public string Vorname = "";
         public string Name = "";
+        public int FolgeNr = 0;
         public Outlook.MailItem MailItem;
         private string Sachberarbeiter = Environment.UserName;
         public bool ArchivingAktive = false;
@@ -106,7 +107,7 @@ namespace OutlookAddIn_MailForm
                 //MessageBox.Show(DtSap.GetType().ToString());
                 //DtSap.test();
                 //END
-                DtSap.saveDokument(filelocaiton, Mandant, Unternehmen, WE, HausNr, Wohnung, AdresseNr,
+                DtSap.saveDokument(filelocaiton, Mandant, Unternehmen, WE, HausNr, Wohnung, FolgeNr, AdresseNr,
                     DokuArt, VorgangKZ, Vorname, Name, Sachberarbeiter, Subject);  
             }
             catch (System.Exception e)
