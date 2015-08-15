@@ -36,7 +36,7 @@ namespace OutlookAddIn_MailForm
             // TODO: REMOVE TESTING
             //MessageBox.Show(btn_typ);
             _btn_typ = btn_typ;
-
+            this.setFormName();
         }
         
         // Prefilling the Gridviewtable by what ist chosen in Frm_MSG.cs
@@ -381,5 +381,45 @@ namespace OutlookAddIn_MailForm
             }
         }
 
+        #region FormDesign
+
+        private void setFormName()
+        {
+            switch (_btn_typ)
+            {
+                case "ma":
+                    {
+                        this.Text = "MSG-Suche: Unternehmen";
+                        break;
+                    }
+                case "ob":
+                    {
+                        this.Text = "MSG-Suche: WE";
+                        break;
+                    }
+                case "kr":
+                    {
+                        this.Text = "MSG-Suche: Kreditor";
+                        break;
+                    }
+                case "ha":
+                    {
+                        this.Text = "MSG-Suche: Haus";
+                        break;
+                    }
+                case "wo":
+                    {
+                        this.Text = "MSG-Suche: Wohnung";
+                        break;
+                    }
+                case "mi":
+                    {
+                        this.Text = "MSG-Suche: Mieter";
+                        break;
+                    }
+            }
+        }
+
+        #endregion
     }
 }
