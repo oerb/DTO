@@ -9,6 +9,7 @@ using System.Globalization;
 using System.Windows.Forms;
 
 
+
 namespace OutlookAddIn_MailForm
 {
     public partial class DerrToolsRibbon1
@@ -114,7 +115,7 @@ namespace OutlookAddIn_MailForm
                         frm_MSG.lbl_haus_txt.Text;
                 }
                 // Parsing a nice Subject String out of the Form
-                string subject = "UN/WE/HA/WO:"+ frm_MSG.mandant.ToString() + "/ " + frm_MSG.txt_objekt.Text + "/ " +
+                string subject = "U/W/H/WO:"+ frm_MSG.mandant.ToString() + "/ " + frm_MSG.txt_objekt.Text + "/ " +
                     frm_MSG.HausNr.ToString()  + wohnung
                      + mieter + kreditor +
                      " : " + myStorageItem.Subject + " : " +
@@ -142,6 +143,18 @@ namespace OutlookAddIn_MailForm
         {
             Frm_UserSettings frm_UsSe = new Frm_UserSettings();
             DialogResult result = frm_UsSe.ShowDialog();
+        }
+
+        private void btn_Info_Click(object sender, RibbonControlEventArgs e)
+        {
+            System.Reflection.Assembly assemblyInfo = System.Reflection.Assembly.GetExecutingAssembly();
+
+
+            string boxtext = "This is an Alpha Version of DTO";
+            boxtext += "\n\n GPL v. 3 Copyright 2015 by Björn Leppin, Hilden, Germany";
+            boxtext += "\n\n Pojektside: https://github.com/oerb/DTO \n\n";
+            boxtext += assemblyInfo.FullName.ToString();
+            MessageBox.Show(boxtext, "DTO Information", MessageBoxButtons.OK ,MessageBoxIcon.Information);
         }
     }
 }

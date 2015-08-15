@@ -37,13 +37,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DerrToolsRibbon1));
             this.tab2 = this.Factory.CreateRibbonTab();
             this.DerrTool_HSM_RibbonGroup = this.Factory.CreateRibbonGroup();
-            this.btn_schadensmeldung = this.Factory.CreateRibbonButton();
             this.RibGroup_Development = this.Factory.CreateRibbonGroup();
-            this.buttonMangelruege = this.Factory.CreateRibbonButton();
             this.groupEinstellungen = this.Factory.CreateRibbonGroup();
+            this.btn_schadensmeldung = this.Factory.CreateRibbonButton();
+            this.buttonMangelruege = this.Factory.CreateRibbonButton();
             this.btn_Settings = this.Factory.CreateRibbonButton();
             this.btn_ServerSettings = this.Factory.CreateRibbonButton();
             this.btn_usersettings = this.Factory.CreateRibbonButton();
+            this.btn_Info = this.Factory.CreateRibbonButton();
             this.tab2.SuspendLayout();
             this.DerrTool_HSM_RibbonGroup.SuspendLayout();
             this.RibGroup_Development.SuspendLayout();
@@ -63,6 +64,22 @@
             this.DerrTool_HSM_RibbonGroup.Label = "Main";
             this.DerrTool_HSM_RibbonGroup.Name = "DerrTool_HSM_RibbonGroup";
             // 
+            // RibGroup_Development
+            // 
+            this.RibGroup_Development.Items.Add(this.buttonMangelruege);
+            this.RibGroup_Development.Label = "Development";
+            this.RibGroup_Development.Name = "RibGroup_Development";
+            this.RibGroup_Development.Visible = false;
+            // 
+            // groupEinstellungen
+            // 
+            this.groupEinstellungen.Items.Add(this.btn_Settings);
+            this.groupEinstellungen.Items.Add(this.btn_ServerSettings);
+            this.groupEinstellungen.Items.Add(this.btn_usersettings);
+            this.groupEinstellungen.Items.Add(this.btn_Info);
+            this.groupEinstellungen.Label = "Einstellungen";
+            this.groupEinstellungen.Name = "groupEinstellungen";
+            // 
             // btn_schadensmeldung
             // 
             this.btn_schadensmeldung.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -73,13 +90,6 @@
             this.btn_schadensmeldung.ShowImage = true;
             this.btn_schadensmeldung.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_schadensmeldung_Click);
             // 
-            // RibGroup_Development
-            // 
-            this.RibGroup_Development.Items.Add(this.buttonMangelruege);
-            this.RibGroup_Development.Label = "Development";
-            this.RibGroup_Development.Name = "RibGroup_Development";
-            this.RibGroup_Development.Visible = false;
-            // 
             // buttonMangelruege
             // 
             this.buttonMangelruege.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -88,14 +98,6 @@
             this.buttonMangelruege.Name = "buttonMangelruege";
             this.buttonMangelruege.ShowImage = true;
             this.buttonMangelruege.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonMangelruege_Click);
-            // 
-            // groupEinstellungen
-            // 
-            this.groupEinstellungen.Items.Add(this.btn_Settings);
-            this.groupEinstellungen.Items.Add(this.btn_ServerSettings);
-            this.groupEinstellungen.Items.Add(this.btn_usersettings);
-            this.groupEinstellungen.Label = "Einstellungen";
-            this.groupEinstellungen.Name = "groupEinstellungen";
             // 
             // btn_Settings
             // 
@@ -125,6 +127,14 @@
             this.btn_usersettings.ShowImage = true;
             this.btn_usersettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_usersettings_Click);
             // 
+            // btn_Info
+            // 
+            this.btn_Info.Image = global::OutlookAddIn_MailForm.Properties.Resources.information_frame;
+            this.btn_Info.Label = "Info";
+            this.btn_Info.Name = "btn_Info";
+            this.btn_Info.ShowImage = true;
+            this.btn_Info.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_Info_Click);
+            // 
             // DerrToolsRibbon1
             // 
             this.Name = "DerrToolsRibbon1";
@@ -153,6 +163,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_Settings;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_ServerSettings;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_usersettings;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_Info;
     }
 
     partial class ThisRibbonCollection
