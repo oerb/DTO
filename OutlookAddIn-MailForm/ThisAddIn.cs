@@ -40,8 +40,16 @@ namespace OutlookAddIn_MailForm
         public int FolgeNr = 0;
         public Outlook.MailItem MailItem;
         private string Sachberarbeiter = Environment.UserName;
+        public string SachBearb
+        {
+            get
+            {
+                return Sachberarbeiter;
+            }
+        }
         public bool ArchivingAktive = false;
-
+        public DateTime datum1 = new DateTime(2015, 1, 1);
+        public DateTime datum2 = DateTime.Now;
         
         #endregion
 

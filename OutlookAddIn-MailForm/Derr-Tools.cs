@@ -95,6 +95,7 @@ namespace OutlookAddIn_MailForm
                 // load a Outlook Predesign by an Outlook Filetyp MSG
                 Outlook.MailItem myStorageItem = (Outlook.MailItem)application.Session.OpenSharedItem(frm_MSG.filelocation);
                 myMailItem.HTMLBody = myStorageItem.HTMLBody;
+                
                 // proof if Kreditor or Mieter is Set an Preset the String Var in common
                 string kreditor = "";
                 if(frm_MSG.kreditor != 0)
@@ -121,16 +122,45 @@ namespace OutlookAddIn_MailForm
                      " : " + myStorageItem.Subject + " : " +
                     frm_MSG.txb_Subject.Text;
                 myMailItem.Subject = subject;
+                // set prefillifo about E-Mail in Mail-TO:
                 myMailItem.To = frm_MSG.eMail;
+                myMailItem = this.replaceFormfields(myMailItem, frm_MSG);
                 // Desplay the Mail form with all Inherited
-                Globals.ThisAddIn.MailItem = myMailItem;
-                myMailItem.Display();  
+                Globals.ThisAddIn.MailItem = myMailItem;               
+                myMailItem.Display();
+               
             }
             catch //(Exception e)
             {
                 string msgtxt = "Meldungstyp nicht gesetzt oder Dateipfad ist nicht korrekt."; // Exeption: " +e.ToString();
                 MessageBox.Show(msgtxt);
             }       
+        }
+
+        // All Parameters from Frm_MSG.cs to use im Mailboddy
+        private Outlook.MailItem replaceFormfields(Outlook.MailItem myMailItem, Frm_MSG frm_MSG)
+        {
+            string datum1 = Globals.ThisAddIn.datum1.ToString("dd.MM.yyyy");
+            string datum2 = Globals.ThisAddIn.datum2.ToString("dd.MM.yyyy");
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Mandant]", Globals.ThisAddIn.Mandant.ToString());
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Unternehmen]", Globals.ThisAddIn.Unternehmen.ToString());
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[WE]", Globals.ThisAddIn.WE.ToString());
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[HAUSNR]", Globals.ThisAddIn.HausNr.ToString());
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[NE]", Globals.ThisAddIn.Wohnung.ToString());
+            string adr = Globals.ThisAddIn.AdresseNr.ToString();
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[ADRNR]", adr);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[DOKUART]", Globals.ThisAddIn.DokuArt);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[VORGANGKZ]", Globals.ThisAddIn.VorgangKZ);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[FOLGENR]", Globals.ThisAddIn.FolgeNr.ToString());
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Name]", Globals.ThisAddIn.Name);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Vorname]", Globals.ThisAddIn.Vorname);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Sachbearbeiter]", Globals.ThisAddIn.SachBearb);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Datum1]", datum1);          
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Datum2]", datum2 );
+            // TODO: Remove this Helper MSGBox
+            string msgtext = "Datum1 ist: " + datum1 + " Datum2 ist: " + datum2 + " AdresseNr: " + adr;
+            MessageBox.Show(msgtext);
+            return myMailItem;
         }
 
         private void btn_ServerSettings_Click(object sender, RibbonControlEventArgs e)
