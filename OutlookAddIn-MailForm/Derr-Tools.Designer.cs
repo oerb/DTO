@@ -54,7 +54,7 @@
             this.tab2.Groups.Add(this.DerrTool_HSM_RibbonGroup);
             this.tab2.Groups.Add(this.RibGroup_Development);
             this.tab2.Groups.Add(this.groupEinstellungen);
-            this.tab2.Label = "DERR TOOLS";
+            this.tab2.Label = "DTO";
             this.tab2.Name = "tab2";
             // 
             // DerrTool_HSM_RibbonGroup

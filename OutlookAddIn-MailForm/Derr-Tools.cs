@@ -103,18 +103,16 @@ namespace OutlookAddIn_MailForm
                     frm_MSG.lbl_kreditor_txt.Text + " : " + myStorageItem.Subject + " : " +
                     frm_MSG.txb_Subject.Text;
                 myMailItem.Subject = subject;
-                
+                myMailItem.To = frm_MSG.eMail;
+                // Desplay the Mail form with all Inherited
+                Globals.ThisAddIn.MailItem = myMailItem;
+                myMailItem.Display();  
             }
             catch //(Exception e)
             {
-                string msgtxt = "MSG-TYP Dateipfad ist nicht korrekt. Exeption: ";// +e.ToString();
+                string msgtxt = "Meldungstyp nicht gesetzt oder Dateipfad ist nicht korrekt."; // Exeption: " +e.ToString();
                 MessageBox.Show(msgtxt);
-            }
-
-            myMailItem.To = frm_MSG.eMail;
-            // Desplay the Mail form with all Inherited
-            Globals.ThisAddIn.MailItem = myMailItem;
-            myMailItem.Display();                   
+            }       
         }
 
         private void btn_ServerSettings_Click(object sender, RibbonControlEventArgs e)

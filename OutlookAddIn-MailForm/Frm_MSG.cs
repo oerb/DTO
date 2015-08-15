@@ -106,7 +106,7 @@ namespace OutlookAddIn_MailForm
                     return 0;
                 }
             }
-            set { this.txt_Mieter.Text = value.ToString(); }
+            set { this.txt_Mieter.Text = value.ToString(); this.lbl_Wohnung.Text = ""; }
         }
 
         public int wohnung
@@ -126,7 +126,6 @@ namespace OutlookAddIn_MailForm
         }
 
         #endregion
-
 
         // One search Buttonhandler 
         // btn_typ: "ma" (Mandant), "kr" (Kreditor), "ob" Objekt, "ha" Haus, 

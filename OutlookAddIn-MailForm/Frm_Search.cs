@@ -172,7 +172,12 @@ namespace OutlookAddIn_MailForm
                     }
                 case "wo":
                     {
-                        this.ParentForm.wohnung = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;                        
+                        this.ParentForm.wohnung = (int)dgv_TableSelect.SelectedRows[0].Cells[6].Value;
+                        this.ParentForm.lbl_wo_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString();
+                        this.ParentForm.lbl_wo_txt.Visible = true;
+                        this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value;
+                        this.ParentForm.lbl_haus_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[0].Value.ToString();
+                        this.ParentForm.lbl_haus_txt.Visible = true;
                         break;
                     }
                 case "mi":
@@ -283,11 +288,23 @@ namespace OutlookAddIn_MailForm
 
         private void fill_dgv_with_Wohnung()
         {
-            if (this.ParentForm.mandant !=0 && this.ParentForm.objekt !=0 && this.ParentForm.HausNr !=0)
+            this.dgv_TableSelect.DataSource = tblWohnungBindingSource;
+            if (this.ParentForm.mandant != 0 && this.ParentForm.objekt != 0 && this.ParentForm.HausNr == 0)
             {
-                this.dgv_TableSelect.DataSource = wohnungBindingSource;
-                this.wohnungTableAdapter.Fill_by_BaUnWeHa(dataSet1Wohnung.Wohnung,
-                    this.ParentForm.objekt, this.ParentForm.HausNr, this.ParentForm.mandant);
+                this.xyMieterTableAdapterWoWiSearch.FillByName1(dataSet1_WOWI_SEARCH.xyMieter, this.txt_filer1.Text);
+                this.tblWohnungTableAdapter.FillByUnWe(dataSet1_WOWI_SEARCH.tblWohnung, this.ParentForm.mandant,
+                    this.ParentForm.objekt);
+            }
+            else if (this.ParentForm.mandant != 0 && this.ParentForm.objekt != 0 && this.ParentForm.HausNr != 0)
+            {
+                this.xyMieterTableAdapterWoWiSearch.FillByName1(dataSet1_WOWI_SEARCH.xyMieter, this.txt_filer1.Text);
+                this.tblWohnungTableAdapter.Fillby_UnWeHa(dataSet1_WOWI_SEARCH.tblWohnung, this.ParentForm.mandant, 
+                    this.ParentForm.objekt, this.ParentForm.HausNr);
+            }
+            else
+            {
+                MessageBox.Show("Sie müssen mindestens Unternehmen und WE angegeben haben!");
+                this.Close();
             }
         }
 
@@ -339,6 +356,15 @@ namespace OutlookAddIn_MailForm
                         this.xyMieterTableAdapterWoWiSearch.FillByName1(dataSet1_WOWI_SEARCH.xyMieter, this.txt_filer1.Text);
                         break;
                     }
+            }
+        }
+
+        private void txt_filer1_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Enter will do the same as the SearchButton
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.btn_search_Click(sender, e);
             }
         }
 

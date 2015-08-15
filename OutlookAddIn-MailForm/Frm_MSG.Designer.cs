@@ -55,7 +55,7 @@
             this.lbl_kreditor_txt = new System.Windows.Forms.Label();
             this.lbl_objekt_txt = new System.Windows.Forms.Label();
             this.lbl_haus_txt = new System.Windows.Forms.Label();
-            this.lbl_we_txt = new System.Windows.Forms.Label();
+            this.lbl_wo_txt = new System.Windows.Forms.Label();
             this.lbl_me_txt = new System.Windows.Forms.Label();
             this.cmb_dokuart = new System.Windows.Forms.ComboBox();
             this.wOWIDOKARTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -227,7 +227,6 @@
             this.btn_wohnung.TabIndex = 29;
             this.btn_wohnung.Text = "?";
             this.btn_wohnung.UseVisualStyleBackColor = true;
-            this.btn_wohnung.Visible = false;
             this.btn_wohnung.Click += new System.EventHandler(this.btn_search_click);
             // 
             // btn_MSGtyp
@@ -324,15 +323,15 @@
             this.lbl_haus_txt.Text = "label1";
             this.lbl_haus_txt.Visible = false;
             // 
-            // lbl_we_txt
+            // lbl_wo_txt
             // 
-            this.lbl_we_txt.AutoSize = true;
-            this.lbl_we_txt.Location = new System.Drawing.Point(302, 130);
-            this.lbl_we_txt.Name = "lbl_we_txt";
-            this.lbl_we_txt.Size = new System.Drawing.Size(46, 17);
-            this.lbl_we_txt.TabIndex = 39;
-            this.lbl_we_txt.Text = "label1";
-            this.lbl_we_txt.Visible = false;
+            this.lbl_wo_txt.AutoSize = true;
+            this.lbl_wo_txt.Location = new System.Drawing.Point(302, 130);
+            this.lbl_wo_txt.Name = "lbl_wo_txt";
+            this.lbl_wo_txt.Size = new System.Drawing.Size(46, 17);
+            this.lbl_wo_txt.TabIndex = 39;
+            this.lbl_wo_txt.Text = "label1";
+            this.lbl_wo_txt.Visible = false;
             // 
             // lbl_me_txt
             // 
@@ -481,7 +480,7 @@
             this.Controls.Add(this.lbl_dokuart);
             this.Controls.Add(this.cmb_dokuart);
             this.Controls.Add(this.lbl_me_txt);
-            this.Controls.Add(this.lbl_we_txt);
+            this.Controls.Add(this.lbl_wo_txt);
             this.Controls.Add(this.lbl_haus_txt);
             this.Controls.Add(this.lbl_objekt_txt);
             this.Controls.Add(this.lbl_kreditor_txt);
@@ -548,7 +547,7 @@
         public System.Windows.Forms.Label lbl_kreditor_txt;
         public System.Windows.Forms.Label lbl_objekt_txt;
         public System.Windows.Forms.Label lbl_haus_txt;
-        public System.Windows.Forms.Label lbl_we_txt;
+        public System.Windows.Forms.Label lbl_wo_txt;
         public System.Windows.Forms.Label lbl_me_txt;
         public System.Windows.Forms.Label lbl_mandant_txt;
         private System.Windows.Forms.ComboBox cmb_dokuart;
