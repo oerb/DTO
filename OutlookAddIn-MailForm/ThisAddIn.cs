@@ -26,19 +26,33 @@ namespace OutlookAddIn_MailForm
         
         #region publicProperties
 
-        public string filelocaiton;
-        public int Mandant = 0;
-        public int Unternehmen = 0;
-        public int WE = 0;
-        public int HausNr = 0;
-        public int Wohnung = 0;
-        public int AdresseNr = 0;
-        public string DokuArt = "DT_Mail";
-        public string VorgangKZ = "DT_Mail";
-        public string Vorname = "";
-        public string Name = "";
-        public int FolgeNr = 0;
-        public Outlook.MailItem MailItem;
+        //public string filelocaiton;
+        //public int Mandant = 0;
+        //public int Unternehmen = 0;
+        //public int WE = 0;
+        //public int HausNr = 0;
+        //public int Wohnung = 0;
+        //public int AdresseNr = 0;
+        //public string DokuArt = "DT_Mail";
+        //public string VorgangKZ = "DT_Mail";
+        //public string Vorname = "";
+        //public string Name = "";
+        //public int FolgeNr = 0;
+        //public Outlook.MailItem MailItem;
+        //public DateTime datum1 = DateTime.Now;
+        //public DateTime datum2 = DateTime.Now;
+        //public string WeBeszeichnung = "";
+        //public string NeStrasse = "";
+        //public string NeOrt = "";
+        //public string NeEtage = "";
+        //public string MiTel = "";
+        //public string MiMob = "";
+        //public string KreditorName = "";
+        
+        // NEW
+        
+        public MSG_Parameter msg_parameter;
+        public bool ArchivingAktive = false;
         private string Sachberarbeiter = Environment.UserName;
         public string SachBearb
         {
@@ -47,10 +61,7 @@ namespace OutlookAddIn_MailForm
                 return Sachberarbeiter;
             }
         }
-        public bool ArchivingAktive = false;
-        public DateTime datum1 = DateTime.Now;
-        public DateTime datum2 = DateTime.Now;
-        
+
         #endregion
 
         private void actionOnEmailSend(object Item, ref bool Cancel)
@@ -103,20 +114,22 @@ namespace OutlookAddIn_MailForm
                 Archivieren DtSap = new Archivieren();
                 //string newfilelocation = System.Uri.UnescapeDataString(filelocaiton);
                 // Fails here???? old code follows
-                MailItem.SaveAs(@"C:\Install\DTO\mail.msg");
-                filelocaiton = @"C:\Install\DTO\mail.msg";
+                this.msg_parameter.MailItem.SaveAs(@"C:\Install\DTO\mail.msg");
+                this.msg_parameter.filelocaiton = @"C:\Install\DTO\mail.msg";
                 //string path = @"%USERPROFILE%\AppData\Local\DTO\mail.msg";
                 //string filepath = Environment.ExpandEnvironmentVariables(path);
                 //MessageBox.Show(filepath);
                 //MailItem.SaveAs(filepath);
                 //filelocaiton = filepath;
-                string Subject = MailItem.Subject;
+                string Subject = this.msg_parameter.MailItem.Subject;
                 //TODO: remove this TEST
                 //MessageBox.Show(DtSap.GetType().ToString());
                 //DtSap.test();
                 //END
-                DtSap.saveDokument(filelocaiton, Mandant, Unternehmen, WE, HausNr, Wohnung, FolgeNr, AdresseNr,
-                    DokuArt, VorgangKZ, Vorname, Name, Sachberarbeiter, Subject);  
+                DtSap.saveDokument(msg_parameter.filelocaiton, msg_parameter.Mandant, msg_parameter.Unternehmen,
+                    msg_parameter.WE, msg_parameter.HausNr, msg_parameter.Wohnung, msg_parameter.FolgeNr,
+                    msg_parameter.AdresseNr, msg_parameter.DokuArt, msg_parameter.VorgangKZ,
+                    msg_parameter.Vorname, msg_parameter.Name, Sachberarbeiter, Subject);  
             }
             catch (System.Exception e)
             {

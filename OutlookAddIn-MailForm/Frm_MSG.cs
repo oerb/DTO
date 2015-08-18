@@ -15,9 +15,13 @@ namespace OutlookAddIn_MailForm
         public Frm_MSG()
         {
             InitializeComponent();
-        }
+            Globals.ThisAddIn.msg_parameter = new MSG_Parameter();
+        } 
 
         #region Properties definition
+
+        //public MSG_Parameter msg_parameter = Globals.ThisAddIn.msg_parameter;
+
 
         // Data
         public string filelocation;
@@ -162,6 +166,7 @@ namespace OutlookAddIn_MailForm
         {
             this.DialogResult = DialogResult.OK;
             Globals.ThisAddIn.ArchivingAktive = true;
+            //Globals.ThisAddIn.msg_parameter = this.msg_parameter;
             this.Close();
         }
 
@@ -171,7 +176,7 @@ namespace OutlookAddIn_MailForm
             {
                 if (this.txt_meldungstyp.Text != "")
                 {
-                    Globals.ThisAddIn.filelocaiton = this.filelocation;
+                    Globals.ThisAddIn.msg_parameter.filelocaiton = this.filelocation;
                 }
             }
             catch
@@ -188,7 +193,7 @@ namespace OutlookAddIn_MailForm
                 if ( this.txt_Mandant.Text != "")
                 {
                     this.mandant = int.Parse(this.txt_Mandant.Text);
-                    Globals.ThisAddIn.Unternehmen = this.mandant;
+                    Globals.ThisAddIn.msg_parameter.Unternehmen = this.mandant;
                 }   
             }
             catch
@@ -205,7 +210,7 @@ namespace OutlookAddIn_MailForm
                 if (this.txt_kreditor.Text != "")
                 {
                     this.kreditor = int.Parse(this.txt_kreditor.Text);
-                    Globals.ThisAddIn.AdresseNr = this.kreditor;
+                    Globals.ThisAddIn.msg_parameter.AdresseNr = this.kreditor;
                     
                 }   
             }
@@ -223,7 +228,7 @@ namespace OutlookAddIn_MailForm
                 if (this.txt_objekt.Text != "")
                 {
                     this.objekt = int.Parse(this.txt_objekt.Text);
-                    Globals.ThisAddIn.WE = this.objekt;
+                    Globals.ThisAddIn.msg_parameter.WE = this.objekt;
                 }
             }
             catch
@@ -255,13 +260,13 @@ namespace OutlookAddIn_MailForm
             // Fill VorgangKZ with Filtered Data
             this.wOWIVORGANGTableAdapter.Fill_DOKUKZ(this.saperionDataSet_Dokuart_DokuKZ.WOWIVORGANG, this.cmb_dokuart.Text);
             // Set Global VorgangKZ for Archiving Function
-            Globals.ThisAddIn.DokuArt = this.cmb_dokuart.Text;
+            Globals.ThisAddIn.msg_parameter.DokuArt = this.cmb_dokuart.Text;
         }
 
         private void cmb_vorgangkz_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Set Global VorgangKZ for Archiving Function
-            Globals.ThisAddIn.VorgangKZ = this.cmb_vorgangkz.Text;
+            Globals.ThisAddIn.msg_parameter.VorgangKZ = this.cmb_vorgangkz.Text;
         }
 
         private void txt_haus_TextChanged(object sender, EventArgs e)
@@ -272,7 +277,7 @@ namespace OutlookAddIn_MailForm
                 if (this.txt_objekt.Text != "")
                 {
                     this.HausNr = int.Parse(this.txt_haus.Text);
-                    Globals.ThisAddIn.HausNr = this.HausNr;
+                    Globals.ThisAddIn.msg_parameter.HausNr = this.HausNr;
                 }
             }
             catch
@@ -299,7 +304,7 @@ namespace OutlookAddIn_MailForm
                 if (this.txt_wohnung.Text != "")
                 {
                     this.wohnung = int.Parse(this.txt_wohnung.Text);
-                    Globals.ThisAddIn.Wohnung = this.wohnung;
+                    Globals.ThisAddIn.msg_parameter.Wohnung = this.wohnung;
                 }
             }
             catch
@@ -313,9 +318,10 @@ namespace OutlookAddIn_MailForm
         // TODO: Rename this to clear_Formdata
         public void clear_parentform_data()
         {
+            this.mandant = 0;
             this.HausNr = 0;
             this.objekt = 0;
-            this.kreditor = 0;
+            //this.kreditor = 0;
             this.wohnung = 0;
             this.Mieter = 0;           
         }
@@ -333,7 +339,7 @@ namespace OutlookAddIn_MailForm
                 if (this.txt_Mieter.Text != "")
                 {
                     this.Mieter = int.Parse(this.txt_Mieter.Text);
-                    Globals.ThisAddIn.AdresseNr = this.Mieter;
+                    Globals.ThisAddIn.msg_parameter.AdresseNr = this.Mieter;
                 }
             }
             catch
@@ -345,12 +351,12 @@ namespace OutlookAddIn_MailForm
 
         private void dtp_Datum1_ValueChanged(object sender, EventArgs e)
         {
-            Globals.ThisAddIn.datum1 = this.dtp_Datum1.Value;
+            Globals.ThisAddIn.msg_parameter.datum1 = this.dtp_Datum1.Value;
         }
 
         private void dtp_Datum2_ValueChanged(object sender, EventArgs e)
         {
-            Globals.ThisAddIn.datum2 = this.dtp_Datum2.Value;
+            Globals.ThisAddIn.msg_parameter.datum2 = this.dtp_Datum2.Value;
         }
     }
 }

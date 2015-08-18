@@ -73,6 +73,7 @@ namespace OutlookAddIn_MailForm
             }
         }
 
+        // TODO: OLD remove this ?!
         private void CreateMailItem()
         {
             Outlook.Application application = Globals.ThisAddIn.Application;
@@ -87,6 +88,8 @@ namespace OutlookAddIn_MailForm
 
         private void CreateMail(Frm_MSG frm_MSG)
         {
+            
+            //Globals.ThisAddIn.msg_parameter = frm_MSG.msg_parameter;
             Outlook.Application application = Globals.ThisAddIn.Application;
             Outlook.ExchangeUser currentUser = application.Session.CurrentUser.AddressEntry.GetExchangeUser();
             Outlook.MailItem myMailItem = (Outlook.MailItem)application.CreateItem(Outlook.OlItemType.olMailItem);
@@ -124,9 +127,9 @@ namespace OutlookAddIn_MailForm
                 myMailItem.Subject = subject;
                 // set prefillifo about E-Mail in Mail-TO:
                 myMailItem.To = frm_MSG.eMail;
-                myMailItem = this.replaceFormfields(myMailItem, frm_MSG);
+                myMailItem = this.replaceFormfields(myMailItem, frm_MSG, Globals.ThisAddIn.msg_parameter);
                 // Desplay the Mail form with all Inherited
-                Globals.ThisAddIn.MailItem = myMailItem;               
+                Globals.ThisAddIn.msg_parameter.MailItem = myMailItem;               
                 myMailItem.Display();
                
             }
@@ -138,25 +141,32 @@ namespace OutlookAddIn_MailForm
         }
 
         // All Parameters from Frm_MSG.cs to use im Mailboddy
-        private Outlook.MailItem replaceFormfields(Outlook.MailItem myMailItem, Frm_MSG frm_MSG)
+        private Outlook.MailItem replaceFormfields(Outlook.MailItem myMailItem, Frm_MSG frm_MSG, MSG_Parameter msg_parameter)
         {
-            string datum1 = Globals.ThisAddIn.datum1.ToString("dd.MM.yyyy");
-            string datum2 = Globals.ThisAddIn.datum2.ToString("dd.MM.yyyy");
-            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Mandant]", Globals.ThisAddIn.Mandant.ToString());
-            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Unternehmen]", Globals.ThisAddIn.Unternehmen.ToString());
-            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[WE]", Globals.ThisAddIn.WE.ToString());
-            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[HAUSNR]", Globals.ThisAddIn.HausNr.ToString());
-            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[NE]", Globals.ThisAddIn.Wohnung.ToString());
-            string adr = Globals.ThisAddIn.AdresseNr.ToString();
+            string datum1 = msg_parameter.datum1.ToString("dd.MM.yyyy");
+            string datum2 = msg_parameter.datum2.ToString("dd.MM.yyyy");
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Mandant]", msg_parameter.Mandant.ToString());
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Unternehmen]", msg_parameter.Unternehmen.ToString());
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[WE]", msg_parameter.WE.ToString());
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[HAUSNR]", msg_parameter.HausNr.ToString());
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[NE]", msg_parameter.Wohnung.ToString());
+            string adr = Globals.ThisAddIn.msg_parameter.AdresseNr.ToString();
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[ADRNR]", adr);
-            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[DOKUART]", Globals.ThisAddIn.DokuArt);
-            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[VORGANGKZ]", Globals.ThisAddIn.VorgangKZ);
-            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[FOLGENR]", Globals.ThisAddIn.FolgeNr.ToString());
-            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Name]", Globals.ThisAddIn.Name);
-            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Vorname]", Globals.ThisAddIn.Vorname);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[DOKUART]", msg_parameter.DokuArt);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[VORGANGKZ]", msg_parameter.VorgangKZ);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[FOLGENR]", msg_parameter.FolgeNr.ToString());
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Name]", msg_parameter.Name);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Vorname]", msg_parameter.Vorname);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Sachbearbeiter]", Globals.ThisAddIn.SachBearb);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Datum1]", datum1);          
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Datum2]", datum2 );
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[WEBEZEICHNUNG]", msg_parameter.WeBeszeichnung);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[NESTRASSE]", msg_parameter.NeStrasse);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[NEORT]", msg_parameter.NeOrt);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[NEETAGE]", msg_parameter.NeEtage);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[MITEL]", msg_parameter.MiTel);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[MIMOB]", msg_parameter.MiMob);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[KREDITORNAME]", msg_parameter.KreditorName);
             // TODO: Remove this Helper MSGBox
             //string msgtext = "Datum1 ist: " + datum1 + " Datum2 ist: " + datum2 + " AdresseNr: " + adr;
             //MessageBox.Show(msgtext);

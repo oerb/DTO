@@ -34,7 +34,7 @@
     <PublishUrl>\\server10\VerzeichnisQ\Administrator\Software\DTO\</PublishUrl>
     <InstallUrl />
     <TargetCulture>de</TargetCulture>
-    <ApplicationVersion>0.0.0.14</ApplicationVersion>
+    <ApplicationVersion>0.0.0.15</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -192,6 +192,7 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="DTO_DATA.cs" />
     <Compile Include="Database1DataSetNewMSGTYPE.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

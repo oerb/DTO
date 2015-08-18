@@ -154,6 +154,9 @@ namespace OutlookAddIn_MailForm
                         string Text = dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString(); //simpler for use in  subject
                         this.ParentForm.lbl_objekt_txt.Text = Text;
                         this.ParentForm.lbl_objekt_txt.Visible = true;
+                        string webez = dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString();
+                        webez += " , " + dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString();
+                        Globals.ThisAddIn.msg_parameter.WeBeszeichnung = webez;
                         break;
                     }
                 case "kr":
@@ -162,8 +165,10 @@ namespace OutlookAddIn_MailForm
                         this.ParentForm.lbl_kreditor_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
                         this.ParentForm.lbl_kreditor_txt.Visible = true;
                         this.ParentForm.eMail = dgv_TableSelect.SelectedRows[0].Cells[19].Value.ToString();
-                        Globals.ThisAddIn.Vorname = dgv_TableSelect.SelectedRows[0].Cells[4].Value.ToString();
-                        Globals.ThisAddIn.Name = dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString();
+                        Globals.ThisAddIn.msg_parameter.Vorname = dgv_TableSelect.SelectedRows[0].Cells[4].Value.ToString();
+                        Globals.ThisAddIn.msg_parameter.Name = dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString();
+                        string KreditorBez = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
+                        Globals.ThisAddIn.msg_parameter.KreditorName = KreditorBez;
                         break;
                     }
                 case "ha":
@@ -181,6 +186,7 @@ namespace OutlookAddIn_MailForm
                         this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value;
                         this.ParentForm.lbl_haus_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[0].Value.ToString();
                         this.ParentForm.lbl_haus_txt.Visible = true;
+                        Globals.ThisAddIn.msg_parameter.NeEtage = dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString();
                         break;
                     }
                 case "mi":
@@ -201,9 +207,17 @@ namespace OutlookAddIn_MailForm
                         this.ParentForm.lbl_wo_txt.Text = "";
                         this.ParentForm.lbl_wo_txt.Visible = true;    
                         // Get/Set Name2 from Adresse to ParenForm
-                        Globals.ThisAddIn.Vorname = dgv_TableSelect.SelectedRows[0].Cells[7].Value.ToString();
-                        Globals.ThisAddIn.Name = dgv_TableSelect.SelectedRows[0].Cells[6].Value.ToString();
-                        Globals.ThisAddIn.FolgeNr = (int)dgv_TableSelect.SelectedRows[0].Cells[16].Value;
+                        Globals.ThisAddIn.msg_parameter.Vorname = dgv_TableSelect.SelectedRows[0].Cells[7].Value.ToString();
+                        Globals.ThisAddIn.msg_parameter.Name = dgv_TableSelect.SelectedRows[0].Cells[6].Value.ToString();
+                        Globals.ThisAddIn.msg_parameter.FolgeNr = (int)dgv_TableSelect.SelectedRows[0].Cells[16].Value;
+                        Globals.ThisAddIn.msg_parameter.NeStrasse = dgv_TableSelect.SelectedRows[0].Cells[8].Value.ToString();
+                        Globals.ThisAddIn.msg_parameter.NeOrt = dgv_TableSelect.SelectedRows[0].Cells[13].Value.ToString();
+                        string MiTel = dgv_TableSelect.SelectedRows[0].Cells[18].Value.ToString();
+                        MiTel += " / " + dgv_TableSelect.SelectedRows[0].Cells[19].Value.ToString();
+                        Globals.ThisAddIn.msg_parameter.MiTel = MiTel;
+                        string MiMob = dgv_TableSelect.SelectedRows[0].Cells[20].Value.ToString();
+                        MiMob += " / " + dgv_TableSelect.SelectedRows[0].Cells[21].Value.ToString();
+                        Globals.ThisAddIn.msg_parameter.MiMob = MiMob;
                         break;
                     }
                 case "me":
