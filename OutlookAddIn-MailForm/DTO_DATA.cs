@@ -33,6 +33,7 @@ namespace OutlookAddIn_MailForm
         public string NeOrt = "";
         public string NeEtage = "";
         public string MiTel = "";
+        public string MiTel2 = "";
         public string MiMob = "";
         public string KreditorName = "";
 

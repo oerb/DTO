@@ -14,12 +14,15 @@
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT PUB.xyMieter.AdressNr, PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.EMail, PUB.Adresse.Ortname, 
                   PUB.Adresse.VPName1, PUB.Adresse.VPName2, PUB.Adresse.Name1Zus, MAX(PUB.xyMieter.Auszugsdatum) AS AUSZUG, MAX(PUB.xyMieter.Einzugsdatum) AS EINZUG, 
-                  MAX(PUB.xyMieter.Folgenummer) AS FOLGENR, PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.HausNr, PUB.xyMieter.WE, PUB.xyMieter.WohnNr, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, PUB.Adresse.BriefAnrNr
+                  MAX(PUB.xyMieter.Folgenummer) AS FOLGENR, PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.HausNr, PUB.xyMieter.WE, PUB.xyMieter.WohnNr, 
+                  PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, 
+                  PUB.Adresse.BriefAnrNr, PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil
 FROM     PUB.xyMieter, PUB.Adresse
 WHERE  PUB.xyMieter.AdressNr = PUB.Adresse.AdressNr
 GROUP BY PUB.xyMieter.AdressNr, PUB.xyMieter.HausNr, PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.WE, PUB.xyMieter.WohnNr, PUB.xyMieter.WohnNrZus, 
                   PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.xyGeloescht, PUB.Adresse.VPName1, PUB.Adresse.VPName2, 
-                  PUB.Adresse.Name1Zus, PUB.Adresse.Ortname, PUB.xyMieter.AbrechnenBeko, PUB.Adresse.EMail, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, PUB.Adresse.BriefAnrNr
+                  PUB.Adresse.Name1Zus, PUB.Adresse.Ortname, PUB.xyMieter.AbrechnenBeko, PUB.Adresse.EMail, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, 
+                  PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, PUB.Adresse.BriefAnrNr, PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil
 HAVING (PUB.xyMieter.MandantNr = 1) AND (PUB.xyMieter.Unternehmen = ?) AND (PUB.xyMieter.WE = ?) AND (PUB.xyMieter.AdressNr &lt;&gt; 9999999) AND (PUB.Adresse.xyGeloescht = 0) 
                   AND (PUB.xyMieter.AbrechnenBeko &lt;&gt; 'N') AND (PUB.xyMieter.HausNr = ?) AND (PUB.xyMieter.WohnNr = ?)
 ORDER BY PUB.xyMieter.WohnNr, FOLGENR DESC, PUB.Adresse.Strasse</CommandText>
@@ -59,6 +62,8 @@ ORDER BY PUB.xyMieter.WohnNr, FOLGENR DESC, PUB.Adresse.Strasse</CommandText>
               <Mapping SourceColumn="Geschlecht" DataSetColumn="Geschlecht" />
               <Mapping SourceColumn="BriefAnrNr2" DataSetColumn="BriefAnrNr2" />
               <Mapping SourceColumn="BriefAnrNr" DataSetColumn="BriefAnrNr" />
+              <Mapping SourceColumn="VorwahlMobil" DataSetColumn="VorwahlMobil" />
+              <Mapping SourceColumn="TelefonMobil" DataSetColumn="TelefonMobil" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="ConnectionStringWoWiODBC (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAdrNr" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAdrNr" GeneratorSourceName="FillByAdrNr" GetMethodModifier="Public" GetMethodName="GetDataByAdrNr" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAdrNr" UserSourceName="FillByAdrNr">
@@ -66,16 +71,16 @@ ORDER BY PUB.xyMieter.WohnNr, FOLGENR DESC, PUB.Adresse.Strasse</CommandText>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT PUB.xyMieter.AdressNr, PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.EMail, PUB.Adresse.Ortname, 
                   PUB.Adresse.VPName1, PUB.Adresse.VPName2, PUB.Adresse.Name1Zus, MAX(PUB.xyMieter.Auszugsdatum) AS AUSZUG, MAX(PUB.xyMieter.Einzugsdatum) AS EINZUG, 
-                  MAX(PUB.xyMieter.Folgenummer) AS FOLGENR, PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.HausNr, PUB.xyMieter.WE, PUB.xyMieter.WohnNr, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, PUB.Adresse.BriefAnrNr
+                  MAX(PUB.xyMieter.Folgenummer) AS FOLGENR, PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.HausNr, PUB.xyMieter.WE, PUB.xyMieter.WohnNr, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, PUB.Adresse.BriefAnrNr ,PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil
 FROM     PUB.xyMieter, PUB.Adresse
 WHERE  PUB.xyMieter.AdressNr = PUB.Adresse.AdressNr
 GROUP BY PUB.xyMieter.AdressNr, PUB.xyMieter.HausNr, PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.WE, PUB.xyMieter.WohnNr, PUB.xyMieter.WohnNrZus, 
                   PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.xyGeloescht, PUB.Adresse.VPName1, PUB.Adresse.VPName2, 
                   PUB.Adresse.Name1Zus, PUB.Adresse.Ortname, PUB.xyMieter.AbrechnenBeko, PUB.Adresse.EMail, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, 
-                  PUB.Adresse.BriefAnrNr
+                  PUB.Adresse.BriefAnrNr,PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil
 HAVING (PUB.xyMieter.MandantNr = 1) AND (PUB.xyMieter.AdressNr = ?)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="AdressNr" DataSourceName="wb4000.xyMieter" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="AdressNr" Precision="0" Scale="0" Size="0" SourceColumn="AdressNr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="AdressNr" DataSourceName="wb4000.xyMieter" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="AdressNr" Precision="0" Scale="0" Size="0" SourceColumn="AdressNr" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -86,16 +91,16 @@ HAVING (PUB.xyMieter.MandantNr = 1) AND (PUB.xyMieter.AdressNr = ?)</CommandText
                     <CommandText>SELECT PUB.xyMieter.AdressNr, PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.EMail, PUB.Adresse.Ortname, 
                   PUB.Adresse.VPName1, PUB.Adresse.VPName2, PUB.Adresse.Name1Zus, MAX(PUB.xyMieter.Auszugsdatum) AS AUSZUG, MAX(PUB.xyMieter.Einzugsdatum) AS EINZUG, 
                   MAX(PUB.xyMieter.Folgenummer) AS FOLGENR, PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.HausNr, PUB.xyMieter.WE, PUB.xyMieter.WohnNr,PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, 
-                  PUB.Adresse.BriefAnrNr
+                  PUB.Adresse.BriefAnrNr, PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil
 FROM     PUB.xyMieter, PUB.Adresse
 WHERE  PUB.xyMieter.AdressNr = PUB.Adresse.AdressNr
 GROUP BY PUB.xyMieter.AdressNr, PUB.xyMieter.HausNr, PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.WE, PUB.xyMieter.WohnNr, PUB.xyMieter.WohnNrZus, 
                   PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.xyGeloescht, PUB.Adresse.VPName1, PUB.Adresse.VPName2, 
                   PUB.Adresse.Name1Zus, PUB.Adresse.Ortname, PUB.xyMieter.AbrechnenBeko, PUB.Adresse.EMail,PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, 
-                  PUB.Adresse.BriefAnrNr
+                  PUB.Adresse.BriefAnrNr,PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil
 HAVING (PUB.xyMieter.MandantNr = 1) AND (PUB.Adresse.Name1 LIKE ?)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="Name1" DataSourceName="wb4000.Adresse" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="Name1" Precision="0" Scale="0" Size="1024" SourceColumn="Name1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="Name1" DataSourceName="wb4000.Adresse" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="Name1" Precision="0" Scale="0" Size="1024" SourceColumn="Name1" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -106,19 +111,19 @@ HAVING (PUB.xyMieter.MandantNr = 1) AND (PUB.Adresse.Name1 LIKE ?)</CommandText>
                     <CommandText>SELECT PUB.xyMieter.AdressNr, PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.EMail, PUB.Adresse.Ortname, 
                   PUB.Adresse.VPName1, PUB.Adresse.VPName2, PUB.Adresse.Name1Zus, MAX(PUB.xyMieter.Auszugsdatum) AS AUSZUG, MAX(PUB.xyMieter.Einzugsdatum) AS EINZUG, 
                   MAX(PUB.xyMieter.Folgenummer) AS FOLGENR, PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.HausNr, PUB.xyMieter.WE, PUB.xyMieter.WohnNr, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, 
-                  PUB.Adresse.BriefAnrNr
+                  PUB.Adresse.BriefAnrNr ,PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil
 FROM     PUB.xyMieter, PUB.Adresse
 WHERE  PUB.xyMieter.AdressNr = PUB.Adresse.AdressNr
 GROUP BY PUB.xyMieter.AdressNr, PUB.xyMieter.HausNr, PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.WE, PUB.xyMieter.WohnNr, PUB.xyMieter.WohnNrZus, 
                   PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.xyGeloescht, PUB.Adresse.VPName1, PUB.Adresse.VPName2, 
                   PUB.Adresse.Name1Zus, PUB.Adresse.Ortname, PUB.xyMieter.AbrechnenBeko, PUB.Adresse.EMail, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, 
-                  PUB.Adresse.BriefAnrNr
+                  PUB.Adresse.BriefAnrNr ,PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil
 HAVING (PUB.xyMieter.MandantNr = 1) AND (PUB.xyMieter.Unternehmen = ?) AND (PUB.xyMieter.WE = ?) AND (PUB.xyMieter.AdressNr &lt;&gt; 9999999) AND (PUB.Adresse.xyGeloescht = 0) 
                   AND (PUB.xyMieter.AbrechnenBeko &lt;&gt; 'N')
 ORDER BY PUB.xyMieter.WohnNr, FOLGENR DESC, PUB.Adresse.Strasse</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="Unternehmen" DataSourceName="wb4000.xyMieter" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="Unternehmen" Precision="0" Scale="0" Size="0" SourceColumn="Unternehmen" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="WE" DataSourceName="wb4000.xyMieter" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="WE" Precision="0" Scale="0" Size="0" SourceColumn="WE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="Unternehmen" DataSourceName="wb4000.xyMieter" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="Unternehmen" Precision="0" Scale="0" Size="0" SourceColumn="Unternehmen" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="WE" DataSourceName="wb4000.xyMieter" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="WE" Precision="0" Scale="0" Size="0" SourceColumn="WE" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -129,20 +134,20 @@ ORDER BY PUB.xyMieter.WohnNr, FOLGENR DESC, PUB.Adresse.Strasse</CommandText>
                     <CommandText>SELECT PUB.xyMieter.AdressNr, PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.EMail, PUB.Adresse.Ortname, 
                   PUB.Adresse.VPName1, PUB.Adresse.VPName2, PUB.Adresse.Name1Zus, MAX(PUB.xyMieter.Auszugsdatum) AS AUSZUG, MAX(PUB.xyMieter.Einzugsdatum) AS EINZUG, 
                   MAX(PUB.xyMieter.Folgenummer) AS FOLGENR, PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.HausNr, PUB.xyMieter.WE, PUB.xyMieter.WohnNr, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, 
-                  PUB.Adresse.BriefAnrNr
+                  PUB.Adresse.BriefAnrNr ,PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil
 FROM     PUB.xyMieter, PUB.Adresse
 WHERE  PUB.xyMieter.AdressNr = PUB.Adresse.AdressNr
 GROUP BY PUB.xyMieter.AdressNr, PUB.xyMieter.HausNr, PUB.xyMieter.MandantNr, PUB.xyMieter.Unternehmen, PUB.xyMieter.WE, PUB.xyMieter.WohnNr, PUB.xyMieter.WohnNrZus, 
                   PUB.Adresse.Name1, PUB.Adresse.Name2, PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.xyGeloescht, PUB.Adresse.VPName1, PUB.Adresse.VPName2, 
                   PUB.Adresse.Name1Zus, PUB.Adresse.Ortname, PUB.xyMieter.AbrechnenBeko, PUB.Adresse.EMail, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, 
-                  PUB.Adresse.BriefAnrNr
+                  PUB.Adresse.BriefAnrNr ,PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil
 HAVING (PUB.xyMieter.MandantNr = 1) AND (PUB.xyMieter.Unternehmen = ?) AND (PUB.xyMieter.WE = ?) AND (PUB.xyMieter.AdressNr &lt;&gt; 9999999) AND (PUB.Adresse.xyGeloescht = 0) 
                   AND (PUB.xyMieter.AbrechnenBeko &lt;&gt; 'N') AND (PUB.xyMieter.HausNr = ?)
 ORDER BY PUB.xyMieter.WohnNr, FOLGENR DESC, PUB.Adresse.Strasse</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="Unternehmen" DataSourceName="wb4000.xyMieter" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="Unternehmen" Precision="0" Scale="0" Size="0" SourceColumn="Unternehmen" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="WE" DataSourceName="wb4000.xyMieter" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="WE" Precision="0" Scale="0" Size="0" SourceColumn="WE" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Param3" ColumnName="HausNr" DataSourceName="wb4000.xyMieter" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="HausNr" Precision="0" Scale="0" Size="0" SourceColumn="HausNr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="Unternehmen" DataSourceName="wb4000.xyMieter" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="Unternehmen" Precision="0" Scale="0" Size="0" SourceColumn="Unternehmen" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="WE" DataSourceName="wb4000.xyMieter" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="WE" Precision="0" Scale="0" Size="0" SourceColumn="WE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param3" ColumnName="HausNr" DataSourceName="wb4000.xyMieter" DataTypeServer="integer" DbType="Int32" Direction="Input" ParameterName="HausNr" Precision="0" Scale="0" Size="0" SourceColumn="HausNr" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -243,7 +248,7 @@ GROUP BY AdressNr, Name1, Name2</CommandText>
   <xs:element name="DataSet1_WOWI_SEARCH" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet1_WOWI_SEARCH" msprop:Generator_UserDSName="DataSet1_WOWI_SEARCH">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="xyMieter" msprop:Generator_TableClassName="xyMieterDataTable" msprop:Generator_TableVarName="tablexyMieter" msprop:Generator_TablePropName="xyMieter" msprop:Generator_RowDeletingName="xyMieterRowDeleting" msprop:Generator_RowChangingName="xyMieterRowChanging" msprop:Generator_RowEvHandlerName="xyMieterRowChangeEventHandler" msprop:Generator_RowDeletedName="xyMieterRowDeleted" msprop:Generator_UserTableName="xyMieter" msprop:Generator_RowChangedName="xyMieterRowChanged" msprop:Generator_RowEvArgName="xyMieterRowChangeEvent" msprop:Generator_RowClassName="xyMieterRow">
+        <xs:element name="xyMieter" msprop:Generator_TableClassName="xyMieterDataTable" msprop:Generator_TableVarName="tablexyMieter" msprop:Generator_RowChangedName="xyMieterRowChanged" msprop:Generator_TablePropName="xyMieter" msprop:Generator_RowDeletingName="xyMieterRowDeleting" msprop:Generator_RowChangingName="xyMieterRowChanging" msprop:Generator_RowEvHandlerName="xyMieterRowChangeEventHandler" msprop:Generator_RowDeletedName="xyMieterRowDeleted" msprop:Generator_RowClassName="xyMieterRow" msprop:Generator_UserTableName="xyMieter" msprop:Generator_RowEvArgName="xyMieterRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="AdressNr" msprop:Generator_ColumnVarNameInTable="columnAdressNr" msprop:Generator_ColumnPropNameInRow="AdressNr" msprop:Generator_ColumnPropNameInTable="AdressNrColumn" msprop:Generator_UserColumnName="AdressNr" type="xs:int" minOccurs="0" />
@@ -343,10 +348,24 @@ GROUP BY AdressNr, Name1, Name2</CommandText>
               <xs:element name="Geschlecht" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGeschlecht" msprop:Generator_ColumnPropNameInRow="Geschlecht" msprop:Generator_ColumnPropNameInTable="GeschlechtColumn" msprop:Generator_UserColumnName="Geschlecht" type="xs:boolean" minOccurs="0" />
               <xs:element name="BriefAnrNr2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBriefAnrNr2" msprop:Generator_ColumnPropNameInRow="BriefAnrNr2" msprop:Generator_ColumnPropNameInTable="BriefAnrNr2Column" msprop:Generator_UserColumnName="BriefAnrNr2" type="xs:int" minOccurs="0" />
               <xs:element name="BriefAnrNr" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBriefAnrNr" msprop:Generator_ColumnPropNameInRow="BriefAnrNr" msprop:Generator_ColumnPropNameInTable="BriefAnrNrColumn" msprop:Generator_UserColumnName="BriefAnrNr" type="xs:int" minOccurs="0" />
+              <xs:element name="VorwahlMobil" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVorwahlMobil" msprop:Generator_ColumnPropNameInRow="VorwahlMobil" msprop:Generator_ColumnPropNameInTable="VorwahlMobilColumn" msprop:Generator_UserColumnName="VorwahlMobil" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TelefonMobil" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTelefonMobil" msprop:Generator_ColumnPropNameInRow="TelefonMobil" msprop:Generator_ColumnPropNameInTable="TelefonMobilColumn" msprop:Generator_UserColumnName="TelefonMobil" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblWohnung" msprop:Generator_TableClassName="tblWohnungDataTable" msprop:Generator_TableVarName="tabletblWohnung" msprop:Generator_RowChangedName="tblWohnungRowChanged" msprop:Generator_TablePropName="tblWohnung" msprop:Generator_RowDeletingName="tblWohnungRowDeleting" msprop:Generator_RowChangingName="tblWohnungRowChanging" msprop:Generator_RowEvHandlerName="tblWohnungRowChangeEventHandler" msprop:Generator_RowDeletedName="tblWohnungRowDeleted" msprop:Generator_RowClassName="tblWohnungRow" msprop:Generator_UserTableName="tblWohnung" msprop:Generator_RowEvArgName="tblWohnungRowChangeEvent">
+        <xs:element name="tblWohnung" msprop:Generator_TableClassName="tblWohnungDataTable" msprop:Generator_TableVarName="tabletblWohnung" msprop:Generator_TablePropName="tblWohnung" msprop:Generator_RowDeletingName="tblWohnungRowDeleting" msprop:Generator_RowChangingName="tblWohnungRowChanging" msprop:Generator_RowEvHandlerName="tblWohnungRowChangeEventHandler" msprop:Generator_RowDeletedName="tblWohnungRowDeleted" msprop:Generator_UserTableName="tblWohnung" msprop:Generator_RowChangedName="tblWohnungRowChanged" msprop:Generator_RowEvArgName="tblWohnungRowChangeEvent" msprop:Generator_RowClassName="tblWohnungRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Strasse" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnStrasse" msprop:Generator_ColumnPropNameInRow="Strasse" msprop:Generator_ColumnPropNameInTable="StrasseColumn" msprop:Generator_UserColumnName="Strasse" minOccurs="0">
@@ -385,7 +404,7 @@ GROUP BY AdressNr, Name1, Name2</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblAdresse" msprop:Generator_TableClassName="tblAdresseDataTable" msprop:Generator_TableVarName="tabletblAdresse" msprop:Generator_RowChangedName="tblAdresseRowChanged" msprop:Generator_TablePropName="tblAdresse" msprop:Generator_RowDeletingName="tblAdresseRowDeleting" msprop:Generator_RowChangingName="tblAdresseRowChanging" msprop:Generator_RowEvHandlerName="tblAdresseRowChangeEventHandler" msprop:Generator_RowDeletedName="tblAdresseRowDeleted" msprop:Generator_RowClassName="tblAdresseRow" msprop:Generator_UserTableName="tblAdresse" msprop:Generator_RowEvArgName="tblAdresseRowChangeEvent">
+        <xs:element name="tblAdresse" msprop:Generator_TableClassName="tblAdresseDataTable" msprop:Generator_TableVarName="tabletblAdresse" msprop:Generator_TablePropName="tblAdresse" msprop:Generator_RowDeletingName="tblAdresseRowDeleting" msprop:Generator_RowChangingName="tblAdresseRowChanging" msprop:Generator_RowEvHandlerName="tblAdresseRowChangeEventHandler" msprop:Generator_RowDeletedName="tblAdresseRowDeleted" msprop:Generator_UserTableName="tblAdresse" msprop:Generator_RowChangedName="tblAdresseRowChanged" msprop:Generator_RowEvArgName="tblAdresseRowChangeEvent" msprop:Generator_RowClassName="tblAdresseRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="AdressNr" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAdressNr" msprop:Generator_ColumnPropNameInRow="AdressNr" msprop:Generator_ColumnPropNameInTable="AdressNrColumn" msprop:Generator_UserColumnName="AdressNr" type="xs:int" minOccurs="0" />

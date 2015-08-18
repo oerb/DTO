@@ -165,6 +165,7 @@ namespace OutlookAddIn_MailForm
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[NEORT]", msg_parameter.NeOrt);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[NEETAGE]", msg_parameter.NeEtage);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[MITEL]", msg_parameter.MiTel);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[MITEL2]", msg_parameter.MiTel2);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[MIMOB]", msg_parameter.MiMob);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[KREDITORNAME]", msg_parameter.KreditorName);
             // TODO: Remove this Helper MSGBox

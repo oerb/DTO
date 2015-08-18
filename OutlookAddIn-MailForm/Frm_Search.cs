@@ -215,9 +215,12 @@ namespace OutlookAddIn_MailForm
                         string MiTel = dgv_TableSelect.SelectedRows[0].Cells[18].Value.ToString();
                         MiTel += " / " + dgv_TableSelect.SelectedRows[0].Cells[19].Value.ToString();
                         Globals.ThisAddIn.msg_parameter.MiTel = MiTel;
-                        string MiMob = dgv_TableSelect.SelectedRows[0].Cells[20].Value.ToString();
-                        MiMob += " / " + dgv_TableSelect.SelectedRows[0].Cells[21].Value.ToString();
+                        string MiMob = dgv_TableSelect.SelectedRows[0].Cells[25].Value.ToString();
+                        MiMob += " / " + dgv_TableSelect.SelectedRows[0].Cells[26].Value.ToString();
                         Globals.ThisAddIn.msg_parameter.MiMob = MiMob;
+                        string MiTel2 = dgv_TableSelect.SelectedRows[0].Cells[20].Value.ToString();
+                        MiTel2 += " / " + dgv_TableSelect.SelectedRows[0].Cells[21].Value.ToString();
+                        Globals.ThisAddIn.msg_parameter.MiTel2 = MiTel2;
                         break;
                     }
                 case "me":
