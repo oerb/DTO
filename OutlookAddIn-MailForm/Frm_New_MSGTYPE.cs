@@ -13,7 +13,8 @@ namespace OutlookAddIn_MailForm
     public partial class Frm_New_MSGTYPE : Form
     {
         // formmode has two Values  new or edit
-        public Frm_New_MSGTYPE(string formmode, int id, string msgtype, string filelocation)
+        public Frm_New_MSGTYPE(string formmode, int id, string msgtype, string filelocation, bool Date1show
+            , string Date1Name, bool Date2show, string Date2Name )
         {
             InitializeComponent();
             this.formmode = formmode;

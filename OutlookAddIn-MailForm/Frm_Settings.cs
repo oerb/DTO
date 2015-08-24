@@ -37,7 +37,7 @@ namespace OutlookAddIn_MailForm
 
         private void btn_new_msgtype_Click(object sender, EventArgs e)
         {
-            Frm_New_MSGTYPE frm_New_MSGTYPE = new Frm_New_MSGTYPE("new", 0, " ", " ");
+            Frm_New_MSGTYPE frm_New_MSGTYPE = new Frm_New_MSGTYPE("new", 0, " ", " ", false, " ", false, " ");
             frm_New_MSGTYPE.ParentForm = this;
             DialogResult result = frm_New_MSGTYPE.ShowDialog();
         }
@@ -77,7 +77,7 @@ namespace OutlookAddIn_MailForm
                 string msgtyp = this.tableTableAdapter.GetMSGTYP((int)this.lbx_mbstypes.SelectedValue).ToString();
                 string filelocation = this.tableTableAdapter.GetFileLocation((int)this.lbx_mbstypes.SelectedValue).ToString();
                 int id = (int)this.lbx_mbstypes.SelectedValue;
-                Frm_New_MSGTYPE frm_New_MSGTYPE = new Frm_New_MSGTYPE("edit", id, msgtyp, filelocation);
+                Frm_New_MSGTYPE frm_New_MSGTYPE = new Frm_New_MSGTYPE("edit", id, msgtyp, filelocation, false, " ", false, " ");
                 frm_New_MSGTYPE.ParentForm = this;
                 DialogResult result = frm_New_MSGTYPE.ShowDialog();
             }

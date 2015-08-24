@@ -71,6 +71,7 @@
             this.lbx_mbstypes.TabIndex = 2;
             this.lbx_mbstypes.ValueMember = "Id";
             this.lbx_mbstypes.Click += new System.EventHandler(this.lbx_mbstypes_Click);
+            this.lbx_mbstypes.DoubleClick += new System.EventHandler(this.btn_edit_Click);
             // 
             // tableBindingSource
             // 

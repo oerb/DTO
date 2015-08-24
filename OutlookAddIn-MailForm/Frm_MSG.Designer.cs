@@ -249,7 +249,7 @@
             this.btn_create_MSG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_create_MSG.Image = ((System.Drawing.Image)(resources.GetObject("btn_create_MSG.Image")));
             this.btn_create_MSG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_create_MSG.Location = new System.Drawing.Point(445, 373);
+            this.btn_create_MSG.Location = new System.Drawing.Point(452, 349);
             this.btn_create_MSG.Name = "btn_create_MSG";
             this.btn_create_MSG.Size = new System.Drawing.Size(208, 46);
             this.btn_create_MSG.TabIndex = 31;
@@ -463,7 +463,7 @@
             // btn_clearform
             // 
             this.btn_clearform.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_clearform.Location = new System.Drawing.Point(540, 9);
+            this.btn_clearform.Location = new System.Drawing.Point(547, 9);
             this.btn_clearform.Name = "btn_clearform";
             this.btn_clearform.Size = new System.Drawing.Size(113, 45);
             this.btn_clearform.TabIndex = 49;
@@ -511,7 +511,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 431);
+            this.ClientSize = new System.Drawing.Size(682, 430);
             this.Controls.Add(this.lbl_Datum2);
             this.Controls.Add(this.dtp_Datum2);
             this.Controls.Add(this.lbl_Datum1);
@@ -553,7 +553,8 @@
             this.Controls.Add(this.lbl_Mandant);
             this.Controls.Add(this.lbl_meldungstyp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(683, 422);
+            this.MaximumSize = new System.Drawing.Size(700, 475);
+            this.MinimumSize = new System.Drawing.Size(700, 475);
             this.Name = "Frm_MSG";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meldung";
