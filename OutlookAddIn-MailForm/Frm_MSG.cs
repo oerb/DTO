@@ -38,7 +38,21 @@ namespace OutlookAddIn_MailForm
                         return 0;
                     }
                 }
-            set { this.txt_Mandant.Text = value.ToString(); this.lbl_mandant_txt.Text = ""; }
+            set 
+            { 
+                this.txt_Mandant.Text = value.ToString();                
+                string companyname = "";
+                if (value == 0)
+                {
+                    companyname = "";
+                }
+                else
+                {
+                    companyname = this.mandantTableAdapter1.GetCompanyName(value).ToString();
+                }               
+                this.lbl_mandant_txt.Text = companyname;
+                this.lbl_mandant_txt.Visible = true;
+            }
         }
 
         public int kreditor

@@ -76,10 +76,13 @@
             this.lbl_Datum1 = new System.Windows.Forms.Label();
             this.lbl_Datum2 = new System.Windows.Forms.Label();
             this.dtp_Datum2 = new System.Windows.Forms.DateTimePicker();
+            this.dataSet1_WoWi_Mandant1 = new OutlookAddIn_MailForm.DataSet1_WoWi_Mandant();
+            this.mandantTableAdapter1 = new OutlookAddIn_MailForm.DataSet1_WoWi_MandantTableAdapters.MandantTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIDOKARTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSetDokuartDokuKZBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSet_Dokuart_DokuKZ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIVORGANGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Mandant1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Subject
@@ -507,6 +510,15 @@
             this.dtp_Datum2.TabIndex = 52;
             this.dtp_Datum2.ValueChanged += new System.EventHandler(this.dtp_Datum2_ValueChanged);
             // 
+            // dataSet1_WoWi_Mandant1
+            // 
+            this.dataSet1_WoWi_Mandant1.DataSetName = "DataSet1_WoWi_Mandant";
+            this.dataSet1_WoWi_Mandant1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // mandantTableAdapter1
+            // 
+            this.mandantTableAdapter1.ClearBeforeFill = true;
+            // 
             // Frm_MSG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -563,6 +575,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSetDokuartDokuKZBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSet_Dokuart_DokuKZ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIVORGANGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Mandant1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,5 +629,7 @@
         private System.Windows.Forms.Label lbl_Datum1;
         private System.Windows.Forms.Label lbl_Datum2;
         private System.Windows.Forms.DateTimePicker dtp_Datum2;
+        private DataSet1_WoWi_Mandant dataSet1_WoWi_Mandant1;
+        private DataSet1_WoWi_MandantTableAdapters.MandantTableAdapter mandantTableAdapter1;
     }
 }
