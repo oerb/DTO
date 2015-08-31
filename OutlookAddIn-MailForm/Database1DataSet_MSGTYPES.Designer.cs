@@ -1145,7 +1145,7 @@ SELECT Id, MSGtyp, Filelocation, Dokuart, VorgangKZ, Datum1show, Datum1Name, Dat
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            //this._connection.ConnectionString = global::DTO.Properties.Settings.Default.Database1ConnectionStringNew_MSGTYPE;
+            this._connection.ConnectionString = global::OutlookAddIn_MailForm.Properties.Settings.Default.Database1ConnectionStringNew_MSGTYPE;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1180,11 +1180,16 @@ SELECT Id, MSGtyp, Filelocation, Dokuart, VorgangKZ, Datum1show, Datum1Name, Dat
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE [dbo].[Table] SET [MSGtyp] = @MSGtyp, [Filelocation] = @Filelocation WHERE" +
-                " ([Id] = @Original_Id) ";
+            this._commandCollection[5].CommandText = @"UPDATE [dbo].[Table] SET [MSGtyp] = @MSGtyp, [Filelocation] = @Filelocation, [Dokuart] = @Dokuart, [VorgangKZ] = @VorgangKZ, [Datum1show] = @Datum1show, [Datum1Name] = @Datum1Name, [Datum2show] = @Datum2show, [Datum2Name] = @Datum2Name WHERE ([Id] = @Original_Id) ";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MSGtyp", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MSGtyp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Filelocation", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Filelocation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dokuart", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Dokuart", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VorgangKZ", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "VorgangKZ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum1show", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1show", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum1Name", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum2show", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2show", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum2Name", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -1668,7 +1673,7 @@ SELECT Id, MSGtyp, Filelocation, Dokuart, VorgangKZ, Datum1show, Datum1Name, Dat
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateByID(string MSGtyp, string Filelocation, int Original_Id) {
+        public virtual int UpdateByID(string MSGtyp, string Filelocation, string Dokuart, string VorgangKZ, global::System.Nullable<bool> Datum1show, string Datum1Name, global::System.Nullable<bool> Datum2show, string Datum2Name, int Original_Id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((MSGtyp == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -1682,7 +1687,43 @@ SELECT Id, MSGtyp, Filelocation, Dokuart, VorgangKZ, Datum1show, Datum1Name, Dat
             else {
                 command.Parameters[1].Value = ((string)(Filelocation));
             }
-            command.Parameters[2].Value = ((int)(Original_Id));
+            if ((Dokuart == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Dokuart));
+            }
+            if ((VorgangKZ == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(VorgangKZ));
+            }
+            if ((Datum1show.HasValue == true)) {
+                command.Parameters[4].Value = ((bool)(Datum1show.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Datum1Name == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(Datum1Name));
+            }
+            if ((Datum2show.HasValue == true)) {
+                command.Parameters[6].Value = ((bool)(Datum2show.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Datum2Name == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(Datum2Name));
+            }
+            command.Parameters[8].Value = ((int)(Original_Id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

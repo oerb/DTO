@@ -226,7 +226,7 @@ namespace OutlookAddIn_MailForm
                 case "me":
                     {
                         this.ParentForm.filelocation = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
-                        
+                        this.ParentForm.msgtyp = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;
                         //this.ParentForm.txb_Subject.Text = dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString();
                         this.ParentForm.txt_meldungstyp.Text = dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString();
                         break;

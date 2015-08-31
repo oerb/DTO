@@ -13,7 +13,8 @@ namespace OutlookAddIn_MailForm
     public partial class Frm_New_MSGTYPE : Form
     {
         // formmode has two Values  new or edit
-        public Frm_New_MSGTYPE(string formmode, int id, string msgtype, string filelocation, bool Date1show
+        public Frm_New_MSGTYPE(string formmode, int id, string msgtype, string filelocation, string Dokuart, 
+            string VorgangKZ,  bool Date1show
             , string Date1Name, bool Date2show, string Date2Name )
         {
             InitializeComponent();
@@ -22,6 +23,12 @@ namespace OutlookAddIn_MailForm
             {
                 this.txt_mailtype.Text = msgtype;
                 this.txt_filelocation.Text = filelocation;
+                this.txtDatum1Bezeichnung.Text = Date1Name;
+                this.txtDatum2Bezeichnung.Text = Date2Name;
+                this.cbxDatum1Anzeigen.Checked = Date1show;
+                this.cbxDatum2Anzeigen.Checked = Date2show;
+                this.cmb_dokuart.Text = Dokuart;
+                this.cmb_vorgangkz.Text = VorgangKZ;
                 this.id = id;                
             }
             else if ( formmode == "new")
@@ -80,7 +87,7 @@ namespace OutlookAddIn_MailForm
             this.Validate();
             this.ParentForm.update_lbx_MSGTYPES(this.formmode, this.id, this.txt_mailtype.Text, this.txt_filelocation.Text
                 , this.cmb_dokuart.Text, this.cmb_vorgangkz.Text, this.cbxDatum1Anzeigen.Checked, 
-                this.txtDatum1Bezeichnung.Text, this.cxbDatum2Anzeigen.Checked, this.txtDatum2Bezeichnung.Text);
+                this.txtDatum1Bezeichnung.Text, this.cbxDatum2Anzeigen.Checked, this.txtDatum2Bezeichnung.Text);
             this.Close();            
         }
 
@@ -90,6 +97,42 @@ namespace OutlookAddIn_MailForm
             {
                 this.txt_filelocation.Text = openFileDialog1.FileName;
             }
+        }
+
+        private void Frm_New_MSGTYPE_Load(object sender, EventArgs e)
+        {
+            if (this.formmode == "new")
+            { 
+                this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART);
+                // Prefilling Dokuart and DokuKZ by Static Properties ( defined by Frm_UserSettings.cs )
+                if (Properties.Settings.Default.uDokuart.ToString() != "")
+                {
+                    this.cmb_dokuart.SelectedValue = Properties.Settings.Default.uDokuart;
+                }
+                if (Properties.Settings.Default.uVorgangKZ.ToString() != "")
+                {
+                    this.cmb_vorgangkz.SelectedValue = Properties.Settings.Default.uVorgangKZ;
+                }
+            }
+            else if (this.formmode == "edit")
+            {
+               // Do Nothing
+            }
+            else
+            {
+                MessageBox.Show("Error: Frm_New_MSGTYPE.cs - Frm_New_MSGTYPE_Load formmode nod valid");
+            }
+        }
+
+        private void cmb_dokuart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Fill VorgangKZ with Filtered Data
+            this.wOWIVORGANGTableAdapter.Fill_DOKUKZ(this.saperionDataSet_Dokuart_DokuKZ.WOWIVORGANG, this.cmb_dokuart.Text);
+        }
+
+        private void cmb_dokuart_DropDown(object sender, EventArgs e)
+        {
+            this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART);
         }
     }
 }

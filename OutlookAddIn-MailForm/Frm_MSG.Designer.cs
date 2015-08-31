@@ -78,11 +78,16 @@
             this.dtp_Datum2 = new System.Windows.Forms.DateTimePicker();
             this.dataSet1_WoWi_Mandant1 = new OutlookAddIn_MailForm.DataSet1_WoWi_Mandant();
             this.mandantTableAdapter1 = new OutlookAddIn_MailForm.DataSet1_WoWi_MandantTableAdapters.MandantTableAdapter();
+            this.tableTableAdapter = new OutlookAddIn_MailForm.Database1DataSet_MSGTYPESTableAdapters.TableTableAdapter();
+            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet_MSGTYPES = new OutlookAddIn_MailForm.Database1DataSet_MSGTYPES();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIDOKARTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSetDokuartDokuKZBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSet_Dokuart_DokuKZ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIVORGANGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Mandant1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet_MSGTYPES)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Subject
@@ -466,9 +471,9 @@
             // btn_clearform
             // 
             this.btn_clearform.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_clearform.Location = new System.Drawing.Point(547, 9);
+            this.btn_clearform.Location = new System.Drawing.Point(371, 350);
             this.btn_clearform.Name = "btn_clearform";
-            this.btn_clearform.Size = new System.Drawing.Size(113, 45);
+            this.btn_clearform.Size = new System.Drawing.Size(75, 45);
             this.btn_clearform.TabIndex = 49;
             this.btn_clearform.Text = "Form 0 setzen";
             this.btn_clearform.UseVisualStyleBackColor = true;
@@ -518,6 +523,20 @@
             // mandantTableAdapter1
             // 
             this.mandantTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableTableAdapter
+            // 
+            this.tableTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableBindingSource
+            // 
+            this.tableBindingSource.DataMember = "Table";
+            this.tableBindingSource.DataSource = this.database1DataSet_MSGTYPES;
+            // 
+            // database1DataSet_MSGTYPES
+            // 
+            this.database1DataSet_MSGTYPES.DataSetName = "Database1DataSet_MSGTYPES";
+            this.database1DataSet_MSGTYPES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Frm_MSG
             // 
@@ -576,6 +595,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSet_Dokuart_DokuKZ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIVORGANGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Mandant1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet_MSGTYPES)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -631,5 +652,8 @@
         private System.Windows.Forms.DateTimePicker dtp_Datum2;
         private DataSet1_WoWi_Mandant dataSet1_WoWi_Mandant1;
         private DataSet1_WoWi_MandantTableAdapters.MandantTableAdapter mandantTableAdapter1;
+        private Database1DataSet_MSGTYPESTableAdapters.TableTableAdapter tableTableAdapter;
+        private System.Windows.Forms.BindingSource tableBindingSource;
+        private Database1DataSet_MSGTYPES database1DataSet_MSGTYPES;
     }
 }

@@ -49,7 +49,7 @@
             this.cmb_dokuart = new System.Windows.Forms.ComboBox();
             this.wOWIDOKARTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grbVorbelegungen = new System.Windows.Forms.GroupBox();
-            this.cxbDatum2Anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbxDatum2Anzeigen = new System.Windows.Forms.CheckBox();
             this.lblDatum2 = new System.Windows.Forms.Label();
             this.txtDatum2Bezeichnung = new System.Windows.Forms.TextBox();
             this.cbxDatum1Anzeigen = new System.Windows.Forms.CheckBox();
@@ -203,6 +203,8 @@
             this.cmb_dokuart.Size = new System.Drawing.Size(408, 24);
             this.cmb_dokuart.TabIndex = 45;
             this.cmb_dokuart.ValueMember = "DOKUART";
+            this.cmb_dokuart.DropDown += new System.EventHandler(this.cmb_dokuart_DropDown);
+            this.cmb_dokuart.SelectedIndexChanged += new System.EventHandler(this.cmb_dokuart_SelectedIndexChanged);
             // 
             // wOWIDOKARTBindingSource
             // 
@@ -211,7 +213,7 @@
             // 
             // grbVorbelegungen
             // 
-            this.grbVorbelegungen.Controls.Add(this.cxbDatum2Anzeigen);
+            this.grbVorbelegungen.Controls.Add(this.cbxDatum2Anzeigen);
             this.grbVorbelegungen.Controls.Add(this.lblDatum2);
             this.grbVorbelegungen.Controls.Add(this.txtDatum2Bezeichnung);
             this.grbVorbelegungen.Controls.Add(this.cbxDatum1Anzeigen);
@@ -228,15 +230,15 @@
             this.grbVorbelegungen.TabStop = false;
             this.grbVorbelegungen.Text = "Vorbelegungen";
             // 
-            // cxbDatum2Anzeigen
+            // cbxDatum2Anzeigen
             // 
-            this.cxbDatum2Anzeigen.AutoSize = true;
-            this.cxbDatum2Anzeigen.Location = new System.Drawing.Point(412, 116);
-            this.cxbDatum2Anzeigen.Name = "cxbDatum2Anzeigen";
-            this.cxbDatum2Anzeigen.Size = new System.Drawing.Size(89, 21);
-            this.cxbDatum2Anzeigen.TabIndex = 54;
-            this.cxbDatum2Anzeigen.Text = "Anzeigen";
-            this.cxbDatum2Anzeigen.UseVisualStyleBackColor = true;
+            this.cbxDatum2Anzeigen.AutoSize = true;
+            this.cbxDatum2Anzeigen.Location = new System.Drawing.Point(412, 116);
+            this.cbxDatum2Anzeigen.Name = "cbxDatum2Anzeigen";
+            this.cbxDatum2Anzeigen.Size = new System.Drawing.Size(89, 21);
+            this.cbxDatum2Anzeigen.TabIndex = 54;
+            this.cbxDatum2Anzeigen.Text = "Anzeigen";
+            this.cbxDatum2Anzeigen.UseVisualStyleBackColor = true;
             // 
             // lblDatum2
             // 
@@ -255,6 +257,7 @@
             this.txtDatum2Bezeichnung.Name = "txtDatum2Bezeichnung";
             this.txtDatum2Bezeichnung.Size = new System.Drawing.Size(185, 22);
             this.txtDatum2Bezeichnung.TabIndex = 52;
+            this.txtDatum2Bezeichnung.Text = "Datum2";
             // 
             // cbxDatum1Anzeigen
             // 
@@ -283,6 +286,7 @@
             this.txtDatum1Bezeichnung.Name = "txtDatum1Bezeichnung";
             this.txtDatum1Bezeichnung.Size = new System.Drawing.Size(185, 22);
             this.txtDatum1Bezeichnung.TabIndex = 49;
+            this.txtDatum1Bezeichnung.Text = "Datum1";
             // 
             // btn_help
             // 
@@ -322,6 +326,7 @@
             this.MinimumSize = new System.Drawing.Size(688, 403);
             this.Name = "Frm_New_MSGTYPE";
             this.Text = "MSG Typ festlegen";
+            this.Load += new System.EventHandler(this.Frm_New_MSGTYPE_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet_MSGTYPES)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIVORGANGBindingSource)).EndInit();
@@ -352,7 +357,7 @@
         private System.Windows.Forms.Label lbl_dokuart;
         private System.Windows.Forms.ComboBox cmb_dokuart;
         private System.Windows.Forms.GroupBox grbVorbelegungen;
-        private System.Windows.Forms.CheckBox cxbDatum2Anzeigen;
+        private System.Windows.Forms.CheckBox cbxDatum2Anzeigen;
         private System.Windows.Forms.Label lblDatum2;
         private System.Windows.Forms.TextBox txtDatum2Bezeichnung;
         private System.Windows.Forms.CheckBox cbxDatum1Anzeigen;

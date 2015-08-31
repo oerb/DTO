@@ -26,6 +26,25 @@ namespace OutlookAddIn_MailForm
         // Data
         public string filelocation;
 
+        private int _msgtyp;
+        public int msgtyp
+        {
+            get { return _msgtyp; }
+            set 
+            {
+                Database1DataSet_MSGTYPES.TableDataTable msgtypTable;
+                msgtypTable = this.tableTableAdapter.GetDataByID(value);
+                this.cmb_dokuart.Text = msgtypTable[0].Dokuart;
+                this.cmb_vorgangkz.Text = msgtypTable[0].VorgangKZ;
+                this.dtp_Datum1.Visible = msgtypTable[0].Datum1show;
+                this.lbl_Datum1.Visible = msgtypTable[0].Datum1show;
+                this.lbl_Datum1.Text = msgtypTable[0].Datum1Name;
+                this.dtp_Datum2.Visible = msgtypTable[0].Datum2show;
+                this.lbl_Datum2.Visible = msgtypTable[0].Datum2show;
+                this.lbl_Datum2.Text = msgtypTable[0].Datum2Name;
+            }
+        }
+
         public int mandant 
         {
             get { 

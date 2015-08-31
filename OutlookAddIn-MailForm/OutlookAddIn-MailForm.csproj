@@ -334,6 +334,10 @@
     <Compile Include="Ribbon.cs">
       <XmlRibbon>true</XmlRibbon>
     </Compile>
+    <Compile Include="saperionDataSet_Dokuart_DokuKZ.cs">
+      <DependentUpon>saperionDataSet_Dokuart_DokuKZ.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="saperionDataSet_Dokuart_DokuKZ.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
