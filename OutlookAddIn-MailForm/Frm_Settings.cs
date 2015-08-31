@@ -18,11 +18,13 @@ namespace OutlookAddIn_MailForm
         }
         // Is for saving Data to Table and Refresh Form
         // TODO: Trennen von Speichern und Füllen
-        public void update_lbx_MSGTYPES(string formmode, int id, string msgtype, string filelocation)
+        public void update_lbx_MSGTYPES(string formmode, int id, string msgtype, string filelocation,
+            string dokuart, string vorgangkz, bool datum1show, string datum1name, bool datum2show, string datum2name)
         {         
             if (formmode == "new")
             {
-                this.tableTableAdapter.Insert(msgtype, filelocation);
+                this.tableTableAdapter.Insert(msgtype, filelocation, dokuart, vorgangkz, datum1show
+                    , datum2name, datum2show, datum2name);
             }
             else if (formmode == "edit")
             {

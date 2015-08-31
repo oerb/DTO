@@ -78,7 +78,9 @@ namespace OutlookAddIn_MailForm
         private void btn_save_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.ParentForm.update_lbx_MSGTYPES(this.formmode, this.id, this.txt_mailtype.Text, this.txt_filelocation.Text);
+            this.ParentForm.update_lbx_MSGTYPES(this.formmode, this.id, this.txt_mailtype.Text, this.txt_filelocation.Text
+                , this.cmb_dokuart.Text, this.cmb_vorgangkz.Text, this.cbxDatum1Anzeigen.Checked, 
+                this.txtDatum1Bezeichnung.Text, this.cxbDatum2Anzeigen.Checked, this.txtDatum2Bezeichnung.Text);
             this.Close();            
         }
 

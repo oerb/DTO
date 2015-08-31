@@ -2,6 +2,9 @@
     
     
     public partial class Database1DataSet_MSGTYPES {
+        partial class TableDataTable
+        {
+        }
     }
 }
 

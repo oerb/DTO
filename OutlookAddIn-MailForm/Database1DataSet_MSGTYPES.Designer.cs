@@ -285,6 +285,18 @@ namespace OutlookAddIn_MailForm {
             
             private global::System.Data.DataColumn columnFilelocation;
             
+            private global::System.Data.DataColumn columnDokuart;
+            
+            private global::System.Data.DataColumn columnVorgangKZ;
+            
+            private global::System.Data.DataColumn columnDatum1show;
+            
+            private global::System.Data.DataColumn columnDatum1Name;
+            
+            private global::System.Data.DataColumn columnDatum2show;
+            
+            private global::System.Data.DataColumn columnDatum2Name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TableDataTable() {
@@ -344,6 +356,54 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DokuartColumn {
+                get {
+                    return this.columnDokuart;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VorgangKZColumn {
+                get {
+                    return this.columnVorgangKZ;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Datum1showColumn {
+                get {
+                    return this.columnDatum1show;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Datum1NameColumn {
+                get {
+                    return this.columnDatum1Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Datum2showColumn {
+                get {
+                    return this.columnDatum2show;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Datum2NameColumn {
+                get {
+                    return this.columnDatum2Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -379,12 +439,18 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableRow AddTableRow(string MSGtyp, string Filelocation) {
+            public TableRow AddTableRow(string MSGtyp, string Filelocation, string Dokuart, string VorgangKZ, bool Datum1show, string Datum1Name, bool Datum2show, string Datum2Name) {
                 TableRow rowTableRow = ((TableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         MSGtyp,
-                        Filelocation};
+                        Filelocation,
+                        Dokuart,
+                        VorgangKZ,
+                        Datum1show,
+                        Datum1Name,
+                        Datum2show,
+                        Datum2Name};
                 rowTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTableRow);
                 return rowTableRow;
@@ -417,6 +483,12 @@ namespace OutlookAddIn_MailForm {
                 this.columnId = base.Columns["Id"];
                 this.columnMSGtyp = base.Columns["MSGtyp"];
                 this.columnFilelocation = base.Columns["Filelocation"];
+                this.columnDokuart = base.Columns["Dokuart"];
+                this.columnVorgangKZ = base.Columns["VorgangKZ"];
+                this.columnDatum1show = base.Columns["Datum1show"];
+                this.columnDatum1Name = base.Columns["Datum1Name"];
+                this.columnDatum2show = base.Columns["Datum2show"];
+                this.columnDatum2Name = base.Columns["Datum2Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -428,6 +500,18 @@ namespace OutlookAddIn_MailForm {
                 base.Columns.Add(this.columnMSGtyp);
                 this.columnFilelocation = new global::System.Data.DataColumn("Filelocation", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFilelocation);
+                this.columnDokuart = new global::System.Data.DataColumn("Dokuart", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDokuart);
+                this.columnVorgangKZ = new global::System.Data.DataColumn("VorgangKZ", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVorgangKZ);
+                this.columnDatum1show = new global::System.Data.DataColumn("Datum1show", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatum1show);
+                this.columnDatum1Name = new global::System.Data.DataColumn("Datum1Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatum1Name);
+                this.columnDatum2show = new global::System.Data.DataColumn("Datum2show", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatum2show);
+                this.columnDatum2Name = new global::System.Data.DataColumn("Datum2Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatum2Name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -438,6 +522,10 @@ namespace OutlookAddIn_MailForm {
                 this.columnId.Unique = true;
                 this.columnMSGtyp.MaxLength = 50;
                 this.columnFilelocation.MaxLength = 2147483647;
+                this.columnDokuart.MaxLength = 50;
+                this.columnVorgangKZ.MaxLength = 50;
+                this.columnDatum1Name.MaxLength = 20;
+                this.columnDatum2Name.MaxLength = 20;
                 this.ExtendedProperties.Add("Generator_RowClassName", "TableRow");
                 this.ExtendedProperties.Add("Generator_RowEvArgName", "TableRowChangeEvent");
                 this.ExtendedProperties.Add("Generator_RowEvHandlerName", "TableRowChangeEventHandler");
@@ -630,6 +718,102 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Dokuart {
+                get {
+                    try {
+                        return ((string)(this[this.tableTable.DokuartColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dokuart\' in table \'Table\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTable.DokuartColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VorgangKZ {
+                get {
+                    try {
+                        return ((string)(this[this.tableTable.VorgangKZColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VorgangKZ\' in table \'Table\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTable.VorgangKZColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Datum1show {
+                get {
+                    try {
+                        return ((bool)(this[this.tableTable.Datum1showColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Datum1show\' in table \'Table\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTable.Datum1showColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Datum1Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableTable.Datum1NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Datum1Name\' in table \'Table\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTable.Datum1NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Datum2show {
+                get {
+                    try {
+                        return ((bool)(this[this.tableTable.Datum2showColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Datum2show\' in table \'Table\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTable.Datum2showColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Datum2Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableTable.Datum2NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Datum2Name\' in table \'Table\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTable.Datum2NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMSGtypNull() {
                 return this.IsNull(this.tableTable.MSGtypColumn);
             }
@@ -650,6 +834,78 @@ namespace OutlookAddIn_MailForm {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetFilelocationNull() {
                 this[this.tableTable.FilelocationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDokuartNull() {
+                return this.IsNull(this.tableTable.DokuartColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDokuartNull() {
+                this[this.tableTable.DokuartColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVorgangKZNull() {
+                return this.IsNull(this.tableTable.VorgangKZColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVorgangKZNull() {
+                this[this.tableTable.VorgangKZColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDatum1showNull() {
+                return this.IsNull(this.tableTable.Datum1showColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDatum1showNull() {
+                this[this.tableTable.Datum1showColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDatum1NameNull() {
+                return this.IsNull(this.tableTable.Datum1NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDatum1NameNull() {
+                this[this.tableTable.Datum1NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDatum2showNull() {
+                return this.IsNull(this.tableTable.Datum2showColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDatum2showNull() {
+                this[this.tableTable.Datum2showColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDatum2NameNull() {
+                return this.IsNull(this.tableTable.Datum2NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDatum2NameNull() {
+                this[this.tableTable.Datum2NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -815,35 +1071,73 @@ namespace OutlookAddIn_MailForm.Database1DataSet_MSGTYPESTableAdapters {
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("MSGtyp", "MSGtyp");
             tableMapping.ColumnMappings.Add("Filelocation", "Filelocation");
+            tableMapping.ColumnMappings.Add("Dokuart", "Dokuart");
+            tableMapping.ColumnMappings.Add("VorgangKZ", "VorgangKZ");
+            tableMapping.ColumnMappings.Add("Datum1show", "Datum1show");
+            tableMapping.ColumnMappings.Add("Datum1Name", "Datum1Name");
+            tableMapping.ColumnMappings.Add("Datum2show", "Datum2show");
+            tableMapping.ColumnMappings.Add("Datum2Name", "Datum2Name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Table] WHERE (([Id] = @Original_Id) AND ((@IsNull_MSGtyp = 1 A" +
-                "ND [MSGtyp] IS NULL) OR ([MSGtyp] = @Original_MSGtyp)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Table] WHERE (([Id] = @Original_Id) AND ((@IsNull_MSGtyp = 1 AND [MSGtyp] IS NULL) OR ([MSGtyp] = @Original_MSGtyp)) AND ((@IsNull_Dokuart = 1 AND [Dokuart] IS NULL) OR ([Dokuart] = @Original_Dokuart)) AND ((@IsNull_VorgangKZ = 1 AND [VorgangKZ] IS NULL) OR ([VorgangKZ] = @Original_VorgangKZ)) AND ((@IsNull_Datum1show = 1 AND [Datum1show] IS NULL) OR ([Datum1show] = @Original_Datum1show)) AND ((@IsNull_Datum1Name = 1 AND [Datum1Name] IS NULL) OR ([Datum1Name] = @Original_Datum1Name)) AND ((@IsNull_Datum2show = 1 AND [Datum2show] IS NULL) OR ([Datum2show] = @Original_Datum2show)) AND ((@IsNull_Datum2Name = 1 AND [Datum2Name] IS NULL) OR ([Datum2Name] = @Original_Datum2Name)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MSGtyp", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MSGtyp", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MSGtyp", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MSGtyp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Dokuart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dokuart", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Dokuart", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dokuart", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_VorgangKZ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VorgangKZ", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VorgangKZ", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VorgangKZ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum1show", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1show", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum1show", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1show", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum1Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum1Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum2show", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2show", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum2show", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2show", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum2Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum2Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Table] ([MSGtyp], [Filelocation]) VALUES (@MSGtyp, @Filelocati" +
-                "on);\r\nSELECT Id, MSGtyp, Filelocation FROM [Table] WHERE (Id = SCOPE_IDENTITY())" +
-                "";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Table] ([MSGtyp], [Filelocation], [Dokuart], [VorgangKZ], [Datum1show], [Datum1Name], [Datum2show], [Datum2Name]) VALUES (@MSGtyp, @Filelocation, @Dokuart, @VorgangKZ, @Datum1show, @Datum1Name, @Datum2show, @Datum2Name);
+SELECT Id, MSGtyp, Filelocation, Dokuart, VorgangKZ, Datum1show, Datum1Name, Datum2show, Datum2Name FROM [Table] WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MSGtyp", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MSGtyp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Filelocation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Filelocation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dokuart", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dokuart", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VorgangKZ", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VorgangKZ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum1show", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1show", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum1Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum2show", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2show", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum2Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Table] SET [MSGtyp] = @MSGtyp, [Filelocation] = @Filelocation WHERE" +
-                " (([Id] = @Original_Id) AND ((@IsNull_MSGtyp = 1 AND [MSGtyp] IS NULL) OR ([MSGt" +
-                "yp] = @Original_MSGtyp)));\r\nSELECT Id, MSGtyp, Filelocation FROM [Table] WHERE (" +
-                "Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Table] SET [MSGtyp] = @MSGtyp, [Filelocation] = @Filelocation, [Dokuart] = @Dokuart, [VorgangKZ] = @VorgangKZ, [Datum1show] = @Datum1show, [Datum1Name] = @Datum1Name, [Datum2show] = @Datum2show, [Datum2Name] = @Datum2Name WHERE (([Id] = @Original_Id) AND ((@IsNull_MSGtyp = 1 AND [MSGtyp] IS NULL) OR ([MSGtyp] = @Original_MSGtyp)) AND ((@IsNull_Dokuart = 1 AND [Dokuart] IS NULL) OR ([Dokuart] = @Original_Dokuart)) AND ((@IsNull_VorgangKZ = 1 AND [VorgangKZ] IS NULL) OR ([VorgangKZ] = @Original_VorgangKZ)) AND ((@IsNull_Datum1show = 1 AND [Datum1show] IS NULL) OR ([Datum1show] = @Original_Datum1show)) AND ((@IsNull_Datum1Name = 1 AND [Datum1Name] IS NULL) OR ([Datum1Name] = @Original_Datum1Name)) AND ((@IsNull_Datum2show = 1 AND [Datum2show] IS NULL) OR ([Datum2show] = @Original_Datum2show)) AND ((@IsNull_Datum2Name = 1 AND [Datum2Name] IS NULL) OR ([Datum2Name] = @Original_Datum2Name)));
+SELECT Id, MSGtyp, Filelocation, Dokuart, VorgangKZ, Datum1show, Datum1Name, Datum2show, Datum2Name FROM [Table] WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MSGtyp", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MSGtyp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Filelocation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Filelocation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dokuart", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dokuart", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VorgangKZ", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VorgangKZ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum1show", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1show", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum1Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum2show", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2show", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum2Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MSGtyp", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MSGtyp", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MSGtyp", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MSGtyp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Dokuart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dokuart", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Dokuart", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dokuart", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_VorgangKZ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VorgangKZ", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VorgangKZ", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VorgangKZ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum1show", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1show", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum1show", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1show", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum1Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum1Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum1Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum2show", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2show", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum2show", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2show", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum2Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum2Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum2Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -851,7 +1145,7 @@ namespace OutlookAddIn_MailForm.Database1DataSet_MSGTYPESTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::OutlookAddIn_MailForm.Properties.Settings.Default.Database1ConnectionStringNew_MSGTYPE;
+            //this._connection.ConnectionString = global::DTO.Properties.Settings.Default.Database1ConnectionStringNew_MSGTYPE;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -860,7 +1154,8 @@ namespace OutlookAddIn_MailForm.Database1DataSet_MSGTYPESTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, MSGtyp, Filelocation FROM dbo.[Table]";
+            this._commandCollection[0].CommandText = "SELECT Id, MSGtyp, Filelocation, Dokuart, VorgangKZ, Datum1show, Datum1Name, Datu" +
+                "m2show, Datum2Name\r\nFROM     [Table]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -869,7 +1164,8 @@ namespace OutlookAddIn_MailForm.Database1DataSet_MSGTYPESTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT TOP 1 * FROM dbo.[Table] WHERE ([Id] = @Original_Id)";
+            this._commandCollection[2].CommandText = "SELECT TOP (1) Datum1Name, Datum1show, Datum2Name, Datum2show, Dokuart, Filelocat" +
+                "ion, Id, MSGtyp, VorgangKZ FROM [Table] WHERE (Id = @Original_Id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
@@ -975,7 +1271,7 @@ namespace OutlookAddIn_MailForm.Database1DataSet_MSGTYPESTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_MSGtyp) {
+        public virtual int Delete(int Original_Id, string Original_MSGtyp, string Original_Dokuart, string Original_VorgangKZ, global::System.Nullable<bool> Original_Datum1show, string Original_Datum1Name, global::System.Nullable<bool> Original_Datum2show, string Original_Datum2Name) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_MSGtyp == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -984,6 +1280,54 @@ namespace OutlookAddIn_MailForm.Database1DataSet_MSGTYPESTableAdapters {
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_MSGtyp));
+            }
+            if ((Original_Dokuart == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Dokuart));
+            }
+            if ((Original_VorgangKZ == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_VorgangKZ));
+            }
+            if ((Original_Datum1show.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((bool)(Original_Datum1show.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Datum1Name == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Datum1Name));
+            }
+            if ((Original_Datum2show.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((bool)(Original_Datum2show.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Datum2Name == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Datum2Name));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1005,7 +1349,7 @@ namespace OutlookAddIn_MailForm.Database1DataSet_MSGTYPESTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string MSGtyp, string Filelocation) {
+        public virtual int Insert(string MSGtyp, string Filelocation, string Dokuart, string VorgangKZ, global::System.Nullable<bool> Datum1show, string Datum1Name, global::System.Nullable<bool> Datum2show, string Datum2Name) {
             if ((MSGtyp == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1017,6 +1361,42 @@ namespace OutlookAddIn_MailForm.Database1DataSet_MSGTYPESTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Filelocation));
+            }
+            if ((Dokuart == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Dokuart));
+            }
+            if ((VorgangKZ == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(VorgangKZ));
+            }
+            if ((Datum1show.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(Datum1show.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Datum1Name == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Datum1Name));
+            }
+            if ((Datum2show.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(Datum2show.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Datum2Name == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Datum2Name));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1038,7 +1418,24 @@ namespace OutlookAddIn_MailForm.Database1DataSet_MSGTYPESTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MSGtyp, string Filelocation, int Original_Id, string Original_MSGtyp, int Id) {
+        public virtual int Update(
+                    string MSGtyp, 
+                    string Filelocation, 
+                    string Dokuart, 
+                    string VorgangKZ, 
+                    global::System.Nullable<bool> Datum1show, 
+                    string Datum1Name, 
+                    global::System.Nullable<bool> Datum2show, 
+                    string Datum2Name, 
+                    int Original_Id, 
+                    string Original_MSGtyp, 
+                    string Original_Dokuart, 
+                    string Original_VorgangKZ, 
+                    global::System.Nullable<bool> Original_Datum1show, 
+                    string Original_Datum1Name, 
+                    global::System.Nullable<bool> Original_Datum2show, 
+                    string Original_Datum2Name, 
+                    int Id) {
             if ((MSGtyp == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1051,16 +1448,100 @@ namespace OutlookAddIn_MailForm.Database1DataSet_MSGTYPESTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Filelocation));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Id));
-            if ((Original_MSGtyp == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((Dokuart == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_MSGtyp));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Dokuart));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Id));
+            if ((VorgangKZ == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(VorgangKZ));
+            }
+            if ((Datum1show.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((bool)(Datum1show.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Datum1Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Datum1Name));
+            }
+            if ((Datum2show.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Datum2show.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Datum2Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Datum2Name));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id));
+            if ((Original_MSGtyp == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_MSGtyp));
+            }
+            if ((Original_Dokuart == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Dokuart));
+            }
+            if ((Original_VorgangKZ == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_VorgangKZ));
+            }
+            if ((Original_Datum1show.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((bool)(Original_Datum1show.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Datum1Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Datum1Name));
+            }
+            if ((Original_Datum2show.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((bool)(Original_Datum2show.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Datum2Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Datum2Name));
+            }
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1081,8 +1562,24 @@ namespace OutlookAddIn_MailForm.Database1DataSet_MSGTYPESTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MSGtyp, string Filelocation, int Original_Id, string Original_MSGtyp) {
-            return this.Update(MSGtyp, Filelocation, Original_Id, Original_MSGtyp, Original_Id);
+        public virtual int Update(
+                    string MSGtyp, 
+                    string Filelocation, 
+                    string Dokuart, 
+                    string VorgangKZ, 
+                    global::System.Nullable<bool> Datum1show, 
+                    string Datum1Name, 
+                    global::System.Nullable<bool> Datum2show, 
+                    string Datum2Name, 
+                    int Original_Id, 
+                    string Original_MSGtyp, 
+                    string Original_Dokuart, 
+                    string Original_VorgangKZ, 
+                    global::System.Nullable<bool> Original_Datum1show, 
+                    string Original_Datum1Name, 
+                    global::System.Nullable<bool> Original_Datum2show, 
+                    string Original_Datum2Name) {
+            return this.Update(MSGtyp, Filelocation, Dokuart, VorgangKZ, Datum1show, Datum1Name, Datum2show, Datum2Name, Original_Id, Original_MSGtyp, Original_Dokuart, Original_VorgangKZ, Original_Datum1show, Original_Datum1Name, Original_Datum2show, Original_Datum2Name, Original_Id);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

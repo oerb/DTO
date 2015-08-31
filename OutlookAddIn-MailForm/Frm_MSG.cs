@@ -110,7 +110,7 @@ namespace OutlookAddIn_MailForm
                     return 0;
                 }
             }
-            set { this.txt_Mieter.Text = value.ToString(); this.lbl_Wohnung.Text = ""; }
+            set { this.txt_Mieter.Text = value.ToString(); }
         }
 
         // NE = wohnung
