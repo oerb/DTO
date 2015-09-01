@@ -119,11 +119,16 @@ namespace OutlookAddIn_MailForm
                         frm_MSG.lbl_haus_txt.Text;
                 }
                 // Parsing a nice Subject String out of the Form
-                string subject = "U/W/H/WO:"+ frm_MSG.mandant.ToString() + "/ " + frm_MSG.txt_objekt.Text + "/ " +
-                    frm_MSG.HausNr.ToString()  + wohnung
-                     + mieter + kreditor +
-                     " : " + myStorageItem.Subject + " : " +
-                    frm_MSG.txb_Subject.Text;
+                string subject = "";
+                //if (true)
+                //{
+                //    subject = "U/W/H/WO:" + frm_MSG.mandant.ToString() + "/ " + frm_MSG.txt_objekt.Text + "/ " +
+                //    frm_MSG.HausNr.ToString() + wohnung
+                //     + mieter + kreditor +
+                //     " : " + myStorageItem.Subject + " : " +
+                //    frm_MSG.txb_Subject.Text;
+                //}                
+                subject = myStorageItem.Subject + " : " + frm_MSG.txb_Subject.Text;
                 myMailItem.Subject = subject;
                 // set prefillifo about E-Mail in Mail-TO:
                 myMailItem.To = frm_MSG.eMail;
@@ -146,28 +151,54 @@ namespace OutlookAddIn_MailForm
             string datum1 = msg_parameter.datum1.ToString("dd.MM.yyyy");
             string datum2 = msg_parameter.datum2.ToString("dd.MM.yyyy");
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Mandant]", msg_parameter.Mandant.ToString());
+            myMailItem.Subject = myMailItem.Subject.Replace("[Mandant]", msg_parameter.Mandant.ToString());
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Unternehmen]", msg_parameter.Unternehmen.ToString());
+            myMailItem.Subject = myMailItem.Subject.Replace("[Unternehmen]", msg_parameter.Unternehmen.ToString());
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[WE]", msg_parameter.WE.ToString());
+            myMailItem.Subject = myMailItem.Subject.Replace("[WE]", msg_parameter.WE.ToString());
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[HAUSNR]", msg_parameter.HausNr.ToString());
+            myMailItem.Subject = myMailItem.Subject.Replace("[HAUSNR]", msg_parameter.HausNr.ToString());
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[NE]", msg_parameter.Wohnung.ToString());
+            myMailItem.Subject = myMailItem.Subject.Replace("[NE]", msg_parameter.Wohnung.ToString());
             string adr = Globals.ThisAddIn.msg_parameter.AdresseNr.ToString();
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[ADRNR]", adr);
+            myMailItem.Subject = myMailItem.Subject.Replace("[ADRNR]", adr);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[DOKUART]", msg_parameter.DokuArt);
+            myMailItem.Subject = myMailItem.Subject.Replace("[DOKUART]", msg_parameter.DokuArt);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[VORGANGKZ]", msg_parameter.VorgangKZ);
+            myMailItem.Subject = myMailItem.Subject.Replace("[VORGANGKZ]", msg_parameter.VorgangKZ);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[FOLGENR]", msg_parameter.FolgeNr.ToString());
+            myMailItem.Subject = myMailItem.Subject.Replace("[FOLGENR]", msg_parameter.FolgeNr.ToString());
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Name]", msg_parameter.Name);
+            myMailItem.Subject = myMailItem.Subject.Replace("[Name]", msg_parameter.Name);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Vorname]", msg_parameter.Vorname);
+            myMailItem.Subject = myMailItem.Subject.Replace("[Vorname]", msg_parameter.Vorname);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Sachbearbeiter]", Globals.ThisAddIn.SachBearb);
-            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Datum1]", datum1);          
+            myMailItem.Subject = myMailItem.Subject.Replace("[Sachbearbeiter]", Globals.ThisAddIn.SachBearb);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Datum1]", datum1);
+            myMailItem.Subject = myMailItem.Subject.Replace("[Datum1]", datum1);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[Datum2]", datum2 );
+            myMailItem.Subject = myMailItem.Subject.Replace("[Datum2]", datum2);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[WEBEZEICHNUNG]", msg_parameter.WeBeszeichnung);
+            myMailItem.Subject = myMailItem.Subject.Replace("[WEBEZEICHNUNG]", msg_parameter.WeBeszeichnung);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[NESTRASSE]", msg_parameter.NeStrasse);
+            myMailItem.Subject = myMailItem.Subject.Replace("[NESTRASSE]", msg_parameter.NeStrasse);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[NEORT]", msg_parameter.NeOrt);
+            myMailItem.Subject = myMailItem.Subject.Replace("[NEORT]", msg_parameter.NeOrt);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[NEETAGE]", msg_parameter.NeEtage);
+            myMailItem.Subject = myMailItem.Subject.Replace("[NEETAGE]", msg_parameter.NeEtage);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[MITEL]", msg_parameter.MiTel);
+            myMailItem.Subject = myMailItem.Subject.Replace("[MITEL]", msg_parameter.MiTel);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[MITEL2]", msg_parameter.MiTel2);
+            myMailItem.Subject = myMailItem.Subject.Replace("[MITEL2]", msg_parameter.MiTel2);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[MIMOB]", msg_parameter.MiMob);
+            myMailItem.Subject = myMailItem.Subject.Replace("[MIMOB]", msg_parameter.MiMob);
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[KREDITORNAME]", msg_parameter.KreditorName);
+            myMailItem.Subject = myMailItem.Subject.Replace("[KREDITORNAME]", msg_parameter.KreditorName);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[KREDITOR]", msg_parameter.KreditorAdr.ToString());
+            myMailItem.Subject = myMailItem.Subject.Replace("[KREDITOR]", msg_parameter.KreditorAdr.ToString());
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[BRIEFANREDE]", msg_parameter.BriefAnrede);
+            myMailItem.Subject = myMailItem.Subject.Replace("[BRIEFANREDE]", msg_parameter.BriefAnrede);
             // TODO: Remove this Helper MSGBox
             //string msgtext = "Datum1 ist: " + datum1 + " Datum2 ist: " + datum2 + " AdresseNr: " + adr;
             //MessageBox.Show(msgtext);

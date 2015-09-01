@@ -67,6 +67,8 @@
             this.dataSet1_WoWi_Mandant = new OutlookAddIn_MailForm.DataSet1_WoWi_Mandant();
             this.mandantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mandantTableAdapter = new OutlookAddIn_MailForm.DataSet1_WoWi_MandantTableAdapters.MandantTableAdapter();
+            this.tblBriefanredeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblBriefanredeTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblBriefanredeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TableSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xyMieterBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1WOWISEARCHBindingSource)).BeginInit();
@@ -88,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblAdresseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Mandant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mandantBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblBriefanredeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_TableSelect
@@ -316,6 +319,15 @@
             // 
             this.mandantTableAdapter.ClearBeforeFill = true;
             // 
+            // tblBriefanredeBindingSource
+            // 
+            this.tblBriefanredeBindingSource.DataMember = "tblBriefanrede";
+            this.tblBriefanredeBindingSource.DataSource = this.dataSet1WOWISEARCHBindingSource;
+            // 
+            // tblBriefanredeTableAdapter
+            // 
+            this.tblBriefanredeTableAdapter.ClearBeforeFill = true;
+            // 
             // Frm_Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -354,6 +366,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblAdresseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Mandant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mandantBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblBriefanredeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,6 +411,8 @@
         private DataSet1_WOWI_SEARCHTableAdapters.tblWohnungTableAdapter tblWohnungTableAdapter;
         private System.Windows.Forms.BindingSource tblAdresseBindingSource;
         private DataSet1_WOWI_SEARCHTableAdapters.tblAdresseTableAdapter tblAdresseTableAdapter;
+        private System.Windows.Forms.BindingSource tblBriefanredeBindingSource;
+        private DataSet1_WOWI_SEARCHTableAdapters.tblBriefanredeTableAdapter tblBriefanredeTableAdapter;
         //private DataSet1_WoWi_KreditorTableAdapters.Kreditor_AdresseTableAdapter kreditor_AdresseTableAdapter;
     }
 }

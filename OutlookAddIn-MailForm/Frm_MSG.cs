@@ -243,7 +243,7 @@ namespace OutlookAddIn_MailForm
                 if (this.txt_kreditor.Text != "")
                 {
                     this.kreditor = int.Parse(this.txt_kreditor.Text);
-                    Globals.ThisAddIn.msg_parameter.AdresseNr = this.kreditor;
+                    Globals.ThisAddIn.msg_parameter.KreditorAdr = this.kreditor;
                     
                 }   
             }

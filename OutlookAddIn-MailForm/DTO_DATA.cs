@@ -36,6 +36,9 @@ namespace OutlookAddIn_MailForm
         public string MiTel2 = "";
         public string MiMob = "";
         public string KreditorName = "";
+        public string KreditorEmail = "";
+        public int KreditorAdr = 0;
+        public string BriefAnrede = "";
 
     }
 }

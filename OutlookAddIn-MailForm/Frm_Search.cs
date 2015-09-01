@@ -162,8 +162,8 @@ namespace OutlookAddIn_MailForm
                         this.ParentForm.lbl_kreditor_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
                         this.ParentForm.lbl_kreditor_txt.Visible = true;
                         this.ParentForm.eMail = dgv_TableSelect.SelectedRows[0].Cells[19].Value.ToString();
-                        Globals.ThisAddIn.msg_parameter.Vorname = dgv_TableSelect.SelectedRows[0].Cells[4].Value.ToString();
-                        Globals.ThisAddIn.msg_parameter.Name = dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString();
+                        //Globals.ThisAddIn.msg_parameter.Vorname = dgv_TableSelect.SelectedRows[0].Cells[4].Value.ToString();
+                        //Globals.ThisAddIn.msg_parameter.Name = dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString();
                         string KreditorBez = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
                         Globals.ThisAddIn.msg_parameter.KreditorName = KreditorBez;
                         break;
@@ -219,6 +219,7 @@ namespace OutlookAddIn_MailForm
                         string MiTel2 = dgv_TableSelect.SelectedRows[0].Cells[20].Value.ToString();
                         MiTel2 += " / " + dgv_TableSelect.SelectedRows[0].Cells[21].Value.ToString();
                         Globals.ThisAddIn.msg_parameter.MiTel2 = MiTel2;
+                        Globals.ThisAddIn.msg_parameter.Mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[2].Value;
                         //Getting Etage and Fill it to Form and Global Data
                         //***Begin***
                         DataSet1_WOWI_SEARCH.tblWohnungDataTable wohnungTable;                        
@@ -243,6 +244,12 @@ namespace OutlookAddIn_MailForm
                             Globals.ThisAddIn.msg_parameter.WeBeszeichnung = webez; 
                         }
                         //***End***
+                        DataSet1_WOWI_SEARCH.tblBriefanredeDataTable anredeTable;
+                        anredeTable = this.tblBriefanredeTableAdapter.GetByNr((int)dgv_TableSelect.SelectedRows[0].Cells[24].Value);
+                        if (anredeTable.Rows.Count > 0)
+                        {
+                            Globals.ThisAddIn.msg_parameter.BriefAnrede = anredeTable[0].BriefAnrText;
+                        }
                         break;
                     }
                 case "me":
