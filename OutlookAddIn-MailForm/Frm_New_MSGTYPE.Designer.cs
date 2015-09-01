@@ -150,10 +150,10 @@
             // lbl_vorgangkz
             // 
             this.lbl_vorgangkz.AutoSize = true;
-            this.lbl_vorgangkz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_vorgangkz.Location = new System.Drawing.Point(9, 50);
+            this.lbl_vorgangkz.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_vorgangkz.Location = new System.Drawing.Point(10, 54);
             this.lbl_vorgangkz.Name = "lbl_vorgangkz";
-            this.lbl_vorgangkz.Size = new System.Drawing.Size(118, 25);
+            this.lbl_vorgangkz.Size = new System.Drawing.Size(96, 20);
             this.lbl_vorgangkz.TabIndex = 48;
             this.lbl_vorgangkz.Text = "Vorgang KZ";
             // 
@@ -186,10 +186,10 @@
             // lbl_dokuart
             // 
             this.lbl_dokuart.AutoSize = true;
-            this.lbl_dokuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dokuart.Location = new System.Drawing.Point(9, 21);
+            this.lbl_dokuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dokuart.Location = new System.Drawing.Point(10, 25);
             this.lbl_dokuart.Name = "lbl_dokuart";
-            this.lbl_dokuart.Size = new System.Drawing.Size(80, 25);
+            this.lbl_dokuart.Size = new System.Drawing.Size(68, 20);
             this.lbl_dokuart.TabIndex = 46;
             this.lbl_dokuart.Text = "Dokuart";
             // 
@@ -243,10 +243,10 @@
             // lblDatum2
             // 
             this.lblDatum2.AutoSize = true;
-            this.lblDatum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatum2.Location = new System.Drawing.Point(9, 116);
+            this.lblDatum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatum2.Location = new System.Drawing.Point(10, 118);
             this.lblDatum2.Name = "lblDatum2";
-            this.lblDatum2.Size = new System.Drawing.Size(171, 25);
+            this.lblDatum2.Size = new System.Drawing.Size(147, 20);
             this.lblDatum2.TabIndex = 53;
             this.lblDatum2.Text = "Datum2 Bezeichn.";
             // 
@@ -272,10 +272,10 @@
             // lblDatumBezeichnung
             // 
             this.lblDatumBezeichnung.AutoSize = true;
-            this.lblDatumBezeichnung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatumBezeichnung.Location = new System.Drawing.Point(9, 88);
+            this.lblDatumBezeichnung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatumBezeichnung.Location = new System.Drawing.Point(10, 90);
             this.lblDatumBezeichnung.Name = "lblDatumBezeichnung";
-            this.lblDatumBezeichnung.Size = new System.Drawing.Size(171, 25);
+            this.lblDatumBezeichnung.Size = new System.Drawing.Size(147, 20);
             this.lblDatumBezeichnung.TabIndex = 50;
             this.lblDatumBezeichnung.Text = "Datum1 Bezeichn.";
             // 

@@ -1040,6 +1040,10 @@ namespace OutlookAddIn_MailForm {
             
             private global::System.Data.DataColumn columnOrtname;
             
+            private global::System.Data.DataColumn columnEtage;
+            
+            private global::System.Data.DataColumn columnWohnlageText;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tblWohnungDataTable() {
@@ -1147,6 +1151,22 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EtageColumn {
+                get {
+                    return this.columnEtage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn WohnlageTextColumn {
+                get {
+                    return this.columnWohnlageText;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1182,7 +1202,7 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblWohnungRow AddtblWohnungRow(string Strasse, string GeschossText, int MandantNr, int Unternehmen, int WE, int HausNr, int WohnNr, string WohnNrZus, string Ortname) {
+            public tblWohnungRow AddtblWohnungRow(string Strasse, string GeschossText, int MandantNr, int Unternehmen, int WE, int HausNr, int WohnNr, string WohnNrZus, string Ortname, int Etage, string WohnlageText) {
                 tblWohnungRow rowtblWohnungRow = ((tblWohnungRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Strasse,
@@ -1193,7 +1213,9 @@ namespace OutlookAddIn_MailForm {
                         HausNr,
                         WohnNr,
                         WohnNrZus,
-                        Ortname};
+                        Ortname,
+                        Etage,
+                        WohnlageText};
                 rowtblWohnungRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblWohnungRow);
                 return rowtblWohnungRow;
@@ -1225,6 +1247,8 @@ namespace OutlookAddIn_MailForm {
                 this.columnWohnNr = base.Columns["WohnNr"];
                 this.columnWohnNrZus = base.Columns["WohnNrZus"];
                 this.columnOrtname = base.Columns["Ortname"];
+                this.columnEtage = base.Columns["Etage"];
+                this.columnWohnlageText = base.Columns["WohnlageText"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1248,6 +1272,10 @@ namespace OutlookAddIn_MailForm {
                 base.Columns.Add(this.columnWohnNrZus);
                 this.columnOrtname = new global::System.Data.DataColumn("Ortname", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOrtname);
+                this.columnEtage = new global::System.Data.DataColumn("Etage", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEtage);
+                this.columnWohnlageText = new global::System.Data.DataColumn("WohnlageText", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWohnlageText);
                 this.columnStrasse.ReadOnly = true;
                 this.columnStrasse.MaxLength = 100;
                 this.columnGeschossText.ReadOnly = true;
@@ -1261,6 +1289,9 @@ namespace OutlookAddIn_MailForm {
                 this.columnWohnNrZus.MaxLength = 2;
                 this.columnOrtname.ReadOnly = true;
                 this.columnOrtname.MaxLength = 100;
+                this.columnEtage.ReadOnly = true;
+                this.columnWohnlageText.ReadOnly = true;
+                this.columnWohnlageText.MaxLength = 60;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2598,6 +2629,38 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Etage {
+                get {
+                    try {
+                        return ((int)(this[this.tabletblWohnung.EtageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Etage\' in table \'tblWohnung\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblWohnung.EtageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WohnlageText {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblWohnung.WohnlageTextColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WohnlageText\' in table \'tblWohnung\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblWohnung.WohnlageTextColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsStrasseNull() {
                 return this.IsNull(this.tabletblWohnung.StrasseColumn);
             }
@@ -2702,6 +2765,30 @@ namespace OutlookAddIn_MailForm {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetOrtnameNull() {
                 this[this.tabletblWohnung.OrtnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEtageNull() {
+                return this.IsNull(this.tabletblWohnung.EtageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEtageNull() {
+                this[this.tabletblWohnung.EtageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWohnlageTextNull() {
+                return this.IsNull(this.tabletblWohnung.WohnlageTextColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWohnlageTextNull() {
+                this[this.tabletblWohnung.WohnlageTextColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3493,6 +3580,8 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
             tableMapping.ColumnMappings.Add("WohnNr", "WohnNr");
             tableMapping.ColumnMappings.Add("WohnNrZus", "WohnNrZus");
             tableMapping.ColumnMappings.Add("Ortname", "Ortname");
+            tableMapping.ColumnMappings.Add("Etage", "Etage");
+            tableMapping.ColumnMappings.Add("WohnlageText", "WohnlageText");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3506,14 +3595,15 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[2];
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[3];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT PUB.Wohnungstamm.Strasse, PUB.Geschoss.GeschossText, PUB.Wohnungstamm.Ortname, PUB.Wohnungstamm.MandantNr, PUB.Wohnungstamm.Unternehmen, 
-                  PUB.Wohnungstamm.WE, PUB.Wohnungstamm.HausNr, PUB.Wohnungstamm.WohnNr, PUB.Wohnungstamm.WohnNrZus
-FROM     PUB.Wohnungstamm, PUB.Geschoss
-WHERE  PUB.Wohnungstamm.GeschossNr = PUB.Geschoss.GeschossNr AND (PUB.Wohnungstamm.Unternehmen = ?) AND (PUB.Wohnungstamm.WE = ?) AND 
-                  (PUB.Wohnungstamm.HausNr = ?)
+                  PUB.Wohnungstamm.WE, PUB.Wohnungstamm.HausNr, PUB.Wohnungstamm.WohnNr, PUB.Wohnungstamm.WohnNrZus, PUB.Wohnungstamm.Etage, 
+                  PUB.Wohnlage.WohnlageText
+FROM     PUB.Wohnungstamm, PUB.Geschoss, PUB.Wohnlage
+WHERE  PUB.Wohnungstamm.GeschossNr = PUB.Geschoss.GeschossNr AND PUB.Wohnungstamm.WohnlageNr = PUB.Wohnlage.WohnlageNr AND 
+                  (PUB.Wohnungstamm.Unternehmen = ?) AND (PUB.Wohnungstamm.WE = ?) AND (PUB.Wohnungstamm.HausNr = ?)
 ORDER BY PUB.Wohnungstamm.Strasse, PUB.Geschoss.GeschossText";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
@@ -3522,13 +3612,28 @@ ORDER BY PUB.Wohnungstamm.Strasse, PUB.Geschoss.GeschossText";
             this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT PUB.Wohnungstamm.Strasse, PUB.Geschoss.GeschossText, PUB.Wohnungstamm.Ortname, PUB.Wohnungstamm.MandantNr, PUB.Wohnungstamm.Unternehmen, 
-                  PUB.Wohnungstamm.WE, PUB.Wohnungstamm.HausNr, PUB.Wohnungstamm.WohnNr, PUB.Wohnungstamm.WohnNrZus
-FROM     PUB.Wohnungstamm, PUB.Geschoss
-WHERE  PUB.Wohnungstamm.GeschossNr = PUB.Geschoss.GeschossNr AND (PUB.Wohnungstamm.Unternehmen = ?) AND (PUB.Wohnungstamm.WE = ?)
+                  PUB.Wohnungstamm.WE, PUB.Wohnungstamm.HausNr, PUB.Wohnungstamm.WohnNr, PUB.Wohnungstamm.WohnNrZus, PUB.Wohnlage.WohnlageText
+FROM     PUB.Wohnungstamm, PUB.Geschoss, PUB.Wohnlage
+WHERE  PUB.Wohnungstamm.GeschossNr = PUB.Geschoss.GeschossNr AND PUB.Wohnungstamm.WohnlageNr = PUB.Wohnlage.WohnlageNr AND 
+                  (PUB.Wohnungstamm.Unternehmen = ?) AND (PUB.Wohnungstamm.WE = ?)
 ORDER BY PUB.Wohnungstamm.Strasse, PUB.Geschoss.GeschossText";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("WE", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WE", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT PUB.Wohnungstamm.Strasse, PUB.Geschoss.GeschossText, PUB.Wohnungstamm.Ortname, PUB.Wohnungstamm.MandantNr, PUB.Wohnungstamm.Unternehmen, 
+                  PUB.Wohnungstamm.WE, PUB.Wohnungstamm.HausNr, PUB.Wohnungstamm.WohnNr, PUB.Wohnungstamm.WohnNrZus, PUB.Wohnungstamm.Etage, 
+                  PUB.Wohnlage.WohnlageText
+FROM     PUB.Wohnungstamm, PUB.Geschoss, PUB.Wohnlage
+WHERE  PUB.Wohnungstamm.GeschossNr = PUB.Geschoss.GeschossNr AND PUB.Wohnungstamm.WohnlageNr = PUB.Wohnlage.WohnlageNr AND 
+                  (PUB.Wohnungstamm.Unternehmen = ?) AND (PUB.Wohnungstamm.WE = ?) AND (PUB.Wohnungstamm.HausNr = ?) AND (PUB.Wohnungstamm.WohnNr = ?)
+ORDER BY PUB.Wohnungstamm.Strasse, PUB.Geschoss.GeschossText";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("WE", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WE", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("HausNr", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "HausNr", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("WohnNr", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WohnNr", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3565,20 +3670,10 @@ ORDER BY PUB.Wohnungstamm.Strasse, PUB.Geschoss.GeschossText";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByUnWe(DataSet1_WOWI_SEARCH.tblWohnungDataTable dataTable, global::System.Nullable<int> Unternehmen, global::System.Nullable<int> WE) {
+        public virtual int FillByUnWe(DataSet1_WOWI_SEARCH.tblWohnungDataTable dataTable, int Unternehmen, int WE) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((Unternehmen.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((WE.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(WE.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(WE));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -3590,20 +3685,42 @@ ORDER BY PUB.Wohnungstamm.Strasse, PUB.Geschoss.GeschossText";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1_WOWI_SEARCH.tblWohnungDataTable GetDataByUnWe(global::System.Nullable<int> Unternehmen, global::System.Nullable<int> WE) {
+        public virtual DataSet1_WOWI_SEARCH.tblWohnungDataTable GetDataByUnWe(int Unternehmen, int WE) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((Unternehmen.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen.Value));
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(WE));
+            DataSet1_WOWI_SEARCH.tblWohnungDataTable dataTable = new DataSet1_WOWI_SEARCH.tblWohnungDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUnWeHaNe(DataSet1_WOWI_SEARCH.tblWohnungDataTable dataTable, int Unternehmen, int WE, int HausNr, int WohnNr) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(WE));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(HausNr));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(WohnNr));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
             }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((WE.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(WE.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1_WOWI_SEARCH.tblWohnungDataTable GetDataByUnWeHaNe(int Unternehmen, int WE, int HausNr, int WohnNr) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(WE));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(HausNr));
+            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(WohnNr));
             DataSet1_WOWI_SEARCH.tblWohnungDataTable dataTable = new DataSet1_WOWI_SEARCH.tblWohnungDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

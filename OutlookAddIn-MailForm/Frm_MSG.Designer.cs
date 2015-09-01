@@ -481,38 +481,42 @@
             // 
             // dtp_Datum1
             // 
-            this.dtp_Datum1.Location = new System.Drawing.Point(98, 337);
+            this.dtp_Datum1.Location = new System.Drawing.Point(148, 337);
             this.dtp_Datum1.Name = "dtp_Datum1";
-            this.dtp_Datum1.Size = new System.Drawing.Size(200, 22);
+            this.dtp_Datum1.Size = new System.Drawing.Size(195, 22);
             this.dtp_Datum1.TabIndex = 50;
+            this.dtp_Datum1.Visible = false;
             this.dtp_Datum1.ValueChanged += new System.EventHandler(this.dtp_Datum1_ValueChanged);
             // 
             // lbl_Datum1
             // 
             this.lbl_Datum1.AutoSize = true;
-            this.lbl_Datum1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Datum1.Location = new System.Drawing.Point(12, 334);
+            this.lbl_Datum1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Datum1.Location = new System.Drawing.Point(13, 339);
             this.lbl_Datum1.Name = "lbl_Datum1";
-            this.lbl_Datum1.Size = new System.Drawing.Size(80, 25);
+            this.lbl_Datum1.Size = new System.Drawing.Size(68, 20);
             this.lbl_Datum1.TabIndex = 51;
             this.lbl_Datum1.Text = "Datum1";
+            this.lbl_Datum1.Visible = false;
             // 
             // lbl_Datum2
             // 
             this.lbl_Datum2.AutoSize = true;
-            this.lbl_Datum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Datum2.Location = new System.Drawing.Point(12, 370);
+            this.lbl_Datum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Datum2.Location = new System.Drawing.Point(13, 375);
             this.lbl_Datum2.Name = "lbl_Datum2";
-            this.lbl_Datum2.Size = new System.Drawing.Size(80, 25);
+            this.lbl_Datum2.Size = new System.Drawing.Size(68, 20);
             this.lbl_Datum2.TabIndex = 53;
             this.lbl_Datum2.Text = "Datum2";
+            this.lbl_Datum2.Visible = false;
             // 
             // dtp_Datum2
             // 
-            this.dtp_Datum2.Location = new System.Drawing.Point(98, 373);
+            this.dtp_Datum2.Location = new System.Drawing.Point(148, 373);
             this.dtp_Datum2.Name = "dtp_Datum2";
-            this.dtp_Datum2.Size = new System.Drawing.Size(200, 22);
+            this.dtp_Datum2.Size = new System.Drawing.Size(197, 22);
             this.dtp_Datum2.TabIndex = 52;
+            this.dtp_Datum2.Visible = false;
             this.dtp_Datum2.ValueChanged += new System.EventHandler(this.dtp_Datum2_ValueChanged);
             // 
             // dataSet1_WoWi_Mandant1

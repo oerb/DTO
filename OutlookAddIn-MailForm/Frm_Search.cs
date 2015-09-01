@@ -148,9 +148,6 @@ namespace OutlookAddIn_MailForm
                 case "ob":
                     {
                         this.ParentForm.txt_objekt.Text = dgv_TableSelect.SelectedRows[0].Cells[0].Value.ToString();
-                        //string Text = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
-                        //Text += ", " + dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString();
-                        //Text += ", " + dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString();
                         string Text = dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString(); //simpler for use in  subject
                         this.ParentForm.lbl_objekt_txt.Text = Text;
                         this.ParentForm.lbl_objekt_txt.Visible = true;
@@ -180,13 +177,14 @@ namespace OutlookAddIn_MailForm
                     }
                 case "wo":
                     {
+                        string etage = dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString() + ", " + dgv_TableSelect.SelectedRows[0].Cells[10].Value.ToString();
                         this.ParentForm.wohnung = (int)dgv_TableSelect.SelectedRows[0].Cells[6].Value;
-                        this.ParentForm.lbl_wo_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString();
+                        this.ParentForm.lbl_wo_txt.Text = etage;
                         this.ParentForm.lbl_wo_txt.Visible = true;
                         this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value;
                         this.ParentForm.lbl_haus_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[0].Value.ToString();
-                        this.ParentForm.lbl_haus_txt.Visible = true;
-                        Globals.ThisAddIn.msg_parameter.NeEtage = dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString();
+                        this.ParentForm.lbl_haus_txt.Visible = true;                        
+                        Globals.ThisAddIn.msg_parameter.NeEtage = etage;
                         break;
                     }
                 case "mi":
@@ -221,6 +219,30 @@ namespace OutlookAddIn_MailForm
                         string MiTel2 = dgv_TableSelect.SelectedRows[0].Cells[20].Value.ToString();
                         MiTel2 += " / " + dgv_TableSelect.SelectedRows[0].Cells[21].Value.ToString();
                         Globals.ThisAddIn.msg_parameter.MiTel2 = MiTel2;
+                        //Getting Etage and Fill it to Form and Global Data
+                        //***Begin***
+                        DataSet1_WOWI_SEARCH.tblWohnungDataTable wohnungTable;                        
+                        wohnungTable = this.tblWohnungTableAdapter.GetDataByUnWeHaNe(
+                            (int)dgv_TableSelect.SelectedRows[0].Cells[3].Value, (int)dgv_TableSelect.SelectedRows[0].Cells[4].Value,
+                            (int)dgv_TableSelect.SelectedRows[0].Cells[2].Value, (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value);
+                        if (wohnungTable.Rows.Count > 0)
+                        {
+                            string etage = wohnungTable[0].GeschossText + ", " + wohnungTable[0].WohnlageText;
+                            this.ParentForm.lbl_wo_txt.Text = etage;
+                            this.ParentForm.lbl_wo_txt.Visible = true;
+                            Globals.ThisAddIn.msg_parameter.NeEtage = etage;
+                        }                        
+                        //***End***
+                        // Getting Objekt Bez and Fill it to Form and Global Data
+                        //***Begin***
+                        DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable weTable;
+                        weTable = this.wirtschaftseinheitTableAdapter.GetDataByWE((int)dgv_TableSelect.SelectedRows[0].Cells[4].Value);
+                        if (weTable.Rows.Count > 0)
+                        {
+                            string webez = weTable[0].Ortname + ", " + weTable[0].Strasse;
+                            Globals.ThisAddIn.msg_parameter.WeBeszeichnung = webez; 
+                        }
+                        //***End***
                         break;
                     }
                 case "me":
@@ -232,11 +254,6 @@ namespace OutlookAddIn_MailForm
                         break;
                     }
             }
-            //if (this._btn_typ == "me")
-            //{
-            //    this.ParentForm.filelocation = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
-            //    this.ParentForm.txb_Subject.Text = dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString();
-            //}
         }
 
         // TODO: Not in Use - Do I need this?
