@@ -135,8 +135,7 @@ namespace OutlookAddIn_MailForm
                 myMailItem = this.replaceFormfields(myMailItem, frm_MSG, Globals.ThisAddIn.msg_parameter);
                 // Desplay the Mail form with all Inherited
                 Globals.ThisAddIn.msg_parameter.MailItem = myMailItem;               
-                myMailItem.Display();
-               
+                myMailItem.Display();               
             }
             catch //(Exception e)
             {
@@ -220,8 +219,6 @@ namespace OutlookAddIn_MailForm
         private void btn_Info_Click(object sender, RibbonControlEventArgs e)
         {
             System.Reflection.Assembly assemblyInfo = System.Reflection.Assembly.GetExecutingAssembly();
-
-
             string boxtext = "This is an Alpha Version of DTO";
             boxtext += "\n\n GPL v. 3 Copyright 2015 by Björn Leppin, Hilden, Germany";
             boxtext += "\n\n Pojektside: https://github.com/oerb/DTO \n\n";

@@ -126,14 +126,20 @@ namespace OutlookAddIn_MailForm
                 //MessageBox.Show(DtSap.GetType().ToString());
                 //DtSap.test();
                 //END
+                string msgtext = "AdrNr: " + msg_parameter.AdresseNr + " - " + msg_parameter.KreditorName;
+                //MessageBox.Show(msgtext);
+                string Memo2 = msg_parameter.KreditorAdr + " - " + msg_parameter.KreditorName;
                 DtSap.saveDokument(msg_parameter.filelocaiton, msg_parameter.Mandant, msg_parameter.Unternehmen,
                     msg_parameter.WE, msg_parameter.HausNr, msg_parameter.Wohnung, msg_parameter.FolgeNr,
                     msg_parameter.AdresseNr, msg_parameter.DokuArt, msg_parameter.VorgangKZ,
-                    msg_parameter.Vorname, msg_parameter.Name, Sachberarbeiter, Subject);  
+                    msg_parameter.Vorname, msg_parameter.Name, Sachberarbeiter, Subject,
+                    msg_parameter.AdresseNr, Memo2, msg_parameter.datum2);  
             }
             catch (System.Exception e)
             {
-                MessageBox.Show(e.ToString());
+                string msgtext = "Ein Fehler ist beim Archivieren aufgetreten, ggf. war z.B. der Betreff zu lang:/n ";
+                msgtext += e.ToString();
+                MessageBox.Show(msgtext);
                 throw;
             }
  
