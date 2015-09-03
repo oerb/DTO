@@ -105,6 +105,55 @@ namespace OutlookAddIn_MailForm
                         fill_dgv_with_Mieter();
                         break;
                     }
+                case "ad":
+                    {                        
+                        this.txt_filer1.Visible = true;
+                        this.txt_filter2.Visible = true;
+                        this.lbl_1.Text = "Name1";
+                        this.lbl_1.Visible = true;
+                        this.lbl_2.Text = "Name2";
+                        this.lbl_2.Visible = true;
+                        this.btn_search.Visible = true;
+                        break;
+                    }
+                case "MiAd":
+                    {
+                        fill_dgv_with_Mieter();
+                        break;
+                    }
+                case "KrAd":
+                    {
+                        DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable kreditorTable;
+                        kreditorTable = this.kreditor_KontoTableAdapter.GetDataByKontonummer(int.Parse(this.ParentForm.txt_Adresse.Text));
+                        if (kreditorTable.Rows.Count == 0)
+                        {
+                            this.ParentForm.kreditor = int.Parse(this.ParentForm.txt_Adresse.Text);
+                            this.ParentForm.lbl_kreditor_txt.Text = this.ParentForm.lbl_Adresse_txt.Text;
+                            this.ParentForm.lbl_kreditor_txt.Visible = true;
+                            // this.ParentForm.eMail = dgv_TableSelect.SelectedRows[0].Cells[19].Value.ToString();
+                            string KreditorBez = this.ParentForm.lbl_Adresse_txt.Text;
+                            Globals.ThisAddIn.msg_parameter.KreditorName = this.ParentForm.lbl_Adresse_txt.Text;
+                            this.Close();
+                        }
+                        if (this.ParentForm.mandant != 0)
+                        {
+                            kreditorKontoBindingSource.Filter = "Unternehmen = " + this.ParentForm.mandant + 
+                                " AND Kontonummer = " + int.Parse(this.ParentForm.txt_Adresse.Text); 
+                            this.dgv_TableSelect.DataSource = kreditorKontoBindingSource;
+                        }
+                        else
+                        {
+                            kreditorKontoBindingSource.Filter = "Kontonummer = " + int.Parse(this.ParentForm.txt_Adresse.Text);
+                            this.dgv_TableSelect.DataSource = kreditorKontoBindingSource;
+                        }
+
+                        this.kreditor_KontoTableAdapter.FillByKontonummer(dataSet1_WoWi_Kreditor._Kreditor_Konto, int.Parse(this.ParentForm.txt_Adresse.Text));                        
+                        this.txt_filer1.Visible = true;
+                        this.lbl_1.Text = "Kontenbezeichnung suchen";
+                        this.lbl_1.Visible = true;
+                        this.btn_search.Visible = true;  
+                        break;
+                    }
                 case "me":
                     {
                         this.dgv_TableSelect.DataSource = tableBindingSource;
@@ -145,6 +194,10 @@ namespace OutlookAddIn_MailForm
 
                         break;
                     }
+                case "m1":
+                    {
+                        break;
+                    }
                 case "ob":
                     {
                         this.ParentForm.txt_objekt.Text = dgv_TableSelect.SelectedRows[0].Cells[0].Value.ToString();
@@ -166,7 +219,19 @@ namespace OutlookAddIn_MailForm
                         //Globals.ThisAddIn.msg_parameter.Name = dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString();
                         string KreditorBez = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
                         Globals.ThisAddIn.msg_parameter.KreditorName = KreditorBez;
+                        this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;
                         break;
+                    }
+                case "KrAd":
+                    {
+                        this.ParentForm.kreditor = (int)dgv_TableSelect.SelectedRows[0].Cells[1].Value;
+                        this.ParentForm.lbl_kreditor_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
+                        this.ParentForm.lbl_kreditor_txt.Visible = true;
+                        this.ParentForm.eMail = dgv_TableSelect.SelectedRows[0].Cells[19].Value.ToString();                        
+                        string KreditorBez = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
+                        Globals.ThisAddIn.msg_parameter.KreditorName = KreditorBez;
+                        this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;
+                        break;                        
                     }
                 case "ha":
                     {
@@ -252,6 +317,13 @@ namespace OutlookAddIn_MailForm
                         }
                         break;
                     }
+                case "ad":
+                    {
+                        this.ParentForm.txt_Adresse.Text = dgv_TableSelect.SelectedRows[0].Cells[10].Value.ToString();
+                        this.ParentForm.lbl_Adresse_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[0].Value.ToString();
+                        this.ParentForm.lbl_Adresse_txt.Visible = true;
+                        break;
+                    }
                 case "me":
                     {
                         this.ParentForm.filelocation = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
@@ -293,8 +365,7 @@ namespace OutlookAddIn_MailForm
             this.txt_filer1.Visible = true;
             this.lbl_1.Text = "Kontenbezeichnung suchen";
             this.lbl_1.Visible = true;
-            this.btn_search.Visible = true;
-            
+            this.btn_search.Visible = true;           
         }
 
         private void fill_dgv_with_Mieter()
@@ -324,6 +395,14 @@ namespace OutlookAddIn_MailForm
             {
                 this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
                 this.xyMieterTableAdapterWoWiSearch.FillByAdrNr(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.Mieter);  
+            }
+            else if (this.ParentForm.txt_Adresse.Text != "")
+            {
+                string msgtext = this.ParentForm.txt_Adresse.Text;
+                int adr = int.Parse(this.ParentForm.txt_Adresse.Text);
+                MessageBox.Show(msgtext);
+                this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
+                this.xyMieterTableAdapterWoWiSearch.FillByAdrNr(dataSet1_WOWI_SEARCH.xyMieter, adr);
             }
             else
             {
@@ -408,6 +487,27 @@ namespace OutlookAddIn_MailForm
                         //this.xyMieterTableAdapter.Fill_by_Name1(dataSet1xyMieter.xyMieter, this.txt_filer1.Text);
                         this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
                         this.xyMieterTableAdapterWoWiSearch.FillByName1(dataSet1_WOWI_SEARCH.xyMieter, this.txt_filer1.Text);
+                        break;
+                    }
+                case "ad":
+                    {
+                        string filter1 = '%' + txt_filer1.Text + '%';
+                        string filter2 = '%' + txt_filter2.Text + '%';
+                        if (string.IsNullOrWhiteSpace(txt_filer1.Text) == false && string.IsNullOrWhiteSpace(txt_filter2.Text) == false)
+                        {
+                                this.dgv_TableSelect.DataSource = tblAdressSearchBindingSource;
+                                this.tblAdressSearchTableAdapter.FillByName1andName2(dataSet1_WOWI_SEARCH.tblAdressSearch, filter1,filter2);                            
+                        }
+                        else if (string.IsNullOrWhiteSpace(txt_filer1.Text) == false && (string.IsNullOrEmpty(txt_filter2.Text) || string.IsNullOrWhiteSpace(txt_filter2.Text)))
+                        {
+                            this.dgv_TableSelect.DataSource = tblAdressSearchBindingSource;
+                            this.tblAdressSearchTableAdapter.FillByName1(dataSet1_WOWI_SEARCH.tblAdressSearch, filter1);
+                        }
+                        else if (string.IsNullOrWhiteSpace(txt_filter2.Text) == false && (string.IsNullOrWhiteSpace(txt_filer1.Text) || string.IsNullOrWhiteSpace(txt_filer1.Text)))
+                        {
+                            this.dgv_TableSelect.DataSource = tblAdressSearchBindingSource;
+                            this.tblAdressSearchTableAdapter.FillByName2(dataSet1_WOWI_SEARCH.tblAdressSearch, filter2);
+                        }                     
                         break;
                     }
             }

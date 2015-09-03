@@ -173,6 +173,9 @@ namespace OutlookAddIn_MailForm
             string btn_typ = "none";
             if (sender == btn_mandant)
                 { btn_typ = "ma"; }
+            // TODO: btn_mandant rename to btn_unternehmen
+            else if (sender == btn_mandant1)
+                { btn_typ = "m1"; }
             else if (sender == btn_kreditor)
                 { btn_typ = "kr"; }
             else if (sender == btn_objekt)
@@ -185,6 +188,8 @@ namespace OutlookAddIn_MailForm
                 { btn_typ = "wo"; }
             else if (sender == btn_mieter)
                 { btn_typ = "mi"; }
+            else if (sender == btn_Adresse)
+                { btn_typ = "ad"; }
             else
                 { btn_typ = "none"; }
             // Open Form 
@@ -390,6 +395,42 @@ namespace OutlookAddIn_MailForm
         private void dtp_Datum2_ValueChanged(object sender, EventArgs e)
         {
             Globals.ThisAddIn.msg_parameter.datum2 = this.dtp_Datum2.Value;
+        }
+
+        private void lbl_Mandant_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_mandant_txt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_adr_as_mieter_Click(object sender, EventArgs e)
+        {
+            if (this.txt_Adresse.Text != "")
+            {
+                 // Open Form 
+                Frm_Search frm_Search = new Frm_Search("MiAd");
+                // frm_Search.MdiParent = this;
+                frm_Search.ParentForm = this; // TODO: Replace this by FormClass inherited MdiParent
+                //DialogResult result = frm_Search.ShowDialog();
+                frm_Search.Show(); // TODO: Do not know what is better to use. Show or ShowDialog ... test it
+            }
+        }
+
+        private void btn_adr_as_kreditor_Click(object sender, EventArgs e)
+        {
+            if (this.txt_Adresse.Text != "")
+            {
+                // Open Form 
+                Frm_Search frm_Search = new Frm_Search("KrAd");
+                // frm_Search.MdiParent = this;
+                frm_Search.ParentForm = this; // TODO: Replace this by FormClass inherited MdiParent
+                //DialogResult result = frm_Search.ShowDialog();
+                frm_Search.Show(); // TODO: Do not know what is better to use. Show or ShowDialog ... test it
+            }
         }
     }
 }

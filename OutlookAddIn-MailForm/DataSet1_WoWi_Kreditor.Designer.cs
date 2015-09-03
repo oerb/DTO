@@ -1926,7 +1926,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WoWi_KreditorTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[3];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT PUB.""Kreditor-Konto"".Unternehmen, PUB.""Kreditor-Konto"".Kontonummer, PUB.""Kreditor-Konto"".Kontobezeichnung, PUB.Adresse.Name1, PUB.Adresse.Name2, 
@@ -1938,6 +1938,31 @@ FROM     PUB.""Kreditor-Konto"", PUB.Adresse
 WHERE  PUB.""Kreditor-Konto"".Kontonummer = PUB.Adresse.AdressNr
 ORDER BY PUB.""Kreditor-Konto"".Kontobezeichnung";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT PUB.""Kreditor-Konto"".Unternehmen, PUB.""Kreditor-Konto"".Kontonummer, PUB.""Kreditor-Konto"".Kontobezeichnung, PUB.Adresse.Name1, PUB.Adresse.Name2, 
+                  PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.PlzPostf, PUB.Adresse.Postfach, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Telefax, 
+                  PUB.Adresse.AdressNr, PUB.Adresse.Vermerk1, PUB.Adresse.Vermerk2, PUB.Adresse.Telefon2, PUB.Adresse.Vorwahl2, PUB.Adresse.VorwahlFax, PUB.Adresse.Ort, 
+                  PUB.Adresse.EMail, PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil, PUB.Adresse.InternetURL, PUB.Adresse.PostfachStaat, PUB.Adresse.PostfachPLZ, 
+                  PUB.Adresse.PostfachOrt, PUB.""Kreditor-Konto"".MandantNr
+FROM     PUB.""Kreditor-Konto"", PUB.Adresse
+WHERE  PUB.""Kreditor-Konto"".Kontonummer = PUB.Adresse.AdressNr AND (PUB.""Kreditor-Konto"".Kontonummer = ?)
+ORDER BY PUB.""Kreditor-Konto"".Kontobezeichnung";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Kontonummer", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kontonummer", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT PUB.""Kreditor-Konto"".Unternehmen, PUB.""Kreditor-Konto"".Kontonummer, PUB.""Kreditor-Konto"".Kontobezeichnung, PUB.Adresse.Name1, PUB.Adresse.Name2, 
+                  PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.PlzPostf, PUB.Adresse.Postfach, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Telefax, 
+                  PUB.Adresse.AdressNr, PUB.Adresse.Vermerk1, PUB.Adresse.Vermerk2, PUB.Adresse.Telefon2, PUB.Adresse.Vorwahl2, PUB.Adresse.VorwahlFax, PUB.Adresse.Ort, 
+                  PUB.Adresse.EMail, PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil, PUB.Adresse.InternetURL, PUB.Adresse.PostfachStaat, PUB.Adresse.PostfachPLZ, 
+                  PUB.Adresse.PostfachOrt, PUB.""Kreditor-Konto"".MandantNr
+FROM     PUB.""Kreditor-Konto"", PUB.Adresse
+WHERE  PUB.""Kreditor-Konto"".Kontonummer = PUB.Adresse.AdressNr AND (PUB.""Kreditor-Konto"".Unternehmen = ?) AND (PUB.""Kreditor-Konto"".Kontonummer = ?)
+ORDER BY PUB.""Kreditor-Konto"".Kontobezeichnung";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Kontonummer", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kontonummer", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1959,6 +1984,60 @@ ORDER BY PUB.""Kreditor-Konto"".Kontobezeichnung";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable dataTable = new DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByKontonummer(DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable dataTable, int Kontonummer) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Kontonummer));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable GetDataByKontonummer(int Kontonummer) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Kontonummer));
+            DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable dataTable = new DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUnKontonummer(DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable dataTable, int Unternehmen, int Kontonummer) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Kontonummer));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable GetDataByUnKontonummer(int Unternehmen, int Kontonummer) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Kontonummer));
             DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable dataTable = new DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

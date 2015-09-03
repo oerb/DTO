@@ -49,6 +49,7 @@
             this.cmb_dokuart = new System.Windows.Forms.ComboBox();
             this.wOWIDOKARTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grbVorbelegungen = new System.Windows.Forms.GroupBox();
+            this.cbx_mandant_anzeigen = new System.Windows.Forms.CheckBox();
             this.cbxDatum2Anzeigen = new System.Windows.Forms.CheckBox();
             this.lblDatum2 = new System.Windows.Forms.Label();
             this.txtDatum2Bezeichnung = new System.Windows.Forms.TextBox();
@@ -58,6 +59,13 @@
             this.btn_help = new System.Windows.Forms.Button();
             this.wOWIDOKARTTableAdapter = new OutlookAddIn_MailForm.saperionDataSet_Dokuart_DokuKZTableAdapters.WOWIDOKARTTableAdapter();
             this.wOWIVORGANGTableAdapter = new OutlookAddIn_MailForm.saperionDataSet_Dokuart_DokuKZTableAdapters.WOWIVORGANGTableAdapter();
+            this.cbx_unternehmen_anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbx_kreditor_anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbx_we_anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbx_haus_anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbx_ne_anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbx_mieter_anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbx_adresse_anzeigen = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet_MSGTYPES)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIVORGANGBindingSource)).BeginInit();
@@ -73,7 +81,7 @@
             this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.Image")));
             this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_save.Location = new System.Drawing.Point(421, 298);
+            this.btn_save.Location = new System.Drawing.Point(421, 410);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(194, 48);
             this.btn_save.TabIndex = 17;
@@ -213,6 +221,14 @@
             // 
             // grbVorbelegungen
             // 
+            this.grbVorbelegungen.Controls.Add(this.cbx_adresse_anzeigen);
+            this.grbVorbelegungen.Controls.Add(this.cbx_mieter_anzeigen);
+            this.grbVorbelegungen.Controls.Add(this.cbx_ne_anzeigen);
+            this.grbVorbelegungen.Controls.Add(this.cbx_haus_anzeigen);
+            this.grbVorbelegungen.Controls.Add(this.cbx_we_anzeigen);
+            this.grbVorbelegungen.Controls.Add(this.cbx_kreditor_anzeigen);
+            this.grbVorbelegungen.Controls.Add(this.cbx_unternehmen_anzeigen);
+            this.grbVorbelegungen.Controls.Add(this.cbx_mandant_anzeigen);
             this.grbVorbelegungen.Controls.Add(this.cbxDatum2Anzeigen);
             this.grbVorbelegungen.Controls.Add(this.lblDatum2);
             this.grbVorbelegungen.Controls.Add(this.txtDatum2Bezeichnung);
@@ -225,10 +241,22 @@
             this.grbVorbelegungen.Controls.Add(this.cmb_vorgangkz);
             this.grbVorbelegungen.Location = new System.Drawing.Point(26, 109);
             this.grbVorbelegungen.Name = "grbVorbelegungen";
-            this.grbVorbelegungen.Size = new System.Drawing.Size(589, 183);
+            this.grbVorbelegungen.Size = new System.Drawing.Size(589, 295);
             this.grbVorbelegungen.TabIndex = 49;
             this.grbVorbelegungen.TabStop = false;
             this.grbVorbelegungen.Text = "Vorbelegungen";
+            // 
+            // cbx_mandant_anzeigen
+            // 
+            this.cbx_mandant_anzeigen.AutoSize = true;
+            this.cbx_mandant_anzeigen.Checked = true;
+            this.cbx_mandant_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_mandant_anzeigen.Location = new System.Drawing.Point(14, 159);
+            this.cbx_mandant_anzeigen.Name = "cbx_mandant_anzeigen";
+            this.cbx_mandant_anzeigen.Size = new System.Drawing.Size(148, 21);
+            this.cbx_mandant_anzeigen.TabIndex = 55;
+            this.cbx_mandant_anzeigen.Text = "Mandant Anzeigen";
+            this.cbx_mandant_anzeigen.UseVisualStyleBackColor = true;
             // 
             // cbxDatum2Anzeigen
             // 
@@ -307,11 +335,95 @@
             // 
             this.wOWIVORGANGTableAdapter.ClearBeforeFill = true;
             // 
+            // cbx_unternehmen_anzeigen
+            // 
+            this.cbx_unternehmen_anzeigen.AutoSize = true;
+            this.cbx_unternehmen_anzeigen.Checked = true;
+            this.cbx_unternehmen_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_unternehmen_anzeigen.Location = new System.Drawing.Point(14, 186);
+            this.cbx_unternehmen_anzeigen.Name = "cbx_unternehmen_anzeigen";
+            this.cbx_unternehmen_anzeigen.Size = new System.Drawing.Size(179, 21);
+            this.cbx_unternehmen_anzeigen.TabIndex = 56;
+            this.cbx_unternehmen_anzeigen.Text = "Unternehmen Anzeigen";
+            this.cbx_unternehmen_anzeigen.UseVisualStyleBackColor = true;
+            // 
+            // cbx_kreditor_anzeigen
+            // 
+            this.cbx_kreditor_anzeigen.AutoSize = true;
+            this.cbx_kreditor_anzeigen.Checked = true;
+            this.cbx_kreditor_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_kreditor_anzeigen.Location = new System.Drawing.Point(14, 213);
+            this.cbx_kreditor_anzeigen.Name = "cbx_kreditor_anzeigen";
+            this.cbx_kreditor_anzeigen.Size = new System.Drawing.Size(143, 21);
+            this.cbx_kreditor_anzeigen.TabIndex = 57;
+            this.cbx_kreditor_anzeigen.Text = "Kreditor Anzeigen";
+            this.cbx_kreditor_anzeigen.UseVisualStyleBackColor = true;
+            // 
+            // cbx_we_anzeigen
+            // 
+            this.cbx_we_anzeigen.AutoSize = true;
+            this.cbx_we_anzeigen.Checked = true;
+            this.cbx_we_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_we_anzeigen.Location = new System.Drawing.Point(14, 240);
+            this.cbx_we_anzeigen.Name = "cbx_we_anzeigen";
+            this.cbx_we_anzeigen.Size = new System.Drawing.Size(115, 21);
+            this.cbx_we_anzeigen.TabIndex = 58;
+            this.cbx_we_anzeigen.Text = "WE Anzeigen";
+            this.cbx_we_anzeigen.UseVisualStyleBackColor = true;
+            // 
+            // cbx_haus_anzeigen
+            // 
+            this.cbx_haus_anzeigen.AutoSize = true;
+            this.cbx_haus_anzeigen.Checked = true;
+            this.cbx_haus_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_haus_anzeigen.Location = new System.Drawing.Point(223, 159);
+            this.cbx_haus_anzeigen.Name = "cbx_haus_anzeigen";
+            this.cbx_haus_anzeigen.Size = new System.Drawing.Size(126, 21);
+            this.cbx_haus_anzeigen.TabIndex = 59;
+            this.cbx_haus_anzeigen.Text = "Haus Anzeigen";
+            this.cbx_haus_anzeigen.UseVisualStyleBackColor = true;
+            // 
+            // cbx_ne_anzeigen
+            // 
+            this.cbx_ne_anzeigen.AutoSize = true;
+            this.cbx_ne_anzeigen.Checked = true;
+            this.cbx_ne_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_ne_anzeigen.Location = new System.Drawing.Point(223, 186);
+            this.cbx_ne_anzeigen.Name = "cbx_ne_anzeigen";
+            this.cbx_ne_anzeigen.Size = new System.Drawing.Size(112, 21);
+            this.cbx_ne_anzeigen.TabIndex = 60;
+            this.cbx_ne_anzeigen.Text = "NE Anzeigen";
+            this.cbx_ne_anzeigen.UseVisualStyleBackColor = true;
+            // 
+            // cbx_mieter_anzeigen
+            // 
+            this.cbx_mieter_anzeigen.AutoSize = true;
+            this.cbx_mieter_anzeigen.Checked = true;
+            this.cbx_mieter_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_mieter_anzeigen.Location = new System.Drawing.Point(223, 213);
+            this.cbx_mieter_anzeigen.Name = "cbx_mieter_anzeigen";
+            this.cbx_mieter_anzeigen.Size = new System.Drawing.Size(132, 21);
+            this.cbx_mieter_anzeigen.TabIndex = 61;
+            this.cbx_mieter_anzeigen.Text = "Mieter Anzeigen";
+            this.cbx_mieter_anzeigen.UseVisualStyleBackColor = true;
+            // 
+            // cbx_adresse_anzeigen
+            // 
+            this.cbx_adresse_anzeigen.AutoSize = true;
+            this.cbx_adresse_anzeigen.Checked = true;
+            this.cbx_adresse_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_adresse_anzeigen.Location = new System.Drawing.Point(223, 240);
+            this.cbx_adresse_anzeigen.Name = "cbx_adresse_anzeigen";
+            this.cbx_adresse_anzeigen.Size = new System.Drawing.Size(145, 21);
+            this.cbx_adresse_anzeigen.TabIndex = 62;
+            this.cbx_adresse_anzeigen.Text = "Adresse Anzeigen";
+            this.cbx_adresse_anzeigen.UseVisualStyleBackColor = true;
+            // 
             // Frm_New_MSGTYPE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 358);
+            this.ClientSize = new System.Drawing.Size(670, 470);
             this.Controls.Add(this.btn_help);
             this.Controls.Add(this.grbVorbelegungen);
             this.Controls.Add(this.lbl_filelocation);
@@ -322,8 +434,8 @@
             this.Controls.Add(this.txt_filelocation);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(688, 403);
-            this.MinimumSize = new System.Drawing.Size(688, 403);
+            this.MaximumSize = new System.Drawing.Size(688, 515);
+            this.MinimumSize = new System.Drawing.Size(688, 515);
             this.Name = "Frm_New_MSGTYPE";
             this.Text = "MSG Typ festlegen";
             this.Load += new System.EventHandler(this.Frm_New_MSGTYPE_Load);
@@ -370,6 +482,14 @@
         private System.Windows.Forms.BindingSource wOWIVORGANGBindingSource;
         private saperionDataSet_Dokuart_DokuKZTableAdapters.WOWIDOKARTTableAdapter wOWIDOKARTTableAdapter;
         private saperionDataSet_Dokuart_DokuKZTableAdapters.WOWIVORGANGTableAdapter wOWIVORGANGTableAdapter;
+        private System.Windows.Forms.CheckBox cbx_mandant_anzeigen;
+        private System.Windows.Forms.CheckBox cbx_adresse_anzeigen;
+        private System.Windows.Forms.CheckBox cbx_mieter_anzeigen;
+        private System.Windows.Forms.CheckBox cbx_ne_anzeigen;
+        private System.Windows.Forms.CheckBox cbx_haus_anzeigen;
+        private System.Windows.Forms.CheckBox cbx_we_anzeigen;
+        private System.Windows.Forms.CheckBox cbx_kreditor_anzeigen;
+        private System.Windows.Forms.CheckBox cbx_unternehmen_anzeigen;
 
     }
 }

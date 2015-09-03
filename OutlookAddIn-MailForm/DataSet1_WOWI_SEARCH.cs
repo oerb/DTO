@@ -6,6 +6,9 @@
 }
 
 namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
+    partial class tblAdressSearchTableAdapter
+    {
+    }
     
     
     public partial class xyMieterTableAdapter {

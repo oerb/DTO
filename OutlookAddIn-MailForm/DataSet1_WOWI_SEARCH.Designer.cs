@@ -32,6 +32,8 @@ namespace OutlookAddIn_MailForm {
         
         private tblBriefanredeDataTable tabletblBriefanrede;
         
+        private tblAdressSearchDataTable tabletblAdressSearch;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -71,6 +73,9 @@ namespace OutlookAddIn_MailForm {
                 }
                 if ((ds.Tables["tblBriefanrede"] != null)) {
                     base.Tables.Add(new tblBriefanredeDataTable(ds.Tables["tblBriefanrede"]));
+                }
+                if ((ds.Tables["tblAdressSearch"] != null)) {
+                    base.Tables.Add(new tblAdressSearchDataTable(ds.Tables["tblAdressSearch"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -127,6 +132,16 @@ namespace OutlookAddIn_MailForm {
         public tblBriefanredeDataTable tblBriefanrede {
             get {
                 return this.tabletblBriefanrede;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public tblAdressSearchDataTable tblAdressSearch {
+            get {
+                return this.tabletblAdressSearch;
             }
         }
         
@@ -209,6 +224,9 @@ namespace OutlookAddIn_MailForm {
                 if ((ds.Tables["tblBriefanrede"] != null)) {
                     base.Tables.Add(new tblBriefanredeDataTable(ds.Tables["tblBriefanrede"]));
                 }
+                if ((ds.Tables["tblAdressSearch"] != null)) {
+                    base.Tables.Add(new tblAdressSearchDataTable(ds.Tables["tblAdressSearch"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -266,6 +284,12 @@ namespace OutlookAddIn_MailForm {
                     this.tabletblBriefanrede.InitVars();
                 }
             }
+            this.tabletblAdressSearch = ((tblAdressSearchDataTable)(base.Tables["tblAdressSearch"]));
+            if ((initTable == true)) {
+                if ((this.tabletblAdressSearch != null)) {
+                    this.tabletblAdressSearch.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -284,6 +308,8 @@ namespace OutlookAddIn_MailForm {
             base.Tables.Add(this.tabletblAdresse);
             this.tabletblBriefanrede = new tblBriefanredeDataTable();
             base.Tables.Add(this.tabletblBriefanrede);
+            this.tabletblAdressSearch = new tblAdressSearchDataTable();
+            base.Tables.Add(this.tabletblAdressSearch);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -307,6 +333,12 @@ namespace OutlookAddIn_MailForm {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializetblBriefanrede() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializetblAdressSearch() {
             return false;
         }
         
@@ -376,6 +408,9 @@ namespace OutlookAddIn_MailForm {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tblBriefanredeRowChangeEventHandler(object sender, tblBriefanredeRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void tblAdressSearchRowChangeEventHandler(object sender, tblAdressSearchRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2022,6 +2057,738 @@ namespace OutlookAddIn_MailForm {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class tblAdressSearchDataTable : global::System.Data.TypedTableBase<tblAdressSearchRow> {
+            
+            private global::System.Data.DataColumn columnName1;
+            
+            private global::System.Data.DataColumn columnName2;
+            
+            private global::System.Data.DataColumn columnStrasse;
+            
+            private global::System.Data.DataColumn columnPlzOrt;
+            
+            private global::System.Data.DataColumn columnPlzPostf;
+            
+            private global::System.Data.DataColumn columnPostfach;
+            
+            private global::System.Data.DataColumn columnAdrAnrNr;
+            
+            private global::System.Data.DataColumn columnVorwahl1;
+            
+            private global::System.Data.DataColumn columnTelefon1;
+            
+            private global::System.Data.DataColumn columnTelefax;
+            
+            private global::System.Data.DataColumn columnAdressNr;
+            
+            private global::System.Data.DataColumn columnVermerk1;
+            
+            private global::System.Data.DataColumn columnVermerk2;
+            
+            private global::System.Data.DataColumn columnTelefon2;
+            
+            private global::System.Data.DataColumn columnVorwahl2;
+            
+            private global::System.Data.DataColumn columnVorwahlFax;
+            
+            private global::System.Data.DataColumn columnGebname;
+            
+            private global::System.Data.DataColumn columnOrt;
+            
+            private global::System.Data.DataColumn columnEMail;
+            
+            private global::System.Data.DataColumn columnVorwahlMobil;
+            
+            private global::System.Data.DataColumn columnTelefonMobil;
+            
+            private global::System.Data.DataColumn columnVPName1;
+            
+            private global::System.Data.DataColumn columnVPName2;
+            
+            private global::System.Data.DataColumn columnPostleitzahl;
+            
+            private global::System.Data.DataColumn columnOrtname;
+            
+            private global::System.Data.DataColumn columnTel1LandKZ;
+            
+            private global::System.Data.DataColumn columnTel2LandKZ;
+            
+            private global::System.Data.DataColumn columnFAXLandKZ;
+            
+            private global::System.Data.DataColumn columnMobilLandKZ;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblAdressSearchDataTable() {
+                this.TableName = "tblAdressSearch";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tblAdressSearchDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected tblAdressSearchDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Name1Column {
+                get {
+                    return this.columnName1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Name2Column {
+                get {
+                    return this.columnName2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StrasseColumn {
+                get {
+                    return this.columnStrasse;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PlzOrtColumn {
+                get {
+                    return this.columnPlzOrt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PlzPostfColumn {
+                get {
+                    return this.columnPlzPostf;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PostfachColumn {
+                get {
+                    return this.columnPostfach;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AdrAnrNrColumn {
+                get {
+                    return this.columnAdrAnrNr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Vorwahl1Column {
+                get {
+                    return this.columnVorwahl1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Telefon1Column {
+                get {
+                    return this.columnTelefon1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TelefaxColumn {
+                get {
+                    return this.columnTelefax;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AdressNrColumn {
+                get {
+                    return this.columnAdressNr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Vermerk1Column {
+                get {
+                    return this.columnVermerk1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Vermerk2Column {
+                get {
+                    return this.columnVermerk2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Telefon2Column {
+                get {
+                    return this.columnTelefon2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Vorwahl2Column {
+                get {
+                    return this.columnVorwahl2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VorwahlFaxColumn {
+                get {
+                    return this.columnVorwahlFax;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GebnameColumn {
+                get {
+                    return this.columnGebname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OrtColumn {
+                get {
+                    return this.columnOrt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EMailColumn {
+                get {
+                    return this.columnEMail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VorwahlMobilColumn {
+                get {
+                    return this.columnVorwahlMobil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TelefonMobilColumn {
+                get {
+                    return this.columnTelefonMobil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VPName1Column {
+                get {
+                    return this.columnVPName1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VPName2Column {
+                get {
+                    return this.columnVPName2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PostleitzahlColumn {
+                get {
+                    return this.columnPostleitzahl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OrtnameColumn {
+                get {
+                    return this.columnOrtname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Tel1LandKZColumn {
+                get {
+                    return this.columnTel1LandKZ;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Tel2LandKZColumn {
+                get {
+                    return this.columnTel2LandKZ;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FAXLandKZColumn {
+                get {
+                    return this.columnFAXLandKZ;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MobilLandKZColumn {
+                get {
+                    return this.columnMobilLandKZ;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblAdressSearchRow this[int index] {
+                get {
+                    return ((tblAdressSearchRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblAdressSearchRowChangeEventHandler tblAdressSearchRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblAdressSearchRowChangeEventHandler tblAdressSearchRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblAdressSearchRowChangeEventHandler tblAdressSearchRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tblAdressSearchRowChangeEventHandler tblAdressSearchRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddtblAdressSearchRow(tblAdressSearchRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblAdressSearchRow AddtblAdressSearchRow(
+                        string Name1, 
+                        string Name2, 
+                        string Strasse, 
+                        int PlzOrt, 
+                        int PlzPostf, 
+                        int Postfach, 
+                        int AdrAnrNr, 
+                        string Vorwahl1, 
+                        string Telefon1, 
+                        string Telefax, 
+                        int AdressNr, 
+                        string Vermerk1, 
+                        string Vermerk2, 
+                        string Telefon2, 
+                        string Vorwahl2, 
+                        string VorwahlFax, 
+                        string Gebname, 
+                        string Ort, 
+                        string EMail, 
+                        string VorwahlMobil, 
+                        string TelefonMobil, 
+                        string VPName1, 
+                        string VPName2, 
+                        string Postleitzahl, 
+                        string Ortname, 
+                        string Tel1LandKZ, 
+                        string Tel2LandKZ, 
+                        string FAXLandKZ, 
+                        string MobilLandKZ) {
+                tblAdressSearchRow rowtblAdressSearchRow = ((tblAdressSearchRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Name1,
+                        Name2,
+                        Strasse,
+                        PlzOrt,
+                        PlzPostf,
+                        Postfach,
+                        AdrAnrNr,
+                        Vorwahl1,
+                        Telefon1,
+                        Telefax,
+                        AdressNr,
+                        Vermerk1,
+                        Vermerk2,
+                        Telefon2,
+                        Vorwahl2,
+                        VorwahlFax,
+                        Gebname,
+                        Ort,
+                        EMail,
+                        VorwahlMobil,
+                        TelefonMobil,
+                        VPName1,
+                        VPName2,
+                        Postleitzahl,
+                        Ortname,
+                        Tel1LandKZ,
+                        Tel2LandKZ,
+                        FAXLandKZ,
+                        MobilLandKZ};
+                rowtblAdressSearchRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtblAdressSearchRow);
+                return rowtblAdressSearchRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblAdressSearchRow FindByAdressNr(int AdressNr) {
+                return ((tblAdressSearchRow)(this.Rows.Find(new object[] {
+                            AdressNr})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                tblAdressSearchDataTable cln = ((tblAdressSearchDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new tblAdressSearchDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnName1 = base.Columns["Name1"];
+                this.columnName2 = base.Columns["Name2"];
+                this.columnStrasse = base.Columns["Strasse"];
+                this.columnPlzOrt = base.Columns["PlzOrt"];
+                this.columnPlzPostf = base.Columns["PlzPostf"];
+                this.columnPostfach = base.Columns["Postfach"];
+                this.columnAdrAnrNr = base.Columns["AdrAnrNr"];
+                this.columnVorwahl1 = base.Columns["Vorwahl1"];
+                this.columnTelefon1 = base.Columns["Telefon1"];
+                this.columnTelefax = base.Columns["Telefax"];
+                this.columnAdressNr = base.Columns["AdressNr"];
+                this.columnVermerk1 = base.Columns["Vermerk1"];
+                this.columnVermerk2 = base.Columns["Vermerk2"];
+                this.columnTelefon2 = base.Columns["Telefon2"];
+                this.columnVorwahl2 = base.Columns["Vorwahl2"];
+                this.columnVorwahlFax = base.Columns["VorwahlFax"];
+                this.columnGebname = base.Columns["Gebname"];
+                this.columnOrt = base.Columns["Ort"];
+                this.columnEMail = base.Columns["EMail"];
+                this.columnVorwahlMobil = base.Columns["VorwahlMobil"];
+                this.columnTelefonMobil = base.Columns["TelefonMobil"];
+                this.columnVPName1 = base.Columns["VPName1"];
+                this.columnVPName2 = base.Columns["VPName2"];
+                this.columnPostleitzahl = base.Columns["Postleitzahl"];
+                this.columnOrtname = base.Columns["Ortname"];
+                this.columnTel1LandKZ = base.Columns["Tel1LandKZ"];
+                this.columnTel2LandKZ = base.Columns["Tel2LandKZ"];
+                this.columnFAXLandKZ = base.Columns["FAXLandKZ"];
+                this.columnMobilLandKZ = base.Columns["MobilLandKZ"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnName1 = new global::System.Data.DataColumn("Name1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName1);
+                this.columnName2 = new global::System.Data.DataColumn("Name2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName2);
+                this.columnStrasse = new global::System.Data.DataColumn("Strasse", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStrasse);
+                this.columnPlzOrt = new global::System.Data.DataColumn("PlzOrt", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlzOrt);
+                this.columnPlzPostf = new global::System.Data.DataColumn("PlzPostf", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlzPostf);
+                this.columnPostfach = new global::System.Data.DataColumn("Postfach", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostfach);
+                this.columnAdrAnrNr = new global::System.Data.DataColumn("AdrAnrNr", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAdrAnrNr);
+                this.columnVorwahl1 = new global::System.Data.DataColumn("Vorwahl1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVorwahl1);
+                this.columnTelefon1 = new global::System.Data.DataColumn("Telefon1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefon1);
+                this.columnTelefax = new global::System.Data.DataColumn("Telefax", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefax);
+                this.columnAdressNr = new global::System.Data.DataColumn("AdressNr", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAdressNr);
+                this.columnVermerk1 = new global::System.Data.DataColumn("Vermerk1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVermerk1);
+                this.columnVermerk2 = new global::System.Data.DataColumn("Vermerk2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVermerk2);
+                this.columnTelefon2 = new global::System.Data.DataColumn("Telefon2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefon2);
+                this.columnVorwahl2 = new global::System.Data.DataColumn("Vorwahl2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVorwahl2);
+                this.columnVorwahlFax = new global::System.Data.DataColumn("VorwahlFax", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVorwahlFax);
+                this.columnGebname = new global::System.Data.DataColumn("Gebname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGebname);
+                this.columnOrt = new global::System.Data.DataColumn("Ort", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrt);
+                this.columnEMail = new global::System.Data.DataColumn("EMail", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEMail);
+                this.columnVorwahlMobil = new global::System.Data.DataColumn("VorwahlMobil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVorwahlMobil);
+                this.columnTelefonMobil = new global::System.Data.DataColumn("TelefonMobil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefonMobil);
+                this.columnVPName1 = new global::System.Data.DataColumn("VPName1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVPName1);
+                this.columnVPName2 = new global::System.Data.DataColumn("VPName2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVPName2);
+                this.columnPostleitzahl = new global::System.Data.DataColumn("Postleitzahl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostleitzahl);
+                this.columnOrtname = new global::System.Data.DataColumn("Ortname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrtname);
+                this.columnTel1LandKZ = new global::System.Data.DataColumn("Tel1LandKZ", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTel1LandKZ);
+                this.columnTel2LandKZ = new global::System.Data.DataColumn("Tel2LandKZ", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTel2LandKZ);
+                this.columnFAXLandKZ = new global::System.Data.DataColumn("FAXLandKZ", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFAXLandKZ);
+                this.columnMobilLandKZ = new global::System.Data.DataColumn("MobilLandKZ", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMobilLandKZ);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnAdressNr}, true));
+                this.columnName1.ReadOnly = true;
+                this.columnName1.MaxLength = 80;
+                this.columnName2.ReadOnly = true;
+                this.columnName2.MaxLength = 80;
+                this.columnStrasse.ReadOnly = true;
+                this.columnStrasse.MaxLength = 100;
+                this.columnPlzOrt.ReadOnly = true;
+                this.columnPlzPostf.ReadOnly = true;
+                this.columnPostfach.ReadOnly = true;
+                this.columnAdrAnrNr.ReadOnly = true;
+                this.columnVorwahl1.ReadOnly = true;
+                this.columnVorwahl1.MaxLength = 14;
+                this.columnTelefon1.ReadOnly = true;
+                this.columnTelefon1.MaxLength = 24;
+                this.columnTelefax.ReadOnly = true;
+                this.columnTelefax.MaxLength = 24;
+                this.columnAdressNr.AllowDBNull = false;
+                this.columnAdressNr.ReadOnly = true;
+                this.columnAdressNr.Unique = true;
+                this.columnVermerk1.ReadOnly = true;
+                this.columnVermerk1.MaxLength = 100;
+                this.columnVermerk2.ReadOnly = true;
+                this.columnVermerk2.MaxLength = 100;
+                this.columnTelefon2.ReadOnly = true;
+                this.columnTelefon2.MaxLength = 24;
+                this.columnVorwahl2.ReadOnly = true;
+                this.columnVorwahl2.MaxLength = 14;
+                this.columnVorwahlFax.ReadOnly = true;
+                this.columnVorwahlFax.MaxLength = 14;
+                this.columnGebname.ReadOnly = true;
+                this.columnGebname.MaxLength = 60;
+                this.columnOrt.ReadOnly = true;
+                this.columnOrt.MaxLength = 60;
+                this.columnEMail.ReadOnly = true;
+                this.columnEMail.MaxLength = 100;
+                this.columnVorwahlMobil.ReadOnly = true;
+                this.columnVorwahlMobil.MaxLength = 14;
+                this.columnTelefonMobil.ReadOnly = true;
+                this.columnTelefonMobil.MaxLength = 24;
+                this.columnVPName1.ReadOnly = true;
+                this.columnVPName1.MaxLength = 80;
+                this.columnVPName2.ReadOnly = true;
+                this.columnVPName2.MaxLength = 80;
+                this.columnPostleitzahl.ReadOnly = true;
+                this.columnPostleitzahl.MaxLength = 20;
+                this.columnOrtname.ReadOnly = true;
+                this.columnOrtname.MaxLength = 100;
+                this.columnTel1LandKZ.ReadOnly = true;
+                this.columnTel1LandKZ.MaxLength = 10;
+                this.columnTel2LandKZ.ReadOnly = true;
+                this.columnTel2LandKZ.MaxLength = 10;
+                this.columnFAXLandKZ.ReadOnly = true;
+                this.columnFAXLandKZ.MaxLength = 10;
+                this.columnMobilLandKZ.ReadOnly = true;
+                this.columnMobilLandKZ.MaxLength = 10;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblAdressSearchRow NewtblAdressSearchRow() {
+                return ((tblAdressSearchRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new tblAdressSearchRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(tblAdressSearchRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.tblAdressSearchRowChanged != null)) {
+                    this.tblAdressSearchRowChanged(this, new tblAdressSearchRowChangeEvent(((tblAdressSearchRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.tblAdressSearchRowChanging != null)) {
+                    this.tblAdressSearchRowChanging(this, new tblAdressSearchRowChangeEvent(((tblAdressSearchRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.tblAdressSearchRowDeleted != null)) {
+                    this.tblAdressSearchRowDeleted(this, new tblAdressSearchRowChangeEvent(((tblAdressSearchRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.tblAdressSearchRowDeleting != null)) {
+                    this.tblAdressSearchRowDeleting(this, new tblAdressSearchRowChangeEvent(((tblAdressSearchRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovetblAdressSearchRow(tblAdressSearchRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1_WOWI_SEARCH ds = new DataSet1_WOWI_SEARCH();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "tblAdressSearchDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class xyMieterRow : global::System.Data.DataRow {
@@ -3280,6 +4047,816 @@ namespace OutlookAddIn_MailForm {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class tblAdressSearchRow : global::System.Data.DataRow {
+            
+            private tblAdressSearchDataTable tabletblAdressSearch;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tblAdressSearchRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabletblAdressSearch = ((tblAdressSearchDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Name1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.Name1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name1\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.Name1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Name2 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.Name2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name2\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.Name2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Strasse {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.StrasseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Strasse\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.StrasseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int PlzOrt {
+                get {
+                    try {
+                        return ((int)(this[this.tabletblAdressSearch.PlzOrtColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PlzOrt\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.PlzOrtColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int PlzPostf {
+                get {
+                    try {
+                        return ((int)(this[this.tabletblAdressSearch.PlzPostfColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PlzPostf\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.PlzPostfColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Postfach {
+                get {
+                    try {
+                        return ((int)(this[this.tabletblAdressSearch.PostfachColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Postfach\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.PostfachColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int AdrAnrNr {
+                get {
+                    try {
+                        return ((int)(this[this.tabletblAdressSearch.AdrAnrNrColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AdrAnrNr\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.AdrAnrNrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Vorwahl1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.Vorwahl1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vorwahl1\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.Vorwahl1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Telefon1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.Telefon1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Telefon1\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.Telefon1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Telefax {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.TelefaxColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Telefax\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.TelefaxColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int AdressNr {
+                get {
+                    return ((int)(this[this.tabletblAdressSearch.AdressNrColumn]));
+                }
+                set {
+                    this[this.tabletblAdressSearch.AdressNrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Vermerk1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.Vermerk1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vermerk1\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.Vermerk1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Vermerk2 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.Vermerk2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vermerk2\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.Vermerk2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Telefon2 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.Telefon2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Telefon2\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.Telefon2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Vorwahl2 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.Vorwahl2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vorwahl2\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.Vorwahl2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VorwahlFax {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.VorwahlFaxColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VorwahlFax\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.VorwahlFaxColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Gebname {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.GebnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Gebname\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.GebnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Ort {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.OrtColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ort\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.OrtColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EMail {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.EMailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EMail\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.EMailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VorwahlMobil {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.VorwahlMobilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VorwahlMobil\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.VorwahlMobilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TelefonMobil {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.TelefonMobilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TelefonMobil\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.TelefonMobilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VPName1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.VPName1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VPName1\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.VPName1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VPName2 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.VPName2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VPName2\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.VPName2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Postleitzahl {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.PostleitzahlColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Postleitzahl\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.PostleitzahlColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Ortname {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.OrtnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ortname\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.OrtnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Tel1LandKZ {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.Tel1LandKZColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tel1LandKZ\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.Tel1LandKZColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Tel2LandKZ {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.Tel2LandKZColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tel2LandKZ\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.Tel2LandKZColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FAXLandKZ {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.FAXLandKZColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FAXLandKZ\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.FAXLandKZColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MobilLandKZ {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblAdressSearch.MobilLandKZColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MobilLandKZ\' in table \'tblAdressSearch\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblAdressSearch.MobilLandKZColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsName1Null() {
+                return this.IsNull(this.tabletblAdressSearch.Name1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetName1Null() {
+                this[this.tabletblAdressSearch.Name1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsName2Null() {
+                return this.IsNull(this.tabletblAdressSearch.Name2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetName2Null() {
+                this[this.tabletblAdressSearch.Name2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStrasseNull() {
+                return this.IsNull(this.tabletblAdressSearch.StrasseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStrasseNull() {
+                this[this.tabletblAdressSearch.StrasseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPlzOrtNull() {
+                return this.IsNull(this.tabletblAdressSearch.PlzOrtColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPlzOrtNull() {
+                this[this.tabletblAdressSearch.PlzOrtColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPlzPostfNull() {
+                return this.IsNull(this.tabletblAdressSearch.PlzPostfColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPlzPostfNull() {
+                this[this.tabletblAdressSearch.PlzPostfColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPostfachNull() {
+                return this.IsNull(this.tabletblAdressSearch.PostfachColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPostfachNull() {
+                this[this.tabletblAdressSearch.PostfachColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAdrAnrNrNull() {
+                return this.IsNull(this.tabletblAdressSearch.AdrAnrNrColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAdrAnrNrNull() {
+                this[this.tabletblAdressSearch.AdrAnrNrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVorwahl1Null() {
+                return this.IsNull(this.tabletblAdressSearch.Vorwahl1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVorwahl1Null() {
+                this[this.tabletblAdressSearch.Vorwahl1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTelefon1Null() {
+                return this.IsNull(this.tabletblAdressSearch.Telefon1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTelefon1Null() {
+                this[this.tabletblAdressSearch.Telefon1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTelefaxNull() {
+                return this.IsNull(this.tabletblAdressSearch.TelefaxColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTelefaxNull() {
+                this[this.tabletblAdressSearch.TelefaxColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVermerk1Null() {
+                return this.IsNull(this.tabletblAdressSearch.Vermerk1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVermerk1Null() {
+                this[this.tabletblAdressSearch.Vermerk1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVermerk2Null() {
+                return this.IsNull(this.tabletblAdressSearch.Vermerk2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVermerk2Null() {
+                this[this.tabletblAdressSearch.Vermerk2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTelefon2Null() {
+                return this.IsNull(this.tabletblAdressSearch.Telefon2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTelefon2Null() {
+                this[this.tabletblAdressSearch.Telefon2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVorwahl2Null() {
+                return this.IsNull(this.tabletblAdressSearch.Vorwahl2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVorwahl2Null() {
+                this[this.tabletblAdressSearch.Vorwahl2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVorwahlFaxNull() {
+                return this.IsNull(this.tabletblAdressSearch.VorwahlFaxColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVorwahlFaxNull() {
+                this[this.tabletblAdressSearch.VorwahlFaxColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGebnameNull() {
+                return this.IsNull(this.tabletblAdressSearch.GebnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGebnameNull() {
+                this[this.tabletblAdressSearch.GebnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOrtNull() {
+                return this.IsNull(this.tabletblAdressSearch.OrtColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOrtNull() {
+                this[this.tabletblAdressSearch.OrtColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEMailNull() {
+                return this.IsNull(this.tabletblAdressSearch.EMailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEMailNull() {
+                this[this.tabletblAdressSearch.EMailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVorwahlMobilNull() {
+                return this.IsNull(this.tabletblAdressSearch.VorwahlMobilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVorwahlMobilNull() {
+                this[this.tabletblAdressSearch.VorwahlMobilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTelefonMobilNull() {
+                return this.IsNull(this.tabletblAdressSearch.TelefonMobilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTelefonMobilNull() {
+                this[this.tabletblAdressSearch.TelefonMobilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVPName1Null() {
+                return this.IsNull(this.tabletblAdressSearch.VPName1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVPName1Null() {
+                this[this.tabletblAdressSearch.VPName1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVPName2Null() {
+                return this.IsNull(this.tabletblAdressSearch.VPName2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVPName2Null() {
+                this[this.tabletblAdressSearch.VPName2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPostleitzahlNull() {
+                return this.IsNull(this.tabletblAdressSearch.PostleitzahlColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPostleitzahlNull() {
+                this[this.tabletblAdressSearch.PostleitzahlColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOrtnameNull() {
+                return this.IsNull(this.tabletblAdressSearch.OrtnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOrtnameNull() {
+                this[this.tabletblAdressSearch.OrtnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTel1LandKZNull() {
+                return this.IsNull(this.tabletblAdressSearch.Tel1LandKZColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTel1LandKZNull() {
+                this[this.tabletblAdressSearch.Tel1LandKZColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTel2LandKZNull() {
+                return this.IsNull(this.tabletblAdressSearch.Tel2LandKZColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTel2LandKZNull() {
+                this[this.tabletblAdressSearch.Tel2LandKZColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFAXLandKZNull() {
+                return this.IsNull(this.tabletblAdressSearch.FAXLandKZColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFAXLandKZNull() {
+                this[this.tabletblAdressSearch.FAXLandKZColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMobilLandKZNull() {
+                return this.IsNull(this.tabletblAdressSearch.MobilLandKZColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMobilLandKZNull() {
+                this[this.tabletblAdressSearch.MobilLandKZColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3401,6 +4978,40 @@ namespace OutlookAddIn_MailForm {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tblBriefanredeRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class tblAdressSearchRowChangeEvent : global::System.EventArgs {
+            
+            private tblAdressSearchRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblAdressSearchRowChangeEvent(tblAdressSearchRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblAdressSearchRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4525,6 +6136,380 @@ ORDER BY PUB.Wohnungstamm.Strasse, PUB.Geschoss.GeschossText";
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(BriefAnrNr));
             DataSet1_WOWI_SEARCH.tblBriefanredeDataTable dataTable = new DataSet1_WOWI_SEARCH.tblBriefanredeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class tblAdressSearchTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.Odbc.OdbcDataAdapter _adapter;
+        
+        private global::System.Data.Odbc.OdbcConnection _connection;
+        
+        private global::System.Data.Odbc.OdbcTransaction _transaction;
+        
+        private global::System.Data.Odbc.OdbcCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public tblAdressSearchTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.Odbc.OdbcDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.Odbc.OdbcConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.Odbc.OdbcCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.Odbc.OdbcTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.Odbc.OdbcCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.Odbc.OdbcDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "tblAdressSearch";
+            tableMapping.ColumnMappings.Add("Name1", "Name1");
+            tableMapping.ColumnMappings.Add("Name2", "Name2");
+            tableMapping.ColumnMappings.Add("Strasse", "Strasse");
+            tableMapping.ColumnMappings.Add("PlzOrt", "PlzOrt");
+            tableMapping.ColumnMappings.Add("PlzPostf", "PlzPostf");
+            tableMapping.ColumnMappings.Add("Postfach", "Postfach");
+            tableMapping.ColumnMappings.Add("AdrAnrNr", "AdrAnrNr");
+            tableMapping.ColumnMappings.Add("Vorwahl1", "Vorwahl1");
+            tableMapping.ColumnMappings.Add("Telefon1", "Telefon1");
+            tableMapping.ColumnMappings.Add("Telefax", "Telefax");
+            tableMapping.ColumnMappings.Add("AdressNr", "AdressNr");
+            tableMapping.ColumnMappings.Add("Vermerk1", "Vermerk1");
+            tableMapping.ColumnMappings.Add("Vermerk2", "Vermerk2");
+            tableMapping.ColumnMappings.Add("Telefon2", "Telefon2");
+            tableMapping.ColumnMappings.Add("Vorwahl2", "Vorwahl2");
+            tableMapping.ColumnMappings.Add("VorwahlFax", "VorwahlFax");
+            tableMapping.ColumnMappings.Add("Gebname", "Gebname");
+            tableMapping.ColumnMappings.Add("Ort", "Ort");
+            tableMapping.ColumnMappings.Add("EMail", "EMail");
+            tableMapping.ColumnMappings.Add("VorwahlMobil", "VorwahlMobil");
+            tableMapping.ColumnMappings.Add("TelefonMobil", "TelefonMobil");
+            tableMapping.ColumnMappings.Add("VPName1", "VPName1");
+            tableMapping.ColumnMappings.Add("VPName2", "VPName2");
+            tableMapping.ColumnMappings.Add("Postleitzahl", "Postleitzahl");
+            tableMapping.ColumnMappings.Add("Ortname", "Ortname");
+            tableMapping.ColumnMappings.Add("Tel1LandKZ", "Tel1LandKZ");
+            tableMapping.ColumnMappings.Add("Tel2LandKZ", "Tel2LandKZ");
+            tableMapping.ColumnMappings.Add("FAXLandKZ", "FAXLandKZ");
+            tableMapping.ColumnMappings.Add("MobilLandKZ", "MobilLandKZ");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.Odbc.OdbcConnection();
+            this._connection.ConnectionString = global::OutlookAddIn_MailForm.Properties.Settings.Default.ConnectionStringWoWiODBC;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[4];
+            this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT Name1, Name2, Strasse, PlzOrt, PlzPostf, Postfach, AdrAnrNr, Vorwahl1, Telefon1, Telefax, AdressNr, Vermerk1, Vermerk2, Telefon2, Vorwahl2, VorwahlFax, Gebname, Ort, 
+                  EMail, VorwahlMobil, TelefonMobil, VPName1, VPName2, Postleitzahl, Ortname, Tel1LandKZ, Tel2LandKZ, FAXLandKZ, MobilLandKZ
+FROM     PUB.Adresse
+WHERE  (Name1 LIKE ?) OR
+                  (Name2 LIKE ?)
+ORDER BY Name1 DESC";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Name1", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Name1", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Name2", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Name2", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT Name1, Name2, Strasse, PlzOrt, PlzPostf, Postfach, AdrAnrNr, Vorwahl1, Telefon1, Telefax, AdressNr, Vermerk1, Vermerk2, Telefon2, Vorwahl2, VorwahlFax, Gebname, Ort, 
+                  EMail, VorwahlMobil, TelefonMobil, VPName1, VPName2, Postleitzahl, Ortname, Tel1LandKZ, Tel2LandKZ, FAXLandKZ, MobilLandKZ
+FROM     PUB.Adresse
+WHERE  (Name1 LIKE ?)
+ORDER BY Name1 DESC";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Name1", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Name1", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT Name1, Name2, Strasse, PlzOrt, PlzPostf, Postfach, AdrAnrNr, Vorwahl1, Telefon1, Telefax, AdressNr, Vermerk1, Vermerk2, Telefon2, Vorwahl2, VorwahlFax, Gebname, Ort, 
+                  EMail, VorwahlMobil, TelefonMobil, VPName1, VPName2, Postleitzahl, Ortname, Tel1LandKZ, Tel2LandKZ, FAXLandKZ, MobilLandKZ
+FROM     PUB.Adresse
+WHERE  (Name1 LIKE ?) AND (Name2 LIKE ?)
+ORDER BY Name1 DESC";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Name1", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Name1", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Name2", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Name2", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT Name1, Name2, Strasse, PlzOrt, PlzPostf, Postfach, AdrAnrNr, Vorwahl1, Telefon1, Telefax, AdressNr, Vermerk1, Vermerk2, Telefon2, Vorwahl2, VorwahlFax, Gebname, Ort, 
+                  EMail, VorwahlMobil, TelefonMobil, VPName1, VPName2, Postleitzahl, Ortname, Tel1LandKZ, Tel2LandKZ, FAXLandKZ, MobilLandKZ
+FROM     PUB.Adresse
+WHERE  (Name2 LIKE ?)
+ORDER BY Name1 DESC";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Name2", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Name2", global::System.Data.DataRowVersion.Current, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int FillbyName1ORName2(DataSet1_WOWI_SEARCH.tblAdressSearchDataTable dataTable, string Name1, string Name2) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Name1 == null)) {
+                throw new global::System.ArgumentNullException("Name1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Name1));
+            }
+            if ((Name2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Name2));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1_WOWI_SEARCH.tblAdressSearchDataTable GetDatabyName1ORName2(string Name1, string Name2) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Name1 == null)) {
+                throw new global::System.ArgumentNullException("Name1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Name1));
+            }
+            if ((Name2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Name2));
+            }
+            DataSet1_WOWI_SEARCH.tblAdressSearchDataTable dataTable = new DataSet1_WOWI_SEARCH.tblAdressSearchDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByName1(DataSet1_WOWI_SEARCH.tblAdressSearchDataTable dataTable, string Name1) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Name1 == null)) {
+                throw new global::System.ArgumentNullException("Name1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Name1));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1_WOWI_SEARCH.tblAdressSearchDataTable GetDataByName1(string Name1) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Name1 == null)) {
+                throw new global::System.ArgumentNullException("Name1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Name1));
+            }
+            DataSet1_WOWI_SEARCH.tblAdressSearchDataTable dataTable = new DataSet1_WOWI_SEARCH.tblAdressSearchDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByName1andName2(DataSet1_WOWI_SEARCH.tblAdressSearchDataTable dataTable, string Name1, string Name2) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Name1 == null)) {
+                throw new global::System.ArgumentNullException("Name1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Name1));
+            }
+            if ((Name2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Name2));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1_WOWI_SEARCH.tblAdressSearchDataTable GetDataByName1andName2(string Name1, string Name2) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Name1 == null)) {
+                throw new global::System.ArgumentNullException("Name1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Name1));
+            }
+            if ((Name2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Name2));
+            }
+            DataSet1_WOWI_SEARCH.tblAdressSearchDataTable dataTable = new DataSet1_WOWI_SEARCH.tblAdressSearchDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByName2(DataSet1_WOWI_SEARCH.tblAdressSearchDataTable dataTable, string Name2) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((Name2 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Name2));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1_WOWI_SEARCH.tblAdressSearchDataTable GetDataByName2(string Name2) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((Name2 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Name2));
+            }
+            DataSet1_WOWI_SEARCH.tblAdressSearchDataTable dataTable = new DataSet1_WOWI_SEARCH.tblAdressSearchDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

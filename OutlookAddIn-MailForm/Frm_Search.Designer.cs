@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Search));
             this.dgv_TableSelect = new System.Windows.Forms.DataGridView();
             this.xyMieterBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1WOWISEARCHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1_WOWI_SEARCH = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCH();
             this.btn_select = new System.Windows.Forms.Button();
             this.dataSet1_WoWi_Objekte = new OutlookAddIn_MailForm.DataSet1_WoWi_Objekte();
             this.wirtschaftseinheitBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,19 +58,21 @@
             this.wohnungBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wohnungTableAdapter = new OutlookAddIn_MailForm.DataSet1WohnungTableAdapters.WohnungTableAdapter();
             this.tblWohnungBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.xyMieterTableAdapterWoWiSearch = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.xyMieterTableAdapter();
-            this.tblWohnungTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblWohnungTableAdapter();
             this.tblAdresseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblAdresseTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblAdresseTableAdapter();
             this.dataSet1_WoWi_Mandant = new OutlookAddIn_MailForm.DataSet1_WoWi_Mandant();
             this.mandantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mandantTableAdapter = new OutlookAddIn_MailForm.DataSet1_WoWi_MandantTableAdapters.MandantTableAdapter();
             this.tblBriefanredeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblAdressSearchBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1WOWISEARCHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1_WOWI_SEARCH = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCH();
+            this.xyMieterTableAdapterWoWiSearch = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.xyMieterTableAdapter();
+            this.tblWohnungTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblWohnungTableAdapter();
+            this.tblAdresseTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblAdresseTableAdapter();
             this.tblBriefanredeTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblBriefanredeTableAdapter();
+            this.tblAdressSearchTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblAdressSearchTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TableSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xyMieterBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1WOWISEARCHBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Objekte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wirtschaftseinheitBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Haus)).BeginInit();
@@ -91,6 +91,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Mandant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mandantBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblBriefanredeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblAdressSearchBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1WOWISEARCHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_TableSelect
@@ -116,16 +119,6 @@
             // 
             this.xyMieterBindingSource1.DataMember = "xyMieter";
             this.xyMieterBindingSource1.DataSource = this.dataSet1WOWISEARCHBindingSource;
-            // 
-            // dataSet1WOWISEARCHBindingSource
-            // 
-            this.dataSet1WOWISEARCHBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
-            this.dataSet1WOWISEARCHBindingSource.Position = 0;
-            // 
-            // dataSet1_WOWI_SEARCH
-            // 
-            this.dataSet1_WOWI_SEARCH.DataSetName = "DataSet1_WOWI_SEARCH";
-            this.dataSet1_WOWI_SEARCH.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_select
             // 
@@ -222,6 +215,7 @@
             this.txt_filter2.Size = new System.Drawing.Size(221, 22);
             this.txt_filter2.TabIndex = 5;
             this.txt_filter2.Visible = false;
+            this.txt_filter2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_filer1_KeyDown);
             // 
             // btn_search
             // 
@@ -288,22 +282,10 @@
             this.tblWohnungBindingSource.DataMember = "tblWohnung";
             this.tblWohnungBindingSource.DataSource = this.dataSet1WOWISEARCHBindingSource;
             // 
-            // xyMieterTableAdapterWoWiSearch
-            // 
-            this.xyMieterTableAdapterWoWiSearch.ClearBeforeFill = true;
-            // 
-            // tblWohnungTableAdapter
-            // 
-            this.tblWohnungTableAdapter.ClearBeforeFill = true;
-            // 
             // tblAdresseBindingSource
             // 
             this.tblAdresseBindingSource.DataMember = "tblAdresse";
             this.tblAdresseBindingSource.DataSource = this.dataSet1WOWISEARCHBindingSource;
-            // 
-            // tblAdresseTableAdapter
-            // 
-            this.tblAdresseTableAdapter.ClearBeforeFill = true;
             // 
             // dataSet1_WoWi_Mandant
             // 
@@ -324,9 +306,40 @@
             this.tblBriefanredeBindingSource.DataMember = "tblBriefanrede";
             this.tblBriefanredeBindingSource.DataSource = this.dataSet1WOWISEARCHBindingSource;
             // 
+            // tblAdressSearchBindingSource
+            // 
+            this.tblAdressSearchBindingSource.DataMember = "tblAdressSearch";
+            this.tblAdressSearchBindingSource.DataSource = this.dataSet1WOWISEARCHBindingSource;
+            // 
+            // dataSet1WOWISEARCHBindingSource
+            // 
+            this.dataSet1WOWISEARCHBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
+            this.dataSet1WOWISEARCHBindingSource.Position = 0;
+            // 
+            // dataSet1_WOWI_SEARCH
+            // 
+            this.dataSet1_WOWI_SEARCH.DataSetName = "DataSet1_WOWI_SEARCH";
+            this.dataSet1_WOWI_SEARCH.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // xyMieterTableAdapterWoWiSearch
+            // 
+            this.xyMieterTableAdapterWoWiSearch.ClearBeforeFill = true;
+            // 
+            // tblWohnungTableAdapter
+            // 
+            this.tblWohnungTableAdapter.ClearBeforeFill = true;
+            // 
+            // tblAdresseTableAdapter
+            // 
+            this.tblAdresseTableAdapter.ClearBeforeFill = true;
+            // 
             // tblBriefanredeTableAdapter
             // 
             this.tblBriefanredeTableAdapter.ClearBeforeFill = true;
+            // 
+            // tblAdressSearchTableAdapter
+            // 
+            this.tblAdressSearchTableAdapter.ClearBeforeFill = true;
             // 
             // Frm_Search
             // 
@@ -347,8 +360,6 @@
             this.Load += new System.EventHandler(this.Frm_Search_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TableSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xyMieterBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1WOWISEARCHBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Objekte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wirtschaftseinheitBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Haus)).EndInit();
@@ -367,6 +378,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Mandant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mandantBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblBriefanredeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblAdressSearchBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1WOWISEARCHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,6 +427,8 @@
         private DataSet1_WOWI_SEARCHTableAdapters.tblAdresseTableAdapter tblAdresseTableAdapter;
         private System.Windows.Forms.BindingSource tblBriefanredeBindingSource;
         private DataSet1_WOWI_SEARCHTableAdapters.tblBriefanredeTableAdapter tblBriefanredeTableAdapter;
+        private System.Windows.Forms.BindingSource tblAdressSearchBindingSource;
+        private DataSet1_WOWI_SEARCHTableAdapters.tblAdressSearchTableAdapter tblAdressSearchTableAdapter;
         //private DataSet1_WoWi_KreditorTableAdapters.Kreditor_AdresseTableAdapter kreditor_AdresseTableAdapter;
     }
 }
