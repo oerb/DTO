@@ -68,21 +68,10 @@ namespace OutlookAddIn_MailForm
 
         private void btn_saveChanges_Click(object sender, EventArgs e)
         {
-            // TODO: Connectionstring Save > following isn't working
-            //Properties.Settings.Default.saperionConnectionString = this.txt_saperion_connectionstring.Text;
-            //Properties.Settings.Default.ConnectionStringWoWiODBC = this.txb_wowi_locationstring.Text;
-            //Howto
-            //http://stackoverflow.com/questions/502411/change-connection-string-reload-app-config-at-run-time
-            //var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            //var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-            //connectionStringsSection.ConnectionStrings["Blah"].ConnectionString = "Data Source=blah;Initial Catalog=blah;UID=blah;password=blah";
-            //config.Save();
-
             string newCnnStr = "Dsn=" + this.txt_dsn.Text;
             newCnnStr += ";uid=" + this.txt_uid.Text;
             newCnnStr += ";pwd=" + this.txt_pwd.Text;
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
             try
             {
                 config.ConnectionStrings.ConnectionStrings["OutlookAddIn_MailForm.Properties.Settings.ConnectionStringWoWiODBC"].ConnectionString = newCnnStr;
@@ -94,8 +83,7 @@ namespace OutlookAddIn_MailForm
                 string msgtext = "Error: WoWi Connectionstring Configfile not found; \n\nEXCEPTTION: " + ex.ToString();
                 MessageBox.Show(msgtext);
                 throw;
-            }
-            
+            }            
         }
     }
 }
