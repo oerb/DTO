@@ -232,10 +232,19 @@ namespace OutlookAddIn_MailForm
 
         private void btn_create_MSG_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            Globals.ThisAddIn.ArchivingAktive = true;
+            
             //Globals.ThisAddIn.msg_parameter = this.msg_parameter;
-            this.Close();
+            if (this.txt_meldungstyp.Text != "")
+            {
+                this.DialogResult = DialogResult.OK;
+                Globals.ThisAddIn.ArchivingAktive = true;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bitte geben Sie einen Meldungstyp an!");
+            }
+            
         }
 
         private void txt_meldungstyp_TextChanged(object sender, EventArgs e)

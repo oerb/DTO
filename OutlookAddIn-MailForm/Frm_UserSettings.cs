@@ -18,11 +18,8 @@ namespace OutlookAddIn_MailForm
         }
 
         private void Frm_UserSettings_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dataSet1_WOWI_SEARCH.tblDokuart' table. You can move, or remove it, as needed.
-            this.tblDokuartTableAdapter.Fill(this.dataSet1_WOWI_SEARCH.tblDokuart);
-            // TODO: This line of code loads data into the 'saperionDataSet_Dokuart_DokuKZ.WOWIDOKART' table. You can move, or remove it, as needed.
-            //this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART);
+        {            
+            this.tblDokuartTableAdapter.Fill(this.dataSet1_WOWI_SEARCH.tblDokuart);            
             if (Properties.Settings.Default.uDokuart != "")
             {
                 this.cmb_dokuart.SelectedValue = Properties.Settings.Default.uDokuart;
@@ -31,7 +28,6 @@ namespace OutlookAddIn_MailForm
             {                
                 this.cmb_vorgangkz.SelectedValue = Properties.Settings.Default.uVorgangKZ;
             }
-
         }
 
         private void cmb_dokuart_SelectedIndexChanged(object sender, EventArgs e)
