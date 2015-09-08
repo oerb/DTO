@@ -38,23 +38,19 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lbl_vorgangkz = new System.Windows.Forms.Label();
             this.cmb_vorgangkz = new System.Windows.Forms.ComboBox();
-            this.wOWIVORGANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.saperionDataSetDokuartDokuKZBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.saperionDataSet_Dokuart_DokuKZ = new OutlookAddIn_MailForm.saperionDataSet_Dokuart_DokuKZ();
             this.lbl_dokuart = new System.Windows.Forms.Label();
             this.cmb_dokuart = new System.Windows.Forms.ComboBox();
-            this.wOWIDOKARTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.wOWIDOKARTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wOWIVORGANGTableAdapter = new OutlookAddIn_MailForm.saperionDataSet_Dokuart_DokuKZTableAdapters.WOWIVORGANGTableAdapter();
-            this.wOWIDOKARTTableAdapter = new OutlookAddIn_MailForm.saperionDataSet_Dokuart_DokuKZTableAdapters.WOWIDOKARTTableAdapter();
+            this.dataSet1_WOWI_SEARCH = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCH();
+            this.tblDokuartBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblDokuartTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblDokuartTableAdapter();
+            this.tblVorgangKZBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblVorgangKZTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblVorgangKZTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wOWIVORGANGBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saperionDataSetDokuartDokuKZBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saperionDataSet_Dokuart_DokuKZ)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wOWIDOKARTBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wOWIDOKARTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -125,7 +121,7 @@
             // 
             this.lbl_vorgangkz.AutoSize = true;
             this.lbl_vorgangkz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_vorgangkz.Location = new System.Drawing.Point(17, 264);
+            this.lbl_vorgangkz.Location = new System.Drawing.Point(9, 64);
             this.lbl_vorgangkz.Name = "lbl_vorgangkz";
             this.lbl_vorgangkz.Size = new System.Drawing.Size(118, 25);
             this.lbl_vorgangkz.TabIndex = 48;
@@ -133,36 +129,21 @@
             // 
             // cmb_vorgangkz
             // 
-            this.cmb_vorgangkz.DataSource = this.wOWIVORGANGBindingSource;
-            this.cmb_vorgangkz.DisplayMember = "VORGANG";
+            this.cmb_vorgangkz.DataSource = this.tblVorgangKZBindingSource;
+            this.cmb_vorgangkz.DisplayMember = "VorgangKZ";
             this.cmb_vorgangkz.FormattingEnabled = true;
-            this.cmb_vorgangkz.Location = new System.Drawing.Point(153, 265);
+            this.cmb_vorgangkz.Location = new System.Drawing.Point(145, 65);
             this.cmb_vorgangkz.Name = "cmb_vorgangkz";
             this.cmb_vorgangkz.Size = new System.Drawing.Size(352, 24);
             this.cmb_vorgangkz.TabIndex = 47;
-            this.cmb_vorgangkz.ValueMember = "VORGANG";
+            this.cmb_vorgangkz.ValueMember = "VorgangKZ";
             this.cmb_vorgangkz.SelectedIndexChanged += new System.EventHandler(this.cmb_vorgangkz_SelectedIndexChanged);
-            // 
-            // wOWIVORGANGBindingSource
-            // 
-            this.wOWIVORGANGBindingSource.DataMember = "WOWIVORGANG";
-            this.wOWIVORGANGBindingSource.DataSource = this.saperionDataSetDokuartDokuKZBindingSource;
-            // 
-            // saperionDataSetDokuartDokuKZBindingSource
-            // 
-            this.saperionDataSetDokuartDokuKZBindingSource.DataSource = this.saperionDataSet_Dokuart_DokuKZ;
-            this.saperionDataSetDokuartDokuKZBindingSource.Position = 0;
-            // 
-            // saperionDataSet_Dokuart_DokuKZ
-            // 
-            this.saperionDataSet_Dokuart_DokuKZ.DataSetName = "saperionDataSet_Dokuart_DokuKZ";
-            this.saperionDataSet_Dokuart_DokuKZ.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lbl_dokuart
             // 
             this.lbl_dokuart.AutoSize = true;
             this.lbl_dokuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dokuart.Location = new System.Drawing.Point(17, 235);
+            this.lbl_dokuart.Location = new System.Drawing.Point(9, 35);
             this.lbl_dokuart.Name = "lbl_dokuart";
             this.lbl_dokuart.Size = new System.Drawing.Size(80, 25);
             this.lbl_dokuart.TabIndex = 46;
@@ -170,33 +151,38 @@
             // 
             // cmb_dokuart
             // 
-            this.cmb_dokuart.DataSource = this.wOWIDOKARTBindingSource1;
+            this.cmb_dokuart.DataSource = this.tblDokuartBindingSource;
             this.cmb_dokuart.DisplayMember = "DOKUART";
             this.cmb_dokuart.FormattingEnabled = true;
-            this.cmb_dokuart.Location = new System.Drawing.Point(153, 235);
+            this.cmb_dokuart.Location = new System.Drawing.Point(145, 35);
             this.cmb_dokuart.Name = "cmb_dokuart";
             this.cmb_dokuart.Size = new System.Drawing.Size(352, 24);
             this.cmb_dokuart.TabIndex = 45;
             this.cmb_dokuart.ValueMember = "DOKUART";
             this.cmb_dokuart.SelectedIndexChanged += new System.EventHandler(this.cmb_dokuart_SelectedIndexChanged);
             // 
-            // wOWIDOKARTBindingSource1
+            // dataSet1_WOWI_SEARCH
             // 
-            this.wOWIDOKARTBindingSource1.DataMember = "WOWIDOKART";
-            this.wOWIDOKARTBindingSource1.DataSource = this.saperionDataSetDokuartDokuKZBindingSource;
+            this.dataSet1_WOWI_SEARCH.DataSetName = "DataSet1_WOWI_SEARCH";
+            this.dataSet1_WOWI_SEARCH.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // wOWIDOKARTBindingSource
+            // tblDokuartBindingSource
             // 
-            this.wOWIDOKARTBindingSource.DataMember = "WOWIDOKART";
-            this.wOWIDOKARTBindingSource.DataSource = this.saperionDataSetDokuartDokuKZBindingSource;
+            this.tblDokuartBindingSource.DataMember = "tblDokuart";
+            this.tblDokuartBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
             // 
-            // wOWIVORGANGTableAdapter
+            // tblDokuartTableAdapter
             // 
-            this.wOWIVORGANGTableAdapter.ClearBeforeFill = true;
+            this.tblDokuartTableAdapter.ClearBeforeFill = true;
             // 
-            // wOWIDOKARTTableAdapter
+            // tblVorgangKZBindingSource
             // 
-            this.wOWIDOKARTTableAdapter.ClearBeforeFill = true;
+            this.tblVorgangKZBindingSource.DataMember = "tblVorgangKZ";
+            this.tblVorgangKZBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
+            // 
+            // tblVorgangKZTableAdapter
+            // 
+            this.tblVorgangKZTableAdapter.ClearBeforeFill = true;
             // 
             // Frm_UserSettings
             // 
@@ -213,11 +199,9 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wOWIVORGANGBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saperionDataSetDokuartDokuKZBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saperionDataSet_Dokuart_DokuKZ)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wOWIDOKARTBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wOWIDOKARTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -233,13 +217,11 @@
         private System.Windows.Forms.ComboBox cmb_vorgangkz;
         private System.Windows.Forms.Label lbl_dokuart;
         private System.Windows.Forms.ComboBox cmb_dokuart;
-        private System.Windows.Forms.BindingSource wOWIDOKARTBindingSource;
-        private System.Windows.Forms.BindingSource saperionDataSetDokuartDokuKZBindingSource;
-        private saperionDataSet_Dokuart_DokuKZ saperionDataSet_Dokuart_DokuKZ;
-        private System.Windows.Forms.BindingSource wOWIVORGANGBindingSource;
-        private saperionDataSet_Dokuart_DokuKZTableAdapters.WOWIVORGANGTableAdapter wOWIVORGANGTableAdapter;
-        private System.Windows.Forms.BindingSource wOWIDOKARTBindingSource1;
-        private saperionDataSet_Dokuart_DokuKZTableAdapters.WOWIDOKARTTableAdapter wOWIDOKARTTableAdapter;
         private System.Windows.Forms.CheckBox chb_ask_before_archive;
+        private DataSet1_WOWI_SEARCH dataSet1_WOWI_SEARCH;
+        private System.Windows.Forms.BindingSource tblDokuartBindingSource;
+        private DataSet1_WOWI_SEARCHTableAdapters.tblDokuartTableAdapter tblDokuartTableAdapter;
+        private System.Windows.Forms.BindingSource tblVorgangKZBindingSource;
+        private DataSet1_WOWI_SEARCHTableAdapters.tblVorgangKZTableAdapter tblVorgangKZTableAdapter;
     }
 }
