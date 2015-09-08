@@ -42,6 +42,12 @@
             this.txt_saperion_connectionstring = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_saveChanges = new System.Windows.Forms.Button();
+            this.lbl_dsn = new System.Windows.Forms.Label();
+            this.lbl_uid = new System.Windows.Forms.Label();
+            this.lbl_pwd = new System.Windows.Forms.Label();
+            this.txt_dsn = new System.Windows.Forms.TextBox();
+            this.txt_uid = new System.Windows.Forms.TextBox();
+            this.txt_pwd = new System.Windows.Forms.TextBox();
             this.tab_settings.SuspendLayout();
             this.tbp_wowinex.SuspendLayout();
             this.tbp_saperion.SuspendLayout();
@@ -67,6 +73,12 @@
             // 
             // tbp_wowinex
             // 
+            this.tbp_wowinex.Controls.Add(this.txt_pwd);
+            this.tbp_wowinex.Controls.Add(this.txt_uid);
+            this.tbp_wowinex.Controls.Add(this.txt_dsn);
+            this.tbp_wowinex.Controls.Add(this.lbl_pwd);
+            this.tbp_wowinex.Controls.Add(this.lbl_uid);
+            this.tbp_wowinex.Controls.Add(this.lbl_dsn);
             this.tbp_wowinex.Controls.Add(this.lbl_serverlocationstring);
             this.tbp_wowinex.Controls.Add(this.txb_wowi_locationstring);
             this.tbp_wowinex.Controls.Add(this.btn_locationstring);
@@ -81,7 +93,7 @@
             // lbl_serverlocationstring
             // 
             this.lbl_serverlocationstring.AutoSize = true;
-            this.lbl_serverlocationstring.Location = new System.Drawing.Point(27, 46);
+            this.lbl_serverlocationstring.Location = new System.Drawing.Point(8, 13);
             this.lbl_serverlocationstring.Name = "lbl_serverlocationstring";
             this.lbl_serverlocationstring.Size = new System.Drawing.Size(147, 17);
             this.lbl_serverlocationstring.TabIndex = 2;
@@ -89,14 +101,15 @@
             // 
             // txb_wowi_locationstring
             // 
-            this.txb_wowi_locationstring.Location = new System.Drawing.Point(30, 74);
+            this.txb_wowi_locationstring.Location = new System.Drawing.Point(11, 41);
             this.txb_wowi_locationstring.Name = "txb_wowi_locationstring";
+            this.txb_wowi_locationstring.ReadOnly = true;
             this.txb_wowi_locationstring.Size = new System.Drawing.Size(377, 22);
             this.txb_wowi_locationstring.TabIndex = 1;
             // 
             // btn_locationstring
             // 
-            this.btn_locationstring.Location = new System.Drawing.Point(413, 73);
+            this.btn_locationstring.Location = new System.Drawing.Point(394, 40);
             this.btn_locationstring.Name = "btn_locationstring";
             this.btn_locationstring.Size = new System.Drawing.Size(32, 23);
             this.btn_locationstring.TabIndex = 0;
@@ -145,13 +158,61 @@
             // 
             // btn_saveChanges
             // 
-            this.btn_saveChanges.Location = new System.Drawing.Point(449, 12);
+            this.btn_saveChanges.Location = new System.Drawing.Point(364, 12);
             this.btn_saveChanges.Name = "btn_saveChanges";
-            this.btn_saveChanges.Size = new System.Drawing.Size(161, 31);
+            this.btn_saveChanges.Size = new System.Drawing.Size(246, 31);
             this.btn_saveChanges.TabIndex = 1;
             this.btn_saveChanges.Text = "Änderungen Speichern";
             this.btn_saveChanges.UseVisualStyleBackColor = true;
             this.btn_saveChanges.Click += new System.EventHandler(this.btn_saveChanges_Click);
+            // 
+            // lbl_dsn
+            // 
+            this.lbl_dsn.AutoSize = true;
+            this.lbl_dsn.Location = new System.Drawing.Point(8, 66);
+            this.lbl_dsn.Name = "lbl_dsn";
+            this.lbl_dsn.Size = new System.Drawing.Size(327, 17);
+            this.lbl_dsn.TabIndex = 3;
+            this.lbl_dsn.Text = "Dsn (siehe Systemsteuerung/Datenquellen(ODBC)";
+            // 
+            // lbl_uid
+            // 
+            this.lbl_uid.AutoSize = true;
+            this.lbl_uid.Location = new System.Drawing.Point(8, 115);
+            this.lbl_uid.Name = "lbl_uid";
+            this.lbl_uid.Size = new System.Drawing.Size(98, 17);
+            this.lbl_uid.TabIndex = 4;
+            this.lbl_uid.Text = "Anmeldename";
+            // 
+            // lbl_pwd
+            // 
+            this.lbl_pwd.AutoSize = true;
+            this.lbl_pwd.Location = new System.Drawing.Point(8, 157);
+            this.lbl_pwd.Name = "lbl_pwd";
+            this.lbl_pwd.Size = new System.Drawing.Size(65, 17);
+            this.lbl_pwd.TabIndex = 5;
+            this.lbl_pwd.Text = "Passwort";
+            // 
+            // txt_dsn
+            // 
+            this.txt_dsn.Location = new System.Drawing.Point(11, 90);
+            this.txt_dsn.Name = "txt_dsn";
+            this.txt_dsn.Size = new System.Drawing.Size(219, 22);
+            this.txt_dsn.TabIndex = 6;
+            // 
+            // txt_uid
+            // 
+            this.txt_uid.Location = new System.Drawing.Point(11, 135);
+            this.txt_uid.Name = "txt_uid";
+            this.txt_uid.Size = new System.Drawing.Size(219, 22);
+            this.txt_uid.TabIndex = 7;
+            // 
+            // txt_pwd
+            // 
+            this.txt_pwd.Location = new System.Drawing.Point(11, 177);
+            this.txt_pwd.Name = "txt_pwd";
+            this.txt_pwd.Size = new System.Drawing.Size(219, 22);
+            this.txt_pwd.TabIndex = 8;
             // 
             // Frm_ServerSettings
             // 
@@ -189,5 +250,11 @@
         private System.Windows.Forms.TextBox txt_saperion_connectionstring;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_saveChanges;
+        private System.Windows.Forms.TextBox txt_pwd;
+        private System.Windows.Forms.TextBox txt_uid;
+        private System.Windows.Forms.TextBox txt_dsn;
+        private System.Windows.Forms.Label lbl_pwd;
+        private System.Windows.Forms.Label lbl_uid;
+        private System.Windows.Forms.Label lbl_dsn;
     }
 }

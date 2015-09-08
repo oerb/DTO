@@ -107,14 +107,7 @@ namespace OutlookAddIn_MailForm
 
             try
             {
-                // TODO: Get this out of Try ?? or make some Better 
-                // infos Message in a Case of Fail
-                // The DTsaperionVBNETLib was not found after Clientinstallation
-                // but do not respond anything so ich put this in Try to catch
-                // Infos
                 Archivieren DtSap = new Archivieren();
-                //string newfilelocation = System.Uri.UnescapeDataString(filelocaiton);
-                // Fails here???? old code follows
                 System.Reflection.Assembly assemblyInfo = System.Reflection.Assembly.GetExecutingAssembly();
                 string FileLocation = Path.GetDirectoryName(assemblyInfo.Location);
                 FileLocation += "mail.msg";
@@ -122,18 +115,7 @@ namespace OutlookAddIn_MailForm
                 this.msg_parameter.filelocaiton = FileLocation;
                 //this.msg_parameter.MailItem.SaveAs(@"C:\Install\DTO\mail.msg");
                 //this.msg_parameter.filelocaiton = @"C:\Install\DTO\mail.msg";
-                //string path = @"%USERPROFILE%\AppData\Local\DTO\mail.msg";
-                //string filepath = Environment.ExpandEnvironmentVariables(path);
-                //MessageBox.Show(filepath);
-                //MailItem.SaveAs(filepath);
-                //filelocaiton = filepath;
                 string Subject = this.msg_parameter.MailItem.Subject;
-                //TODO: remove this TEST
-                //MessageBox.Show(DtSap.GetType().ToString());
-                //DtSap.test();
-                //END
-                //string msgtext = "AdrNr: " + msg_parameter.AdresseNr + " - " + msg_parameter.KreditorName;
-                //MessageBox.Show(msgtext);
                 string Memo2 = msg_parameter.KreditorAdr + " - " + msg_parameter.KreditorName;
                 // string Subject2 = Subject.Substring(0, 149);
                 DtSap.saveDokument(msg_parameter.filelocaiton, msg_parameter.Mandant, msg_parameter.Unternehmen,
