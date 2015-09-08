@@ -42,6 +42,36 @@ namespace OutlookAddIn_MailForm
                 this.dtp_Datum2.Visible = msgtypTable[0].Datum2show;
                 this.lbl_Datum2.Visible = msgtypTable[0].Datum2show;
                 this.lbl_Datum2.Text = msgtypTable[0].Datum2Name;
+                //Unternehmen zeigen
+                this.txt_Mandant.Visible = msgtypTable[0].UnternehmenAnz;
+                this.lbl_Mandant.Visible = msgtypTable[0].UnternehmenAnz;
+                this.btn_mandant.Visible = msgtypTable[0].UnternehmenAnz;
+                //Mandant zeigen
+                this.txt_mandant1.Visible = msgtypTable[0].MandantAnz;
+                this.lbl_mandant1.Visible = msgtypTable[0].MandantAnz;
+                this.btn_mandant1.Visible = msgtypTable[0].MandantAnz;
+                //Kreditor zeigen
+                this.txt_kreditor.Visible = msgtypTable[0].KreditorAnz;
+                this.lbl_Kreditor.Visible = msgtypTable[0].KreditorAnz;
+                this.btn_kreditor.Visible = msgtypTable[0].KreditorAnz;
+                //WE zeigen
+                this.txt_objekt.Visible = msgtypTable[0].WEanz;
+                this.lbl_Objekt.Visible = msgtypTable[0].WEanz;
+                this.btn_objekt.Visible = msgtypTable[0].WEanz;
+                //Haus zeigen
+                this.txt_haus.Visible = msgtypTable[0].HausAnz;
+                this.lbl_haus.Visible = msgtypTable[0].HausAnz;
+                this.btn_haus.Visible = msgtypTable[0].HausAnz;
+                //NE zeigen
+                this.txt_wohnung.Visible = msgtypTable[0].NEanz;
+                this.lbl_Wohnung.Visible = msgtypTable[0].NEanz;
+                this.btn_wohnung.Visible = msgtypTable[0].NEanz;
+                //Mieter zeigen
+                this.txt_Mieter.Visible = msgtypTable[0].MieterAnz;
+                this.lbl_Mieter.Visible = msgtypTable[0].MieterAnz;
+                this.btn_mieter.Visible = msgtypTable[0].MieterAnz;
+                //Adresse zeigen
+                this.grb_adress_search.Visible = msgtypTable[0].AdresseAnz;
             }
         }
 

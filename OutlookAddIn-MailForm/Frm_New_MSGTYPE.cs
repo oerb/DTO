@@ -15,7 +15,8 @@ namespace OutlookAddIn_MailForm
         // formmode has two Values  new or edit
         public Frm_New_MSGTYPE(string formmode, int id, string msgtype, string filelocation, string Dokuart, 
             string VorgangKZ,  bool Date1show
-            , string Date1Name, bool Date2show, string Date2Name )
+            , string Date1Name, bool Date2show, string Date2Name, bool MandantAnz, bool UnternehmenAnz, 
+            bool KreditorAnz, bool WEanz, bool HausAnz, bool NEanz, bool MieterAnz, bool AdresseAnz )
         {
             InitializeComponent();
             this.formmode = formmode;
@@ -27,6 +28,14 @@ namespace OutlookAddIn_MailForm
                 this.txtDatum2Bezeichnung.Text = Date2Name;
                 this.cbxDatum1Anzeigen.Checked = Date1show;
                 this.cbxDatum2Anzeigen.Checked = Date2show;
+                this.cbx_mandant_anzeigen.Checked = MandantAnz;
+                this.cbx_unternehmen_anzeigen.Checked = UnternehmenAnz;
+                this.cbx_kreditor_anzeigen.Checked = KreditorAnz;
+                this.cbx_we_anzeigen.Checked = WEanz;
+                this.cbx_haus_anzeigen.Checked = HausAnz;
+                this.cbx_ne_anzeigen.Checked = NEanz;
+                this.cbx_mieter_anzeigen.Checked = MieterAnz;
+                this.cbx_adresse_anzeigen.Checked = AdresseAnz;
                 this.cmb_dokuart.Text = Dokuart;
                 this.cmb_vorgangkz.Text = VorgangKZ;
                 this.id = id;                
@@ -87,7 +96,10 @@ namespace OutlookAddIn_MailForm
             this.Validate();
             this.ParentForm.update_lbx_MSGTYPES(this.formmode, this.id, this.txt_mailtype.Text, this.txt_filelocation.Text
                 , this.cmb_dokuart.Text, this.cmb_vorgangkz.Text, this.cbxDatum1Anzeigen.Checked, 
-                this.txtDatum1Bezeichnung.Text, this.cbxDatum2Anzeigen.Checked, this.txtDatum2Bezeichnung.Text);
+                this.txtDatum1Bezeichnung.Text, this.cbxDatum2Anzeigen.Checked, this.txtDatum2Bezeichnung.Text,
+                this.cbx_mandant_anzeigen.Checked, this.cbx_unternehmen_anzeigen.Checked, this.cbx_kreditor_anzeigen.Checked, 
+                this.cbx_we_anzeigen.Checked, this.cbx_haus_anzeigen.Checked, this.cbx_ne_anzeigen.Checked, this.cbx_mieter_anzeigen.Checked,
+                this.cbx_adresse_anzeigen.Checked);
             this.Close();            
         }
 
@@ -101,6 +113,8 @@ namespace OutlookAddIn_MailForm
 
         private void Frm_New_MSGTYPE_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1_WOWI_SEARCH.tblDokuart' table. You can move, or remove it, as needed.
+            this.tblDokuartTableAdapter.Fill(this.dataSet1_WOWI_SEARCH.tblDokuart);
             if (this.formmode == "new")
             { 
                 this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART);

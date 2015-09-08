@@ -7,6 +7,8 @@ using Outlook = Microsoft.Office.Interop.Outlook;
 using dialog = System.Windows.Forms;
 using System.Globalization;
 using System.Windows.Forms;
+using System.Deployment.Application;
+using System.IO;
 
 
 
@@ -218,11 +220,24 @@ namespace OutlookAddIn_MailForm
 
         private void btn_Info_Click(object sender, RibbonControlEventArgs e)
         {
+            string DTOversion = "in Developmode";
+            string DTOdatadirectory = "";
+            if (ApplicationDeployment.IsNetworkDeployed)
+            {
+                ApplicationDeployment ad = ApplicationDeployment.CurrentDeployment;
+                DTOversion = ad.CurrentVersion.ToString(4);
+                DTOdatadirectory = ad.DataDirectory.ToString();
+            }            
             System.Reflection.Assembly assemblyInfo = System.Reflection.Assembly.GetExecutingAssembly();
+            Uri uriCodeBase = new Uri(assemblyInfo.CodeBase);
+            string ClickOnceLocation = Path.GetDirectoryName(uriCodeBase.LocalPath.ToString());
             string boxtext = "This is an Alpha Version of DTO";
             boxtext += "\n\n GPL v. 3 Copyright 2015 by Björn Leppin, Hilden, Germany";
             boxtext += "\n\n Pojektside: https://github.com/oerb/DTO \n\n";
-            boxtext += assemblyInfo.FullName.ToString();
+            boxtext += "\n\nAssemblyLocation:\n" + assemblyInfo.Location.ToString();
+            boxtext += "\n\n aplha v. " + DTOversion;
+            boxtext += "\n\nClickOnceLocation:\n" + ClickOnceLocation;
+            //            assemblyInfo.ImageRuntimeVersion.ToString();
             MessageBox.Show(boxtext, "DTO Information", MessageBoxButtons.OK ,MessageBoxIcon.Information);
         }
     }

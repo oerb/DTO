@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Search));
             this.dgv_TableSelect = new System.Windows.Forms.DataGridView();
             this.xyMieterBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1WOWISEARCHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1_WOWI_SEARCH = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCH();
             this.btn_select = new System.Windows.Forms.Button();
             this.dataSet1_WoWi_Objekte = new OutlookAddIn_MailForm.DataSet1_WoWi_Objekte();
             this.wirtschaftseinheitBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -64,8 +66,6 @@
             this.mandantTableAdapter = new OutlookAddIn_MailForm.DataSet1_WoWi_MandantTableAdapters.MandantTableAdapter();
             this.tblBriefanredeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblAdressSearchBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1WOWISEARCHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1_WOWI_SEARCH = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCH();
             this.xyMieterTableAdapterWoWiSearch = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.xyMieterTableAdapter();
             this.tblWohnungTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblWohnungTableAdapter();
             this.tblAdresseTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblAdresseTableAdapter();
@@ -73,6 +73,8 @@
             this.tblAdressSearchTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblAdressSearchTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TableSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xyMieterBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1WOWISEARCHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Objekte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wirtschaftseinheitBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Haus)).BeginInit();
@@ -92,8 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mandantBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblBriefanredeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblAdressSearchBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1WOWISEARCHBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_TableSelect
@@ -119,6 +119,16 @@
             // 
             this.xyMieterBindingSource1.DataMember = "xyMieter";
             this.xyMieterBindingSource1.DataSource = this.dataSet1WOWISEARCHBindingSource;
+            // 
+            // dataSet1WOWISEARCHBindingSource
+            // 
+            this.dataSet1WOWISEARCHBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
+            this.dataSet1WOWISEARCHBindingSource.Position = 0;
+            // 
+            // dataSet1_WOWI_SEARCH
+            // 
+            this.dataSet1_WOWI_SEARCH.DataSetName = "DataSet1_WOWI_SEARCH";
+            this.dataSet1_WOWI_SEARCH.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_select
             // 
@@ -311,16 +321,6 @@
             this.tblAdressSearchBindingSource.DataMember = "tblAdressSearch";
             this.tblAdressSearchBindingSource.DataSource = this.dataSet1WOWISEARCHBindingSource;
             // 
-            // dataSet1WOWISEARCHBindingSource
-            // 
-            this.dataSet1WOWISEARCHBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
-            this.dataSet1WOWISEARCHBindingSource.Position = 0;
-            // 
-            // dataSet1_WOWI_SEARCH
-            // 
-            this.dataSet1_WOWI_SEARCH.DataSetName = "DataSet1_WOWI_SEARCH";
-            this.dataSet1_WOWI_SEARCH.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // xyMieterTableAdapterWoWiSearch
             // 
             this.xyMieterTableAdapterWoWiSearch.ClearBeforeFill = true;
@@ -360,6 +360,8 @@
             this.Load += new System.EventHandler(this.Frm_Search_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TableSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xyMieterBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1WOWISEARCHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Objekte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wirtschaftseinheitBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Haus)).EndInit();
@@ -379,8 +381,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mandantBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblBriefanredeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblAdressSearchBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1WOWISEARCHBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

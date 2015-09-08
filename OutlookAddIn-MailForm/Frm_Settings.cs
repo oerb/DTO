@@ -19,17 +19,21 @@ namespace OutlookAddIn_MailForm
         // Is for saving Data to Table and Refresh Form
         // TODO: Trennen von Speichern und Füllen
         public void update_lbx_MSGTYPES(string formmode, int id, string msgtype, string filelocation,
-            string dokuart, string vorgangkz, bool datum1show, string datum1name, bool datum2show, string datum2name)
+            string dokuart, string vorgangkz, bool datum1show, string datum1name, bool datum2show, 
+            string datum2name, bool MandantAnz, bool UnternehmenAnz,
+            bool KreditorAnz, bool WEanz, bool HausAnz, bool NEanz, bool MieterAnz, bool AdresseAnz)
         {         
             if (formmode == "new")
             {
                 this.tableTableAdapter.Insert(msgtype, filelocation, dokuart, vorgangkz, datum1show
-                    , datum1name, datum2show, datum2name);
+                    , datum1name, datum2show, datum2name, MandantAnz, UnternehmenAnz, KreditorAnz, 
+                    WEanz, HausAnz, NEanz, MieterAnz, AdresseAnz);
             }
             else if (formmode == "edit")
             {
                 this.tableTableAdapter.UpdateByID(msgtype, filelocation, dokuart, vorgangkz, datum1show
-                    , datum1name, datum2show, datum2name, id);
+                    , datum1name, datum2show, datum2name, MandantAnz, UnternehmenAnz, KreditorAnz, 
+                    WEanz, HausAnz, NEanz, MieterAnz, AdresseAnz, id);
             }
             else
             {
@@ -40,7 +44,8 @@ namespace OutlookAddIn_MailForm
 
         private void btn_new_msgtype_Click(object sender, EventArgs e)
         {
-            Frm_New_MSGTYPE frm_New_MSGTYPE = new Frm_New_MSGTYPE("new", 0, " ", " " , " ", " ", false, " ", false, " ");
+            Frm_New_MSGTYPE frm_New_MSGTYPE = new Frm_New_MSGTYPE("new", 0, " ", " ", " ", " ", false, " ", false, " ",
+                false, false, false, false, false, false, false, false);
             frm_New_MSGTYPE.ParentForm = this;
             DialogResult result = frm_New_MSGTYPE.ShowDialog();
         }
@@ -85,7 +90,9 @@ namespace OutlookAddIn_MailForm
                 msgtypTable = this.tableTableAdapter.GetDataByID((int)this.lbx_mbstypes.SelectedValue);                
                 Frm_New_MSGTYPE frm_New_MSGTYPE = new Frm_New_MSGTYPE("edit", id, msgtyp, filelocation, 
                     msgtypTable[0].Dokuart.ToString(), msgtypTable[0].VorgangKZ.ToString() , msgtypTable[0].Datum1show,
-                    msgtypTable[0].Datum1Name.ToString(), msgtypTable[0].Datum2show, msgtypTable[0].Datum2Name.ToString());
+                    msgtypTable[0].Datum1Name.ToString(), msgtypTable[0].Datum2show, msgtypTable[0].Datum2Name.ToString(),
+                    msgtypTable[0].MandantAnz, msgtypTable[0].UnternehmenAnz, msgtypTable[0].KreditorAnz, msgtypTable[0].WEanz,
+                    msgtypTable[0].HausAnz, msgtypTable[0].NEanz, msgtypTable[0].MieterAnz, msgtypTable[0].AdresseAnz);
                 frm_New_MSGTYPE.ParentForm = this;
                 DialogResult result = frm_New_MSGTYPE.ShowDialog();
             }           

@@ -49,6 +49,13 @@
             this.cmb_dokuart = new System.Windows.Forms.ComboBox();
             this.wOWIDOKARTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grbVorbelegungen = new System.Windows.Forms.GroupBox();
+            this.cbx_adresse_anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbx_mieter_anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbx_ne_anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbx_haus_anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbx_we_anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbx_kreditor_anzeigen = new System.Windows.Forms.CheckBox();
+            this.cbx_unternehmen_anzeigen = new System.Windows.Forms.CheckBox();
             this.cbx_mandant_anzeigen = new System.Windows.Forms.CheckBox();
             this.cbxDatum2Anzeigen = new System.Windows.Forms.CheckBox();
             this.lblDatum2 = new System.Windows.Forms.Label();
@@ -59,13 +66,12 @@
             this.btn_help = new System.Windows.Forms.Button();
             this.wOWIDOKARTTableAdapter = new OutlookAddIn_MailForm.saperionDataSet_Dokuart_DokuKZTableAdapters.WOWIDOKARTTableAdapter();
             this.wOWIVORGANGTableAdapter = new OutlookAddIn_MailForm.saperionDataSet_Dokuart_DokuKZTableAdapters.WOWIVORGANGTableAdapter();
-            this.cbx_unternehmen_anzeigen = new System.Windows.Forms.CheckBox();
-            this.cbx_kreditor_anzeigen = new System.Windows.Forms.CheckBox();
-            this.cbx_we_anzeigen = new System.Windows.Forms.CheckBox();
-            this.cbx_haus_anzeigen = new System.Windows.Forms.CheckBox();
-            this.cbx_ne_anzeigen = new System.Windows.Forms.CheckBox();
-            this.cbx_mieter_anzeigen = new System.Windows.Forms.CheckBox();
-            this.cbx_adresse_anzeigen = new System.Windows.Forms.CheckBox();
+            this.dataSet1_WOWI_SEARCH = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCH();
+            this.tblDokuartBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblDokuartTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblDokuartTableAdapter();
+            this.dataSet1WOWISEARCHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblVorgangKZBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblVorgangKZTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblVorgangKZTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet_MSGTYPES)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIVORGANGBindingSource)).BeginInit();
@@ -73,6 +79,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSet_Dokuart_DokuKZ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIDOKARTBindingSource)).BeginInit();
             this.grbVorbelegungen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1WOWISEARCHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_save
@@ -167,14 +177,14 @@
             // 
             // cmb_vorgangkz
             // 
-            this.cmb_vorgangkz.DataSource = this.wOWIVORGANGBindingSource;
-            this.cmb_vorgangkz.DisplayMember = "VORGANG";
+            this.cmb_vorgangkz.DataSource = this.tblVorgangKZBindingSource;
+            this.cmb_vorgangkz.DisplayMember = "VorgangKZ";
             this.cmb_vorgangkz.FormattingEnabled = true;
             this.cmb_vorgangkz.Location = new System.Drawing.Point(145, 51);
             this.cmb_vorgangkz.Name = "cmb_vorgangkz";
             this.cmb_vorgangkz.Size = new System.Drawing.Size(408, 24);
             this.cmb_vorgangkz.TabIndex = 47;
-            this.cmb_vorgangkz.ValueMember = "VORGANG";
+            this.cmb_vorgangkz.ValueMember = "VorgangKZ";
             // 
             // wOWIVORGANGBindingSource
             // 
@@ -203,7 +213,7 @@
             // 
             // cmb_dokuart
             // 
-            this.cmb_dokuart.DataSource = this.wOWIDOKARTBindingSource;
+            this.cmb_dokuart.DataSource = this.tblDokuartBindingSource;
             this.cmb_dokuart.DisplayMember = "DOKUART";
             this.cmb_dokuart.FormattingEnabled = true;
             this.cmb_dokuart.Location = new System.Drawing.Point(145, 21);
@@ -245,6 +255,90 @@
             this.grbVorbelegungen.TabIndex = 49;
             this.grbVorbelegungen.TabStop = false;
             this.grbVorbelegungen.Text = "Vorbelegungen";
+            // 
+            // cbx_adresse_anzeigen
+            // 
+            this.cbx_adresse_anzeigen.AutoSize = true;
+            this.cbx_adresse_anzeigen.Checked = true;
+            this.cbx_adresse_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_adresse_anzeigen.Location = new System.Drawing.Point(223, 240);
+            this.cbx_adresse_anzeigen.Name = "cbx_adresse_anzeigen";
+            this.cbx_adresse_anzeigen.Size = new System.Drawing.Size(145, 21);
+            this.cbx_adresse_anzeigen.TabIndex = 62;
+            this.cbx_adresse_anzeigen.Text = "Adresse Anzeigen";
+            this.cbx_adresse_anzeigen.UseVisualStyleBackColor = true;
+            // 
+            // cbx_mieter_anzeigen
+            // 
+            this.cbx_mieter_anzeigen.AutoSize = true;
+            this.cbx_mieter_anzeigen.Checked = true;
+            this.cbx_mieter_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_mieter_anzeigen.Location = new System.Drawing.Point(223, 213);
+            this.cbx_mieter_anzeigen.Name = "cbx_mieter_anzeigen";
+            this.cbx_mieter_anzeigen.Size = new System.Drawing.Size(132, 21);
+            this.cbx_mieter_anzeigen.TabIndex = 61;
+            this.cbx_mieter_anzeigen.Text = "Mieter Anzeigen";
+            this.cbx_mieter_anzeigen.UseVisualStyleBackColor = true;
+            // 
+            // cbx_ne_anzeigen
+            // 
+            this.cbx_ne_anzeigen.AutoSize = true;
+            this.cbx_ne_anzeigen.Checked = true;
+            this.cbx_ne_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_ne_anzeigen.Location = new System.Drawing.Point(223, 186);
+            this.cbx_ne_anzeigen.Name = "cbx_ne_anzeigen";
+            this.cbx_ne_anzeigen.Size = new System.Drawing.Size(112, 21);
+            this.cbx_ne_anzeigen.TabIndex = 60;
+            this.cbx_ne_anzeigen.Text = "NE Anzeigen";
+            this.cbx_ne_anzeigen.UseVisualStyleBackColor = true;
+            // 
+            // cbx_haus_anzeigen
+            // 
+            this.cbx_haus_anzeigen.AutoSize = true;
+            this.cbx_haus_anzeigen.Checked = true;
+            this.cbx_haus_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_haus_anzeigen.Location = new System.Drawing.Point(223, 159);
+            this.cbx_haus_anzeigen.Name = "cbx_haus_anzeigen";
+            this.cbx_haus_anzeigen.Size = new System.Drawing.Size(126, 21);
+            this.cbx_haus_anzeigen.TabIndex = 59;
+            this.cbx_haus_anzeigen.Text = "Haus Anzeigen";
+            this.cbx_haus_anzeigen.UseVisualStyleBackColor = true;
+            // 
+            // cbx_we_anzeigen
+            // 
+            this.cbx_we_anzeigen.AutoSize = true;
+            this.cbx_we_anzeigen.Checked = true;
+            this.cbx_we_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_we_anzeigen.Location = new System.Drawing.Point(14, 240);
+            this.cbx_we_anzeigen.Name = "cbx_we_anzeigen";
+            this.cbx_we_anzeigen.Size = new System.Drawing.Size(115, 21);
+            this.cbx_we_anzeigen.TabIndex = 58;
+            this.cbx_we_anzeigen.Text = "WE Anzeigen";
+            this.cbx_we_anzeigen.UseVisualStyleBackColor = true;
+            // 
+            // cbx_kreditor_anzeigen
+            // 
+            this.cbx_kreditor_anzeigen.AutoSize = true;
+            this.cbx_kreditor_anzeigen.Checked = true;
+            this.cbx_kreditor_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_kreditor_anzeigen.Location = new System.Drawing.Point(14, 213);
+            this.cbx_kreditor_anzeigen.Name = "cbx_kreditor_anzeigen";
+            this.cbx_kreditor_anzeigen.Size = new System.Drawing.Size(143, 21);
+            this.cbx_kreditor_anzeigen.TabIndex = 57;
+            this.cbx_kreditor_anzeigen.Text = "Kreditor Anzeigen";
+            this.cbx_kreditor_anzeigen.UseVisualStyleBackColor = true;
+            // 
+            // cbx_unternehmen_anzeigen
+            // 
+            this.cbx_unternehmen_anzeigen.AutoSize = true;
+            this.cbx_unternehmen_anzeigen.Checked = true;
+            this.cbx_unternehmen_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbx_unternehmen_anzeigen.Location = new System.Drawing.Point(14, 186);
+            this.cbx_unternehmen_anzeigen.Name = "cbx_unternehmen_anzeigen";
+            this.cbx_unternehmen_anzeigen.Size = new System.Drawing.Size(179, 21);
+            this.cbx_unternehmen_anzeigen.TabIndex = 56;
+            this.cbx_unternehmen_anzeigen.Text = "Unternehmen Anzeigen";
+            this.cbx_unternehmen_anzeigen.UseVisualStyleBackColor = true;
             // 
             // cbx_mandant_anzeigen
             // 
@@ -335,89 +429,33 @@
             // 
             this.wOWIVORGANGTableAdapter.ClearBeforeFill = true;
             // 
-            // cbx_unternehmen_anzeigen
+            // dataSet1_WOWI_SEARCH
             // 
-            this.cbx_unternehmen_anzeigen.AutoSize = true;
-            this.cbx_unternehmen_anzeigen.Checked = true;
-            this.cbx_unternehmen_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbx_unternehmen_anzeigen.Location = new System.Drawing.Point(14, 186);
-            this.cbx_unternehmen_anzeigen.Name = "cbx_unternehmen_anzeigen";
-            this.cbx_unternehmen_anzeigen.Size = new System.Drawing.Size(179, 21);
-            this.cbx_unternehmen_anzeigen.TabIndex = 56;
-            this.cbx_unternehmen_anzeigen.Text = "Unternehmen Anzeigen";
-            this.cbx_unternehmen_anzeigen.UseVisualStyleBackColor = true;
+            this.dataSet1_WOWI_SEARCH.DataSetName = "DataSet1_WOWI_SEARCH";
+            this.dataSet1_WOWI_SEARCH.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cbx_kreditor_anzeigen
+            // tblDokuartBindingSource
             // 
-            this.cbx_kreditor_anzeigen.AutoSize = true;
-            this.cbx_kreditor_anzeigen.Checked = true;
-            this.cbx_kreditor_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbx_kreditor_anzeigen.Location = new System.Drawing.Point(14, 213);
-            this.cbx_kreditor_anzeigen.Name = "cbx_kreditor_anzeigen";
-            this.cbx_kreditor_anzeigen.Size = new System.Drawing.Size(143, 21);
-            this.cbx_kreditor_anzeigen.TabIndex = 57;
-            this.cbx_kreditor_anzeigen.Text = "Kreditor Anzeigen";
-            this.cbx_kreditor_anzeigen.UseVisualStyleBackColor = true;
+            this.tblDokuartBindingSource.DataMember = "tblDokuart";
+            this.tblDokuartBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
             // 
-            // cbx_we_anzeigen
+            // tblDokuartTableAdapter
             // 
-            this.cbx_we_anzeigen.AutoSize = true;
-            this.cbx_we_anzeigen.Checked = true;
-            this.cbx_we_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbx_we_anzeigen.Location = new System.Drawing.Point(14, 240);
-            this.cbx_we_anzeigen.Name = "cbx_we_anzeigen";
-            this.cbx_we_anzeigen.Size = new System.Drawing.Size(115, 21);
-            this.cbx_we_anzeigen.TabIndex = 58;
-            this.cbx_we_anzeigen.Text = "WE Anzeigen";
-            this.cbx_we_anzeigen.UseVisualStyleBackColor = true;
+            this.tblDokuartTableAdapter.ClearBeforeFill = true;
             // 
-            // cbx_haus_anzeigen
+            // dataSet1WOWISEARCHBindingSource
             // 
-            this.cbx_haus_anzeigen.AutoSize = true;
-            this.cbx_haus_anzeigen.Checked = true;
-            this.cbx_haus_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbx_haus_anzeigen.Location = new System.Drawing.Point(223, 159);
-            this.cbx_haus_anzeigen.Name = "cbx_haus_anzeigen";
-            this.cbx_haus_anzeigen.Size = new System.Drawing.Size(126, 21);
-            this.cbx_haus_anzeigen.TabIndex = 59;
-            this.cbx_haus_anzeigen.Text = "Haus Anzeigen";
-            this.cbx_haus_anzeigen.UseVisualStyleBackColor = true;
+            this.dataSet1WOWISEARCHBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
+            this.dataSet1WOWISEARCHBindingSource.Position = 0;
             // 
-            // cbx_ne_anzeigen
+            // tblVorgangKZBindingSource
             // 
-            this.cbx_ne_anzeigen.AutoSize = true;
-            this.cbx_ne_anzeigen.Checked = true;
-            this.cbx_ne_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbx_ne_anzeigen.Location = new System.Drawing.Point(223, 186);
-            this.cbx_ne_anzeigen.Name = "cbx_ne_anzeigen";
-            this.cbx_ne_anzeigen.Size = new System.Drawing.Size(112, 21);
-            this.cbx_ne_anzeigen.TabIndex = 60;
-            this.cbx_ne_anzeigen.Text = "NE Anzeigen";
-            this.cbx_ne_anzeigen.UseVisualStyleBackColor = true;
+            this.tblVorgangKZBindingSource.DataMember = "tblVorgangKZ";
+            this.tblVorgangKZBindingSource.DataSource = this.dataSet1WOWISEARCHBindingSource;
             // 
-            // cbx_mieter_anzeigen
+            // tblVorgangKZTableAdapter
             // 
-            this.cbx_mieter_anzeigen.AutoSize = true;
-            this.cbx_mieter_anzeigen.Checked = true;
-            this.cbx_mieter_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbx_mieter_anzeigen.Location = new System.Drawing.Point(223, 213);
-            this.cbx_mieter_anzeigen.Name = "cbx_mieter_anzeigen";
-            this.cbx_mieter_anzeigen.Size = new System.Drawing.Size(132, 21);
-            this.cbx_mieter_anzeigen.TabIndex = 61;
-            this.cbx_mieter_anzeigen.Text = "Mieter Anzeigen";
-            this.cbx_mieter_anzeigen.UseVisualStyleBackColor = true;
-            // 
-            // cbx_adresse_anzeigen
-            // 
-            this.cbx_adresse_anzeigen.AutoSize = true;
-            this.cbx_adresse_anzeigen.Checked = true;
-            this.cbx_adresse_anzeigen.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbx_adresse_anzeigen.Location = new System.Drawing.Point(223, 240);
-            this.cbx_adresse_anzeigen.Name = "cbx_adresse_anzeigen";
-            this.cbx_adresse_anzeigen.Size = new System.Drawing.Size(145, 21);
-            this.cbx_adresse_anzeigen.TabIndex = 62;
-            this.cbx_adresse_anzeigen.Text = "Adresse Anzeigen";
-            this.cbx_adresse_anzeigen.UseVisualStyleBackColor = true;
+            this.tblVorgangKZTableAdapter.ClearBeforeFill = true;
             // 
             // Frm_New_MSGTYPE
             // 
@@ -447,6 +485,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.wOWIDOKARTBindingSource)).EndInit();
             this.grbVorbelegungen.ResumeLayout(false);
             this.grbVorbelegungen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1WOWISEARCHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -490,6 +532,12 @@
         private System.Windows.Forms.CheckBox cbx_we_anzeigen;
         private System.Windows.Forms.CheckBox cbx_kreditor_anzeigen;
         private System.Windows.Forms.CheckBox cbx_unternehmen_anzeigen;
+        private DataSet1_WOWI_SEARCH dataSet1_WOWI_SEARCH;
+        private System.Windows.Forms.BindingSource tblDokuartBindingSource;
+        private DataSet1_WOWI_SEARCHTableAdapters.tblDokuartTableAdapter tblDokuartTableAdapter;
+        private System.Windows.Forms.BindingSource tblVorgangKZBindingSource;
+        private System.Windows.Forms.BindingSource dataSet1WOWISEARCHBindingSource;
+        private DataSet1_WOWI_SEARCHTableAdapters.tblVorgangKZTableAdapter tblVorgangKZTableAdapter;
 
     }
 }

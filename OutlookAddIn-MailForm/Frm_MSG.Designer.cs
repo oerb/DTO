@@ -90,8 +90,8 @@
             this.txt_mandant1 = new System.Windows.Forms.TextBox();
             this.lbl_mandant1 = new System.Windows.Forms.Label();
             this.grb_adress_search = new System.Windows.Forms.GroupBox();
-            this.btn_adr_as_mieter = new System.Windows.Forms.Button();
             this.btn_adr_as_kreditor = new System.Windows.Forms.Button();
+            this.btn_adr_as_mieter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.wOWIDOKARTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSetDokuartDokuKZBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saperionDataSet_Dokuart_DokuKZ)).BeginInit();
@@ -654,17 +654,6 @@
             this.grb_adress_search.TabStop = false;
             this.grb_adress_search.Text = "Adressbasierte Suche";
             // 
-            // btn_adr_as_mieter
-            // 
-            this.btn_adr_as_mieter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_adr_as_mieter.Location = new System.Drawing.Point(11, 72);
-            this.btn_adr_as_mieter.Name = "btn_adr_as_mieter";
-            this.btn_adr_as_mieter.Size = new System.Drawing.Size(159, 34);
-            this.btn_adr_as_mieter.TabIndex = 58;
-            this.btn_adr_as_mieter.Text = "als Mieter übern.";
-            this.btn_adr_as_mieter.UseVisualStyleBackColor = false;
-            this.btn_adr_as_mieter.Click += new System.EventHandler(this.btn_adr_as_mieter_Click);
-            // 
             // btn_adr_as_kreditor
             // 
             this.btn_adr_as_kreditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -675,6 +664,17 @@
             this.btn_adr_as_kreditor.Text = "als Kreditor übern.";
             this.btn_adr_as_kreditor.UseVisualStyleBackColor = false;
             this.btn_adr_as_kreditor.Click += new System.EventHandler(this.btn_adr_as_kreditor_Click);
+            // 
+            // btn_adr_as_mieter
+            // 
+            this.btn_adr_as_mieter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_adr_as_mieter.Location = new System.Drawing.Point(11, 72);
+            this.btn_adr_as_mieter.Name = "btn_adr_as_mieter";
+            this.btn_adr_as_mieter.Size = new System.Drawing.Size(159, 34);
+            this.btn_adr_as_mieter.TabIndex = 58;
+            this.btn_adr_as_mieter.Text = "als Mieter übern.";
+            this.btn_adr_as_mieter.UseVisualStyleBackColor = false;
+            this.btn_adr_as_mieter.Click += new System.EventHandler(this.btn_adr_as_mieter_Click);
             // 
             // Frm_MSG
             // 
@@ -727,7 +727,8 @@
             this.Controls.Add(this.lbl_Mandant);
             this.Controls.Add(this.lbl_meldungstyp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(700, 498);
+            this.MaximumSize = new System.Drawing.Size(700, 602);
+            this.MinimumSize = new System.Drawing.Size(700, 602);
             this.Name = "Frm_MSG";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meldung";

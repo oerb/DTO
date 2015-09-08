@@ -1,6 +1,5 @@
 C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
 C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\bin\Debug\Microsoft.Office.Tools.Outlook.v4.0.Utilities.dll
-C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\OutlookAddIn-MailForm.csprojResolveAssemblyReference.cache
 C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\OutlookAddIn_MailForm.Properties.Resources.resources
 C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\OutlookAddIn_MailForm.DerrToolsRibbon1.resources
 C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\OutlookAddIn_MailForm.Schadensmeldung.resources
@@ -31,3 +30,4 @@ C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\Outl
 C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\bin\Debug\App_Data\Database1_log.ldf
 C:\Users\leppin\Documents\Visual Studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
 C:\Users\leppin\Documents\Visual Studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\bin\Debug\Microsoft.Office.Tools.Outlook.v4.0.Utilities.xml
+C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\OutlookAddIn-MailForm.csprojResolveAssemblyReference.cache

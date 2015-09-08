@@ -8,6 +8,7 @@ using Office = Microsoft.Office.Core;
 using Microsoft.Office.Interop.Outlook;
 using System.Windows.Forms;
 using DTsaperionVBNETLib;
+using System.IO;
 
 
 namespace OutlookAddIn_MailForm
@@ -114,8 +115,13 @@ namespace OutlookAddIn_MailForm
                 Archivieren DtSap = new Archivieren();
                 //string newfilelocation = System.Uri.UnescapeDataString(filelocaiton);
                 // Fails here???? old code follows
-                this.msg_parameter.MailItem.SaveAs(@"C:\Install\DTO\mail.msg");
-                this.msg_parameter.filelocaiton = @"C:\Install\DTO\mail.msg";
+                System.Reflection.Assembly assemblyInfo = System.Reflection.Assembly.GetExecutingAssembly();
+                string FileLocation = Path.GetDirectoryName(assemblyInfo.Location);
+                FileLocation += "mail.msg";
+                this.msg_parameter.MailItem.SaveAs(FileLocation);
+                this.msg_parameter.filelocaiton = FileLocation;
+                //this.msg_parameter.MailItem.SaveAs(@"C:\Install\DTO\mail.msg");
+                //this.msg_parameter.filelocaiton = @"C:\Install\DTO\mail.msg";
                 //string path = @"%USERPROFILE%\AppData\Local\DTO\mail.msg";
                 //string filepath = Environment.ExpandEnvironmentVariables(path);
                 //MessageBox.Show(filepath);
@@ -126,9 +132,10 @@ namespace OutlookAddIn_MailForm
                 //MessageBox.Show(DtSap.GetType().ToString());
                 //DtSap.test();
                 //END
-                string msgtext = "AdrNr: " + msg_parameter.AdresseNr + " - " + msg_parameter.KreditorName;
+                //string msgtext = "AdrNr: " + msg_parameter.AdresseNr + " - " + msg_parameter.KreditorName;
                 //MessageBox.Show(msgtext);
                 string Memo2 = msg_parameter.KreditorAdr + " - " + msg_parameter.KreditorName;
+                // string Subject2 = Subject.Substring(0, 149);
                 DtSap.saveDokument(msg_parameter.filelocaiton, msg_parameter.Mandant, msg_parameter.Unternehmen,
                     msg_parameter.WE, msg_parameter.HausNr, msg_parameter.Wohnung, msg_parameter.FolgeNr,
                     msg_parameter.AdresseNr, msg_parameter.DokuArt, msg_parameter.VorgangKZ,
@@ -141,9 +148,7 @@ namespace OutlookAddIn_MailForm
                 msgtext += e.ToString();
                 MessageBox.Show(msgtext);
                 throw;
-            }
- 
-            
+            }            
         }
 
         #region Von VSTO generierter Code
