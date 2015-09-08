@@ -114,10 +114,11 @@ namespace OutlookAddIn_MailForm
         private void Frm_New_MSGTYPE_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataSet1_WOWI_SEARCH.tblDokuart' table. You can move, or remove it, as needed.
-            this.tblDokuartTableAdapter.Fill(this.dataSet1_WOWI_SEARCH.tblDokuart);
+            //this.tblDokuartTableAdapter.Fill(this.dataSet1_WOWI_SEARCH.tblDokuart);
             if (this.formmode == "new")
-            { 
-                this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART);
+            {
+                this.tblDokuartTableAdapter.Fill(this.dataSet1_WOWI_SEARCH.tblDokuart);
+                //this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART);
                 // Prefilling Dokuart and DokuKZ by Static Properties ( defined by Frm_UserSettings.cs )
                 if (Properties.Settings.Default.uDokuart.ToString() != "")
                 {
@@ -141,12 +142,14 @@ namespace OutlookAddIn_MailForm
         private void cmb_dokuart_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Fill VorgangKZ with Filtered Data
-            this.wOWIVORGANGTableAdapter.Fill_DOKUKZ(this.saperionDataSet_Dokuart_DokuKZ.WOWIVORGANG, this.cmb_dokuart.Text);
+            //this.wOWIVORGANGTableAdapter.Fill_DOKUKZ(this.saperionDataSet_Dokuart_DokuKZ.WOWIVORGANG, this.cmb_dokuart.Text);
+            this.tblVorgangKZTableAdapter.FillbyDokuart(this.dataSet1_WOWI_SEARCH.tblVorgangKZ, this.cmb_dokuart.Text);
         }
 
         private void cmb_dokuart_DropDown(object sender, EventArgs e)
         {
-            this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART);
+            this.tblDokuartTableAdapter.Fill(this.dataSet1_WOWI_SEARCH.tblDokuart);
+            //this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART);
         }
     }
 }
