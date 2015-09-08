@@ -308,10 +308,11 @@ namespace OutlookAddIn_MailForm
 
         private void Frm_MSG_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1_WOWI_SEARCH.tblDokuart' table. You can move, or remove it, as needed.
+            this.tblDokuartTableAdapter.Fill(this.dataSet1_WOWI_SEARCH.tblDokuart);
             // TODO: This line of code loads data into the 'saperionDataSet_Dokuart_DokuKZ.WOWIVORGANG' table. You can move, or remove it, as needed.
             //this.wOWIVORGANGTableAdapter.Fill_DOKUKZ(this.saperionDataSet_Dokuart_DokuKZ.WOWIVORGANG);
-            // TODO: This line of code loads data into the 'saperionDataSet_Dokuart_DokuKZ.WOWIDOKART' table. You can move, or remove it, as needed.
-            this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART);            
+            // TODO: This line of code loads data into the 'saperionDataSet_Dokuart_DokuKZ.WOWIDOKART' table. You can move, or remove it, as needed.                       
             // Prefilling Dokuart and DokuKZ by Static Properties ( defined by Frm_UserSettings.cs )
             if (Properties.Settings.Default.uDokuart.ToString() != "")
             {
@@ -326,7 +327,8 @@ namespace OutlookAddIn_MailForm
         private void cmb_dokuart_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Fill VorgangKZ with Filtered Data
-            this.wOWIVORGANGTableAdapter.Fill_DOKUKZ(this.saperionDataSet_Dokuart_DokuKZ.WOWIVORGANG, this.cmb_dokuart.Text);
+            this.tblVorgangKZTableAdapter.FillbyDokuart(this.dataSet1_WOWI_SEARCH.tblVorgangKZ, this.cmb_dokuart.Text);
+            //this.wOWIVORGANGTableAdapter.Fill_DOKUKZ(this.saperionDataSet_Dokuart_DokuKZ.WOWIVORGANG, this.cmb_dokuart.Text);
             // Set Global VorgangKZ for Archiving Function
             Globals.ThisAddIn.msg_parameter.DokuArt = this.cmb_dokuart.Text;
         }
@@ -360,7 +362,8 @@ namespace OutlookAddIn_MailForm
             // This Refille have to be done because the Dropdown was 
             // losing Items when changing Items in both
             // cmd_Dokuart and cmd_DokuKZ
-            this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART); 
+            //this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART);
+            this.tblDokuartTableAdapter.Fill(this.dataSet1_WOWI_SEARCH.tblDokuart);
         }
 
         private void txt_wohnung_TextChanged(object sender, EventArgs e)
