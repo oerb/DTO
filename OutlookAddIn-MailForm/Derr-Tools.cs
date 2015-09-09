@@ -90,7 +90,8 @@ namespace OutlookAddIn_MailForm
 
         private void CreateMail(Frm_MSG frm_MSG)
         {
-            
+            Outlook.UserProperties mailUserProperties = null;
+            Outlook.UserProperty mailUserProperty = null;
             //Globals.ThisAddIn.msg_parameter = frm_MSG.msg_parameter;
             Outlook.Application application = Globals.ThisAddIn.Application;
             Outlook.ExchangeUser currentUser = application.Session.CurrentUser.AddressEntry.GetExchangeUser();
@@ -100,7 +101,11 @@ namespace OutlookAddIn_MailForm
                 // load a Outlook Predesign by an Outlook Filetyp MSG
                 Outlook.MailItem myStorageItem = (Outlook.MailItem)application.Session.OpenSharedItem(frm_MSG.filelocation);
                 myMailItem.HTMLBody = myStorageItem.HTMLBody;
-                
+
+                // give the MailItem a new Property that marks it for archiving
+                mailUserProperties = myMailItem.UserProperties;
+                mailUserProperty = mailUserProperties.Add("Saperion", Outlook.OlUserPropertyType.olYesNo, false);
+                mailUserProperty.Value = true;
                 // proof if Kreditor or Mieter is Set an Preset the String Var in common
                 string kreditor = "";
                 if(frm_MSG.kreditor != 0)
@@ -139,9 +144,9 @@ namespace OutlookAddIn_MailForm
                 Globals.ThisAddIn.msg_parameter.MailItem = myMailItem;               
                 myMailItem.Display();               
             }
-            catch //(Exception e)
+            catch (Exception e)
             {
-                string msgtxt = "Meldungstyp nicht gesetzt oder Dateipfad ist nicht korrekt."; // Exeption: " +e.ToString();
+                string msgtxt = "Meldungstyp nicht gesetzt oder Dateipfad ist nicht korrekt. Exeption: " +e.ToString();
                 MessageBox.Show(msgtxt);
             }       
         }

@@ -43,14 +43,14 @@
             // 
             // btn_new_msgtype
             // 
-            this.btn_new_msgtype.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_new_msgtype.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_new_msgtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new_msgtype.Image = ((System.Drawing.Image)(resources.GetObject("btn_new_msgtype.Image")));
             this.btn_new_msgtype.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_new_msgtype.Location = new System.Drawing.Point(42, 594);
+            this.btn_new_msgtype.Location = new System.Drawing.Point(13, 293);
             this.btn_new_msgtype.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_new_msgtype.Name = "btn_new_msgtype";
-            this.btn_new_msgtype.Size = new System.Drawing.Size(210, 42);
+            this.btn_new_msgtype.Size = new System.Drawing.Size(142, 42);
             this.btn_new_msgtype.TabIndex = 1;
             this.btn_new_msgtype.Text = "MSG Typ erstellen";
             this.btn_new_msgtype.UseVisualStyleBackColor = true;
@@ -58,16 +58,18 @@
             // 
             // lbx_mbstypes
             // 
+            this.lbx_mbstypes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbx_mbstypes.DataSource = this.tableBindingSource;
             this.lbx_mbstypes.DisplayMember = "MSGtyp";
-            this.lbx_mbstypes.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbx_mbstypes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbx_mbstypes.FormattingEnabled = true;
             this.lbx_mbstypes.ItemHeight = 20;
-            this.lbx_mbstypes.Location = new System.Drawing.Point(0, 0);
+            this.lbx_mbstypes.Location = new System.Drawing.Point(2, 0);
             this.lbx_mbstypes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbx_mbstypes.Name = "lbx_mbstypes";
-            this.lbx_mbstypes.Size = new System.Drawing.Size(682, 564);
+            this.lbx_mbstypes.Size = new System.Drawing.Size(465, 284);
             this.lbx_mbstypes.TabIndex = 2;
             this.lbx_mbstypes.ValueMember = "Id";
             this.lbx_mbstypes.Click += new System.EventHandler(this.lbx_mbstypes_Click);
@@ -85,14 +87,14 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete.Image")));
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_delete.Location = new System.Drawing.Point(477, 594);
+            this.btn_delete.Location = new System.Drawing.Point(315, 294);
             this.btn_delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(192, 42);
+            this.btn_delete.Size = new System.Drawing.Size(142, 42);
             this.btn_delete.TabIndex = 3;
             this.btn_delete.Text = "Löschen";
             this.btn_delete.UseVisualStyleBackColor = true;
@@ -104,14 +106,14 @@
             // 
             // btn_edit
             // 
-            this.btn_edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_edit.Image = ((System.Drawing.Image)(resources.GetObject("btn_edit.Image")));
             this.btn_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_edit.Location = new System.Drawing.Point(260, 594);
+            this.btn_edit.Location = new System.Drawing.Point(165, 293);
             this.btn_edit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(209, 42);
+            this.btn_edit.Size = new System.Drawing.Size(142, 42);
             this.btn_edit.TabIndex = 4;
             this.btn_edit.Text = "Bearbeiten";
             this.btn_edit.UseVisualStyleBackColor = true;
@@ -121,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 650);
+            this.ClientSize = new System.Drawing.Size(469, 349);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.lbx_mbstypes);
@@ -129,8 +131,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximumSize = new System.Drawing.Size(700, 695);
-            this.MinimumSize = new System.Drawing.Size(700, 695);
+            this.MaximumSize = new System.Drawing.Size(600, 600);
+            this.MinimumSize = new System.Drawing.Size(487, 394);
             this.Name = "Frm_Settings";
             this.Text = "MSG Typ Einstellungen";
             this.Load += new System.EventHandler(this.Frm_Settings_Load);

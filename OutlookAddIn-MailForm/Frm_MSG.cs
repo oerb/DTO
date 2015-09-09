@@ -258,8 +258,7 @@ namespace OutlookAddIn_MailForm
             //Globals.ThisAddIn.msg_parameter = this.msg_parameter;
             if (this.txt_meldungstyp.Text != "")
             {
-                this.DialogResult = DialogResult.OK;
-                Globals.ThisAddIn.ArchivingAktive = true;
+                this.DialogResult = DialogResult.OK;                
                 this.Close();
             }
             else

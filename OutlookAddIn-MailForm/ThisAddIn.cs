@@ -53,7 +53,7 @@ namespace OutlookAddIn_MailForm
         // NEW
         
         public MSG_Parameter msg_parameter;
-        public bool ArchivingAktive = false;
+        
         private string Sachberarbeiter = Environment.UserName;
         public string SachBearb
         {
@@ -67,11 +67,24 @@ namespace OutlookAddIn_MailForm
 
         private void actionOnEmailSend(object Item, ref bool Cancel)
         {
+            bool saperion = false;
+            // Get the Saperion Property to determine for archiving
+            try
+            {
+                Outlook.UserProperties mailUserProperties = null;                
+                MailItem mailItem = Item as Outlook.MailItem;
+                mailUserProperties = mailItem.UserProperties;
+                saperion = mailUserProperties.Find("Saperion").Value;
+            }
+            catch 
+            {
+                //nothing
+            }
             // Send E-Mail with or with out archiving 
             // and if ask for archiving or not 
             if (Properties.Settings.Default.autoarchiving)
             {
-                if (this.ArchivingAktive)
+                if (saperion)
                 {
 
                     if (Properties.Settings.Default.ask_before_archiving)
@@ -87,8 +100,6 @@ namespace OutlookAddIn_MailForm
                     {
                         saveMailtoSaperion();
                     }
-                    // Set archiving back to Standard
-                    this.ArchivingAktive = false;
                 } 
             }
         }
@@ -122,7 +133,8 @@ namespace OutlookAddIn_MailForm
                     msg_parameter.WE, msg_parameter.HausNr, msg_parameter.Wohnung, msg_parameter.FolgeNr,
                     msg_parameter.AdresseNr, msg_parameter.DokuArt, msg_parameter.VorgangKZ,
                     msg_parameter.Vorname, msg_parameter.Name, Sachberarbeiter, Subject,
-                    msg_parameter.AdresseNr, Memo2, msg_parameter.datum2);  
+                    msg_parameter.AdresseNr, Memo2, msg_parameter.datum2, msg_parameter.KreditorAdr, 
+                    msg_parameter.KreditorName);  
             }
             catch (System.Exception e)
             {
