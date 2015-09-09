@@ -71,6 +71,12 @@
             this.tblAdresseTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblAdresseTableAdapter();
             this.tblBriefanredeTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblBriefanredeTableAdapter();
             this.tblAdressSearchTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblAdressSearchTableAdapter();
+            this.tblMandantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblMandantTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblMandantTableAdapter();
+            this.dtp_einzug_ab = new System.Windows.Forms.DateTimePicker();
+            this.dtp_auszug_ab = new System.Windows.Forms.DateTimePicker();
+            this.lbl_EinzugAb = new System.Windows.Forms.Label();
+            this.lbl_AuszugAb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TableSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xyMieterBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1WOWISEARCHBindingSource)).BeginInit();
@@ -94,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mandantBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblBriefanredeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblAdressSearchBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMandantBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_TableSelect
@@ -136,7 +143,7 @@
             this.btn_select.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_select.Location = new System.Drawing.Point(477, 12);
             this.btn_select.Name = "btn_select";
-            this.btn_select.Size = new System.Drawing.Size(224, 44);
+            this.btn_select.Size = new System.Drawing.Size(221, 33);
             this.btn_select.TabIndex = 1;
             this.btn_select.Text = "übernehmen";
             this.btn_select.UseVisualStyleBackColor = true;
@@ -188,7 +195,7 @@
             // 
             this.lbl_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_1.AutoSize = true;
-            this.lbl_1.Location = new System.Drawing.Point(477, 73);
+            this.lbl_1.Location = new System.Drawing.Point(474, 48);
             this.lbl_1.Name = "lbl_1";
             this.lbl_1.Size = new System.Drawing.Size(46, 17);
             this.lbl_1.TabIndex = 2;
@@ -199,7 +206,7 @@
             // 
             this.lbl_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_2.AutoSize = true;
-            this.lbl_2.Location = new System.Drawing.Point(477, 118);
+            this.lbl_2.Location = new System.Drawing.Point(474, 93);
             this.lbl_2.Name = "lbl_2";
             this.lbl_2.Size = new System.Drawing.Size(46, 17);
             this.lbl_2.TabIndex = 3;
@@ -209,7 +216,7 @@
             // txt_filer1
             // 
             this.txt_filer1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_filer1.Location = new System.Drawing.Point(480, 93);
+            this.txt_filer1.Location = new System.Drawing.Point(477, 68);
             this.txt_filer1.Name = "txt_filer1";
             this.txt_filer1.Size = new System.Drawing.Size(221, 22);
             this.txt_filer1.TabIndex = 4;
@@ -220,7 +227,7 @@
             // txt_filter2
             // 
             this.txt_filter2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_filter2.Location = new System.Drawing.Point(480, 138);
+            this.txt_filter2.Location = new System.Drawing.Point(477, 113);
             this.txt_filter2.Name = "txt_filter2";
             this.txt_filter2.Size = new System.Drawing.Size(221, 22);
             this.txt_filter2.TabIndex = 5;
@@ -231,7 +238,7 @@
             // 
             this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_search.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.Image")));
-            this.btn_search.Location = new System.Drawing.Point(665, 166);
+            this.btn_search.Location = new System.Drawing.Point(662, 141);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(36, 37);
             this.btn_search.TabIndex = 6;
@@ -341,11 +348,60 @@
             // 
             this.tblAdressSearchTableAdapter.ClearBeforeFill = true;
             // 
+            // tblMandantBindingSource
+            // 
+            this.tblMandantBindingSource.DataMember = "tblMandant";
+            this.tblMandantBindingSource.DataSource = this.dataSet1WOWISEARCHBindingSource;
+            // 
+            // tblMandantTableAdapter
+            // 
+            this.tblMandantTableAdapter.ClearBeforeFill = true;
+            // 
+            // dtp_einzug_ab
+            // 
+            this.dtp_einzug_ab.Location = new System.Drawing.Point(569, 201);
+            this.dtp_einzug_ab.Name = "dtp_einzug_ab";
+            this.dtp_einzug_ab.Size = new System.Drawing.Size(129, 22);
+            this.dtp_einzug_ab.TabIndex = 7;
+            this.dtp_einzug_ab.Visible = false;
+            // 
+            // dtp_auszug_ab
+            // 
+            this.dtp_auszug_ab.Location = new System.Drawing.Point(569, 229);
+            this.dtp_auszug_ab.Name = "dtp_auszug_ab";
+            this.dtp_auszug_ab.Size = new System.Drawing.Size(129, 22);
+            this.dtp_auszug_ab.TabIndex = 8;
+            this.dtp_auszug_ab.Visible = false;
+            // 
+            // lbl_EinzugAb
+            // 
+            this.lbl_EinzugAb.AutoSize = true;
+            this.lbl_EinzugAb.Location = new System.Drawing.Point(488, 201);
+            this.lbl_EinzugAb.Name = "lbl_EinzugAb";
+            this.lbl_EinzugAb.Size = new System.Drawing.Size(71, 17);
+            this.lbl_EinzugAb.TabIndex = 9;
+            this.lbl_EinzugAb.Text = "Einzug ab";
+            this.lbl_EinzugAb.Visible = false;
+            // 
+            // lbl_AuszugAb
+            // 
+            this.lbl_AuszugAb.AutoSize = true;
+            this.lbl_AuszugAb.Location = new System.Drawing.Point(488, 229);
+            this.lbl_AuszugAb.Name = "lbl_AuszugAb";
+            this.lbl_AuszugAb.Size = new System.Drawing.Size(75, 17);
+            this.lbl_AuszugAb.TabIndex = 10;
+            this.lbl_AuszugAb.Text = "Auszug ab";
+            this.lbl_AuszugAb.Visible = false;
+            // 
             // Frm_Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 295);
+            this.Controls.Add(this.lbl_AuszugAb);
+            this.Controls.Add(this.lbl_EinzugAb);
+            this.Controls.Add(this.dtp_auszug_ab);
+            this.Controls.Add(this.dtp_einzug_ab);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txt_filter2);
             this.Controls.Add(this.txt_filer1);
@@ -381,6 +437,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mandantBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblBriefanredeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblAdressSearchBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMandantBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,6 +486,12 @@
         private DataSet1_WOWI_SEARCHTableAdapters.tblBriefanredeTableAdapter tblBriefanredeTableAdapter;
         private System.Windows.Forms.BindingSource tblAdressSearchBindingSource;
         private DataSet1_WOWI_SEARCHTableAdapters.tblAdressSearchTableAdapter tblAdressSearchTableAdapter;
+        private System.Windows.Forms.BindingSource tblMandantBindingSource;
+        private DataSet1_WOWI_SEARCHTableAdapters.tblMandantTableAdapter tblMandantTableAdapter;
+        private System.Windows.Forms.DateTimePicker dtp_einzug_ab;
+        private System.Windows.Forms.DateTimePicker dtp_auszug_ab;
+        private System.Windows.Forms.Label lbl_EinzugAb;
+        private System.Windows.Forms.Label lbl_AuszugAb;
         //private DataSet1_WoWi_KreditorTableAdapters.Kreditor_AdresseTableAdapter kreditor_AdresseTableAdapter;
     }
 }

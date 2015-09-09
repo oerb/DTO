@@ -45,10 +45,17 @@ namespace OutlookAddIn_MailForm
             // select the Databinding by _btn_type from Instantiation
             switch (_btn_typ)
             {
-                case "ma":
+                case "m1":  //Mandant
                     {
+                        this.dgv_TableSelect.DataSource = tblMandantBindingSource;
+                        this.tblMandantTableAdapter.Fill(dataSet1_WOWI_SEARCH.tblMandant);
+                        break;
+                    }
+                case "ma":  //Unternehmen
+                    {
+                        
                         this.dgv_TableSelect.DataSource = mandantBindingSource;        
-                        this.mandantTableAdapter.Fill(this.dataSet1_WoWi_Mandant.Mandant);
+                        this.mandantTableAdapter.Fill(this.dataSet1_WoWi_Mandant.Mandant, this.ParentForm.mandant1);
                         break;
                     }
                 case "kr":
@@ -58,17 +65,17 @@ namespace OutlookAddIn_MailForm
                     }
                 case "ob":
                     {
-                        if (this.ParentForm.mandant != 0)
+                        if (this.ParentForm.mandant != 0 && this.ParentForm.mandant1 != 0)
                         {
                             wirtschaftseinheitBindingSource.Filter = "Unternehmen = " + this.ParentForm.mandant;
                             this.dgv_TableSelect.DataSource = wirtschaftseinheitBindingSource;
+                            this.wirtschaftseinheitTableAdapter.FillbyMaUn(this.dataSet1_WoWi_Objekte.Wirtschaftseinheit, this.ParentForm.mandant1, this.ParentForm.mandant);
                         }
                         else
                         {
                             this.dgv_TableSelect.DataSource = wirtschaftseinheitBindingSource;
-                        }
-                        
-                        this.wirtschaftseinheitTableAdapter.Fill(this.dataSet1_WoWi_Objekte.Wirtschaftseinheit);
+                            this.wirtschaftseinheitTableAdapter.Fill(this.dataSet1_WoWi_Objekte.Wirtschaftseinheit);
+                        }                                                
                         break;
                     }
                 case "ha":
@@ -90,7 +97,9 @@ namespace OutlookAddIn_MailForm
                         }
                         else
                         {
-                            this.dgv_TableSelect.DataSource = hausBindingSource;
+                            //this.dgv_TableSelect.DataSource = hausBindingSource;
+                            MessageBox.Show("Bitte wählen Sie erst einen Mandanten und ein Unternehmen");
+                            this.Close();
                         }
                         this.hausTableAdapter.Fill(this.dataSet1_WoWi_Haus.Haus);
                         break;
@@ -185,21 +194,25 @@ namespace OutlookAddIn_MailForm
             if (dgv_TableSelect.SelectedRows.Count == 0) return;
             switch (_btn_typ)
             {
-                case "ma":
+                case "m1": //Mandante
+                    {
+                        this.ParentForm.clear_form_data();
+                        this.ParentForm.mandant1 = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;                       
+                        break;
+                    }
+                case "ma": //Unternehmen
                     {
                         
                         this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;
                         this.ParentForm.lbl_mandant_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
                         this.ParentForm.lbl_mandant_txt.Visible = true;
-
-                        break;
-                    }
-                case "m1":
-                    {
                         break;
                     }
                 case "ob":
                     {
+                        this.ParentForm.clear_form_data();
+                        this.ParentForm.mandant1 = (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value;
+                        this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[4].Value;
                         this.ParentForm.txt_objekt.Text = dgv_TableSelect.SelectedRows[0].Cells[0].Value.ToString();
                         string Text = dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString(); //simpler for use in  subject
                         this.ParentForm.lbl_objekt_txt.Text = Text;
@@ -210,7 +223,7 @@ namespace OutlookAddIn_MailForm
                         break;
                     }
                 case "kr":
-                    {
+                    {                        
                         this.ParentForm.kreditor = (int)dgv_TableSelect.SelectedRows[0].Cells[1].Value;
                         this.ParentForm.lbl_kreditor_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
                         this.ParentForm.lbl_kreditor_txt.Visible = true;
@@ -235,13 +248,27 @@ namespace OutlookAddIn_MailForm
                     }
                 case "ha":
                     {
-                        this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;
-                        this.ParentForm.lbl_haus_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
-                        this.ParentForm.lbl_haus_txt.Visible = true;
+                        if (this.ParentForm.mandant != 0 && this.ParentForm.mandant1 != 0)
+                        {
+                            this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[3].Value;
+                            this.ParentForm.objekt = (int)dgv_TableSelect.SelectedRows[0].Cells[4].Value;
+                            this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;
+                            this.ParentForm.lbl_haus_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
+                            this.ParentForm.lbl_haus_txt.Visible = true;
+                            this.set_WE_lable();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Bitte wählen Sie erst einen Mandanten und ein Unternehmen");
+                        }
                         break;
                     }
                 case "wo":
                     {
+                        this.ParentForm.mandant1 = (int)dgv_TableSelect.SelectedRows[0].Cells[3].Value;
+                        this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[4].Value;
+                        this.ParentForm.objekt = (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value;
+                        this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[6].Value;
                         string etage = dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString() + ", " + dgv_TableSelect.SelectedRows[0].Cells[10].Value.ToString();
                         this.ParentForm.wohnung = (int)dgv_TableSelect.SelectedRows[0].Cells[6].Value;
                         this.ParentForm.lbl_wo_txt.Text = etage;
@@ -250,6 +277,7 @@ namespace OutlookAddIn_MailForm
                         this.ParentForm.lbl_haus_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[0].Value.ToString();
                         this.ParentForm.lbl_haus_txt.Visible = true;                        
                         Globals.ThisAddIn.msg_parameter.NeEtage = etage;
+                        this.set_WE_lable();
                         break;
                     }
                 case "mi":
@@ -282,7 +310,7 @@ namespace OutlookAddIn_MailForm
 
         private void set_mieter_to_ParentForm()
         {
-            this.ParentForm.clear_parentform_data();
+            this.ParentForm.clear_form_data();
             this.ParentForm.Mieter = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;
             this.ParentForm.lbl_mieter_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[6].Value.ToString();
             this.ParentForm.eMail = dgv_TableSelect.SelectedRows[0].Cells[17].Value.ToString();
@@ -317,8 +345,11 @@ namespace OutlookAddIn_MailForm
             //***Begin***
             DataSet1_WOWI_SEARCH.tblWohnungDataTable wohnungTable;
             wohnungTable = this.tblWohnungTableAdapter.GetDataByUnWeHaNe(
-                (int)dgv_TableSelect.SelectedRows[0].Cells[3].Value, (int)dgv_TableSelect.SelectedRows[0].Cells[4].Value,
-                (int)dgv_TableSelect.SelectedRows[0].Cells[2].Value, (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value);
+                                             (int)dgv_TableSelect.SelectedRows[0].Cells[3].Value,
+                                             (int)dgv_TableSelect.SelectedRows[0].Cells[4].Value,
+                                             (int)dgv_TableSelect.SelectedRows[0].Cells[1].Value,
+                                             (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value,
+                                             (int)dgv_TableSelect.SelectedRows[0].Cells[2].Value);
             if (wohnungTable.Rows.Count > 0)
             {
                 string etage = wohnungTable[0].GeschossText + ", " + wohnungTable[0].WohnlageText;
@@ -327,22 +358,30 @@ namespace OutlookAddIn_MailForm
                 Globals.ThisAddIn.msg_parameter.NeEtage = etage;
             }
             //***End***
-            // Getting Objekt Bez and Fill it to Form and Global Data
-            //***Begin***
-            DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable weTable;
-            weTable = this.wirtschaftseinheitTableAdapter.GetDataByWE((int)dgv_TableSelect.SelectedRows[0].Cells[4].Value);
-            if (weTable.Rows.Count > 0)
-            {
-                string webez = weTable[0].Ortname + ", " + weTable[0].Strasse;
-                Globals.ThisAddIn.msg_parameter.WeBeszeichnung = webez;
-            }
-            //***End***
+            this.set_WE_lable();
             DataSet1_WOWI_SEARCH.tblBriefanredeDataTable anredeTable;
             anredeTable = this.tblBriefanredeTableAdapter.GetByNr((int)dgv_TableSelect.SelectedRows[0].Cells[24].Value);
             if (anredeTable.Rows.Count > 0)
             {
                 Globals.ThisAddIn.msg_parameter.BriefAnrede = anredeTable[0].BriefAnrText;
             }
+        }
+
+        // setting WE Infotext by current Parentform WE data
+        private void set_WE_lable()
+        {
+            // Getting Objekt Lable and Fill it to Form and Global Data
+            //***Begin***
+            DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable weTable;
+            weTable = this.wirtschaftseinheitTableAdapter.GetDataByWE((int)dgv_TableSelect.SelectedRows[0].Cells[4].Value, this.ParentForm.mandant1, this.ParentForm.mandant);
+            if (weTable.Rows.Count > 0)
+            {
+                string webez = weTable[0].Ortname + ", " + weTable[0].Strasse;
+                Globals.ThisAddIn.msg_parameter.WeBeszeichnung = webez;
+                this.ParentForm.lbl_objekt_txt.Text = webez;
+                this.ParentForm.lbl_objekt_txt.Visible = true;
+            }
+            //***END*** 
         }
 
         // TODO: Not in Use - Do I need this?
@@ -385,33 +424,33 @@ namespace OutlookAddIn_MailForm
                  && this.ParentForm.wohnung == 0 && this.ParentForm.Mieter == 0)
             {
                 this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
-                this.xyMieterTableAdapterWoWiSearch.FillByUnWe(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt);  
+                this.xyMieterTableAdapterWoWiSearch.FillByUnWe(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant1, this.ParentForm.mandant, this.ParentForm.objekt);  
             }
             else if (this.ParentForm.mandant !=0 && this.ParentForm.objekt !=0 && this.ParentForm.HausNr !=0
                 && this.ParentForm.wohnung == 0 && this.ParentForm.Mieter == 0)
             {
                 this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
-                this.xyMieterTableAdapterWoWiSearch.FillByUnWeHa(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt,
+                this.xyMieterTableAdapterWoWiSearch.FillByUnWeHa(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant1, this.ParentForm.mandant, this.ParentForm.objekt,
                     this.ParentForm.HausNr);  
             }
             else if (this.ParentForm.mandant != 0 && this.ParentForm.objekt != 0 && this.ParentForm.HausNr != 0
                  && this.ParentForm.wohnung != 0 && this.ParentForm.Mieter == 0)
             {
                 this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
-                this.xyMieterTableAdapterWoWiSearch.FillbyUnWeHaWo(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt,
+                this.xyMieterTableAdapterWoWiSearch.FillbyUnWeHaWo(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant1, this.ParentForm.mandant, this.ParentForm.objekt,
                     this.ParentForm.HausNr, this.ParentForm.wohnung);  
             }
             else if (this.ParentForm.Mieter != 0)
             {
                 this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
-                this.xyMieterTableAdapterWoWiSearch.FillByAdrNr(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.Mieter);  
+                this.xyMieterTableAdapterWoWiSearch.FillByAdrNr(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant1, this.ParentForm.Mieter);  
             }
              // Mieter comes by Address
             else if (this.ParentForm.txt_Adresse.Text != "")
             {
                 int adr = int.Parse(this.ParentForm.txt_Adresse.Text);
                 this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
-                this.xyMieterTableAdapterWoWiSearch.FillByAdrNr(dataSet1_WOWI_SEARCH.xyMieter, adr);
+                this.xyMieterTableAdapterWoWiSearch.FillByAdrNr(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant1, adr);
             }
             else
             {
@@ -433,15 +472,15 @@ namespace OutlookAddIn_MailForm
             this.dgv_TableSelect.DataSource = tblWohnungBindingSource;
             if (this.ParentForm.mandant != 0 && this.ParentForm.objekt != 0 && this.ParentForm.HausNr == 0)
             {
-                this.xyMieterTableAdapterWoWiSearch.FillByName1(dataSet1_WOWI_SEARCH.xyMieter, this.txt_filer1.Text);
+                this.xyMieterTableAdapterWoWiSearch.FillByName1(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant1, this.txt_filer1.Text);
                 this.tblWohnungTableAdapter.FillByUnWe(dataSet1_WOWI_SEARCH.tblWohnung, this.ParentForm.mandant,
-                    this.ParentForm.objekt);
+                    this.ParentForm.objekt, this.ParentForm.mandant1);
             }
             else if (this.ParentForm.mandant != 0 && this.ParentForm.objekt != 0 && this.ParentForm.HausNr != 0)
             {
-                this.xyMieterTableAdapterWoWiSearch.FillByName1(dataSet1_WOWI_SEARCH.xyMieter, this.txt_filer1.Text);
+                this.xyMieterTableAdapterWoWiSearch.FillByName1(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant1, this.txt_filer1.Text);
                 this.tblWohnungTableAdapter.Fillby_UnWeHa(dataSet1_WOWI_SEARCH.tblWohnung, this.ParentForm.mandant, 
-                    this.ParentForm.objekt, this.ParentForm.HausNr);
+                    this.ParentForm.objekt, this.ParentForm.HausNr, this.ParentForm.mandant1);
             }
             else
             {
@@ -495,7 +534,7 @@ namespace OutlookAddIn_MailForm
                         ////DateTime jahresbeginn = new DateTime(2015, 1, 1);
                         //this.xyMieterTableAdapter.Fill_by_Name1(dataSet1xyMieter.xyMieter, this.txt_filer1.Text);
                         this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
-                        this.xyMieterTableAdapterWoWiSearch.FillByName1(dataSet1_WOWI_SEARCH.xyMieter, this.txt_filer1.Text);
+                        this.xyMieterTableAdapterWoWiSearch.FillByName1(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant1, this.txt_filer1.Text);
                         break;
                     }
                 case "ad":

@@ -822,14 +822,16 @@ namespace OutlookAddIn_MailForm.DataSet1_WoWi_MandantTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PUB.Mandant.Unternehmen, PUB.Adresse.Name1 AS Name, PUB.Mandant.AdressNr\r\n" +
                 "FROM     PUB.Mandant, PUB.Adresse\r\nWHERE  PUB.Mandant.AdressNr = PUB.Adresse.Adr" +
-                "essNr";
+                "essNr AND (PUB.Mandant.MandantNr = ?)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("MandantNr", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MandantNr", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT PUB.Adresse.Name1 AS Name\r\nFROM     PUB.Mandant, PUB.Adresse\r\nWHERE  PUB.M" +
-                "andant.AdressNr = PUB.Adresse.AdressNr AND (PUB.Mandant.MandantNr = 1) AND (PUB." +
+                "andant.AdressNr = PUB.Adresse.AdressNr AND (PUB.Mandant.MandantNr = ?) AND (PUB." +
                 "Mandant.Unternehmen = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("MandantNr", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MandantNr", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
         }
         
@@ -837,8 +839,9 @@ namespace OutlookAddIn_MailForm.DataSet1_WoWi_MandantTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1_WoWi_Mandant.MandantDataTable dataTable) {
+        public virtual int Fill(DataSet1_WoWi_Mandant.MandantDataTable dataTable, int MandantNr) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -850,8 +853,9 @@ namespace OutlookAddIn_MailForm.DataSet1_WoWi_MandantTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1_WoWi_Mandant.MandantDataTable GetData() {
+        public virtual DataSet1_WoWi_Mandant.MandantDataTable GetData(int MandantNr) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             DataSet1_WoWi_Mandant.MandantDataTable dataTable = new DataSet1_WoWi_Mandant.MandantDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -860,9 +864,10 @@ namespace OutlookAddIn_MailForm.DataSet1_WoWi_MandantTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object GetCompanyName(int Unternehmen) {
+        public virtual object GetCompanyName(int MandantNr, int Unternehmen) {
             global::System.Data.Odbc.OdbcCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(Unternehmen));
+            command.Parameters[0].Value = ((int)(MandantNr));
+            command.Parameters[1].Value = ((int)(Unternehmen));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

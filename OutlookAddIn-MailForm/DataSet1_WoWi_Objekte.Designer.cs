@@ -289,6 +289,8 @@ namespace OutlookAddIn_MailForm {
             
             private global::System.Data.DataColumn columnUnternehmen;
             
+            private global::System.Data.DataColumn columnMandantNr;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public WirtschaftseinheitDataTable() {
@@ -364,6 +366,14 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MandantNrColumn {
+                get {
+                    return this.columnMandantNr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,17 +409,27 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WirtschaftseinheitRow AddWirtschaftseinheitRow(int WE, string Strasse, string Postleitzahl, string Ortname, int Unternehmen) {
+            public WirtschaftseinheitRow AddWirtschaftseinheitRow(int WE, string Strasse, string Postleitzahl, string Ortname, int Unternehmen, int MandantNr) {
                 WirtschaftseinheitRow rowWirtschaftseinheitRow = ((WirtschaftseinheitRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         WE,
                         Strasse,
                         Postleitzahl,
                         Ortname,
-                        Unternehmen};
+                        Unternehmen,
+                        MandantNr};
                 rowWirtschaftseinheitRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowWirtschaftseinheitRow);
                 return rowWirtschaftseinheitRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public WirtschaftseinheitRow FindByWEUnternehmenMandantNr(int WE, int Unternehmen, int MandantNr) {
+                return ((WirtschaftseinheitRow)(this.Rows.Find(new object[] {
+                            WE,
+                            Unternehmen,
+                            MandantNr})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -434,6 +454,7 @@ namespace OutlookAddIn_MailForm {
                 this.columnPostleitzahl = base.Columns["Postleitzahl"];
                 this.columnOrtname = base.Columns["Ortname"];
                 this.columnUnternehmen = base.Columns["Unternehmen"];
+                this.columnMandantNr = base.Columns["MandantNr"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -449,11 +470,18 @@ namespace OutlookAddIn_MailForm {
                 base.Columns.Add(this.columnOrtname);
                 this.columnUnternehmen = new global::System.Data.DataColumn("Unternehmen", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUnternehmen);
+                this.columnMandantNr = new global::System.Data.DataColumn("MandantNr", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMandantNr);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnWE,
+                                this.columnUnternehmen,
+                                this.columnMandantNr}, true));
                 this.columnWE.AllowDBNull = false;
                 this.columnStrasse.MaxLength = 100;
                 this.columnPostleitzahl.MaxLength = 20;
                 this.columnOrtname.MaxLength = 100;
                 this.columnUnternehmen.AllowDBNull = false;
+                this.columnMandantNr.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -666,6 +694,17 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int MandantNr {
+                get {
+                    return ((int)(this[this.tableWirtschaftseinheit.MandantNrColumn]));
+                }
+                set {
+                    this[this.tableWirtschaftseinheit.MandantNrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsStrasseNull() {
                 return this.IsNull(this.tableWirtschaftseinheit.StrasseColumn);
             }
@@ -865,6 +904,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WoWi_ObjekteTableAdapters {
             tableMapping.ColumnMappings.Add("Postleitzahl", "Postleitzahl");
             tableMapping.ColumnMappings.Add("Ortname", "Ortname");
             tableMapping.ColumnMappings.Add("Unternehmen", "Unternehmen");
+            tableMapping.ColumnMappings.Add("MandantNr", "MandantNr");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -878,26 +918,37 @@ namespace OutlookAddIn_MailForm.DataSet1_WoWi_ObjekteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[2];
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[3];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT WE, Strasse, Postleitzahl, Ortname, Unternehmen FROM PUB.Wirtschaftseinhei" +
-                "t";
+            this._commandCollection[0].CommandText = "SELECT WE, Strasse, Postleitzahl, Ortname, Unternehmen, MandantNr\r\nFROM     PUB.W" +
+                "irtschaftseinheit\r\nWHERE  (MandantNr = ?) AND (Unternehmen = ?)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("MandantNr", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MandantNr", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT WE, Strasse, Postleitzahl, Ortname, Unternehmen\r\nFROM     PUB.Wirtschaftse" +
-                "inheit\r\nWHERE  (WE = ?)";
+            this._commandCollection[1].CommandText = "SELECT WE, Strasse, Postleitzahl, Ortname, Unternehmen, MandantNr\r\nFROM     PUB.W" +
+                "irtschaftseinheit";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("WE", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WE", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT WE, Strasse, Postleitzahl, Ortname, Unternehmen, MandantNr\r\nFROM     PUB.W" +
+                "irtschaftseinheit\r\nWHERE  (WE = ?) AND (MandantNr = ?) AND (Unternehmen = ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("WE", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WE", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("MandantNr", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MandantNr", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable dataTable) {
+        public virtual int FillbyMaUn(DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable dataTable, int MandantNr, int Unternehmen) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Unternehmen));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -909,8 +960,10 @@ namespace OutlookAddIn_MailForm.DataSet1_WoWi_ObjekteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable GetData() {
+        public virtual DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable GetDatabyMaUn(int MandantNr, int Unternehmen) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Unternehmen));
             DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable dataTable = new DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -920,9 +973,8 @@ namespace OutlookAddIn_MailForm.DataSet1_WoWi_ObjekteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByWE(DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable dataTable, int WE) {
+        public virtual int Fill(DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(WE));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -934,9 +986,38 @@ namespace OutlookAddIn_MailForm.DataSet1_WoWi_ObjekteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable GetDataByWE(int WE) {
+        public virtual DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable dataTable = new DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByWE(DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable dataTable, int WE, int MandantNr, int Unternehmen) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(WE));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MandantNr));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Unternehmen));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable GetDataByWE(int WE, int MandantNr, int Unternehmen) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(WE));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MandantNr));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Unternehmen));
             DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable dataTable = new DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

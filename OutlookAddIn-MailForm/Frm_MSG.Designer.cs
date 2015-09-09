@@ -600,7 +600,6 @@
             this.btn_mandant1.TabIndex = 60;
             this.btn_mandant1.Text = "?";
             this.btn_mandant1.UseVisualStyleBackColor = true;
-            this.btn_mandant1.Visible = false;
             this.btn_mandant1.Click += new System.EventHandler(this.btn_search_click);
             // 
             // txt_mandant1
@@ -611,7 +610,6 @@
             this.txt_mandant1.Size = new System.Drawing.Size(100, 22);
             this.txt_mandant1.TabIndex = 59;
             this.txt_mandant1.Text = "1";
-            this.txt_mandant1.Visible = false;
             // 
             // lbl_mandant1
             // 
@@ -622,7 +620,6 @@
             this.lbl_mandant1.Size = new System.Drawing.Size(89, 25);
             this.lbl_mandant1.TabIndex = 58;
             this.lbl_mandant1.Text = "Mandant";
-            this.lbl_mandant1.Visible = false;
             // 
             // grb_adress_search
             // 

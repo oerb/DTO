@@ -16,6 +16,7 @@ namespace OutlookAddIn_MailForm
         {
             InitializeComponent();
             Globals.ThisAddIn.msg_parameter = new MSG_Parameter();
+            this.mandant1 = Globals.ThisAddIn.msg_parameter.Mandant;
         } 
 
         #region Properties definition
@@ -75,7 +76,28 @@ namespace OutlookAddIn_MailForm
             }
         }
 
-        public int mandant 
+
+        public int mandant1 // Mandante
+        {
+            get
+            {
+                if (this.txt_mandant1.Text != "")
+                {
+                    return int.Parse(this.txt_mandant1.Text);
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+
+            set
+            {                
+                this.txt_mandant1.Text = value.ToString();
+                Globals.ThisAddIn.msg_parameter.Mandant = value;
+            }
+        }
+        public int mandant // Unternehmen
         {
             get { 
                     if (this.txt_Mandant.Text != "")
@@ -97,7 +119,7 @@ namespace OutlookAddIn_MailForm
                 }
                 else
                 {
-                    companyname = this.mandantTableAdapter1.GetCompanyName(value).ToString();
+                    companyname = this.mandantTableAdapter1.GetCompanyName(this.mandant1,value).ToString();
                 }               
                 this.lbl_mandant_txt.Text = companyname;
                 this.lbl_mandant_txt.Visible = true;
@@ -267,7 +289,7 @@ namespace OutlookAddIn_MailForm
         {
             try
             {
-                if ( this.txt_Mandant.Text != "")
+                if (this.txt_Mandant.Text != "")
                 {
                     this.mandant = int.Parse(this.txt_Mandant.Text);
                     Globals.ThisAddIn.msg_parameter.Unternehmen = this.mandant;
@@ -396,9 +418,10 @@ namespace OutlookAddIn_MailForm
 
         // clear all Info-lables behind Textboxes
         // TODO: Rename this to clear_Formdata
-        public void clear_parentform_data()
+        public void clear_form_data()
         {
             this.mandant = 0;
+            this.mandant1 = Globals.ThisAddIn.msg_parameter.Mandant;
             this.HausNr = 0;
             this.objekt = 0;
             //this.kreditor = 0;
@@ -408,7 +431,7 @@ namespace OutlookAddIn_MailForm
 
         private void btn_clearform_Click(object sender, EventArgs e)
         {
-            clear_parentform_data();
+            clear_form_data();
         }
 
         private void txt_Mieter_TextChanged(object sender, EventArgs e)

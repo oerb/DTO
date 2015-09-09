@@ -14,7 +14,7 @@ namespace OutlookAddIn_MailForm
     public class MSG_Parameter
     {
         public string filelocaiton;
-        public int Mandant = 0;
+        public int Mandant = 1;
         public int Unternehmen = 0;
         public int WE = 0;
         public int HausNr = 0;
