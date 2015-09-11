@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1_WoWi_WirtschaftseinheitTEST" targetNamespace="http://tempuri.org/DataSet1_WoWi_WirtschaftseinheitTEST.xsd" xmlns:mstns="http://tempuri.org/DataSet1_WoWi_WirtschaftseinheitTEST.xsd" xmlns="http://tempuri.org/DataSet1_WoWi_WirtschaftseinheitTEST.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionStringWoWiODBC" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionStringWoWiODBC (Settings)" PropertyReference="ApplicationSettings.OutlookAddIn_MailForm.Properties.Settings.GlobalReference.Default.ConnectionStringWoWiODBC" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="WirtschaftseinheitTableAdapter" GeneratorDataComponentClassName="WirtschaftseinheitTableAdapter" Name="Wirtschaftseinheit" UserDataComponentName="WirtschaftseinheitTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionStringWoWiODBC (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT WE, Strasse, MandantNr, Flaeche, Bezeichnung, Postleitzahl, Ortname, erwerbsdatum, Unternehmen, "Anz-Haeuser" AS ANZhaeuser, "Anz-Wohnungen" AS ANZwohnungen, 
+                  "Anz-Gewerbe" AS ANZgewerbe, "Anz-Garagen" AS ANZgaragen, "Anz-Stellplaetze" AS ANZstellplaetze, Aufzug
+FROM     PUB.Wirtschaftseinheit</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="WE" DataSetColumn="WE" />
+              <Mapping SourceColumn="Strasse" DataSetColumn="Strasse" />
+              <Mapping SourceColumn="MandantNr" DataSetColumn="MandantNr" />
+              <Mapping SourceColumn="Flaeche" DataSetColumn="Flaeche" />
+              <Mapping SourceColumn="Bezeichnung" DataSetColumn="Bezeichnung" />
+              <Mapping SourceColumn="Postleitzahl" DataSetColumn="Postleitzahl" />
+              <Mapping SourceColumn="Ortname" DataSetColumn="Ortname" />
+              <Mapping SourceColumn="erwerbsdatum" DataSetColumn="erwerbsdatum" />
+              <Mapping SourceColumn="Unternehmen" DataSetColumn="Unternehmen" />
+              <Mapping SourceColumn="ANZHAEUSER" DataSetColumn="ANZHAEUSER" />
+              <Mapping SourceColumn="ANZWOHNUNGEN" DataSetColumn="ANZWOHNUNGEN" />
+              <Mapping SourceColumn="ANZGEWERBE" DataSetColumn="ANZGEWERBE" />
+              <Mapping SourceColumn="ANZGARAGEN" DataSetColumn="ANZGARAGEN" />
+              <Mapping SourceColumn="ANZSTELLPLAETZE" DataSetColumn="ANZSTELLPLAETZE" />
+              <Mapping SourceColumn="Aufzug" DataSetColumn="Aufzug" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1_WoWi_WirtschaftseinheitTEST" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet1_WoWi_WirtschaftseinheitTEST" msprop:Generator_UserDSName="DataSet1_WoWi_WirtschaftseinheitTEST">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Wirtschaftseinheit" msprop:Generator_TableClassName="WirtschaftseinheitDataTable" msprop:Generator_TableVarName="tableWirtschaftseinheit" msprop:Generator_TablePropName="Wirtschaftseinheit" msprop:Generator_RowDeletingName="WirtschaftseinheitRowDeleting" msprop:Generator_RowChangingName="WirtschaftseinheitRowChanging" msprop:Generator_RowEvHandlerName="WirtschaftseinheitRowChangeEventHandler" msprop:Generator_RowDeletedName="WirtschaftseinheitRowDeleted" msprop:Generator_UserTableName="Wirtschaftseinheit" msprop:Generator_RowChangedName="WirtschaftseinheitRowChanged" msprop:Generator_RowEvArgName="WirtschaftseinheitRowChangeEvent" msprop:Generator_RowClassName="WirtschaftseinheitRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WE" msprop:Generator_ColumnVarNameInTable="columnWE" msprop:Generator_ColumnPropNameInRow="WE" msprop:Generator_ColumnPropNameInTable="WEColumn" msprop:Generator_UserColumnName="WE" type="xs:int" />
+              <xs:element name="Strasse" msprop:Generator_ColumnVarNameInTable="columnStrasse" msprop:Generator_ColumnPropNameInRow="Strasse" msprop:Generator_ColumnPropNameInTable="StrasseColumn" msprop:Generator_UserColumnName="Strasse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MandantNr" msprop:Generator_ColumnVarNameInTable="columnMandantNr" msprop:Generator_ColumnPropNameInRow="MandantNr" msprop:Generator_ColumnPropNameInTable="MandantNrColumn" msprop:Generator_UserColumnName="MandantNr" type="xs:int" />
+              <xs:element name="Flaeche" msprop:Generator_ColumnVarNameInTable="columnFlaeche" msprop:Generator_ColumnPropNameInRow="Flaeche" msprop:Generator_ColumnPropNameInTable="FlaecheColumn" msprop:Generator_UserColumnName="Flaeche" type="xs:decimal" />
+              <xs:element name="Bezeichnung" msprop:Generator_ColumnVarNameInTable="columnBezeichnung" msprop:Generator_ColumnPropNameInRow="Bezeichnung" msprop:Generator_ColumnPropNameInTable="BezeichnungColumn" msprop:Generator_UserColumnName="Bezeichnung" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Postleitzahl" msprop:Generator_ColumnVarNameInTable="columnPostleitzahl" msprop:Generator_ColumnPropNameInRow="Postleitzahl" msprop:Generator_ColumnPropNameInTable="PostleitzahlColumn" msprop:Generator_UserColumnName="Postleitzahl" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ortname" msprop:Generator_ColumnVarNameInTable="columnOrtname" msprop:Generator_ColumnPropNameInRow="Ortname" msprop:Generator_ColumnPropNameInTable="OrtnameColumn" msprop:Generator_UserColumnName="Ortname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="erwerbsdatum" msprop:Generator_ColumnVarNameInTable="columnerwerbsdatum" msprop:Generator_ColumnPropNameInRow="erwerbsdatum" msprop:Generator_ColumnPropNameInTable="erwerbsdatumColumn" msprop:Generator_UserColumnName="erwerbsdatum" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Unternehmen" msprop:Generator_ColumnVarNameInTable="columnUnternehmen" msprop:Generator_ColumnPropNameInRow="Unternehmen" msprop:Generator_ColumnPropNameInTable="UnternehmenColumn" msprop:Generator_UserColumnName="Unternehmen" type="xs:int" />
+              <xs:element name="ANZHAEUSER" msprop:Generator_ColumnVarNameInTable="columnANZHAEUSER" msprop:Generator_ColumnPropNameInRow="ANZHAEUSER" msprop:Generator_ColumnPropNameInTable="ANZHAEUSERColumn" msprop:Generator_UserColumnName="ANZHAEUSER" type="xs:int" />
+              <xs:element name="ANZWOHNUNGEN" msprop:Generator_ColumnVarNameInTable="columnANZWOHNUNGEN" msprop:Generator_ColumnPropNameInRow="ANZWOHNUNGEN" msprop:Generator_ColumnPropNameInTable="ANZWOHNUNGENColumn" msprop:Generator_UserColumnName="ANZWOHNUNGEN" type="xs:int" />
+              <xs:element name="ANZGEWERBE" msprop:Generator_ColumnVarNameInTable="columnANZGEWERBE" msprop:Generator_ColumnPropNameInRow="ANZGEWERBE" msprop:Generator_ColumnPropNameInTable="ANZGEWERBEColumn" msprop:Generator_UserColumnName="ANZGEWERBE" type="xs:int" />
+              <xs:element name="ANZGARAGEN" msprop:Generator_ColumnVarNameInTable="columnANZGARAGEN" msprop:Generator_ColumnPropNameInRow="ANZGARAGEN" msprop:Generator_ColumnPropNameInTable="ANZGARAGENColumn" msprop:Generator_UserColumnName="ANZGARAGEN" type="xs:int" />
+              <xs:element name="ANZSTELLPLAETZE" msprop:Generator_ColumnVarNameInTable="columnANZSTELLPLAETZE" msprop:Generator_ColumnPropNameInRow="ANZSTELLPLAETZE" msprop:Generator_ColumnPropNameInTable="ANZSTELLPLAETZEColumn" msprop:Generator_UserColumnName="ANZSTELLPLAETZE" type="xs:int" />
+              <xs:element name="Aufzug" msprop:Generator_ColumnVarNameInTable="columnAufzug" msprop:Generator_ColumnPropNameInRow="Aufzug" msprop:Generator_ColumnPropNameInTable="AufzugColumn" msprop:Generator_UserColumnName="Aufzug" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

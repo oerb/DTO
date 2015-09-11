@@ -50,7 +50,10 @@ namespace OutlookAddIn_MailForm
         // TODO: Exclude from Project - was just for testing
         private void buttonMangelruege_Click(object sender, RibbonControlEventArgs e)
         {
-            //openTestForm();          
+            //openTestForm();   
+            Frm_KalenderWoReport frmKWR = new Frm_KalenderWoReport();
+            DialogResult result = frmKWR.ShowDialog();
+           
         }
 
         private void openTestForm()

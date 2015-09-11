@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1_WoWi_Wirtschaftseinheit" targetNamespace="http://tempuri.org/DataSet1_WoWi_Wirtschaftseinheit.xsd" xmlns:mstns="http://tempuri.org/DataSet1_WoWi_Wirtschaftseinheit.xsd" xmlns="http://tempuri.org/DataSet1_WoWi_Wirtschaftseinheit.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionStringWoWiODBC" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionStringWoWiODBC (Settings)" PropertyReference="ApplicationSettings.OutlookAddIn_MailForm.Properties.Settings.GlobalReference.Default.ConnectionStringWoWiODBC" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="WirtschaftseinheitTableAdapter" GeneratorDataComponentClassName="WirtschaftseinheitTableAdapter" Name="Wirtschaftseinheit" UserDataComponentName="WirtschaftseinheitTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionStringWoWiODBC (Settings)" DbObjectName="wb4000.Wirtschaftseinheit" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT "WE", "Strasse", "Unternehmen", "Anz-Haeuser", "Anz-Wohnungen", "Anz-Gewerbe", "Anz-Garagen", "Anz-Stellplaetze", "Postleitzahl", "Ortname" FROM "PUB"."Wirtschaftseinheit"</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="WE" DataSetColumn="WE" />
+              <Mapping SourceColumn="Strasse" DataSetColumn="Strasse" />
+              <Mapping SourceColumn="Unternehmen" DataSetColumn="Unternehmen" />
+              <Mapping SourceColumn="Anz-Haeuser" DataSetColumn="Anz-Haeuser" />
+              <Mapping SourceColumn="Anz-Wohnungen" DataSetColumn="Anz-Wohnungen" />
+              <Mapping SourceColumn="Anz-Gewerbe" DataSetColumn="Anz-Gewerbe" />
+              <Mapping SourceColumn="Anz-Garagen" DataSetColumn="Anz-Garagen" />
+              <Mapping SourceColumn="Anz-Stellplaetze" DataSetColumn="Anz-Stellplaetze" />
+              <Mapping SourceColumn="Postleitzahl" DataSetColumn="Postleitzahl" />
+              <Mapping SourceColumn="Ortname" DataSetColumn="Ortname" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1_WoWi_Wirtschaftseinheit" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet1_WoWi_Wirtschaftseinheit" msprop:Generator_UserDSName="DataSet1_WoWi_Wirtschaftseinheit">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Wirtschaftseinheit" msprop:Generator_TableClassName="WirtschaftseinheitDataTable" msprop:Generator_TableVarName="tableWirtschaftseinheit" msprop:Generator_TablePropName="Wirtschaftseinheit" msprop:Generator_RowDeletingName="WirtschaftseinheitRowDeleting" msprop:Generator_RowChangingName="WirtschaftseinheitRowChanging" msprop:Generator_RowEvHandlerName="WirtschaftseinheitRowChangeEventHandler" msprop:Generator_RowDeletedName="WirtschaftseinheitRowDeleted" msprop:Generator_UserTableName="Wirtschaftseinheit" msprop:Generator_RowChangedName="WirtschaftseinheitRowChanged" msprop:Generator_RowEvArgName="WirtschaftseinheitRowChangeEvent" msprop:Generator_RowClassName="WirtschaftseinheitRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WE" msprop:Generator_ColumnVarNameInTable="columnWE" msprop:Generator_ColumnPropNameInRow="WE" msprop:Generator_ColumnPropNameInTable="WEColumn" msprop:Generator_UserColumnName="WE" type="xs:int" />
+              <xs:element name="Strasse" msprop:Generator_ColumnVarNameInTable="columnStrasse" msprop:Generator_ColumnPropNameInRow="Strasse" msprop:Generator_ColumnPropNameInTable="StrasseColumn" msprop:Generator_UserColumnName="Strasse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Unternehmen" msprop:Generator_ColumnVarNameInTable="columnUnternehmen" msprop:Generator_ColumnPropNameInRow="Unternehmen" msprop:Generator_ColumnPropNameInTable="UnternehmenColumn" msprop:Generator_UserColumnName="Unternehmen" type="xs:int" />
+              <xs:element name="Anz-Haeuser" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="_columnAnz_Haeuser" msprop:Generator_ColumnPropNameInRow="_Anz_Haeuser" msprop:Generator_ColumnPropNameInTable="_Anz_HaeuserColumn" msprop:Generator_UserColumnName="Anz-Haeuser" type="xs:int" minOccurs="0" />
+              <xs:element name="Anz-Wohnungen" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="_columnAnz_Wohnungen" msprop:Generator_ColumnPropNameInRow="_Anz_Wohnungen" msprop:Generator_ColumnPropNameInTable="_Anz_WohnungenColumn" msprop:Generator_UserColumnName="Anz-Wohnungen" type="xs:int" minOccurs="0" />
+              <xs:element name="Anz-Gewerbe" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="_columnAnz_Gewerbe" msprop:Generator_ColumnPropNameInRow="_Anz_Gewerbe" msprop:Generator_ColumnPropNameInTable="_Anz_GewerbeColumn" msprop:Generator_UserColumnName="Anz-Gewerbe" type="xs:int" minOccurs="0" />
+              <xs:element name="Anz-Garagen" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="_columnAnz_Garagen" msprop:Generator_ColumnPropNameInRow="_Anz_Garagen" msprop:Generator_ColumnPropNameInTable="_Anz_GaragenColumn" msprop:Generator_UserColumnName="Anz-Garagen" type="xs:int" minOccurs="0" />
+              <xs:element name="Anz-Stellplaetze" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="_columnAnz_Stellplaetze" msprop:Generator_ColumnPropNameInRow="_Anz_Stellplaetze" msprop:Generator_ColumnPropNameInTable="_Anz_StellplaetzeColumn" msprop:Generator_UserColumnName="Anz-Stellplaetze" type="xs:int" minOccurs="0" />
+              <xs:element name="Postleitzahl" msprop:Generator_ColumnVarNameInTable="columnPostleitzahl" msprop:Generator_ColumnPropNameInRow="Postleitzahl" msprop:Generator_ColumnPropNameInTable="PostleitzahlColumn" msprop:Generator_UserColumnName="Postleitzahl" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ortname" msprop:Generator_ColumnVarNameInTable="columnOrtname" msprop:Generator_ColumnPropNameInRow="Ortname" msprop:Generator_ColumnPropNameInTable="OrtnameColumn" msprop:Generator_UserColumnName="Ortname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Wirtschaftseinheit" />
+      <xs:field xpath="mstns:Unternehmen" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

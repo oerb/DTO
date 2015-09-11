@@ -37,10 +37,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DerrToolsRibbon1));
             this.tab2 = this.Factory.CreateRibbonTab();
             this.DerrTool_HSM_RibbonGroup = this.Factory.CreateRibbonGroup();
-            this.btn_schadensmeldung = this.Factory.CreateRibbonButton();
             this.RibGroup_Development = this.Factory.CreateRibbonGroup();
-            this.buttonMangelruege = this.Factory.CreateRibbonButton();
             this.groupEinstellungen = this.Factory.CreateRibbonGroup();
+            this.btn_schadensmeldung = this.Factory.CreateRibbonButton();
+            this.buttonMangelruege = this.Factory.CreateRibbonButton();
             this.btn_Settings = this.Factory.CreateRibbonButton();
             this.btn_ServerSettings = this.Factory.CreateRibbonButton();
             this.btn_usersettings = this.Factory.CreateRibbonButton();
@@ -64,6 +64,21 @@
             this.DerrTool_HSM_RibbonGroup.Label = "Main";
             this.DerrTool_HSM_RibbonGroup.Name = "DerrTool_HSM_RibbonGroup";
             // 
+            // RibGroup_Development
+            // 
+            this.RibGroup_Development.Items.Add(this.buttonMangelruege);
+            this.RibGroup_Development.Label = "Development";
+            this.RibGroup_Development.Name = "RibGroup_Development";
+            // 
+            // groupEinstellungen
+            // 
+            this.groupEinstellungen.Items.Add(this.btn_Settings);
+            this.groupEinstellungen.Items.Add(this.btn_ServerSettings);
+            this.groupEinstellungen.Items.Add(this.btn_usersettings);
+            this.groupEinstellungen.Items.Add(this.btn_Info);
+            this.groupEinstellungen.Label = "Einstellungen";
+            this.groupEinstellungen.Name = "groupEinstellungen";
+            // 
             // btn_schadensmeldung
             // 
             this.btn_schadensmeldung.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -74,13 +89,6 @@
             this.btn_schadensmeldung.ShowImage = true;
             this.btn_schadensmeldung.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_schadensmeldung_Click);
             // 
-            // RibGroup_Development
-            // 
-            this.RibGroup_Development.Items.Add(this.buttonMangelruege);
-            this.RibGroup_Development.Label = "Development";
-            this.RibGroup_Development.Name = "RibGroup_Development";
-            this.RibGroup_Development.Visible = false;
-            // 
             // buttonMangelruege
             // 
             this.buttonMangelruege.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -89,15 +97,6 @@
             this.buttonMangelruege.Name = "buttonMangelruege";
             this.buttonMangelruege.ShowImage = true;
             this.buttonMangelruege.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonMangelruege_Click);
-            // 
-            // groupEinstellungen
-            // 
-            this.groupEinstellungen.Items.Add(this.btn_Settings);
-            this.groupEinstellungen.Items.Add(this.btn_ServerSettings);
-            this.groupEinstellungen.Items.Add(this.btn_usersettings);
-            this.groupEinstellungen.Items.Add(this.btn_Info);
-            this.groupEinstellungen.Label = "Einstellungen";
-            this.groupEinstellungen.Name = "groupEinstellungen";
             // 
             // btn_Settings
             // 
