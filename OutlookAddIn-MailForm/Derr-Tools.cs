@@ -205,6 +205,8 @@ namespace OutlookAddIn_MailForm
             myMailItem.Subject = myMailItem.Subject.Replace("[KREDITOR]", msg_parameter.KreditorAdr.ToString());
             myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[BRIEFANREDE]", msg_parameter.BriefAnrede);
             myMailItem.Subject = myMailItem.Subject.Replace("[BRIEFANREDE]", msg_parameter.BriefAnrede);
+            myMailItem.HTMLBody = myMailItem.HTMLBody.Replace("[KREDITORBRIEFANREDE]", msg_parameter.KreditorBriefAnrede);
+            myMailItem.Subject = myMailItem.Subject.Replace("[KREDITORBRIEFANREDE]", msg_parameter.KreditorBriefAnrede);
             // TODO: Remove this Helper MSGBox
             //string msgtext = "Datum1 ist: " + datum1 + " Datum2 ist: " + datum2 + " AdresseNr: " + adr;
             //MessageBox.Show(msgtext);

@@ -333,6 +333,8 @@ namespace OutlookAddIn_MailForm {
             
             private global::System.Data.DataColumn columnMandantNr;
             
+            private global::System.Data.DataColumn columnBriefAnrNr;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public _Kreditor_KontoDataTable() {
@@ -584,6 +586,14 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BriefAnrNrColumn {
+                get {
+                    return this.columnBriefAnrNr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -646,7 +656,8 @@ namespace OutlookAddIn_MailForm {
                         string PostfachStaat, 
                         string PostfachPLZ, 
                         string PostfachOrt, 
-                        int MandantNr) {
+                        int MandantNr, 
+                        int BriefAnrNr) {
                 _Kreditor_KontoRow row_Kreditor_KontoRow = ((_Kreditor_KontoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Unternehmen,
@@ -675,7 +686,8 @@ namespace OutlookAddIn_MailForm {
                         PostfachStaat,
                         PostfachPLZ,
                         PostfachOrt,
-                        MandantNr};
+                        MandantNr,
+                        BriefAnrNr};
                 row_Kreditor_KontoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row_Kreditor_KontoRow);
                 return row_Kreditor_KontoRow;
@@ -725,6 +737,7 @@ namespace OutlookAddIn_MailForm {
                 this.columnPostfachPLZ = base.Columns["PostfachPLZ"];
                 this.columnPostfachOrt = base.Columns["PostfachOrt"];
                 this.columnMandantNr = base.Columns["MandantNr"];
+                this.columnBriefAnrNr = base.Columns["BriefAnrNr"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -784,6 +797,8 @@ namespace OutlookAddIn_MailForm {
                 base.Columns.Add(this.columnPostfachOrt);
                 this.columnMandantNr = new global::System.Data.DataColumn("MandantNr", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMandantNr);
+                this.columnBriefAnrNr = new global::System.Data.DataColumn("BriefAnrNr", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBriefAnrNr);
                 this.columnKontobezeichnung.MaxLength = 60;
                 this.columnName1.ReadOnly = true;
                 this.columnName1.MaxLength = 80;
@@ -828,6 +843,7 @@ namespace OutlookAddIn_MailForm {
                 this.columnPostfachOrt.ReadOnly = true;
                 this.columnPostfachOrt.MaxLength = 100;
                 this.columnMandantNr.ReadOnly = true;
+                this.columnBriefAnrNr.ReadOnly = true;
                 this.ExtendedProperties.Add("Generator_TableVarName", "_tableKreditor_Konto");
                 this.ExtendedProperties.Add("Generator_UserTableName", "Kreditor-Konto");
             }
@@ -1404,6 +1420,22 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int BriefAnrNr {
+                get {
+                    try {
+                        return ((int)(this[this._tableKreditor_Konto.BriefAnrNrColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BriefAnrNr\' in table \'Kreditor-Konto\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._tableKreditor_Konto.BriefAnrNrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsUnternehmenNull() {
                 return this.IsNull(this._tableKreditor_Konto.UnternehmenColumn);
             }
@@ -1725,6 +1757,18 @@ namespace OutlookAddIn_MailForm {
             public void SetMandantNrNull() {
                 this[this._tableKreditor_Konto.MandantNrColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBriefAnrNrNull() {
+                return this.IsNull(this._tableKreditor_Konto.BriefAnrNrColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBriefAnrNrNull() {
+                this[this._tableKreditor_Konto.BriefAnrNrColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1913,6 +1957,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WoWi_KreditorTableAdapters {
             tableMapping.ColumnMappings.Add("PostfachPLZ", "PostfachPLZ");
             tableMapping.ColumnMappings.Add("PostfachOrt", "PostfachOrt");
             tableMapping.ColumnMappings.Add("MandantNr", "MandantNr");
+            tableMapping.ColumnMappings.Add("BriefAnrNr", "BriefAnrNr");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1933,7 +1978,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WoWi_KreditorTableAdapters {
                   PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.PlzPostf, PUB.Adresse.Postfach, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Telefax, 
                   PUB.Adresse.AdressNr, PUB.Adresse.Vermerk1, PUB.Adresse.Vermerk2, PUB.Adresse.Telefon2, PUB.Adresse.Vorwahl2, PUB.Adresse.VorwahlFax, PUB.Adresse.Ort, 
                   PUB.Adresse.EMail, PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil, PUB.Adresse.InternetURL, PUB.Adresse.PostfachStaat, PUB.Adresse.PostfachPLZ, 
-                  PUB.Adresse.PostfachOrt, PUB.""Kreditor-Konto"".MandantNr
+                  PUB.Adresse.PostfachOrt, PUB.""Kreditor-Konto"".MandantNr, PUB.Adresse.BriefAnrNr
 FROM     PUB.""Kreditor-Konto"", PUB.Adresse
 WHERE  PUB.""Kreditor-Konto"".Kontonummer = PUB.Adresse.AdressNr
 ORDER BY PUB.""Kreditor-Konto"".Kontobezeichnung";
@@ -1944,7 +1989,8 @@ ORDER BY PUB.""Kreditor-Konto"".Kontobezeichnung";
                   PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.PlzPostf, PUB.Adresse.Postfach, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Telefax, 
                   PUB.Adresse.AdressNr, PUB.Adresse.Vermerk1, PUB.Adresse.Vermerk2, PUB.Adresse.Telefon2, PUB.Adresse.Vorwahl2, PUB.Adresse.VorwahlFax, PUB.Adresse.Ort, 
                   PUB.Adresse.EMail, PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil, PUB.Adresse.InternetURL, PUB.Adresse.PostfachStaat, PUB.Adresse.PostfachPLZ, 
-                  PUB.Adresse.PostfachOrt, PUB.""Kreditor-Konto"".MandantNr
+                  PUB.Adresse.PostfachOrt, PUB.""Kreditor-Konto"".MandantNr,
+PUB.Adresse.BriefAnrNr
 FROM     PUB.""Kreditor-Konto"", PUB.Adresse
 WHERE  PUB.""Kreditor-Konto"".Kontonummer = PUB.Adresse.AdressNr AND (PUB.""Kreditor-Konto"".Kontonummer = ?)
 ORDER BY PUB.""Kreditor-Konto"".Kontobezeichnung";
@@ -1956,7 +2002,8 @@ ORDER BY PUB.""Kreditor-Konto"".Kontobezeichnung";
                   PUB.Adresse.Strasse, PUB.Adresse.PlzOrt, PUB.Adresse.PlzPostf, PUB.Adresse.Postfach, PUB.Adresse.Vorwahl1, PUB.Adresse.Telefon1, PUB.Adresse.Telefax, 
                   PUB.Adresse.AdressNr, PUB.Adresse.Vermerk1, PUB.Adresse.Vermerk2, PUB.Adresse.Telefon2, PUB.Adresse.Vorwahl2, PUB.Adresse.VorwahlFax, PUB.Adresse.Ort, 
                   PUB.Adresse.EMail, PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil, PUB.Adresse.InternetURL, PUB.Adresse.PostfachStaat, PUB.Adresse.PostfachPLZ, 
-                  PUB.Adresse.PostfachOrt, PUB.""Kreditor-Konto"".MandantNr
+                  PUB.Adresse.PostfachOrt, PUB.""Kreditor-Konto"".MandantNr,
+PUB.Adresse.BriefAnrNr
 FROM     PUB.""Kreditor-Konto"", PUB.Adresse
 WHERE  PUB.""Kreditor-Konto"".Kontonummer = PUB.Adresse.AdressNr AND (PUB.""Kreditor-Konto"".Unternehmen = ?) AND (PUB.""Kreditor-Konto"".Kontonummer = ?)
 ORDER BY PUB.""Kreditor-Konto"".Kontobezeichnung";
@@ -2056,11 +2103,26 @@ WHERE  PUB.""Kreditor-Konto"".Kontonummer = PUB.Adresse.AdressNr AND (PUB.""Kred
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string GetKreditorNameBYMaUnKr(int MandantNr, int Unternehmen, int Kontonummer) {
+        public virtual string GetKreditorNameBYMaUnKr(global::System.Nullable<int> MandantNr, global::System.Nullable<int> Unternehmen, global::System.Nullable<int> Kontonummer) {
             global::System.Data.Odbc.OdbcCommand command = this.CommandCollection[3];
-            command.Parameters[0].Value = ((int)(MandantNr));
-            command.Parameters[1].Value = ((int)(Unternehmen));
-            command.Parameters[2].Value = ((int)(Kontonummer));
+            if ((MandantNr.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(MandantNr.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Unternehmen.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(Unternehmen.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Kontonummer.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(Kontonummer.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

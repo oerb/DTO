@@ -39,5 +39,6 @@ namespace OutlookAddIn_MailForm
         public string KreditorEmail = "";
         public int KreditorAdr = 0;
         public string BriefAnrede = "";
+        public string KreditorBriefAnrede = "";
    }
 }

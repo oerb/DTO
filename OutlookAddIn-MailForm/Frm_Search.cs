@@ -233,6 +233,7 @@ namespace OutlookAddIn_MailForm
                         string KreditorBez = dgv_TableSelect.SelectedRows[0].Cells[2].Value.ToString();
                         Globals.ThisAddIn.msg_parameter.KreditorName = KreditorBez;
                         this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;
+                        Globals.ThisAddIn.msg_parameter.KreditorBriefAnrede = this.getBriefAnrede((int)dgv_TableSelect.SelectedRows[0].Cells[27].Value);
                         break;
                     }
                 case "KrAd":
@@ -359,12 +360,19 @@ namespace OutlookAddIn_MailForm
             }
             //***End***
             this.set_WE_lable();
+            Globals.ThisAddIn.msg_parameter.BriefAnrede = this.getBriefAnrede((int)dgv_TableSelect.SelectedRows[0].Cells[24].Value);            
+        }
+
+        private string getBriefAnrede(int BriefAnredeNr)
+        {
             DataSet1_WOWI_SEARCH.tblBriefanredeDataTable anredeTable;
-            anredeTable = this.tblBriefanredeTableAdapter.GetByNr((int)dgv_TableSelect.SelectedRows[0].Cells[24].Value);
+            anredeTable = this.tblBriefanredeTableAdapter.GetByNr(BriefAnredeNr);
+            string BriefAnrede = "";
             if (anredeTable.Rows.Count > 0)
             {
-                Globals.ThisAddIn.msg_parameter.BriefAnrede = anredeTable[0].BriefAnrText;
+                BriefAnrede = anredeTable[0].BriefAnrText;
             }
+            return BriefAnrede;
         }
 
         // setting WE Infotext by current Parentform WE data
