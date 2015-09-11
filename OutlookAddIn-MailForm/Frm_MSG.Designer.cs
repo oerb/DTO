@@ -91,6 +91,7 @@
             this.btn_adr_as_mieter = new System.Windows.Forms.Button();
             this.tblDokuartTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblDokuartTableAdapter();
             this.tblVorgangKZTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblVorgangKZTableAdapter();
+            this.wirtschaftseinheitTableAdapter = new OutlookAddIn_MailForm.DataSet1_WoWi_ObjekteTableAdapters.WirtschaftseinheitTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).BeginInit();
@@ -191,6 +192,7 @@
             this.txt_objekt.Size = new System.Drawing.Size(100, 22);
             this.txt_objekt.TabIndex = 23;
             this.txt_objekt.TextChanged += new System.EventHandler(this.txt_objekt_TextChanged);
+            this.txt_objekt.Leave += new System.EventHandler(this.txt_objekt_Leave);
             // 
             // txt_wohnung
             // 
@@ -666,6 +668,10 @@
             // 
             this.tblVorgangKZTableAdapter.ClearBeforeFill = true;
             // 
+            // wirtschaftseinheitTableAdapter
+            // 
+            this.wirtschaftseinheitTableAdapter.ClearBeforeFill = true;
+            // 
             // Frm_MSG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -799,5 +805,6 @@
         private DataSet1_WOWI_SEARCHTableAdapters.tblDokuartTableAdapter tblDokuartTableAdapter;
         private System.Windows.Forms.BindingSource tblVorgangKZBindingSource;
         private DataSet1_WOWI_SEARCHTableAdapters.tblVorgangKZTableAdapter tblVorgangKZTableAdapter;
+        private DataSet1_WoWi_ObjekteTableAdapters.WirtschaftseinheitTableAdapter wirtschaftseinheitTableAdapter;
     }
 }

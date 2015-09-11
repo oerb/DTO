@@ -321,19 +321,29 @@ namespace OutlookAddIn_MailForm
 
         private void txt_objekt_TextChanged(object sender, EventArgs e)
         {
-            try
+
+        }
+
+        // setting WE Infotext by current Parentform WE data
+        public void set_WE_lable()
+        {
+            // Getting Objekt Lable and Fill it to Form and Global Data
+            //***Begin***
+            DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable weTable;
+            weTable = this.wirtschaftseinheitTableAdapter.GetDataByWE(this.objekt, this.mandant1, this.mandant);
+            if (weTable.Rows.Count > 0)
             {
-                if (this.txt_objekt.Text != "")
-                {
-                    this.objekt = int.Parse(this.txt_objekt.Text);
-                    Globals.ThisAddIn.msg_parameter.WE = this.objekt;
-                }
+                string webez = weTable[0].Ortname + ", " + weTable[0].Strasse;
+                Globals.ThisAddIn.msg_parameter.WeBeszeichnung = webez;
+                this.lbl_objekt_txt.Text = webez;
+                this.lbl_objekt_txt.Visible = true;               
             }
-            catch
+            else
             {
-                this.txt_objekt.Text = null;
-                MessageBox.Show("Objekt muss eine Zahl sein");
+                MessageBox.Show("Mandant und Unternehmen müssen einen Wert haben!");
+                this.txt_objekt.Text = "0";
             }
+            //***END*** 
         }
 
         private void Frm_MSG_Load(object sender, EventArgs e)
@@ -494,6 +504,25 @@ namespace OutlookAddIn_MailForm
                 frm_Search.ParentForm = this; // TODO: Replace this by FormClass inherited MdiParent
                 //DialogResult result = frm_Search.ShowDialog();
                 frm_Search.Show(); // TODO: Do not know what is better to use. Show or ShowDialog ... test it
+            }
+        }
+
+        private void txt_objekt_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txt_objekt.Text != "")
+                {
+                    this.objekt = int.Parse(this.txt_objekt.Text);
+                    Globals.ThisAddIn.msg_parameter.WE = this.objekt;
+                    this.set_WE_lable();
+                    MessageBox.Show("Done");
+                }
+            }
+            catch
+            {
+                this.txt_objekt.Text = null;
+                MessageBox.Show("Objekt muss eine Zahl sein");
             }
         }
     }

@@ -263,12 +263,12 @@ namespace OutlookAddIn_MailForm
                         }
                         break;
                     }
-                case "wo":
+                case "wo": //bzw. NE
                     {
-                        this.ParentForm.mandant1 = (int)dgv_TableSelect.SelectedRows[0].Cells[3].Value;
-                        this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[4].Value;
-                        this.ParentForm.objekt = (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value;
-                        this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[6].Value;
+                        this.ParentForm.mandant1 = (int)dgv_TableSelect.SelectedRows[0].Cells[2].Value;
+                        this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[3].Value;
+                        this.ParentForm.objekt = (int)dgv_TableSelect.SelectedRows[0].Cells[4].Value;
+                        this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value;
                         string etage = dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString() + ", " + dgv_TableSelect.SelectedRows[0].Cells[10].Value.ToString();
                         this.ParentForm.wohnung = (int)dgv_TableSelect.SelectedRows[0].Cells[6].Value;
                         this.ParentForm.lbl_wo_txt.Text = etage;
@@ -370,18 +370,7 @@ namespace OutlookAddIn_MailForm
         // setting WE Infotext by current Parentform WE data
         private void set_WE_lable()
         {
-            // Getting Objekt Lable and Fill it to Form and Global Data
-            //***Begin***
-            DataSet1_WoWi_Objekte.WirtschaftseinheitDataTable weTable;
-            weTable = this.wirtschaftseinheitTableAdapter.GetDataByWE((int)dgv_TableSelect.SelectedRows[0].Cells[4].Value, this.ParentForm.mandant1, this.ParentForm.mandant);
-            if (weTable.Rows.Count > 0)
-            {
-                string webez = weTable[0].Ortname + ", " + weTable[0].Strasse;
-                Globals.ThisAddIn.msg_parameter.WeBeszeichnung = webez;
-                this.ParentForm.lbl_objekt_txt.Text = webez;
-                this.ParentForm.lbl_objekt_txt.Visible = true;
-            }
-            //***END*** 
+            this.ParentForm.set_WE_lable();
         }
 
         // TODO: Not in Use - Do I need this?
