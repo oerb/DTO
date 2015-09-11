@@ -92,6 +92,9 @@
             this.tblDokuartTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblDokuartTableAdapter();
             this.tblVorgangKZTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblVorgangKZTableAdapter();
             this.wirtschaftseinheitTableAdapter = new OutlookAddIn_MailForm.DataSet1_WoWi_ObjekteTableAdapters.WirtschaftseinheitTableAdapter();
+            this.kreditor_KontoTableAdapter = new OutlookAddIn_MailForm.DataSet1_WoWi_KreditorTableAdapters.Kreditor_KontoTableAdapter();
+            this.tblHausTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblHausTableAdapter();
+            this.tblWohnungTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblWohnungTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).BeginInit();
@@ -175,7 +178,7 @@
             this.txt_Mandant.Name = "txt_Mandant";
             this.txt_Mandant.Size = new System.Drawing.Size(100, 22);
             this.txt_Mandant.TabIndex = 21;
-            this.txt_Mandant.TextChanged += new System.EventHandler(this.txt_Mandant_TextChanged);
+            this.txt_Mandant.Leave += new System.EventHandler(this.txt_Mandant_Leave);
             // 
             // txt_kreditor
             // 
@@ -183,7 +186,7 @@
             this.txt_kreditor.Name = "txt_kreditor";
             this.txt_kreditor.Size = new System.Drawing.Size(100, 22);
             this.txt_kreditor.TabIndex = 22;
-            this.txt_kreditor.TextChanged += new System.EventHandler(this.txt_kreditor_TextChanged);
+            this.txt_kreditor.Validating += new System.ComponentModel.CancelEventHandler(this.txt_kreditor_Validating);
             // 
             // txt_objekt
             // 
@@ -191,7 +194,6 @@
             this.txt_objekt.Name = "txt_objekt";
             this.txt_objekt.Size = new System.Drawing.Size(100, 22);
             this.txt_objekt.TabIndex = 23;
-            this.txt_objekt.TextChanged += new System.EventHandler(this.txt_objekt_TextChanged);
             this.txt_objekt.Leave += new System.EventHandler(this.txt_objekt_Leave);
             // 
             // txt_wohnung
@@ -200,7 +202,7 @@
             this.txt_wohnung.Name = "txt_wohnung";
             this.txt_wohnung.Size = new System.Drawing.Size(100, 22);
             this.txt_wohnung.TabIndex = 24;
-            this.txt_wohnung.TextChanged += new System.EventHandler(this.txt_wohnung_TextChanged);
+            this.txt_wohnung.Leave += new System.EventHandler(this.txt_wohnung_Leave);
             // 
             // txt_meldungstyp
             // 
@@ -297,7 +299,7 @@
             this.txt_haus.Name = "txt_haus";
             this.txt_haus.Size = new System.Drawing.Size(100, 22);
             this.txt_haus.TabIndex = 33;
-            this.txt_haus.TextChanged += new System.EventHandler(this.txt_haus_TextChanged);
+            this.txt_haus.Leave += new System.EventHandler(this.txt_haus_Leave);
             // 
             // lbl_haus
             // 
@@ -672,6 +674,18 @@
             // 
             this.wirtschaftseinheitTableAdapter.ClearBeforeFill = true;
             // 
+            // kreditor_KontoTableAdapter
+            // 
+            this.kreditor_KontoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tblHausTableAdapter
+            // 
+            this.tblHausTableAdapter.ClearBeforeFill = true;
+            // 
+            // tblWohnungTableAdapter
+            // 
+            this.tblWohnungTableAdapter.ClearBeforeFill = true;
+            // 
             // Frm_MSG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -806,5 +820,8 @@
         private System.Windows.Forms.BindingSource tblVorgangKZBindingSource;
         private DataSet1_WOWI_SEARCHTableAdapters.tblVorgangKZTableAdapter tblVorgangKZTableAdapter;
         private DataSet1_WoWi_ObjekteTableAdapters.WirtschaftseinheitTableAdapter wirtschaftseinheitTableAdapter;
+        private DataSet1_WoWi_KreditorTableAdapters.Kreditor_KontoTableAdapter kreditor_KontoTableAdapter;
+        private DataSet1_WOWI_SEARCHTableAdapters.tblHausTableAdapter tblHausTableAdapter;
+        private DataSet1_WOWI_SEARCHTableAdapters.tblWohnungTableAdapter tblWohnungTableAdapter;
     }
 }

@@ -284,47 +284,7 @@ namespace OutlookAddIn_MailForm
             }
         }
 
-        private void txt_Mandant_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (this.txt_Mandant.Text != "")
-                {
-                    this.mandant = int.Parse(this.txt_Mandant.Text);
-                    Globals.ThisAddIn.msg_parameter.Unternehmen = this.mandant;
-                }   
-            }
-            catch
-            {
-                this.txt_Mandant.Text = null;
-                MessageBox.Show("Mandant muss eine Zahl sein");
-            }
-        }
-
-        private void txt_kreditor_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (this.txt_kreditor.Text != "")
-                {
-                    this.kreditor = int.Parse(this.txt_kreditor.Text);
-                    Globals.ThisAddIn.msg_parameter.KreditorAdr = this.kreditor;
-                    
-                }   
-            }
-            catch
-            {
-                this.txt_kreditor.Text = null;
-                MessageBox.Show("Kreditor muss eine Zahl sein");
-            }
-        }
-
-        private void txt_objekt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // setting WE Infotext by current Parentform WE data
+        // setting WE Infotext by current WE data
         public void set_WE_lable()
         {
             // Getting Objekt Lable and Fill it to Form and Global Data
@@ -344,6 +304,50 @@ namespace OutlookAddIn_MailForm
                 this.txt_objekt.Text = "0";
             }
             //***END*** 
+        }
+
+        public void set_Kreditor_lable()
+        {
+            //DataSet1_WoWi_Kreditor._Kreditor_KontoDataTable krTable;            
+            if (this.mandant != 0 && this.mandant1 !=0)
+            {
+                //kreditorKontoBindingSource.Filter = "Unternehmen = " + this.ParentForm.mandant;
+                //this.dgv_TableSelect.DataSource = kreditorKontoBindingSource;
+                string kreditorname = this.kreditor_KontoTableAdapter.GetKreditorNameBYMaUnKr(this.mandant1, this.mandant, this.kreditor);
+                Globals.ThisAddIn.msg_parameter.KreditorName = kreditorname;
+                this.lbl_kreditor_txt.Text = kreditorname;
+                this.lbl_kreditor_txt.Visible = true;
+            }
+            else
+            {
+                //this.dgv_TableSelect.DataSource = kreditorKontoBindingSource;
+            }
+        }
+
+        public void set_Haus_lable()
+        {
+            if (this.mandant != 0 && this.mandant1 != 0 && this.objekt != 0)
+            {
+                string hausbez = tblHausTableAdapter.GetBezeichnBYMaUnWeHa(this.mandant1, this.mandant, this.objekt, this.HausNr);
+                this.lbl_haus_txt.Text = hausbez;
+                this.lbl_haus_txt.Visible = true; 
+            }
+        }
+
+        public void set_Wohnung_lable()
+        {            
+            if (this.mandant != 0 && this.mandant1 != 0 && this.objekt != 0 && this.HausNr != 0)
+            {
+                DataSet1_WOWI_SEARCH.tblWohnungDataTable woTable;
+                woTable = tblWohnungTableAdapter.GetDataByMaUnWeHaWo(this.mandant, this.objekt, this.HausNr, this.mandant1, this.wohnung);
+                if (woTable.Rows.Count > 0)
+                {
+                    string etage = woTable[0].GeschossText + ", " + woTable[0].WohnlageText;
+                    Globals.ThisAddIn.msg_parameter.NeEtage = etage;
+                    this.lbl_wo_txt.Text = etage;
+                    this.lbl_wo_txt.Visible = true;
+                }
+            }
         }
 
         private void Frm_MSG_Load(object sender, EventArgs e)
@@ -379,23 +383,6 @@ namespace OutlookAddIn_MailForm
             Globals.ThisAddIn.msg_parameter.VorgangKZ = this.cmb_vorgangkz.Text;
         }
 
-        private void txt_haus_TextChanged(object sender, EventArgs e)
-        {
-            // Set Global HausNr for Archiving Function
-            try
-            {
-                if (this.txt_objekt.Text != "")
-                {
-                    this.HausNr = int.Parse(this.txt_haus.Text);
-                    Globals.ThisAddIn.msg_parameter.HausNr = this.HausNr;
-                }
-            }
-            catch
-            {
-                this.txt_haus.Text = null;
-                MessageBox.Show("HausNr. muss eine Zahl sein");
-            }
-        }
 
         private void cmb_dokuart_DropDown(object sender, EventArgs e)
         {
@@ -404,25 +391,6 @@ namespace OutlookAddIn_MailForm
             // cmd_Dokuart and cmd_DokuKZ
             //this.wOWIDOKARTTableAdapter.Fill_Dokuart(this.saperionDataSet_Dokuart_DokuKZ.WOWIDOKART);
             this.tblDokuartTableAdapter.Fill(this.dataSet1_WOWI_SEARCH.tblDokuart);
-        }
-
-        private void txt_wohnung_TextChanged(object sender, EventArgs e)
-        {
-            //this.wohnung = Convert.ToInt32(this.txt_wohnung.Text);
-            // Set Global HausNr for Archiving Function
-            try
-            {
-                if (this.txt_wohnung.Text != "")
-                {
-                    this.wohnung = int.Parse(this.txt_wohnung.Text);
-                    Globals.ThisAddIn.msg_parameter.Wohnung = this.wohnung;
-                }
-            }
-            catch
-            {
-                this.txt_wohnung.Text = null;
-                MessageBox.Show("NE. muss eine Zahl sein");
-            }
         }
 
         // clear all Info-lables behind Textboxes
@@ -513,16 +481,112 @@ namespace OutlookAddIn_MailForm
             {
                 if (this.txt_objekt.Text != "")
                 {
-                    this.objekt = int.Parse(this.txt_objekt.Text);
-                    Globals.ThisAddIn.msg_parameter.WE = this.objekt;
-                    this.set_WE_lable();
-                    MessageBox.Show("Done");
+                    if (this.mandant1 != 0 && this.mandant != 0)
+                    {
+                        this.objekt = int.Parse(this.txt_objekt.Text);
+                        Globals.ThisAddIn.msg_parameter.WE = this.objekt;
+                        this.set_WE_lable();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mandant und Unternehmen müssen einen Wert haben!");
+                    }
                 }
             }
             catch
             {
                 this.txt_objekt.Text = null;
-                MessageBox.Show("Objekt muss eine Zahl sein");
+                //MessageBox.Show("Objekt muss eine Zahl sein");
+            }
+        }
+
+        private void txt_kreditor_Validating(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                if (this.txt_kreditor.Text != "" && this.mandant1 != 0 && this.mandant != 0)
+                {
+                    this.kreditor = int.Parse(this.txt_kreditor.Text);
+                    Globals.ThisAddIn.msg_parameter.KreditorAdr = this.kreditor;
+                    this.set_Kreditor_lable();
+                }
+                else
+                {
+                    MessageBox.Show("Mandant und Unternehmen müssen einen Wert haben!");
+                }
+            }
+            catch
+            {
+                this.txt_kreditor.Text = null;
+               // MessageBox.Show("Kreditor muss eine Zahl sein");
+            }
+        }
+
+        private void txt_Mandant_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txt_Mandant.Text != "")
+                {
+                    this.mandant = int.Parse(this.txt_Mandant.Text);
+                    Globals.ThisAddIn.msg_parameter.Unternehmen = this.mandant;
+                }
+            }
+            catch
+            {
+                this.txt_Mandant.Text = null;
+                //MessageBox.Show("Mandant muss eine Zahl sein");
+            }
+        }
+
+        private void txt_haus_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.txt_Mandant.Text != "" && this.mandant != 0 && this.mandant1 != 0 && this.objekt != 0)
+                {
+                    this.mandant = int.Parse(this.txt_Mandant.Text);
+                    Globals.ThisAddIn.msg_parameter.Unternehmen = this.mandant;
+                    this.set_Haus_lable();
+                }
+                else
+                {
+                    MessageBox.Show("Mandant, Unternehmen und WE müssen einen Wert haben!");
+                    this.txt_haus.Text = "";
+                }
+            }
+            catch
+            {
+                this.txt_Mandant.Text = null;
+                //MessageBox.Show("Mandant muss eine Zahl sein");
+            }
+        }
+
+        private void txt_wohnung_Leave(object sender, EventArgs e)
+        {
+            //this.wohnung = Convert.ToInt32(this.txt_wohnung.Text);
+            // Set Global HausNr for Archiving Function
+            try
+            {
+                if (this.txt_wohnung.Text != "")
+                {
+                    if (this.txt_Mandant.Text != "" && this.mandant != 0 && this.mandant1 != 0 && this.objekt != 0 && this.HausNr != 0)
+                    {
+                        this.wohnung = int.Parse(this.txt_wohnung.Text);
+                        Globals.ThisAddIn.msg_parameter.Wohnung = this.wohnung;
+                        this.set_Wohnung_lable();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mandant, Unternehmen, WE und Haus müssen einen Wert haben!");
+                        this.txt_wohnung.Text = "";
+                    }
+                }
+            }
+            catch
+            {
+                this.txt_wohnung.Text = null;
+                //MessageBox.Show("NE. muss eine Zahl sein");
             }
         }
     }
