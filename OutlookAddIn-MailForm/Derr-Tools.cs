@@ -51,16 +51,25 @@ namespace OutlookAddIn_MailForm
         private void buttonMangelruege_Click(object sender, RibbonControlEventArgs e)
         {
             //openTestForm();   
-            Frm_KalenderWoReport frmKWR = new Frm_KalenderWoReport();
-            var DateSpan = frmKWR.getSelectedDateSpan();
-            if (DateSpan.Item3)
+
+            try
             {
-                DialogResult result = frmKWR.ShowDialog();
+                Frm_KalenderWoReport frmKWR = new Frm_KalenderWoReport();
+                var DateSpan = frmKWR.getSelectedDateSpan();
+                if (DateSpan.Item3)
+                {
+                    DialogResult result = frmKWR.ShowDialog();
+                }
+                else
+                {
+                    frmKWR.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                frmKWR.Close();
-            }                       
+                MessageBox.Show(ex.ToString());
+                throw;
+            }                     
         }
 
         private void openTestForm()

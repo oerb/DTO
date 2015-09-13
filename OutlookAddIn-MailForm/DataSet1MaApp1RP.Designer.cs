@@ -295,6 +295,8 @@ namespace OutlookAddIn_MailForm {
             
             private global::System.Data.DataColumn columnBody;
             
+            private global::System.Data.DataColumn columnHours;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tblMaAppDataTable() {
@@ -394,6 +396,14 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HoursColumn {
+                get {
+                    return this.columnHours;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -429,7 +439,7 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblMaAppRow AddtblMaAppRow(string Subject, string Location, System.DateTime StartTime, System.DateTime EndTime, System.DateTime StartDate, System.DateTime EndDate, bool AllDayEvent, string Body) {
+            public tblMaAppRow AddtblMaAppRow(string Subject, string Location, System.DateTime StartTime, System.DateTime EndTime, System.DateTime StartDate, System.DateTime EndDate, bool AllDayEvent, string Body, System.TimeSpan Hours) {
                 tblMaAppRow rowtblMaAppRow = ((tblMaAppRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Subject,
@@ -439,7 +449,8 @@ namespace OutlookAddIn_MailForm {
                         StartDate,
                         EndDate,
                         AllDayEvent,
-                        Body};
+                        Body,
+                        Hours};
                 rowtblMaAppRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblMaAppRow);
                 return rowtblMaAppRow;
@@ -470,6 +481,7 @@ namespace OutlookAddIn_MailForm {
                 this.columnEndDate = base.Columns["EndDate"];
                 this.columnAllDayEvent = base.Columns["AllDayEvent"];
                 this.columnBody = base.Columns["Body"];
+                this.columnHours = base.Columns["Hours"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -491,6 +503,8 @@ namespace OutlookAddIn_MailForm {
                 base.Columns.Add(this.columnAllDayEvent);
                 this.columnBody = new global::System.Data.DataColumn("Body", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBody);
+                this.columnHours = new global::System.Data.DataColumn("Hours", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHours);
                 this.columnEndDate.Caption = "DataColumn1";
             }
             
@@ -762,6 +776,22 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.TimeSpan Hours {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tabletblMaApp.HoursColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Hours\' in table \'tblMaApp\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblMaApp.HoursColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSubjectNull() {
                 return this.IsNull(this.tabletblMaApp.SubjectColumn);
             }
@@ -854,6 +884,18 @@ namespace OutlookAddIn_MailForm {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBodyNull() {
                 this[this.tabletblMaApp.BodyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHoursNull() {
+                return this.IsNull(this.tabletblMaApp.HoursColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHoursNull() {
+                this[this.tabletblMaApp.HoursColumn] = global::System.Convert.DBNull;
             }
         }
         

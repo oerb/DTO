@@ -31,6 +31,9 @@ namespace OutlookAddIn_MailForm
             //Get Only the full Day of dateStart
             DateTime dateStart = DateSpan.Item1.Date;
             DateTime dateEnd = dateStart.AddDays(1);//DateSpan.Item2;
+            //TimeSpan hours = dateStart - dateEnd;
+            //string msgtext = "Zeitspanne" + hours.ToString();
+            //MessageBox.Show(msgtext);
             if (DateSpan.Item3)
             {
                 this.MarkedAppointment = this.GetCalenderItemsInTimeSpan(dateStart, dateEnd);                               
@@ -83,6 +86,7 @@ namespace OutlookAddIn_MailForm
                                     row["EndDate"] = item.End.Date;
                                     row["AllDayEvent"] = item.AllDayEvent;
                                     row["Body"] = item.Body;
+                                    row["Hours"] = item.End.TimeOfDay-item.Start.TimeOfDay;
                                     sample.Rows.Add(row);  
 	            }
 	        }

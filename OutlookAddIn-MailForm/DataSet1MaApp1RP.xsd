@@ -12,7 +12,7 @@
   <xs:element name="DataSet1MaApp1RP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1MaApp1RP" msprop:Generator_UserDSName="DataSet1MaApp1RP">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tblMaApp" msprop:Generator_TableClassName="tblMaAppDataTable" msprop:Generator_TableVarName="tabletblMaApp" msprop:Generator_TablePropName="tblMaApp" msprop:Generator_RowDeletingName="tblMaAppRowDeleting" msprop:Generator_RowChangingName="tblMaAppRowChanging" msprop:Generator_RowEvHandlerName="tblMaAppRowChangeEventHandler" msprop:Generator_RowDeletedName="tblMaAppRowDeleted" msprop:Generator_UserTableName="tblMaApp" msprop:Generator_RowChangedName="tblMaAppRowChanged" msprop:Generator_RowEvArgName="tblMaAppRowChangeEvent" msprop:Generator_RowClassName="tblMaAppRow">
+        <xs:element name="tblMaApp" msprop:Generator_TableClassName="tblMaAppDataTable" msprop:Generator_TableVarName="tabletblMaApp" msprop:Generator_RowChangedName="tblMaAppRowChanged" msprop:Generator_TablePropName="tblMaApp" msprop:Generator_RowDeletingName="tblMaAppRowDeleting" msprop:Generator_RowChangingName="tblMaAppRowChanging" msprop:Generator_RowEvHandlerName="tblMaAppRowChangeEventHandler" msprop:Generator_RowDeletedName="tblMaAppRowDeleted" msprop:Generator_RowClassName="tblMaAppRow" msprop:Generator_UserTableName="tblMaApp" msprop:Generator_RowEvArgName="tblMaAppRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Subject" msprop:Generator_ColumnVarNameInTable="columnSubject" msprop:Generator_ColumnPropNameInRow="Subject" msprop:Generator_ColumnPropNameInTable="SubjectColumn" msprop:Generator_UserColumnName="Subject" type="xs:string" minOccurs="0" />
@@ -23,6 +23,7 @@
               <xs:element name="EndDate" msdata:Caption="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="AllDayEvent" msprop:Generator_ColumnVarNameInTable="columnAllDayEvent" msprop:Generator_ColumnPropNameInRow="AllDayEvent" msprop:Generator_ColumnPropNameInTable="AllDayEventColumn" msprop:Generator_UserColumnName="AllDayEvent" type="xs:boolean" minOccurs="0" />
               <xs:element name="Body" msprop:Generator_ColumnVarNameInTable="columnBody" msprop:Generator_ColumnPropNameInRow="Body" msprop:Generator_ColumnPropNameInTable="BodyColumn" msprop:Generator_UserColumnName="Body" type="xs:string" minOccurs="0" />
+              <xs:element name="Hours" msprop:Generator_ColumnVarNameInTable="columnHours" msprop:Generator_ColumnPropNameInRow="Hours" msprop:Generator_ColumnPropNameInTable="HoursColumn" msprop:Generator_UserColumnName="Hours" type="xs:duration" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
