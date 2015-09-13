@@ -29,54 +29,69 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSet1_WoWi_WirtschaftseinheitTEST = new OutlookAddIn_MailForm.DataSet1_WoWi_WirtschaftseinheitTEST();
             this.WirtschaftseinheitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet1_WoWi_WirtschaftseinheitTEST = new OutlookAddIn_MailForm.DataSet1_WoWi_WirtschaftseinheitTEST();
             this.WirtschaftseinheitTableAdapter = new OutlookAddIn_MailForm.DataSet1_WoWi_WirtschaftseinheitTESTTableAdapters.WirtschaftseinheitTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet1_WoWi_WirtschaftseinheitTEST)).BeginInit();
+            this.dataSet1MaApp1RP1 = new OutlookAddIn_MailForm.DataSet1MaApp1RP();
+            this.bindingSourcetblMaApp = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.WirtschaftseinheitBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1_WoWi_WirtschaftseinheitTEST)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1MaApp1RP1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcetblMaApp)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "DataSet1_WoWi_WirtschaftseinhTestRP";
-            reportDataSource1.Value = this.WirtschaftseinheitBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OutlookAddIn_MailForm.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource2.Name = "DataSet1MaApp1RP";
+            reportDataSource2.Value = this.bindingSourcetblMaApp;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OutlookAddIn_MailForm.Rep_WochenKalender.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(503, 444);
+            this.reportViewer1.Size = new System.Drawing.Size(951, 703);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // DataSet1_WoWi_WirtschaftseinheitTEST
-            // 
-            this.DataSet1_WoWi_WirtschaftseinheitTEST.DataSetName = "DataSet1_WoWi_WirtschaftseinheitTEST";
-            this.DataSet1_WoWi_WirtschaftseinheitTEST.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // WirtschaftseinheitBindingSource
             // 
             this.WirtschaftseinheitBindingSource.DataMember = "Wirtschaftseinheit";
             this.WirtschaftseinheitBindingSource.DataSource = this.DataSet1_WoWi_WirtschaftseinheitTEST;
             // 
+            // DataSet1_WoWi_WirtschaftseinheitTEST
+            // 
+            this.DataSet1_WoWi_WirtschaftseinheitTEST.DataSetName = "DataSet1_WoWi_WirtschaftseinheitTEST";
+            this.DataSet1_WoWi_WirtschaftseinheitTEST.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // WirtschaftseinheitTableAdapter
             // 
             this.WirtschaftseinheitTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataSet1MaApp1RP1
+            // 
+            this.dataSet1MaApp1RP1.DataSetName = "DataSet1MaApp1RP";
+            this.dataSet1MaApp1RP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingSourcetblMaApp
+            // 
+            this.bindingSourcetblMaApp.DataMember = "tblMaApp";
+            this.bindingSourcetblMaApp.DataSource = this.dataSet1MaApp1RP1;
             // 
             // Frm_KalenderWoReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 468);
+            this.ClientSize = new System.Drawing.Size(951, 703);
             this.Controls.Add(this.reportViewer1);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Frm_KalenderWoReport";
-            this.Text = "Frm_KalenderWoReport";
+            this.Text = "HSM Tagesbericht";
             this.Load += new System.EventHandler(this.Frm_KalenderWoReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet1_WoWi_WirtschaftseinheitTEST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WirtschaftseinheitBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1_WoWi_WirtschaftseinheitTEST)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1MaApp1RP1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcetblMaApp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -87,5 +102,7 @@
         private System.Windows.Forms.BindingSource WirtschaftseinheitBindingSource;
         private DataSet1_WoWi_WirtschaftseinheitTEST DataSet1_WoWi_WirtschaftseinheitTEST;
         private DataSet1_WoWi_WirtschaftseinheitTESTTableAdapters.WirtschaftseinheitTableAdapter WirtschaftseinheitTableAdapter;
+        private DataSet1MaApp1RP dataSet1MaApp1RP1;
+        private System.Windows.Forms.BindingSource bindingSourcetblMaApp;
     }
 }

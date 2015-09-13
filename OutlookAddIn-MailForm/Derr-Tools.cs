@@ -52,8 +52,15 @@ namespace OutlookAddIn_MailForm
         {
             //openTestForm();   
             Frm_KalenderWoReport frmKWR = new Frm_KalenderWoReport();
-            DialogResult result = frmKWR.ShowDialog();
-           
+            var DateSpan = frmKWR.getSelectedDateSpan();
+            if (DateSpan.Item3)
+            {
+                DialogResult result = frmKWR.ShowDialog();
+            }
+            else
+            {
+                frmKWR.Close();
+            }                       
         }
 
         private void openTestForm()
