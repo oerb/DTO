@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security;
+using System.Resources;
 
 // Allgemeine Informationen über eine Assembly werden über die folgende 
 // Attributgruppe gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
@@ -33,6 +34,7 @@ using System.Security;
 // Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern 
 // übernehmen, indem Sie "*" eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.0.0.33")]
+[assembly: AssemblyFileVersion("0.0.0.33")]
 
+[assembly: NeutralResourcesLanguageAttribute("de")]
