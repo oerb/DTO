@@ -29,9 +29,10 @@ namespace OutlookAddIn_MailForm
         private void button1_Click(object sender, EventArgs e)
         {
             Frm_helphtmlfile help = new Frm_helphtmlfile();
-            help.url = @"C:\Users\leppin\Documents\Visual Studio 2013\" +
-            @"Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\" + 
-            @"Resources\Helpdocs\Saperion_Serverlocation.mht";
+            //help.url = @"C:\Users\leppin\Documents\Visual Studio 2013\" +
+            //@"Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\" + 
+            //@"Resources\Helpdocs\Saperion_Serverlocation.mht";
+            help.url = @"https://github.com/oerb/DTO/wiki/Help---WoWi-ODBC-Connectionstring";
             DialogResult result = help.ShowDialog(); 
             
         }
@@ -39,18 +40,20 @@ namespace OutlookAddIn_MailForm
         private void button2_Click(object sender, EventArgs e)
         {
             Frm_helphtmlfile help = new Frm_helphtmlfile();
-            help.url = @"C:\Users\leppin\Documents\Visual Studio 2013\" +
-            @"Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\" +
-            @"Resources\Helpdocs\SaperionSQL_ConnectionString.mht";
+            //help.url = @"C:\Users\leppin\Documents\Visual Studio 2013\" +
+            //@"Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\" +
+            //@"Resources\Helpdocs\SaperionSQL_ConnectionString.mht";
+            help.url = @"https://github.com/oerb/DTO/wiki/Help---WoWi-ODBC-Connectionstring";
             DialogResult result = help.ShowDialog(); 
         }
 
         private void btn_locationstring_Click(object sender, EventArgs e)
         {
             Frm_helphtmlfile help = new Frm_helphtmlfile();
-            help.url = @"C:\Users\leppin\Documents\Visual Studio 2013\" +
-            @"Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\" +
-            @"Resources\Helpdocs\wowi_ODBC_Connectionstring.mht";
+            //help.url = @"C:\Users\leppin\Documents\Visual Studio 2013\" +
+            //@"Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\" +
+            //@"Resources\Helpdocs\wowi_ODBC_Connectionstring.mht";
+            help.url = @"https://github.com/oerb/DTO/wiki/Help---WoWi-ODBC-Connectionstring";
             DialogResult result = help.ShowDialog(); 
         }
 
@@ -63,7 +66,7 @@ namespace OutlookAddIn_MailForm
             this.txt_uid.Text = wowi_connectionstring_split[3];
             this.txt_pwd.Text = wowi_connectionstring_split[5];
             this.txb_wowi_locationstring.Text = wowi_connectionstring;
-            this.txt_saperion_connectionstring.Text = Properties.Settings.Default.saperionConnectionString.ToString();        
+            //this.txt_saperion_connectionstring.Text = Properties.Settings.Default.saperionConnectionString.ToString();        
         }
 
         private void btn_saveChanges_Click(object sender, EventArgs e)

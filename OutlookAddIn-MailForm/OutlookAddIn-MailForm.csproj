@@ -34,7 +34,7 @@
     <PublishUrl>\\server10\VerzeichnisQ\Administrator\Software\DTO\</PublishUrl>
     <InstallUrl />
     <TargetCulture>de</TargetCulture>
-    <ApplicationVersion>0.0.0.32</ApplicationVersion>
+    <ApplicationVersion>0.0.0.43</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -62,9 +62,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.ReportViewer.11.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Report Viewer 2012 Runtime</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.11.1">
       <Visible>False</Visible>
       <ProductName>SQL Server 2012 Express LocalDB</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SQLSysClrTypes.11.0.x64">
+      <Visible>False</Visible>
+      <ProductName>Microsoft® System CLR Types for SQL Server® 2012 %28x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SQLSysClrTypes.11.0.x86">
+      <Visible>False</Visible>
+      <ProductName>Microsoft® System CLR Types for SQL Server® 2012 %28x86%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
@@ -143,11 +158,14 @@
       <HintPath>..\..\DTsaperionVBNETLib\DTsaperionVBNETLib\bin\Debug\DTsaperionVBNETLib.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -194,9 +212,28 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="DataSet1MaApp1RP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1MaApp1RP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1_WoWi_Mandant.cs">
       <DependentUpon>DataSet1_WoWi_Mandant.xsd</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1_WoWi_Wirtschaftseinheit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1_WoWi_Wirtschaftseinheit.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1_WoWi_WirtschaftseinheitTEST.cs">
+      <DependentUpon>DataSet1_WoWi_WirtschaftseinheitTEST.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1_WoWi_WirtschaftseinheitTEST.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1_WoWi_WirtschaftseinheitTEST.xsd</DependentUpon>
     </Compile>
     <Compile Include="DTO_DATA.cs" />
     <Compile Include="Database1DataSetNewMSGTYPE.Designer.cs">
@@ -279,6 +316,12 @@
     <Compile Include="Frm_helphtmlfile.Designer.cs">
       <DependentUpon>Frm_helphtmlfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_KalenderWoReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_KalenderWoReport.Designer.cs">
+      <DependentUpon>Frm_KalenderWoReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_MailMain.cs" />
     <Compile Include="Frm_MailMain.Designer.cs">
       <DependentUpon>Frm_MailMain.cs</DependentUpon>
@@ -336,15 +379,6 @@
     <Compile Include="Ribbon.cs">
       <XmlRibbon>true</XmlRibbon>
     </Compile>
-    <Compile Include="saperionDataSet_Dokuart_DokuKZ.cs">
-      <DependentUpon>saperionDataSet_Dokuart_DokuKZ.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="saperionDataSet_Dokuart_DokuKZ.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>saperionDataSet_Dokuart_DokuKZ.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="WOWI_Mandant.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -358,6 +392,9 @@
     </Compile>
     <EmbeddedResource Include="Frm_helphtmlfile.resx">
       <DependentUpon>Frm_helphtmlfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_KalenderWoReport.resx">
+      <DependentUpon>Frm_KalenderWoReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_MailMain.resx">
       <DependentUpon>Frm_MailMain.cs</DependentUpon>
@@ -393,11 +430,14 @@
     <EmbeddedResource Include="Derr-Tools.resx">
       <DependentUpon>Derr-Tools.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Rep_WochenKalender.rdlc" />
     <EmbeddedResource Include="Schadensmeldung.resx">
       <DependentUpon>Schadensmeldung.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Database1DataSetNewMSGTYPE.xsc">
       <DependentUpon>Database1DataSetNewMSGTYPE.xsd</DependentUpon>
     </None>
@@ -430,6 +470,17 @@
     </None>
     <None Include="Database1DataSet_MSGTYPES.xss">
       <DependentUpon>Database1DataSet_MSGTYPES.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1MaApp1RP.xsc">
+      <DependentUpon>DataSet1MaApp1RP.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1MaApp1RP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1MaApp1RP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1MaApp1RP.xss">
+      <DependentUpon>DataSet1MaApp1RP.xsd</DependentUpon>
     </None>
     <None Include="DataSet1Wohnung.xsc">
       <DependentUpon>DataSet1Wohnung.xsd</DependentUpon>
@@ -507,7 +558,32 @@
     <None Include="DataSet1_WOWI_SEARCH.xss">
       <DependentUpon>DataSet1_WOWI_SEARCH.xsd</DependentUpon>
     </None>
+    <None Include="DataSet1_WoWi_Wirtschaftseinheit.xsc">
+      <DependentUpon>DataSet1_WoWi_Wirtschaftseinheit.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_WoWi_Wirtschaftseinheit.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1_WoWi_Wirtschaftseinheit.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1_WoWi_Wirtschaftseinheit.xss">
+      <DependentUpon>DataSet1_WoWi_Wirtschaftseinheit.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_WoWi_WirtschaftseinheitTEST.xsc">
+      <DependentUpon>DataSet1_WoWi_WirtschaftseinheitTEST.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_WoWi_WirtschaftseinheitTEST.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1_WoWi_WirtschaftseinheitTEST.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1_WoWi_WirtschaftseinheitTEST.xss">
+      <DependentUpon>DataSet1_WoWi_WirtschaftseinheitTEST.xsd</DependentUpon>
+    </None>
     <None Include="OutlookAddIn-MailForm_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\DataSet1MaApp1RP.tblMaAppDataTable.datasource" />
+    <None Include="Properties\DataSources\Frm_KalenderWoReport.datasource" />
+    <None Include="Properties\DataSources\Globals.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -587,17 +663,6 @@
     <None Include="Resources\star-empty.png" />
     <None Include="Resources\star-small.png" />
     <None Include="Resources\star.png" />
-    <None Include="saperionDataSet_Dokuart_DokuKZ.xsc">
-      <DependentUpon>saperionDataSet_Dokuart_DokuKZ.xsd</DependentUpon>
-    </None>
-    <None Include="saperionDataSet_Dokuart_DokuKZ.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>saperionDataSet_Dokuart_DokuKZ.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="saperionDataSet_Dokuart_DokuKZ.xss">
-      <DependentUpon>saperionDataSet_Dokuart_DokuKZ.xsd</DependentUpon>
-    </None>
     <None Include="test1.ofs" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.cs</DependentUpon>
@@ -647,6 +712,17 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="Help\Img\DTO-ArchivierenBestätigen.png" />
+    <Content Include="Help\Img\DTO-Benutzereinstellung-Allgemein.png" />
+    <Content Include="Help\Img\DTO-Benutzereinstellung-MSG-Form.png" />
+    <Content Include="Help\Img\DTO-Meldung.png" />
+    <Content Include="Help\Img\DTO-MSGtyp-Erstellen-Bearbeiten.png" />
+    <Content Include="Help\Img\DTO-Ribbon.png" />
+    <Content Include="Help\Img\DTO-Servereinstellung.png" />
+    <Content Include="Help\Img\DTO-STAMMVORLAGE.png" />
+    <Content Include="Help\Img\DTO-Vorlage-Speichern.png" />
+    <Content Include="Help\Img\SaperionAbfrageMaske-DTO-Mängel.png" />
+    <Content Include="Help\Img\SaperionIndexMaske-DTO-Mängel.png" />
     <Content Include="Resources\book_open.ico" />
     <Content Include="Resources\browser_window_settings-32.png" />
     <Content Include="Resources\disk_black.ico" />
@@ -677,6 +753,7 @@
     <Content Include="Resources\plus_circle.ico" />
     <Content Include="Resources\server_settings-32.png" />
     <Content Include="Resources\Streamline-75-64.png" />
+    <Content Include="Resources\WoWi-Access-ODBC.png" />
     <None Include="Resources\Save_big.ico" />
   </ItemGroup>
   <PropertyGroup>

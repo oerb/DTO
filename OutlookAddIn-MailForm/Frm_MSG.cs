@@ -123,6 +123,7 @@ namespace OutlookAddIn_MailForm
                 }               
                 this.lbl_mandant_txt.Text = companyname;
                 this.lbl_mandant_txt.Visible = true;
+                Globals.ThisAddIn.msg_parameter.Unternehmen = value;
             }
         }
 
@@ -139,7 +140,12 @@ namespace OutlookAddIn_MailForm
                     return 0;
                 }
             }
-            set { this.txt_kreditor.Text = value.ToString(); this.lbl_kreditor_txt.Text = ""; }
+            set 
+            { 
+                this.txt_kreditor.Text = value.ToString(); 
+                this.lbl_kreditor_txt.Text = "";
+                Globals.ThisAddIn.msg_parameter.KreditorAdr = value;
+            }
         }
 
         public int objekt
@@ -155,7 +161,12 @@ namespace OutlookAddIn_MailForm
                     return 0;
                 }
             }
-            set { this.txt_objekt.Text = value.ToString(); this.lbl_objekt_txt.Text = ""; }
+            set 
+            { 
+                this.txt_objekt.Text = value.ToString(); 
+                this.lbl_objekt_txt.Text = "";
+                Globals.ThisAddIn.msg_parameter.WE = value;
+            }
         }
 
         private string _eMail;
@@ -179,7 +190,12 @@ namespace OutlookAddIn_MailForm
                     return 0;
                 }
             }
-            set { this.txt_haus.Text = value.ToString(); this.lbl_haus_txt.Text = ""; }
+            set 
+            { 
+                this.txt_haus.Text = value.ToString(); 
+                this.lbl_haus_txt.Text = "";
+                Globals.ThisAddIn.msg_parameter.HausNr = value;
+            }
         }
 
         public int Mieter
@@ -195,7 +211,11 @@ namespace OutlookAddIn_MailForm
                     return 0;
                 }
             }
-            set { this.txt_Mieter.Text = value.ToString(); }
+            set 
+            { 
+                this.txt_Mieter.Text = value.ToString();
+                Globals.ThisAddIn.msg_parameter.AdresseNr = value;
+            }
         }
 
         // NE = wohnung
@@ -212,7 +232,11 @@ namespace OutlookAddIn_MailForm
                     return 0;
                 }
             }
-            set { this.txt_wohnung.Text = value.ToString(); }
+            set 
+            { 
+                this.txt_wohnung.Text = value.ToString();
+                Globals.ThisAddIn.msg_parameter.Wohnung = value;
+            }
         }
 
         #endregion

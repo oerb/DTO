@@ -38,19 +38,19 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lbl_vorgangkz = new System.Windows.Forms.Label();
             this.cmb_vorgangkz = new System.Windows.Forms.ComboBox();
+            this.tblVorgangKZBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1_WOWI_SEARCH = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCH();
             this.lbl_dokuart = new System.Windows.Forms.Label();
             this.cmb_dokuart = new System.Windows.Forms.ComboBox();
-            this.dataSet1_WOWI_SEARCH = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCH();
             this.tblDokuartBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblDokuartTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblDokuartTableAdapter();
-            this.tblVorgangKZBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblVorgangKZTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblVorgangKZTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -58,10 +58,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl1.Location = new System.Drawing.Point(0, 40);
+            this.tabControl1.Location = new System.Drawing.Point(0, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(632, 354);
+            this.tabControl1.Size = new System.Drawing.Size(533, 176);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -71,7 +71,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(624, 325);
+            this.tabPage1.Size = new System.Drawing.Size(717, 147);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Allgemein";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(624, 325);
+            this.tabPage2.Size = new System.Drawing.Size(525, 147);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "MSG Form";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -139,6 +139,16 @@
             this.cmb_vorgangkz.ValueMember = "VorgangKZ";
             this.cmb_vorgangkz.SelectedIndexChanged += new System.EventHandler(this.cmb_vorgangkz_SelectedIndexChanged);
             // 
+            // tblVorgangKZBindingSource
+            // 
+            this.tblVorgangKZBindingSource.DataMember = "tblVorgangKZ";
+            this.tblVorgangKZBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
+            // 
+            // dataSet1_WOWI_SEARCH
+            // 
+            this.dataSet1_WOWI_SEARCH.DataSetName = "DataSet1_WOWI_SEARCH";
+            this.dataSet1_WOWI_SEARCH.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lbl_dokuart
             // 
             this.lbl_dokuart.AutoSize = true;
@@ -161,11 +171,6 @@
             this.cmb_dokuart.ValueMember = "DOKUART";
             this.cmb_dokuart.SelectedIndexChanged += new System.EventHandler(this.cmb_dokuart_SelectedIndexChanged);
             // 
-            // dataSet1_WOWI_SEARCH
-            // 
-            this.dataSet1_WOWI_SEARCH.DataSetName = "DataSet1_WOWI_SEARCH";
-            this.dataSet1_WOWI_SEARCH.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tblDokuartBindingSource
             // 
             this.tblDokuartBindingSource.DataMember = "tblDokuart";
@@ -175,11 +180,6 @@
             // 
             this.tblDokuartTableAdapter.ClearBeforeFill = true;
             // 
-            // tblVorgangKZBindingSource
-            // 
-            this.tblVorgangKZBindingSource.DataMember = "tblVorgangKZ";
-            this.tblVorgangKZBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
-            // 
             // tblVorgangKZTableAdapter
             // 
             this.tblVorgangKZTableAdapter.ClearBeforeFill = true;
@@ -188,9 +188,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 394);
+            this.ClientSize = new System.Drawing.Size(533, 178);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(551, 223);
+            this.MinimumSize = new System.Drawing.Size(551, 223);
             this.Name = "Frm_UserSettings";
             this.Text = "Benutzereinstellungen";
             this.Load += new System.EventHandler(this.Frm_UserSettings_Load);
@@ -199,9 +201,9 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
