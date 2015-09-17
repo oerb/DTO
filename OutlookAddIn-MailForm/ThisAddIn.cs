@@ -9,6 +9,7 @@ using Microsoft.Office.Interop.Outlook;
 using System.Windows.Forms;
 using DTsaperionVBNETLib;
 using System.IO;
+using System.DirectoryServices.AccountManagement;
 
 
 namespace OutlookAddIn_MailForm
@@ -53,8 +54,8 @@ namespace OutlookAddIn_MailForm
         // NEW
         
         public MSG_Parameter msg_parameter;
-        
-        private string Sachberarbeiter = Environment.UserName;
+
+        private string Sachberarbeiter = UserPrincipal.Current.DisplayName; //Environment.UserName;
         public string SachBearb
         {
             get
