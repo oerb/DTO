@@ -87,7 +87,7 @@
             this.buttonMangelruege.Label = "Tagesbericht";
             this.buttonMangelruege.Name = "buttonMangelruege";
             this.buttonMangelruege.ShowImage = true;
-            this.buttonMangelruege.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonMangelruege_Click);
+            this.buttonMangelruege.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button_HSM_Tagesbericht_Click);
             // 
             // groupEinstellungen
             // 

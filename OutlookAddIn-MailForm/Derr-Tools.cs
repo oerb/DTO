@@ -47,8 +47,8 @@ namespace OutlookAddIn_MailForm
             DialogResult result = frm_settings.ShowDialog();
         }
 
-        // TODO: Exclude from Project - was just for testing
-        private void buttonMangelruege_Click(object sender, RibbonControlEventArgs e)
+        // TODO: Rename to button_HSM_Tagesbericht_Click
+        private void button_HSM_Tagesbericht_Click(object sender, RibbonControlEventArgs e)
         {
             //openTestForm();   
 
@@ -265,6 +265,11 @@ namespace OutlookAddIn_MailForm
             boxtext += "\n\nClickOnceLocation:\n" + ClickOnceLocation;
             //            assemblyInfo.ImageRuntimeVersion.ToString();
             MessageBox.Show(boxtext, "DTO Information", MessageBoxButtons.OK ,MessageBoxIcon.Information);
+        }
+
+        private void buttonMangelruege_Click(object sender, RibbonControlEventArgs e)
+        {
+
         }
     }
 }

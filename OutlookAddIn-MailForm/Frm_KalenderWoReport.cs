@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using System.Diagnostics;
+using Microsoft.Reporting.WinForms;
 
 namespace OutlookAddIn_MailForm
 {
@@ -17,6 +18,9 @@ namespace OutlookAddIn_MailForm
         public Frm_KalenderWoReport()
         {
             InitializeComponent();
+            ReportParameter Rparam = new ReportParameter("currentUser", Globals.ThisAddIn.SachBearb);
+            this.reportViewer1.LocalReport.SetParameters(Rparam);  
+            
         }
         private DataTable MarkedAppointment;
         
@@ -36,9 +40,10 @@ namespace OutlookAddIn_MailForm
             //MessageBox.Show(msgtext);
             if (DateSpan.Item3)
             {
-                this.MarkedAppointment = this.GetCalenderItemsInTimeSpan(dateStart, dateEnd);                               
+                this.MarkedAppointment = this.GetCalenderItemsInTimeSpan(dateStart, dateEnd);                     
                 this.reportViewer1.RefreshReport();                
             }
+
         }
 
         // gets the DateSpan Marked in Outlook Kalender
