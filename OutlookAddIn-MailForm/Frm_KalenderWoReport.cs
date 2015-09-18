@@ -19,8 +19,7 @@ namespace OutlookAddIn_MailForm
         {
             InitializeComponent();
             ReportParameter Rparam = new ReportParameter("currentUser", Globals.ThisAddIn.SachBearb);
-            this.reportViewer1.LocalReport.SetParameters(Rparam);  
-            
+            this.reportViewer1.LocalReport.SetParameters(Rparam);    
         }
         private DataTable MarkedAppointment;
         
@@ -40,10 +39,9 @@ namespace OutlookAddIn_MailForm
             //MessageBox.Show(msgtext);
             if (DateSpan.Item3)
             {
-                this.MarkedAppointment = this.GetCalenderItemsInTimeSpan(dateStart, dateEnd);                     
+                this.MarkedAppointment = this.GetCalenderItemsInTimeSpan(dateStart, dateEnd);
                 this.reportViewer1.RefreshReport();                
             }
-
         }
 
         // gets the DateSpan Marked in Outlook Kalender
@@ -73,7 +71,6 @@ namespace OutlookAddIn_MailForm
         private DataTable GetCalenderItemsInTimeSpan(DateTime StartDate, DateTime EndDate)
         {
             DataTable sample = this.dataSet1MaApp1RP1.tblMaApp; //Sample Data
-
             Outlook.Folder calFolder = Globals.ThisAddIn.Application.Session.GetDefaultFolder(
             Outlook.OlDefaultFolders.olFolderCalendar)
             as Outlook.Folder;

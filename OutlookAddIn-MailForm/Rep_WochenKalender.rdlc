@@ -799,7 +799,7 @@
         </Field>
         <Field Name="Hours">
           <DataField>Hours</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.TimeSpan</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
@@ -825,9 +825,6 @@
       <Value />
     </CustomProperty>
   </CustomProperties>
-  <CodeModules>
-    <CodeModule>System.DirectoryServices.AccountManagement, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</CodeModule>
-  </CodeModules>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>de704750-6ad7-4ba1-bf63-2fea4d09c94d</rd:ReportID>
 </Report>

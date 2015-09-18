@@ -60,7 +60,7 @@
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1MaApp1RP";
-            reportDataSource1.Value = this.tblMaAppBindingSource;
+            reportDataSource1.Value = this.bindingSourcetblMaApp;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "OutlookAddIn_MailForm.Rep_WochenKalender.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
