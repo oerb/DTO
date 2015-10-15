@@ -320,7 +320,7 @@ namespace OutlookAddIn_MailForm
             this.ParentForm.lbl_objekt_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[13].Value.ToString();
             this.ParentForm.lbl_objekt_txt.Visible = true;
             this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[3].Value;
-            this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[2].Value;
+            this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[1].Value;
             this.ParentForm.lbl_haus_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[8].Value.ToString();
             this.ParentForm.lbl_haus_txt.Visible = true;
             this.ParentForm.wohnung = (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value;
