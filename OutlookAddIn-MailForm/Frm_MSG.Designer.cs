@@ -58,9 +58,11 @@
             this.lbl_wo_txt = new System.Windows.Forms.Label();
             this.lbl_me_txt = new System.Windows.Forms.Label();
             this.cmb_dokuart = new System.Windows.Forms.ComboBox();
+            this.tblDokuartBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1_WOWI_SEARCH = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCH();
             this.lbl_dokuart = new System.Windows.Forms.Label();
             this.cmb_vorgangkz = new System.Windows.Forms.ComboBox();
+            this.tblVorgangKZBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_vorgangkz = new System.Windows.Forms.Label();
             this.lbl_mieter_txt = new System.Windows.Forms.Label();
             this.btn_mieter = new System.Windows.Forms.Button();
@@ -93,15 +95,13 @@
             this.kreditor_KontoTableAdapter = new OutlookAddIn_MailForm.DataSet1_WoWi_KreditorTableAdapters.Kreditor_KontoTableAdapter();
             this.tblHausTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblHausTableAdapter();
             this.tblWohnungTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblWohnungTableAdapter();
-            this.tblDokuartBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblVorgangKZBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Mandant1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet_MSGTYPES)).BeginInit();
             this.grb_adress_search.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Subject
@@ -385,6 +385,11 @@
             this.cmb_dokuart.DropDown += new System.EventHandler(this.cmb_dokuart_DropDown);
             this.cmb_dokuart.SelectedIndexChanged += new System.EventHandler(this.cmb_dokuart_SelectedIndexChanged);
             // 
+            // tblDokuartBindingSource
+            // 
+            this.tblDokuartBindingSource.DataMember = "tblDokuart";
+            this.tblDokuartBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
+            // 
             // dataSet1_WOWI_SEARCH
             // 
             this.dataSet1_WOWI_SEARCH.DataSetName = "DataSet1_WOWI_SEARCH";
@@ -412,6 +417,11 @@
             this.cmb_vorgangkz.TabIndex = 43;
             this.cmb_vorgangkz.ValueMember = "VorgangKZ";
             this.cmb_vorgangkz.SelectedIndexChanged += new System.EventHandler(this.cmb_vorgangkz_SelectedIndexChanged);
+            // 
+            // tblVorgangKZBindingSource
+            // 
+            this.tblVorgangKZBindingSource.DataMember = "tblVorgangKZ";
+            this.tblVorgangKZBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
             // 
             // lbl_vorgangkz
             // 
@@ -676,16 +686,6 @@
             // 
             this.tblWohnungTableAdapter.ClearBeforeFill = true;
             // 
-            // tblDokuartBindingSource
-            // 
-            this.tblDokuartBindingSource.DataMember = "tblDokuart";
-            this.tblDokuartBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
-            // 
-            // tblVorgangKZBindingSource
-            // 
-            this.tblVorgangKZBindingSource.DataMember = "tblVorgangKZ";
-            this.tblVorgangKZBindingSource.DataSource = this.dataSet1_WOWI_SEARCH;
-            // 
             // Frm_MSG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -743,14 +743,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meldung";
             this.Load += new System.EventHandler(this.Frm_MSG_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WoWi_Mandant1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet_MSGTYPES)).EndInit();
             this.grb_adress_search.ResumeLayout(false);
             this.grb_adress_search.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

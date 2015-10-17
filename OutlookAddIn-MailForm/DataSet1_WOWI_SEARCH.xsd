@@ -7,7 +7,7 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionStringWoWiODBC" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionStringWoWiODBC (Settings)" PropertyReference="ApplicationSettings.OutlookAddIn_MailForm.Properties.Settings.GlobalReference.Default.ConnectionStringWoWiODBC" Provider="System.Data.Odbc" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="xyMieterTableAdapter" GeneratorDataComponentClassName="xyMieterTableAdapter" Name="xyMieter" UserDataComponentName="xyMieterTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="xyMieterOldTableAdapter" GeneratorDataComponentClassName="xyMieterOldTableAdapter" Name="xyMieterOld" UserDataComponentName="xyMieterOldTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="ConnectionStringWoWiODBC (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillbyUnWeHaWo" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDatabyUnWeHaWo" GeneratorSourceName="FillbyUnWeHaWo" GetMethodModifier="Public" GetMethodName="GetDatabyUnWeHaWo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDatabyUnWeHaWo" UserSourceName="FillbyUnWeHaWo">
                 <SelectCommand>
@@ -517,7 +517,7 @@ WHERE  (MandantNr = ?) AND (Unternehmen = ?) AND (WE = ?) AND (HausNr = ?)</Comm
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblMieterTableAdapter" GeneratorDataComponentClassName="tblMieterTableAdapter" Name="tblMieter" UserDataComponentName="tblMieterTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="xyMieterTableAdapter" GeneratorDataComponentClassName="xyMieterTableAdapter" Name="xyMieter" UserDataComponentName="xyMieterTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="ConnectionStringWoWiODBC (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillbyUnWeHaWo" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDatabyUnWeHaWo" GeneratorSourceName="FillbyUnWeHaWo" GetMethodModifier="Public" GetMethodName="GetDatabyUnWeHaWo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDatabyUnWeHaWo" UserSourceName="FillbyUnWeHaWo">
                 <SelectCommand>
@@ -659,7 +659,7 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
   <xs:element name="DataSet1_WOWI_SEARCH" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet1_WOWI_SEARCH" msprop:Generator_UserDSName="DataSet1_WOWI_SEARCH">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="xyMieter" msprop:Generator_TableClassName="xyMieterDataTable" msprop:Generator_TableVarName="tablexyMieter" msprop:Generator_RowChangedName="xyMieterRowChanged" msprop:Generator_TablePropName="xyMieter" msprop:Generator_RowDeletingName="xyMieterRowDeleting" msprop:Generator_RowChangingName="xyMieterRowChanging" msprop:Generator_RowEvHandlerName="xyMieterRowChangeEventHandler" msprop:Generator_RowDeletedName="xyMieterRowDeleted" msprop:Generator_RowClassName="xyMieterRow" msprop:Generator_UserTableName="xyMieter" msprop:Generator_RowEvArgName="xyMieterRowChangeEvent">
+        <xs:element name="xyMieterOld" msprop:Generator_TableClassName="xyMieterOldDataTable" msprop:Generator_TableVarName="tablexyMieterOld" msprop:Generator_RowChangedName="xyMieterOldRowChanged" msprop:Generator_TablePropName="xyMieterOld" msprop:Generator_RowDeletingName="xyMieterOldRowDeleting" msprop:Generator_RowChangingName="xyMieterOldRowChanging" msprop:Generator_RowEvHandlerName="xyMieterOldRowChangeEventHandler" msprop:Generator_RowDeletedName="xyMieterOldRowDeleted" msprop:Generator_RowClassName="xyMieterOldRow" msprop:Generator_UserTableName="xyMieterOld" msprop:Generator_RowEvArgName="xyMieterOldRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="AdressNr" msprop:Generator_ColumnVarNameInTable="columnAdressNr" msprop:Generator_ColumnPropNameInRow="AdressNr" msprop:Generator_ColumnPropNameInTable="AdressNrColumn" msprop:Generator_UserColumnName="AdressNr" type="xs:int" minOccurs="0" />
@@ -1102,7 +1102,7 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblMieter" msprop:Generator_TableClassName="tblMieterDataTable" msprop:Generator_TableVarName="tabletblMieter" msprop:Generator_TablePropName="tblMieter" msprop:Generator_RowDeletingName="tblMieterRowDeleting" msprop:Generator_RowChangingName="tblMieterRowChanging" msprop:Generator_RowEvHandlerName="tblMieterRowChangeEventHandler" msprop:Generator_RowDeletedName="tblMieterRowDeleted" msprop:Generator_UserTableName="tblMieter" msprop:Generator_RowChangedName="tblMieterRowChanged" msprop:Generator_RowEvArgName="tblMieterRowChangeEvent" msprop:Generator_RowClassName="tblMieterRow">
+        <xs:element name="xyMieter" msprop:Generator_TableClassName="xyMieterDataTable" msprop:Generator_TableVarName="tablexyMieter" msprop:Generator_TablePropName="xyMieter" msprop:Generator_RowDeletingName="xyMieterRowDeleting" msprop:Generator_RowChangingName="xyMieterRowChanging" msprop:Generator_RowEvHandlerName="xyMieterRowChangeEventHandler" msprop:Generator_RowDeletedName="xyMieterRowDeleted" msprop:Generator_UserTableName="xyMieter" msprop:Generator_RowChangedName="xyMieterRowChanged" msprop:Generator_RowEvArgName="xyMieterRowChangeEvent" msprop:Generator_RowClassName="xyMieterRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="AdressNr" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAdressNr" msprop:Generator_ColumnPropNameInRow="AdressNr" msprop:Generator_ColumnPropNameInTable="AdressNrColumn" msprop:Generator_UserColumnName="AdressNr" type="xs:int" minOccurs="0" />

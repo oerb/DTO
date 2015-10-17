@@ -24,7 +24,7 @@ namespace OutlookAddIn_MailForm {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSet1_WOWI_SEARCH : global::System.Data.DataSet {
         
-        private xyMieterDataTable tablexyMieter;
+        private xyMieterOldDataTable tablexyMieterOld;
         
         private tblWohnungDataTable tabletblWohnung;
         
@@ -42,7 +42,7 @@ namespace OutlookAddIn_MailForm {
         
         private tblHausDataTable tabletblHaus;
         
-        private tblMieterDataTable tabletblMieter;
+        private xyMieterDataTable tablexyMieter;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -72,8 +72,8 @@ namespace OutlookAddIn_MailForm {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["xyMieter"] != null)) {
-                    base.Tables.Add(new xyMieterDataTable(ds.Tables["xyMieter"]));
+                if ((ds.Tables["xyMieterOld"] != null)) {
+                    base.Tables.Add(new xyMieterOldDataTable(ds.Tables["xyMieterOld"]));
                 }
                 if ((ds.Tables["tblWohnung"] != null)) {
                     base.Tables.Add(new tblWohnungDataTable(ds.Tables["tblWohnung"]));
@@ -99,8 +99,8 @@ namespace OutlookAddIn_MailForm {
                 if ((ds.Tables["tblHaus"] != null)) {
                     base.Tables.Add(new tblHausDataTable(ds.Tables["tblHaus"]));
                 }
-                if ((ds.Tables["tblMieter"] != null)) {
-                    base.Tables.Add(new tblMieterDataTable(ds.Tables["tblMieter"]));
+                if ((ds.Tables["xyMieter"] != null)) {
+                    base.Tables.Add(new xyMieterDataTable(ds.Tables["xyMieter"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -124,9 +124,9 @@ namespace OutlookAddIn_MailForm {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public xyMieterDataTable xyMieter {
+        public xyMieterOldDataTable xyMieterOld {
             get {
-                return this.tablexyMieter;
+                return this.tablexyMieterOld;
             }
         }
         
@@ -214,9 +214,9 @@ namespace OutlookAddIn_MailForm {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tblMieterDataTable tblMieter {
+        public xyMieterDataTable xyMieter {
             get {
-                return this.tabletblMieter;
+                return this.tablexyMieter;
             }
         }
         
@@ -287,8 +287,8 @@ namespace OutlookAddIn_MailForm {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["xyMieter"] != null)) {
-                    base.Tables.Add(new xyMieterDataTable(ds.Tables["xyMieter"]));
+                if ((ds.Tables["xyMieterOld"] != null)) {
+                    base.Tables.Add(new xyMieterOldDataTable(ds.Tables["xyMieterOld"]));
                 }
                 if ((ds.Tables["tblWohnung"] != null)) {
                     base.Tables.Add(new tblWohnungDataTable(ds.Tables["tblWohnung"]));
@@ -314,8 +314,8 @@ namespace OutlookAddIn_MailForm {
                 if ((ds.Tables["tblHaus"] != null)) {
                     base.Tables.Add(new tblHausDataTable(ds.Tables["tblHaus"]));
                 }
-                if ((ds.Tables["tblMieter"] != null)) {
-                    base.Tables.Add(new tblMieterDataTable(ds.Tables["tblMieter"]));
+                if ((ds.Tables["xyMieter"] != null)) {
+                    base.Tables.Add(new xyMieterDataTable(ds.Tables["xyMieter"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -350,10 +350,10 @@ namespace OutlookAddIn_MailForm {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablexyMieter = ((xyMieterDataTable)(base.Tables["xyMieter"]));
+            this.tablexyMieterOld = ((xyMieterOldDataTable)(base.Tables["xyMieterOld"]));
             if ((initTable == true)) {
-                if ((this.tablexyMieter != null)) {
-                    this.tablexyMieter.InitVars();
+                if ((this.tablexyMieterOld != null)) {
+                    this.tablexyMieterOld.InitVars();
                 }
             }
             this.tabletblWohnung = ((tblWohnungDataTable)(base.Tables["tblWohnung"]));
@@ -404,10 +404,10 @@ namespace OutlookAddIn_MailForm {
                     this.tabletblHaus.InitVars();
                 }
             }
-            this.tabletblMieter = ((tblMieterDataTable)(base.Tables["tblMieter"]));
+            this.tablexyMieter = ((xyMieterDataTable)(base.Tables["xyMieter"]));
             if ((initTable == true)) {
-                if ((this.tabletblMieter != null)) {
-                    this.tabletblMieter.InitVars();
+                if ((this.tablexyMieter != null)) {
+                    this.tablexyMieter.InitVars();
                 }
             }
         }
@@ -420,8 +420,8 @@ namespace OutlookAddIn_MailForm {
             this.Namespace = "http://tempuri.org/DataSet1_WOWI_SEARCH.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablexyMieter = new xyMieterDataTable();
-            base.Tables.Add(this.tablexyMieter);
+            this.tablexyMieterOld = new xyMieterOldDataTable();
+            base.Tables.Add(this.tablexyMieterOld);
             this.tabletblWohnung = new tblWohnungDataTable();
             base.Tables.Add(this.tabletblWohnung);
             this.tabletblAdresse = new tblAdresseDataTable();
@@ -438,13 +438,13 @@ namespace OutlookAddIn_MailForm {
             base.Tables.Add(this.tabletblMandant);
             this.tabletblHaus = new tblHausDataTable();
             base.Tables.Add(this.tabletblHaus);
-            this.tabletblMieter = new tblMieterDataTable();
-            base.Tables.Add(this.tabletblMieter);
+            this.tablexyMieter = new xyMieterDataTable();
+            base.Tables.Add(this.tablexyMieter);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializexyMieter() {
+        private bool ShouldSerializexyMieterOld() {
             return false;
         }
         
@@ -498,7 +498,7 @@ namespace OutlookAddIn_MailForm {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializetblMieter() {
+        private bool ShouldSerializexyMieter() {
             return false;
         }
         
@@ -558,7 +558,7 @@ namespace OutlookAddIn_MailForm {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void xyMieterRowChangeEventHandler(object sender, xyMieterRowChangeEvent e);
+        public delegate void xyMieterOldRowChangeEventHandler(object sender, xyMieterOldRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tblWohnungRowChangeEventHandler(object sender, tblWohnungRowChangeEvent e);
@@ -585,14 +585,14 @@ namespace OutlookAddIn_MailForm {
         public delegate void tblHausRowChangeEventHandler(object sender, tblHausRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void tblMieterRowChangeEventHandler(object sender, tblMieterRowChangeEvent e);
+        public delegate void xyMieterRowChangeEventHandler(object sender, xyMieterRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class xyMieterDataTable : global::System.Data.TypedTableBase<xyMieterRow> {
+        public partial class xyMieterOldDataTable : global::System.Data.TypedTableBase<xyMieterOldRow> {
             
             private global::System.Data.DataColumn columnAdressNr;
             
@@ -650,8 +650,8 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public xyMieterDataTable() {
-                this.TableName = "xyMieter";
+            public xyMieterOldDataTable() {
+                this.TableName = "xyMieterOld";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -659,7 +659,7 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal xyMieterDataTable(global::System.Data.DataTable table) {
+            internal xyMieterOldDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -676,7 +676,7 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected xyMieterDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected xyMieterOldDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -908,33 +908,33 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public xyMieterRow this[int index] {
+            public xyMieterOldRow this[int index] {
                 get {
-                    return ((xyMieterRow)(this.Rows[index]));
+                    return ((xyMieterOldRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event xyMieterRowChangeEventHandler xyMieterRowChanging;
+            public event xyMieterOldRowChangeEventHandler xyMieterOldRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event xyMieterRowChangeEventHandler xyMieterRowChanged;
+            public event xyMieterOldRowChangeEventHandler xyMieterOldRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event xyMieterRowChangeEventHandler xyMieterRowDeleting;
+            public event xyMieterOldRowChangeEventHandler xyMieterOldRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event xyMieterRowChangeEventHandler xyMieterRowDeleted;
+            public event xyMieterOldRowChangeEventHandler xyMieterOldRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddxyMieterRow(xyMieterRow row) {
+            public void AddxyMieterOldRow(xyMieterOldRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public xyMieterRow AddxyMieterRow(
+            public xyMieterOldRow AddxyMieterOldRow(
                         int AdressNr, 
                         int HausNr, 
                         int MandantNr, 
@@ -962,7 +962,7 @@ namespace OutlookAddIn_MailForm {
                         int BriefAnrNr, 
                         string VorwahlMobil, 
                         string TelefonMobil) {
-                xyMieterRow rowxyMieterRow = ((xyMieterRow)(this.NewRow()));
+                xyMieterOldRow rowxyMieterOldRow = ((xyMieterOldRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         AdressNr,
                         HausNr,
@@ -991,15 +991,15 @@ namespace OutlookAddIn_MailForm {
                         BriefAnrNr,
                         VorwahlMobil,
                         TelefonMobil};
-                rowxyMieterRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowxyMieterRow);
-                return rowxyMieterRow;
+                rowxyMieterOldRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowxyMieterOldRow);
+                return rowxyMieterOldRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                xyMieterDataTable cln = ((xyMieterDataTable)(base.Clone()));
+                xyMieterOldDataTable cln = ((xyMieterOldDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1007,7 +1007,7 @@ namespace OutlookAddIn_MailForm {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new xyMieterDataTable();
+                return new xyMieterOldDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1138,28 +1138,28 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public xyMieterRow NewxyMieterRow() {
-                return ((xyMieterRow)(this.NewRow()));
+            public xyMieterOldRow NewxyMieterOldRow() {
+                return ((xyMieterOldRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new xyMieterRow(builder);
+                return new xyMieterOldRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(xyMieterRow);
+                return typeof(xyMieterOldRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.xyMieterRowChanged != null)) {
-                    this.xyMieterRowChanged(this, new xyMieterRowChangeEvent(((xyMieterRow)(e.Row)), e.Action));
+                if ((this.xyMieterOldRowChanged != null)) {
+                    this.xyMieterOldRowChanged(this, new xyMieterOldRowChangeEvent(((xyMieterOldRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1167,8 +1167,8 @@ namespace OutlookAddIn_MailForm {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.xyMieterRowChanging != null)) {
-                    this.xyMieterRowChanging(this, new xyMieterRowChangeEvent(((xyMieterRow)(e.Row)), e.Action));
+                if ((this.xyMieterOldRowChanging != null)) {
+                    this.xyMieterOldRowChanging(this, new xyMieterOldRowChangeEvent(((xyMieterOldRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1176,8 +1176,8 @@ namespace OutlookAddIn_MailForm {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.xyMieterRowDeleted != null)) {
-                    this.xyMieterRowDeleted(this, new xyMieterRowChangeEvent(((xyMieterRow)(e.Row)), e.Action));
+                if ((this.xyMieterOldRowDeleted != null)) {
+                    this.xyMieterOldRowDeleted(this, new xyMieterOldRowChangeEvent(((xyMieterOldRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1185,14 +1185,14 @@ namespace OutlookAddIn_MailForm {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.xyMieterRowDeleting != null)) {
-                    this.xyMieterRowDeleting(this, new xyMieterRowChangeEvent(((xyMieterRow)(e.Row)), e.Action));
+                if ((this.xyMieterOldRowDeleting != null)) {
+                    this.xyMieterOldRowDeleting(this, new xyMieterOldRowChangeEvent(((xyMieterOldRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovexyMieterRow(xyMieterRow row) {
+            public void RemovexyMieterOldRow(xyMieterOldRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1219,7 +1219,7 @@ namespace OutlookAddIn_MailForm {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "xyMieterDataTable";
+                attribute2.FixedValue = "xyMieterOldDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4093,7 +4093,7 @@ namespace OutlookAddIn_MailForm {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tblMieterDataTable : global::System.Data.TypedTableBase<tblMieterRow> {
+        public partial class xyMieterDataTable : global::System.Data.TypedTableBase<xyMieterRow> {
             
             private global::System.Data.DataColumn columnAdressNr;
             
@@ -4151,8 +4151,8 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblMieterDataTable() {
-                this.TableName = "tblMieter";
+            public xyMieterDataTable() {
+                this.TableName = "xyMieter";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -4160,7 +4160,7 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tblMieterDataTable(global::System.Data.DataTable table) {
+            internal xyMieterDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -4177,7 +4177,7 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected tblMieterDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected xyMieterDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -4409,33 +4409,33 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblMieterRow this[int index] {
+            public xyMieterRow this[int index] {
                 get {
-                    return ((tblMieterRow)(this.Rows[index]));
+                    return ((xyMieterRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblMieterRowChangeEventHandler tblMieterRowChanging;
+            public event xyMieterRowChangeEventHandler xyMieterRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblMieterRowChangeEventHandler tblMieterRowChanged;
+            public event xyMieterRowChangeEventHandler xyMieterRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblMieterRowChangeEventHandler tblMieterRowDeleting;
+            public event xyMieterRowChangeEventHandler xyMieterRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblMieterRowChangeEventHandler tblMieterRowDeleted;
+            public event xyMieterRowChangeEventHandler xyMieterRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddtblMieterRow(tblMieterRow row) {
+            public void AddxyMieterRow(xyMieterRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblMieterRow AddtblMieterRow(
+            public xyMieterRow AddxyMieterRow(
                         int AdressNr, 
                         int HausNr, 
                         int MandantNr, 
@@ -4463,7 +4463,7 @@ namespace OutlookAddIn_MailForm {
                         string TelefonMobil, 
                         System.DateTime AUSZUG, 
                         System.DateTime EINZUG) {
-                tblMieterRow rowtblMieterRow = ((tblMieterRow)(this.NewRow()));
+                xyMieterRow rowxyMieterRow = ((xyMieterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         AdressNr,
                         HausNr,
@@ -4492,15 +4492,15 @@ namespace OutlookAddIn_MailForm {
                         TelefonMobil,
                         AUSZUG,
                         EINZUG};
-                rowtblMieterRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtblMieterRow);
-                return rowtblMieterRow;
+                rowxyMieterRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowxyMieterRow);
+                return rowxyMieterRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                tblMieterDataTable cln = ((tblMieterDataTable)(base.Clone()));
+                xyMieterDataTable cln = ((xyMieterDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -4508,7 +4508,7 @@ namespace OutlookAddIn_MailForm {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new tblMieterDataTable();
+                return new xyMieterDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4645,28 +4645,28 @@ namespace OutlookAddIn_MailForm {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblMieterRow NewtblMieterRow() {
-                return ((tblMieterRow)(this.NewRow()));
+            public xyMieterRow NewxyMieterRow() {
+                return ((xyMieterRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tblMieterRow(builder);
+                return new xyMieterRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(tblMieterRow);
+                return typeof(xyMieterRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.tblMieterRowChanged != null)) {
-                    this.tblMieterRowChanged(this, new tblMieterRowChangeEvent(((tblMieterRow)(e.Row)), e.Action));
+                if ((this.xyMieterRowChanged != null)) {
+                    this.xyMieterRowChanged(this, new xyMieterRowChangeEvent(((xyMieterRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4674,8 +4674,8 @@ namespace OutlookAddIn_MailForm {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.tblMieterRowChanging != null)) {
-                    this.tblMieterRowChanging(this, new tblMieterRowChangeEvent(((tblMieterRow)(e.Row)), e.Action));
+                if ((this.xyMieterRowChanging != null)) {
+                    this.xyMieterRowChanging(this, new xyMieterRowChangeEvent(((xyMieterRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4683,8 +4683,8 @@ namespace OutlookAddIn_MailForm {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.tblMieterRowDeleted != null)) {
-                    this.tblMieterRowDeleted(this, new tblMieterRowChangeEvent(((tblMieterRow)(e.Row)), e.Action));
+                if ((this.xyMieterRowDeleted != null)) {
+                    this.xyMieterRowDeleted(this, new xyMieterRowChangeEvent(((xyMieterRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4692,14 +4692,14 @@ namespace OutlookAddIn_MailForm {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.tblMieterRowDeleting != null)) {
-                    this.tblMieterRowDeleting(this, new tblMieterRowChangeEvent(((tblMieterRow)(e.Row)), e.Action));
+                if ((this.xyMieterRowDeleting != null)) {
+                    this.xyMieterRowDeleting(this, new xyMieterRowChangeEvent(((xyMieterRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovetblMieterRow(tblMieterRow row) {
+            public void RemovexyMieterRow(xyMieterRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -4726,7 +4726,7 @@ namespace OutlookAddIn_MailForm {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tblMieterDataTable";
+                attribute2.FixedValue = "xyMieterDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4770,15 +4770,15 @@ namespace OutlookAddIn_MailForm {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class xyMieterRow : global::System.Data.DataRow {
+        public partial class xyMieterOldRow : global::System.Data.DataRow {
             
-            private xyMieterDataTable tablexyMieter;
+            private xyMieterOldDataTable tablexyMieterOld;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal xyMieterRow(global::System.Data.DataRowBuilder rb) : 
+            internal xyMieterOldRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablexyMieter = ((xyMieterDataTable)(this.Table));
+                this.tablexyMieterOld = ((xyMieterOldDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4786,14 +4786,14 @@ namespace OutlookAddIn_MailForm {
             public int AdressNr {
                 get {
                     try {
-                        return ((int)(this[this.tablexyMieter.AdressNrColumn]));
+                        return ((int)(this[this.tablexyMieterOld.AdressNrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AdressNr\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AdressNr\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.AdressNrColumn] = value;
+                    this[this.tablexyMieterOld.AdressNrColumn] = value;
                 }
             }
             
@@ -4802,14 +4802,14 @@ namespace OutlookAddIn_MailForm {
             public int HausNr {
                 get {
                     try {
-                        return ((int)(this[this.tablexyMieter.HausNrColumn]));
+                        return ((int)(this[this.tablexyMieterOld.HausNrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HausNr\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'HausNr\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.HausNrColumn] = value;
+                    this[this.tablexyMieterOld.HausNrColumn] = value;
                 }
             }
             
@@ -4818,14 +4818,14 @@ namespace OutlookAddIn_MailForm {
             public int MandantNr {
                 get {
                     try {
-                        return ((int)(this[this.tablexyMieter.MandantNrColumn]));
+                        return ((int)(this[this.tablexyMieterOld.MandantNrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MandantNr\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'MandantNr\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.MandantNrColumn] = value;
+                    this[this.tablexyMieterOld.MandantNrColumn] = value;
                 }
             }
             
@@ -4834,14 +4834,14 @@ namespace OutlookAddIn_MailForm {
             public int Unternehmen {
                 get {
                     try {
-                        return ((int)(this[this.tablexyMieter.UnternehmenColumn]));
+                        return ((int)(this[this.tablexyMieterOld.UnternehmenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Unternehmen\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Unternehmen\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.UnternehmenColumn] = value;
+                    this[this.tablexyMieterOld.UnternehmenColumn] = value;
                 }
             }
             
@@ -4850,14 +4850,14 @@ namespace OutlookAddIn_MailForm {
             public int WE {
                 get {
                     try {
-                        return ((int)(this[this.tablexyMieter.WEColumn]));
+                        return ((int)(this[this.tablexyMieterOld.WEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WE\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'WE\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.WEColumn] = value;
+                    this[this.tablexyMieterOld.WEColumn] = value;
                 }
             }
             
@@ -4866,14 +4866,14 @@ namespace OutlookAddIn_MailForm {
             public int WohnNr {
                 get {
                     try {
-                        return ((int)(this[this.tablexyMieter.WohnNrColumn]));
+                        return ((int)(this[this.tablexyMieterOld.WohnNrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WohnNr\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'WohnNr\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.WohnNrColumn] = value;
+                    this[this.tablexyMieterOld.WohnNrColumn] = value;
                 }
             }
             
@@ -4882,14 +4882,14 @@ namespace OutlookAddIn_MailForm {
             public string Name1 {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.Name1Column]));
+                        return ((string)(this[this.tablexyMieterOld.Name1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name1\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name1\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.Name1Column] = value;
+                    this[this.tablexyMieterOld.Name1Column] = value;
                 }
             }
             
@@ -4898,14 +4898,14 @@ namespace OutlookAddIn_MailForm {
             public string Name2 {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.Name2Column]));
+                        return ((string)(this[this.tablexyMieterOld.Name2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name2\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name2\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.Name2Column] = value;
+                    this[this.tablexyMieterOld.Name2Column] = value;
                 }
             }
             
@@ -4914,14 +4914,14 @@ namespace OutlookAddIn_MailForm {
             public string Strasse {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.StrasseColumn]));
+                        return ((string)(this[this.tablexyMieterOld.StrasseColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Strasse\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Strasse\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.StrasseColumn] = value;
+                    this[this.tablexyMieterOld.StrasseColumn] = value;
                 }
             }
             
@@ -4930,14 +4930,14 @@ namespace OutlookAddIn_MailForm {
             public int PlzOrt {
                 get {
                     try {
-                        return ((int)(this[this.tablexyMieter.PlzOrtColumn]));
+                        return ((int)(this[this.tablexyMieterOld.PlzOrtColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PlzOrt\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PlzOrt\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.PlzOrtColumn] = value;
+                    this[this.tablexyMieterOld.PlzOrtColumn] = value;
                 }
             }
             
@@ -4946,14 +4946,14 @@ namespace OutlookAddIn_MailForm {
             public string VPName1 {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.VPName1Column]));
+                        return ((string)(this[this.tablexyMieterOld.VPName1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VPName1\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'VPName1\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.VPName1Column] = value;
+                    this[this.tablexyMieterOld.VPName1Column] = value;
                 }
             }
             
@@ -4962,14 +4962,14 @@ namespace OutlookAddIn_MailForm {
             public string VPName2 {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.VPName2Column]));
+                        return ((string)(this[this.tablexyMieterOld.VPName2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VPName2\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'VPName2\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.VPName2Column] = value;
+                    this[this.tablexyMieterOld.VPName2Column] = value;
                 }
             }
             
@@ -4978,14 +4978,14 @@ namespace OutlookAddIn_MailForm {
             public string Name1Zus {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.Name1ZusColumn]));
+                        return ((string)(this[this.tablexyMieterOld.Name1ZusColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name1Zus\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name1Zus\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.Name1ZusColumn] = value;
+                    this[this.tablexyMieterOld.Name1ZusColumn] = value;
                 }
             }
             
@@ -4994,14 +4994,14 @@ namespace OutlookAddIn_MailForm {
             public string Ortname {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.OrtnameColumn]));
+                        return ((string)(this[this.tablexyMieterOld.OrtnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ortname\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ortname\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.OrtnameColumn] = value;
+                    this[this.tablexyMieterOld.OrtnameColumn] = value;
                 }
             }
             
@@ -5010,14 +5010,14 @@ namespace OutlookAddIn_MailForm {
             public System.DateTime AUSZUG {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablexyMieter.AUSZUGColumn]));
+                        return ((global::System.DateTime)(this[this.tablexyMieterOld.AUSZUGColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AUSZUG\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AUSZUG\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.AUSZUGColumn] = value;
+                    this[this.tablexyMieterOld.AUSZUGColumn] = value;
                 }
             }
             
@@ -5026,14 +5026,14 @@ namespace OutlookAddIn_MailForm {
             public System.DateTime EINZUG {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablexyMieter.EINZUGColumn]));
+                        return ((global::System.DateTime)(this[this.tablexyMieterOld.EINZUGColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EINZUG\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EINZUG\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.EINZUGColumn] = value;
+                    this[this.tablexyMieterOld.EINZUGColumn] = value;
                 }
             }
             
@@ -5042,14 +5042,14 @@ namespace OutlookAddIn_MailForm {
             public int FOLGENR {
                 get {
                     try {
-                        return ((int)(this[this.tablexyMieter.FOLGENRColumn]));
+                        return ((int)(this[this.tablexyMieterOld.FOLGENRColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FOLGENR\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FOLGENR\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.FOLGENRColumn] = value;
+                    this[this.tablexyMieterOld.FOLGENRColumn] = value;
                 }
             }
             
@@ -5058,14 +5058,14 @@ namespace OutlookAddIn_MailForm {
             public string EMail {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.EMailColumn]));
+                        return ((string)(this[this.tablexyMieterOld.EMailColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EMail\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EMail\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.EMailColumn] = value;
+                    this[this.tablexyMieterOld.EMailColumn] = value;
                 }
             }
             
@@ -5074,14 +5074,14 @@ namespace OutlookAddIn_MailForm {
             public string Vorwahl1 {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.Vorwahl1Column]));
+                        return ((string)(this[this.tablexyMieterOld.Vorwahl1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Vorwahl1\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vorwahl1\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.Vorwahl1Column] = value;
+                    this[this.tablexyMieterOld.Vorwahl1Column] = value;
                 }
             }
             
@@ -5090,14 +5090,14 @@ namespace OutlookAddIn_MailForm {
             public string Telefon1 {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.Telefon1Column]));
+                        return ((string)(this[this.tablexyMieterOld.Telefon1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Telefon1\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Telefon1\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.Telefon1Column] = value;
+                    this[this.tablexyMieterOld.Telefon1Column] = value;
                 }
             }
             
@@ -5106,14 +5106,14 @@ namespace OutlookAddIn_MailForm {
             public string Vorwahl2 {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.Vorwahl2Column]));
+                        return ((string)(this[this.tablexyMieterOld.Vorwahl2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Vorwahl2\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vorwahl2\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.Vorwahl2Column] = value;
+                    this[this.tablexyMieterOld.Vorwahl2Column] = value;
                 }
             }
             
@@ -5122,14 +5122,14 @@ namespace OutlookAddIn_MailForm {
             public string Telefon2 {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.Telefon2Column]));
+                        return ((string)(this[this.tablexyMieterOld.Telefon2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Telefon2\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Telefon2\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.Telefon2Column] = value;
+                    this[this.tablexyMieterOld.Telefon2Column] = value;
                 }
             }
             
@@ -5138,14 +5138,14 @@ namespace OutlookAddIn_MailForm {
             public bool Geschlecht {
                 get {
                     try {
-                        return ((bool)(this[this.tablexyMieter.GeschlechtColumn]));
+                        return ((bool)(this[this.tablexyMieterOld.GeschlechtColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Geschlecht\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Geschlecht\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.GeschlechtColumn] = value;
+                    this[this.tablexyMieterOld.GeschlechtColumn] = value;
                 }
             }
             
@@ -5154,14 +5154,14 @@ namespace OutlookAddIn_MailForm {
             public int BriefAnrNr2 {
                 get {
                     try {
-                        return ((int)(this[this.tablexyMieter.BriefAnrNr2Column]));
+                        return ((int)(this[this.tablexyMieterOld.BriefAnrNr2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BriefAnrNr2\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BriefAnrNr2\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.BriefAnrNr2Column] = value;
+                    this[this.tablexyMieterOld.BriefAnrNr2Column] = value;
                 }
             }
             
@@ -5170,14 +5170,14 @@ namespace OutlookAddIn_MailForm {
             public int BriefAnrNr {
                 get {
                     try {
-                        return ((int)(this[this.tablexyMieter.BriefAnrNrColumn]));
+                        return ((int)(this[this.tablexyMieterOld.BriefAnrNrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BriefAnrNr\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BriefAnrNr\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.BriefAnrNrColumn] = value;
+                    this[this.tablexyMieterOld.BriefAnrNrColumn] = value;
                 }
             }
             
@@ -5186,14 +5186,14 @@ namespace OutlookAddIn_MailForm {
             public string VorwahlMobil {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.VorwahlMobilColumn]));
+                        return ((string)(this[this.tablexyMieterOld.VorwahlMobilColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VorwahlMobil\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'VorwahlMobil\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.VorwahlMobilColumn] = value;
+                    this[this.tablexyMieterOld.VorwahlMobilColumn] = value;
                 }
             }
             
@@ -5202,339 +5202,339 @@ namespace OutlookAddIn_MailForm {
             public string TelefonMobil {
                 get {
                     try {
-                        return ((string)(this[this.tablexyMieter.TelefonMobilColumn]));
+                        return ((string)(this[this.tablexyMieterOld.TelefonMobilColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TelefonMobil\' in table \'xyMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TelefonMobil\' in table \'xyMieterOld\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablexyMieter.TelefonMobilColumn] = value;
+                    this[this.tablexyMieterOld.TelefonMobilColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAdressNrNull() {
-                return this.IsNull(this.tablexyMieter.AdressNrColumn);
+                return this.IsNull(this.tablexyMieterOld.AdressNrColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAdressNrNull() {
-                this[this.tablexyMieter.AdressNrColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.AdressNrColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsHausNrNull() {
-                return this.IsNull(this.tablexyMieter.HausNrColumn);
+                return this.IsNull(this.tablexyMieterOld.HausNrColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetHausNrNull() {
-                this[this.tablexyMieter.HausNrColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.HausNrColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMandantNrNull() {
-                return this.IsNull(this.tablexyMieter.MandantNrColumn);
+                return this.IsNull(this.tablexyMieterOld.MandantNrColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMandantNrNull() {
-                this[this.tablexyMieter.MandantNrColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.MandantNrColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsUnternehmenNull() {
-                return this.IsNull(this.tablexyMieter.UnternehmenColumn);
+                return this.IsNull(this.tablexyMieterOld.UnternehmenColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetUnternehmenNull() {
-                this[this.tablexyMieter.UnternehmenColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.UnternehmenColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsWENull() {
-                return this.IsNull(this.tablexyMieter.WEColumn);
+                return this.IsNull(this.tablexyMieterOld.WEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetWENull() {
-                this[this.tablexyMieter.WEColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.WEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsWohnNrNull() {
-                return this.IsNull(this.tablexyMieter.WohnNrColumn);
+                return this.IsNull(this.tablexyMieterOld.WohnNrColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetWohnNrNull() {
-                this[this.tablexyMieter.WohnNrColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.WohnNrColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsName1Null() {
-                return this.IsNull(this.tablexyMieter.Name1Column);
+                return this.IsNull(this.tablexyMieterOld.Name1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetName1Null() {
-                this[this.tablexyMieter.Name1Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.Name1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsName2Null() {
-                return this.IsNull(this.tablexyMieter.Name2Column);
+                return this.IsNull(this.tablexyMieterOld.Name2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetName2Null() {
-                this[this.tablexyMieter.Name2Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.Name2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsStrasseNull() {
-                return this.IsNull(this.tablexyMieter.StrasseColumn);
+                return this.IsNull(this.tablexyMieterOld.StrasseColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetStrasseNull() {
-                this[this.tablexyMieter.StrasseColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.StrasseColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPlzOrtNull() {
-                return this.IsNull(this.tablexyMieter.PlzOrtColumn);
+                return this.IsNull(this.tablexyMieterOld.PlzOrtColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPlzOrtNull() {
-                this[this.tablexyMieter.PlzOrtColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.PlzOrtColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVPName1Null() {
-                return this.IsNull(this.tablexyMieter.VPName1Column);
+                return this.IsNull(this.tablexyMieterOld.VPName1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVPName1Null() {
-                this[this.tablexyMieter.VPName1Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.VPName1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVPName2Null() {
-                return this.IsNull(this.tablexyMieter.VPName2Column);
+                return this.IsNull(this.tablexyMieterOld.VPName2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVPName2Null() {
-                this[this.tablexyMieter.VPName2Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.VPName2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsName1ZusNull() {
-                return this.IsNull(this.tablexyMieter.Name1ZusColumn);
+                return this.IsNull(this.tablexyMieterOld.Name1ZusColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetName1ZusNull() {
-                this[this.tablexyMieter.Name1ZusColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.Name1ZusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsOrtnameNull() {
-                return this.IsNull(this.tablexyMieter.OrtnameColumn);
+                return this.IsNull(this.tablexyMieterOld.OrtnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetOrtnameNull() {
-                this[this.tablexyMieter.OrtnameColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.OrtnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAUSZUGNull() {
-                return this.IsNull(this.tablexyMieter.AUSZUGColumn);
+                return this.IsNull(this.tablexyMieterOld.AUSZUGColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAUSZUGNull() {
-                this[this.tablexyMieter.AUSZUGColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.AUSZUGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsEINZUGNull() {
-                return this.IsNull(this.tablexyMieter.EINZUGColumn);
+                return this.IsNull(this.tablexyMieterOld.EINZUGColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEINZUGNull() {
-                this[this.tablexyMieter.EINZUGColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.EINZUGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsFOLGENRNull() {
-                return this.IsNull(this.tablexyMieter.FOLGENRColumn);
+                return this.IsNull(this.tablexyMieterOld.FOLGENRColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetFOLGENRNull() {
-                this[this.tablexyMieter.FOLGENRColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.FOLGENRColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsEMailNull() {
-                return this.IsNull(this.tablexyMieter.EMailColumn);
+                return this.IsNull(this.tablexyMieterOld.EMailColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEMailNull() {
-                this[this.tablexyMieter.EMailColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.EMailColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVorwahl1Null() {
-                return this.IsNull(this.tablexyMieter.Vorwahl1Column);
+                return this.IsNull(this.tablexyMieterOld.Vorwahl1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVorwahl1Null() {
-                this[this.tablexyMieter.Vorwahl1Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.Vorwahl1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTelefon1Null() {
-                return this.IsNull(this.tablexyMieter.Telefon1Column);
+                return this.IsNull(this.tablexyMieterOld.Telefon1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTelefon1Null() {
-                this[this.tablexyMieter.Telefon1Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.Telefon1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVorwahl2Null() {
-                return this.IsNull(this.tablexyMieter.Vorwahl2Column);
+                return this.IsNull(this.tablexyMieterOld.Vorwahl2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVorwahl2Null() {
-                this[this.tablexyMieter.Vorwahl2Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.Vorwahl2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTelefon2Null() {
-                return this.IsNull(this.tablexyMieter.Telefon2Column);
+                return this.IsNull(this.tablexyMieterOld.Telefon2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTelefon2Null() {
-                this[this.tablexyMieter.Telefon2Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.Telefon2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsGeschlechtNull() {
-                return this.IsNull(this.tablexyMieter.GeschlechtColumn);
+                return this.IsNull(this.tablexyMieterOld.GeschlechtColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetGeschlechtNull() {
-                this[this.tablexyMieter.GeschlechtColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.GeschlechtColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBriefAnrNr2Null() {
-                return this.IsNull(this.tablexyMieter.BriefAnrNr2Column);
+                return this.IsNull(this.tablexyMieterOld.BriefAnrNr2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBriefAnrNr2Null() {
-                this[this.tablexyMieter.BriefAnrNr2Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.BriefAnrNr2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBriefAnrNrNull() {
-                return this.IsNull(this.tablexyMieter.BriefAnrNrColumn);
+                return this.IsNull(this.tablexyMieterOld.BriefAnrNrColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBriefAnrNrNull() {
-                this[this.tablexyMieter.BriefAnrNrColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.BriefAnrNrColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVorwahlMobilNull() {
-                return this.IsNull(this.tablexyMieter.VorwahlMobilColumn);
+                return this.IsNull(this.tablexyMieterOld.VorwahlMobilColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVorwahlMobilNull() {
-                this[this.tablexyMieter.VorwahlMobilColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.VorwahlMobilColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTelefonMobilNull() {
-                return this.IsNull(this.tablexyMieter.TelefonMobilColumn);
+                return this.IsNull(this.tablexyMieterOld.TelefonMobilColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTelefonMobilNull() {
-                this[this.tablexyMieter.TelefonMobilColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieterOld.TelefonMobilColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7042,15 +7042,15 @@ namespace OutlookAddIn_MailForm {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class tblMieterRow : global::System.Data.DataRow {
+        public partial class xyMieterRow : global::System.Data.DataRow {
             
-            private tblMieterDataTable tabletblMieter;
+            private xyMieterDataTable tablexyMieter;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tblMieterRow(global::System.Data.DataRowBuilder rb) : 
+            internal xyMieterRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabletblMieter = ((tblMieterDataTable)(this.Table));
+                this.tablexyMieter = ((xyMieterDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7058,14 +7058,14 @@ namespace OutlookAddIn_MailForm {
             public int AdressNr {
                 get {
                     try {
-                        return ((int)(this[this.tabletblMieter.AdressNrColumn]));
+                        return ((int)(this[this.tablexyMieter.AdressNrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AdressNr\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AdressNr\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.AdressNrColumn] = value;
+                    this[this.tablexyMieter.AdressNrColumn] = value;
                 }
             }
             
@@ -7074,14 +7074,14 @@ namespace OutlookAddIn_MailForm {
             public int HausNr {
                 get {
                     try {
-                        return ((int)(this[this.tabletblMieter.HausNrColumn]));
+                        return ((int)(this[this.tablexyMieter.HausNrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HausNr\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'HausNr\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.HausNrColumn] = value;
+                    this[this.tablexyMieter.HausNrColumn] = value;
                 }
             }
             
@@ -7090,14 +7090,14 @@ namespace OutlookAddIn_MailForm {
             public int MandantNr {
                 get {
                     try {
-                        return ((int)(this[this.tabletblMieter.MandantNrColumn]));
+                        return ((int)(this[this.tablexyMieter.MandantNrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MandantNr\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'MandantNr\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.MandantNrColumn] = value;
+                    this[this.tablexyMieter.MandantNrColumn] = value;
                 }
             }
             
@@ -7106,14 +7106,14 @@ namespace OutlookAddIn_MailForm {
             public int Unternehmen {
                 get {
                     try {
-                        return ((int)(this[this.tabletblMieter.UnternehmenColumn]));
+                        return ((int)(this[this.tablexyMieter.UnternehmenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Unternehmen\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Unternehmen\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.UnternehmenColumn] = value;
+                    this[this.tablexyMieter.UnternehmenColumn] = value;
                 }
             }
             
@@ -7122,14 +7122,14 @@ namespace OutlookAddIn_MailForm {
             public int WE {
                 get {
                     try {
-                        return ((int)(this[this.tabletblMieter.WEColumn]));
+                        return ((int)(this[this.tablexyMieter.WEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WE\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'WE\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.WEColumn] = value;
+                    this[this.tablexyMieter.WEColumn] = value;
                 }
             }
             
@@ -7138,14 +7138,14 @@ namespace OutlookAddIn_MailForm {
             public int WohnNr {
                 get {
                     try {
-                        return ((int)(this[this.tabletblMieter.WohnNrColumn]));
+                        return ((int)(this[this.tablexyMieter.WohnNrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WohnNr\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'WohnNr\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.WohnNrColumn] = value;
+                    this[this.tablexyMieter.WohnNrColumn] = value;
                 }
             }
             
@@ -7154,14 +7154,14 @@ namespace OutlookAddIn_MailForm {
             public string Name1 {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.Name1Column]));
+                        return ((string)(this[this.tablexyMieter.Name1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name1\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name1\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.Name1Column] = value;
+                    this[this.tablexyMieter.Name1Column] = value;
                 }
             }
             
@@ -7170,14 +7170,14 @@ namespace OutlookAddIn_MailForm {
             public string Name2 {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.Name2Column]));
+                        return ((string)(this[this.tablexyMieter.Name2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name2\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name2\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.Name2Column] = value;
+                    this[this.tablexyMieter.Name2Column] = value;
                 }
             }
             
@@ -7186,14 +7186,14 @@ namespace OutlookAddIn_MailForm {
             public string Strasse {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.StrasseColumn]));
+                        return ((string)(this[this.tablexyMieter.StrasseColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Strasse\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Strasse\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.StrasseColumn] = value;
+                    this[this.tablexyMieter.StrasseColumn] = value;
                 }
             }
             
@@ -7202,14 +7202,14 @@ namespace OutlookAddIn_MailForm {
             public int PlzOrt {
                 get {
                     try {
-                        return ((int)(this[this.tabletblMieter.PlzOrtColumn]));
+                        return ((int)(this[this.tablexyMieter.PlzOrtColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PlzOrt\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PlzOrt\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.PlzOrtColumn] = value;
+                    this[this.tablexyMieter.PlzOrtColumn] = value;
                 }
             }
             
@@ -7218,14 +7218,14 @@ namespace OutlookAddIn_MailForm {
             public string VPName1 {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.VPName1Column]));
+                        return ((string)(this[this.tablexyMieter.VPName1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VPName1\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'VPName1\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.VPName1Column] = value;
+                    this[this.tablexyMieter.VPName1Column] = value;
                 }
             }
             
@@ -7234,14 +7234,14 @@ namespace OutlookAddIn_MailForm {
             public string VPName2 {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.VPName2Column]));
+                        return ((string)(this[this.tablexyMieter.VPName2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VPName2\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'VPName2\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.VPName2Column] = value;
+                    this[this.tablexyMieter.VPName2Column] = value;
                 }
             }
             
@@ -7250,14 +7250,14 @@ namespace OutlookAddIn_MailForm {
             public string Name1Zus {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.Name1ZusColumn]));
+                        return ((string)(this[this.tablexyMieter.Name1ZusColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name1Zus\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name1Zus\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.Name1ZusColumn] = value;
+                    this[this.tablexyMieter.Name1ZusColumn] = value;
                 }
             }
             
@@ -7266,14 +7266,14 @@ namespace OutlookAddIn_MailForm {
             public string Ortname {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.OrtnameColumn]));
+                        return ((string)(this[this.tablexyMieter.OrtnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ortname\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ortname\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.OrtnameColumn] = value;
+                    this[this.tablexyMieter.OrtnameColumn] = value;
                 }
             }
             
@@ -7282,14 +7282,14 @@ namespace OutlookAddIn_MailForm {
             public int Folgenummer {
                 get {
                     try {
-                        return ((int)(this[this.tabletblMieter.FolgenummerColumn]));
+                        return ((int)(this[this.tablexyMieter.FolgenummerColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Folgenummer\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Folgenummer\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.FolgenummerColumn] = value;
+                    this[this.tablexyMieter.FolgenummerColumn] = value;
                 }
             }
             
@@ -7298,14 +7298,14 @@ namespace OutlookAddIn_MailForm {
             public string EMail {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.EMailColumn]));
+                        return ((string)(this[this.tablexyMieter.EMailColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EMail\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EMail\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.EMailColumn] = value;
+                    this[this.tablexyMieter.EMailColumn] = value;
                 }
             }
             
@@ -7314,14 +7314,14 @@ namespace OutlookAddIn_MailForm {
             public string Vorwahl1 {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.Vorwahl1Column]));
+                        return ((string)(this[this.tablexyMieter.Vorwahl1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Vorwahl1\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vorwahl1\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.Vorwahl1Column] = value;
+                    this[this.tablexyMieter.Vorwahl1Column] = value;
                 }
             }
             
@@ -7330,14 +7330,14 @@ namespace OutlookAddIn_MailForm {
             public string Telefon1 {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.Telefon1Column]));
+                        return ((string)(this[this.tablexyMieter.Telefon1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Telefon1\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Telefon1\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.Telefon1Column] = value;
+                    this[this.tablexyMieter.Telefon1Column] = value;
                 }
             }
             
@@ -7346,14 +7346,14 @@ namespace OutlookAddIn_MailForm {
             public string Vorwahl2 {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.Vorwahl2Column]));
+                        return ((string)(this[this.tablexyMieter.Vorwahl2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Vorwahl2\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vorwahl2\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.Vorwahl2Column] = value;
+                    this[this.tablexyMieter.Vorwahl2Column] = value;
                 }
             }
             
@@ -7362,14 +7362,14 @@ namespace OutlookAddIn_MailForm {
             public string Telefon2 {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.Telefon2Column]));
+                        return ((string)(this[this.tablexyMieter.Telefon2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Telefon2\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Telefon2\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.Telefon2Column] = value;
+                    this[this.tablexyMieter.Telefon2Column] = value;
                 }
             }
             
@@ -7378,14 +7378,14 @@ namespace OutlookAddIn_MailForm {
             public bool Geschlecht {
                 get {
                     try {
-                        return ((bool)(this[this.tabletblMieter.GeschlechtColumn]));
+                        return ((bool)(this[this.tablexyMieter.GeschlechtColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Geschlecht\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Geschlecht\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.GeschlechtColumn] = value;
+                    this[this.tablexyMieter.GeschlechtColumn] = value;
                 }
             }
             
@@ -7394,14 +7394,14 @@ namespace OutlookAddIn_MailForm {
             public int BriefAnrNr2 {
                 get {
                     try {
-                        return ((int)(this[this.tabletblMieter.BriefAnrNr2Column]));
+                        return ((int)(this[this.tablexyMieter.BriefAnrNr2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BriefAnrNr2\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BriefAnrNr2\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.BriefAnrNr2Column] = value;
+                    this[this.tablexyMieter.BriefAnrNr2Column] = value;
                 }
             }
             
@@ -7410,14 +7410,14 @@ namespace OutlookAddIn_MailForm {
             public int BriefAnrNr {
                 get {
                     try {
-                        return ((int)(this[this.tabletblMieter.BriefAnrNrColumn]));
+                        return ((int)(this[this.tablexyMieter.BriefAnrNrColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BriefAnrNr\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BriefAnrNr\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.BriefAnrNrColumn] = value;
+                    this[this.tablexyMieter.BriefAnrNrColumn] = value;
                 }
             }
             
@@ -7426,14 +7426,14 @@ namespace OutlookAddIn_MailForm {
             public string VorwahlMobil {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.VorwahlMobilColumn]));
+                        return ((string)(this[this.tablexyMieter.VorwahlMobilColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VorwahlMobil\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'VorwahlMobil\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.VorwahlMobilColumn] = value;
+                    this[this.tablexyMieter.VorwahlMobilColumn] = value;
                 }
             }
             
@@ -7442,14 +7442,14 @@ namespace OutlookAddIn_MailForm {
             public string TelefonMobil {
                 get {
                     try {
-                        return ((string)(this[this.tabletblMieter.TelefonMobilColumn]));
+                        return ((string)(this[this.tablexyMieter.TelefonMobilColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TelefonMobil\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TelefonMobil\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.TelefonMobilColumn] = value;
+                    this[this.tablexyMieter.TelefonMobilColumn] = value;
                 }
             }
             
@@ -7458,14 +7458,14 @@ namespace OutlookAddIn_MailForm {
             public System.DateTime AUSZUG {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tabletblMieter.AUSZUGColumn]));
+                        return ((global::System.DateTime)(this[this.tablexyMieter.AUSZUGColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AUSZUG\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AUSZUG\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.AUSZUGColumn] = value;
+                    this[this.tablexyMieter.AUSZUGColumn] = value;
                 }
             }
             
@@ -7474,339 +7474,339 @@ namespace OutlookAddIn_MailForm {
             public System.DateTime EINZUG {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tabletblMieter.EINZUGColumn]));
+                        return ((global::System.DateTime)(this[this.tablexyMieter.EINZUGColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EINZUG\' in table \'tblMieter\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EINZUG\' in table \'xyMieter\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblMieter.EINZUGColumn] = value;
+                    this[this.tablexyMieter.EINZUGColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAdressNrNull() {
-                return this.IsNull(this.tabletblMieter.AdressNrColumn);
+                return this.IsNull(this.tablexyMieter.AdressNrColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAdressNrNull() {
-                this[this.tabletblMieter.AdressNrColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.AdressNrColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsHausNrNull() {
-                return this.IsNull(this.tabletblMieter.HausNrColumn);
+                return this.IsNull(this.tablexyMieter.HausNrColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetHausNrNull() {
-                this[this.tabletblMieter.HausNrColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.HausNrColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMandantNrNull() {
-                return this.IsNull(this.tabletblMieter.MandantNrColumn);
+                return this.IsNull(this.tablexyMieter.MandantNrColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMandantNrNull() {
-                this[this.tabletblMieter.MandantNrColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.MandantNrColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsUnternehmenNull() {
-                return this.IsNull(this.tabletblMieter.UnternehmenColumn);
+                return this.IsNull(this.tablexyMieter.UnternehmenColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetUnternehmenNull() {
-                this[this.tabletblMieter.UnternehmenColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.UnternehmenColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsWENull() {
-                return this.IsNull(this.tabletblMieter.WEColumn);
+                return this.IsNull(this.tablexyMieter.WEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetWENull() {
-                this[this.tabletblMieter.WEColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.WEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsWohnNrNull() {
-                return this.IsNull(this.tabletblMieter.WohnNrColumn);
+                return this.IsNull(this.tablexyMieter.WohnNrColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetWohnNrNull() {
-                this[this.tabletblMieter.WohnNrColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.WohnNrColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsName1Null() {
-                return this.IsNull(this.tabletblMieter.Name1Column);
+                return this.IsNull(this.tablexyMieter.Name1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetName1Null() {
-                this[this.tabletblMieter.Name1Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.Name1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsName2Null() {
-                return this.IsNull(this.tabletblMieter.Name2Column);
+                return this.IsNull(this.tablexyMieter.Name2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetName2Null() {
-                this[this.tabletblMieter.Name2Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.Name2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsStrasseNull() {
-                return this.IsNull(this.tabletblMieter.StrasseColumn);
+                return this.IsNull(this.tablexyMieter.StrasseColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetStrasseNull() {
-                this[this.tabletblMieter.StrasseColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.StrasseColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPlzOrtNull() {
-                return this.IsNull(this.tabletblMieter.PlzOrtColumn);
+                return this.IsNull(this.tablexyMieter.PlzOrtColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPlzOrtNull() {
-                this[this.tabletblMieter.PlzOrtColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.PlzOrtColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVPName1Null() {
-                return this.IsNull(this.tabletblMieter.VPName1Column);
+                return this.IsNull(this.tablexyMieter.VPName1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVPName1Null() {
-                this[this.tabletblMieter.VPName1Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.VPName1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVPName2Null() {
-                return this.IsNull(this.tabletblMieter.VPName2Column);
+                return this.IsNull(this.tablexyMieter.VPName2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVPName2Null() {
-                this[this.tabletblMieter.VPName2Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.VPName2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsName1ZusNull() {
-                return this.IsNull(this.tabletblMieter.Name1ZusColumn);
+                return this.IsNull(this.tablexyMieter.Name1ZusColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetName1ZusNull() {
-                this[this.tabletblMieter.Name1ZusColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.Name1ZusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsOrtnameNull() {
-                return this.IsNull(this.tabletblMieter.OrtnameColumn);
+                return this.IsNull(this.tablexyMieter.OrtnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetOrtnameNull() {
-                this[this.tabletblMieter.OrtnameColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.OrtnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsFolgenummerNull() {
-                return this.IsNull(this.tabletblMieter.FolgenummerColumn);
+                return this.IsNull(this.tablexyMieter.FolgenummerColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetFolgenummerNull() {
-                this[this.tabletblMieter.FolgenummerColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.FolgenummerColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsEMailNull() {
-                return this.IsNull(this.tabletblMieter.EMailColumn);
+                return this.IsNull(this.tablexyMieter.EMailColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEMailNull() {
-                this[this.tabletblMieter.EMailColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.EMailColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVorwahl1Null() {
-                return this.IsNull(this.tabletblMieter.Vorwahl1Column);
+                return this.IsNull(this.tablexyMieter.Vorwahl1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVorwahl1Null() {
-                this[this.tabletblMieter.Vorwahl1Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.Vorwahl1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTelefon1Null() {
-                return this.IsNull(this.tabletblMieter.Telefon1Column);
+                return this.IsNull(this.tablexyMieter.Telefon1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTelefon1Null() {
-                this[this.tabletblMieter.Telefon1Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.Telefon1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVorwahl2Null() {
-                return this.IsNull(this.tabletblMieter.Vorwahl2Column);
+                return this.IsNull(this.tablexyMieter.Vorwahl2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVorwahl2Null() {
-                this[this.tabletblMieter.Vorwahl2Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.Vorwahl2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTelefon2Null() {
-                return this.IsNull(this.tabletblMieter.Telefon2Column);
+                return this.IsNull(this.tablexyMieter.Telefon2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTelefon2Null() {
-                this[this.tabletblMieter.Telefon2Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.Telefon2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsGeschlechtNull() {
-                return this.IsNull(this.tabletblMieter.GeschlechtColumn);
+                return this.IsNull(this.tablexyMieter.GeschlechtColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetGeschlechtNull() {
-                this[this.tabletblMieter.GeschlechtColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.GeschlechtColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBriefAnrNr2Null() {
-                return this.IsNull(this.tabletblMieter.BriefAnrNr2Column);
+                return this.IsNull(this.tablexyMieter.BriefAnrNr2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBriefAnrNr2Null() {
-                this[this.tabletblMieter.BriefAnrNr2Column] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.BriefAnrNr2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBriefAnrNrNull() {
-                return this.IsNull(this.tabletblMieter.BriefAnrNrColumn);
+                return this.IsNull(this.tablexyMieter.BriefAnrNrColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBriefAnrNrNull() {
-                this[this.tabletblMieter.BriefAnrNrColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.BriefAnrNrColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVorwahlMobilNull() {
-                return this.IsNull(this.tabletblMieter.VorwahlMobilColumn);
+                return this.IsNull(this.tablexyMieter.VorwahlMobilColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVorwahlMobilNull() {
-                this[this.tabletblMieter.VorwahlMobilColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.VorwahlMobilColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTelefonMobilNull() {
-                return this.IsNull(this.tabletblMieter.TelefonMobilColumn);
+                return this.IsNull(this.tablexyMieter.TelefonMobilColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTelefonMobilNull() {
-                this[this.tabletblMieter.TelefonMobilColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.TelefonMobilColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAUSZUGNull() {
-                return this.IsNull(this.tabletblMieter.AUSZUGColumn);
+                return this.IsNull(this.tablexyMieter.AUSZUGColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAUSZUGNull() {
-                this[this.tabletblMieter.AUSZUGColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.AUSZUGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsEINZUGNull() {
-                return this.IsNull(this.tabletblMieter.EINZUGColumn);
+                return this.IsNull(this.tablexyMieter.EINZUGColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEINZUGNull() {
-                this[this.tabletblMieter.EINZUGColumn] = global::System.Convert.DBNull;
+                this[this.tablexyMieter.EINZUGColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7814,22 +7814,22 @@ namespace OutlookAddIn_MailForm {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class xyMieterRowChangeEvent : global::System.EventArgs {
+        public class xyMieterOldRowChangeEvent : global::System.EventArgs {
             
-            private xyMieterRow eventRow;
+            private xyMieterOldRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public xyMieterRowChangeEvent(xyMieterRow row, global::System.Data.DataRowAction action) {
+            public xyMieterOldRowChangeEvent(xyMieterOldRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public xyMieterRow Row {
+            public xyMieterOldRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8120,22 +8120,22 @@ namespace OutlookAddIn_MailForm {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class tblMieterRowChangeEvent : global::System.EventArgs {
+        public class xyMieterRowChangeEvent : global::System.EventArgs {
             
-            private tblMieterRow eventRow;
+            private xyMieterRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblMieterRowChangeEvent(tblMieterRow row, global::System.Data.DataRowAction action) {
+            public xyMieterRowChangeEvent(xyMieterRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblMieterRow Row {
+            public xyMieterRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8163,7 +8163,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class xyMieterTableAdapter : global::System.ComponentModel.Component {
+    public partial class xyMieterOldTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.Odbc.OdbcDataAdapter _adapter;
         
@@ -8177,7 +8177,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public xyMieterTableAdapter() {
+        public xyMieterOldTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -8274,7 +8274,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
             this._adapter = new global::System.Data.Odbc.OdbcDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "xyMieter";
+            tableMapping.DataSetTable = "xyMieterOld";
             tableMapping.ColumnMappings.Add("AdressNr", "AdressNr");
             tableMapping.ColumnMappings.Add("HausNr", "HausNr");
             tableMapping.ColumnMappings.Add("MandantNr", "MandantNr");
@@ -8463,7 +8463,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int FillbyUnWeHaWo(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, int MandantNr, int Unternehmen, int WE, int HausNr, int WohnNr) {
+        public virtual int FillbyUnWeHaWo(DataSet1_WOWI_SEARCH.xyMieterOldDataTable dataTable, int MandantNr, int Unternehmen, int WE, int HausNr, int WohnNr) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Unternehmen));
@@ -8481,14 +8481,14 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDatabyUnWeHaWo(int MandantNr, int Unternehmen, int WE, int HausNr, int WohnNr) {
+        public virtual DataSet1_WOWI_SEARCH.xyMieterOldDataTable GetDatabyUnWeHaWo(int MandantNr, int Unternehmen, int WE, int HausNr, int WohnNr) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Unternehmen));
             this.Adapter.SelectCommand.Parameters[2].Value = ((int)(WE));
             this.Adapter.SelectCommand.Parameters[3].Value = ((int)(HausNr));
             this.Adapter.SelectCommand.Parameters[4].Value = ((int)(WohnNr));
-            DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterDataTable();
+            DataSet1_WOWI_SEARCH.xyMieterOldDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterOldDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8497,7 +8497,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByAdrNr(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, int MandantNr, int AdressNr) {
+        public virtual int FillByAdrNr(DataSet1_WOWI_SEARCH.xyMieterOldDataTable dataTable, int MandantNr, int AdressNr) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(AdressNr));
@@ -8512,11 +8512,11 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDataByAdrNr(int MandantNr, int AdressNr) {
+        public virtual DataSet1_WOWI_SEARCH.xyMieterOldDataTable GetDataByAdrNr(int MandantNr, int AdressNr) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(AdressNr));
-            DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterDataTable();
+            DataSet1_WOWI_SEARCH.xyMieterOldDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterOldDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8525,7 +8525,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByName1(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, int MandantNr, string Name1) {
+        public virtual int FillByName1(DataSet1_WOWI_SEARCH.xyMieterOldDataTable dataTable, int MandantNr, string Name1) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             if ((Name1 == null)) {
@@ -8545,7 +8545,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDataByName1(int MandantNr, string Name1) {
+        public virtual DataSet1_WOWI_SEARCH.xyMieterOldDataTable GetDataByName1(int MandantNr, string Name1) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             if ((Name1 == null)) {
@@ -8554,7 +8554,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Name1));
             }
-            DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterDataTable();
+            DataSet1_WOWI_SEARCH.xyMieterOldDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterOldDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8563,7 +8563,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByUnWe(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, int MandantNr, int Unternehmen, int WE) {
+        public virtual int FillByUnWe(DataSet1_WOWI_SEARCH.xyMieterOldDataTable dataTable, int MandantNr, int Unternehmen, int WE) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Unternehmen));
@@ -8579,12 +8579,12 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDataByUnWe(int MandantNr, int Unternehmen, int WE) {
+        public virtual DataSet1_WOWI_SEARCH.xyMieterOldDataTable GetDataByUnWe(int MandantNr, int Unternehmen, int WE) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Unternehmen));
             this.Adapter.SelectCommand.Parameters[2].Value = ((int)(WE));
-            DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterDataTable();
+            DataSet1_WOWI_SEARCH.xyMieterOldDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterOldDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8593,7 +8593,7 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByUnWeHa(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, int MandantNr, int Unternehmen, int WE, int HausNr) {
+        public virtual int FillByUnWeHa(DataSet1_WOWI_SEARCH.xyMieterOldDataTable dataTable, int MandantNr, int Unternehmen, int WE, int HausNr) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Unternehmen));
@@ -8610,13 +8610,13 @@ namespace OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDataByUnWeHa(int MandantNr, int Unternehmen, int WE, int HausNr) {
+        public virtual DataSet1_WOWI_SEARCH.xyMieterOldDataTable GetDataByUnWeHa(int MandantNr, int Unternehmen, int WE, int HausNr) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Unternehmen));
             this.Adapter.SelectCommand.Parameters[2].Value = ((int)(WE));
             this.Adapter.SelectCommand.Parameters[3].Value = ((int)(HausNr));
-            DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterDataTable();
+            DataSet1_WOWI_SEARCH.xyMieterOldDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterOldDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10464,7 +10464,7 @@ ORDER BY Name1 DESC";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tblMieterTableAdapter : global::System.ComponentModel.Component {
+    public partial class xyMieterTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.Odbc.OdbcDataAdapter _adapter;
         
@@ -10478,7 +10478,7 @@ ORDER BY Name1 DESC";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public tblMieterTableAdapter() {
+        public xyMieterTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -10575,7 +10575,7 @@ ORDER BY Name1 DESC";
             this._adapter = new global::System.Data.Odbc.OdbcDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tblMieter";
+            tableMapping.DataSetTable = "xyMieter";
             tableMapping.ColumnMappings.Add("AdressNr", "AdressNr");
             tableMapping.ColumnMappings.Add("HausNr", "HausNr");
             tableMapping.ColumnMappings.Add("MandantNr", "MandantNr");
@@ -10697,7 +10697,7 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int FillbyUnWeHaWo(DataSet1_WOWI_SEARCH.tblMieterDataTable dataTable, int Unternehmen, int WE, int HausNr, int WohnNr, int MandantNr) {
+        public virtual int FillbyUnWeHaWo(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, int Unternehmen, int WE, int HausNr, int WohnNr, int MandantNr) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(WE));
@@ -10715,14 +10715,14 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1_WOWI_SEARCH.tblMieterDataTable GetDatabyUnWeHaWo(int Unternehmen, int WE, int HausNr, int WohnNr, int MandantNr) {
+        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDatabyUnWeHaWo(int Unternehmen, int WE, int HausNr, int WohnNr, int MandantNr) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(WE));
             this.Adapter.SelectCommand.Parameters[2].Value = ((int)(HausNr));
             this.Adapter.SelectCommand.Parameters[3].Value = ((int)(WohnNr));
             this.Adapter.SelectCommand.Parameters[4].Value = ((int)(MandantNr));
-            DataSet1_WOWI_SEARCH.tblMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.tblMieterDataTable();
+            DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10731,7 +10731,7 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByAdrNr(DataSet1_WOWI_SEARCH.tblMieterDataTable dataTable, int AdressNr, int MandantNr) {
+        public virtual int FillByAdrNr(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, int AdressNr, int MandantNr) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AdressNr));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MandantNr));
@@ -10746,11 +10746,11 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1_WOWI_SEARCH.tblMieterDataTable GetDataByAdrNr(int AdressNr, int MandantNr) {
+        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDataByAdrNr(int AdressNr, int MandantNr) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AdressNr));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MandantNr));
-            DataSet1_WOWI_SEARCH.tblMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.tblMieterDataTable();
+            DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10759,7 +10759,7 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByName1(DataSet1_WOWI_SEARCH.tblMieterDataTable dataTable, int MandantNr, string Name1) {
+        public virtual int FillByName1(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, int MandantNr, string Name1) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             if ((Name1 == null)) {
@@ -10779,7 +10779,7 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1_WOWI_SEARCH.tblMieterDataTable GetDataByName1(int MandantNr, string Name1) {
+        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDataByName1(int MandantNr, string Name1) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             if ((Name1 == null)) {
@@ -10788,7 +10788,7 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Name1));
             }
-            DataSet1_WOWI_SEARCH.tblMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.tblMieterDataTable();
+            DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10797,7 +10797,7 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByUnWe(DataSet1_WOWI_SEARCH.tblMieterDataTable dataTable, int MandantNr, int Unternehmen, int WE) {
+        public virtual int FillByUnWe(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, int MandantNr, int Unternehmen, int WE) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Unternehmen));
@@ -10813,12 +10813,12 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1_WOWI_SEARCH.tblMieterDataTable GetDataByUnWe(int MandantNr, int Unternehmen, int WE) {
+        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDataByUnWe(int MandantNr, int Unternehmen, int WE) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Unternehmen));
             this.Adapter.SelectCommand.Parameters[2].Value = ((int)(WE));
-            DataSet1_WOWI_SEARCH.tblMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.tblMieterDataTable();
+            DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10827,7 +10827,7 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByUnWeHa(DataSet1_WOWI_SEARCH.tblMieterDataTable dataTable, int Unternehmen, int WE, int HausNr, int MandantNr) {
+        public virtual int FillByUnWeHa(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, int Unternehmen, int WE, int HausNr, int MandantNr) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(WE));
@@ -10844,13 +10844,13 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1_WOWI_SEARCH.tblMieterDataTable GetDataByUnWeHa(int Unternehmen, int WE, int HausNr, int MandantNr) {
+        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDataByUnWeHa(int Unternehmen, int WE, int HausNr, int MandantNr) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Unternehmen));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(WE));
             this.Adapter.SelectCommand.Parameters[2].Value = ((int)(HausNr));
             this.Adapter.SelectCommand.Parameters[3].Value = ((int)(MandantNr));
-            DataSet1_WOWI_SEARCH.tblMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.tblMieterDataTable();
+            DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

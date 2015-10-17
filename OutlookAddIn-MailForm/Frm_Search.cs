@@ -312,36 +312,36 @@ namespace OutlookAddIn_MailForm
         private void set_mieter_to_ParentForm()
         {
             this.ParentForm.clear_form_data();
-            this.ParentForm.Mieter = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;
-            this.ParentForm.lbl_mieter_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[6].Value.ToString();
-            this.ParentForm.eMail = dgv_TableSelect.SelectedRows[0].Cells[17].Value.ToString();
+            this.ParentForm.Mieter = (int)dgv_TableSelect.SelectedRows[0].Cells["AdressNr"].Value;
+            this.ParentForm.lbl_mieter_txt.Text = dgv_TableSelect.SelectedRows[0].Cells["Name1"].Value.ToString();
+            this.ParentForm.eMail = dgv_TableSelect.SelectedRows[0].Cells["EMail"].Value.ToString();
             this.ParentForm.lbl_mieter_txt.Visible = true;
-            this.ParentForm.objekt = (int)dgv_TableSelect.SelectedRows[0].Cells[4].Value;
-            this.ParentForm.lbl_objekt_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[13].Value.ToString();
+            this.ParentForm.objekt = (int)dgv_TableSelect.SelectedRows[0].Cells["WE"].Value;
+            this.ParentForm.lbl_objekt_txt.Text = dgv_TableSelect.SelectedRows[0].Cells["Ortname"].Value.ToString();
             this.ParentForm.lbl_objekt_txt.Visible = true;
-            this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[3].Value;
-            this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells[1].Value;
-            this.ParentForm.lbl_haus_txt.Text = dgv_TableSelect.SelectedRows[0].Cells[8].Value.ToString();
+            this.ParentForm.mandant = (int)dgv_TableSelect.SelectedRows[0].Cells["Unternehmen"].Value;
+            this.ParentForm.HausNr = (int)dgv_TableSelect.SelectedRows[0].Cells["HausNr"].Value;
+            this.ParentForm.lbl_haus_txt.Text = dgv_TableSelect.SelectedRows[0].Cells["Strasse"].Value.ToString();
             this.ParentForm.lbl_haus_txt.Visible = true;
-            this.ParentForm.wohnung = (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value;
+            this.ParentForm.wohnung = (int)dgv_TableSelect.SelectedRows[0].Cells["WohnNr"].Value;
             this.ParentForm.lbl_wo_txt.Text = "";
             this.ParentForm.lbl_wo_txt.Visible = true;
             // Get/Set Name2 from Adresse to ParenForm
-            Globals.ThisAddIn.msg_parameter.Vorname = dgv_TableSelect.SelectedRows[0].Cells[7].Value.ToString();
-            Globals.ThisAddIn.msg_parameter.Name = dgv_TableSelect.SelectedRows[0].Cells[6].Value.ToString();
-            Globals.ThisAddIn.msg_parameter.FolgeNr = (int)dgv_TableSelect.SelectedRows[0].Cells[16].Value;
-            Globals.ThisAddIn.msg_parameter.NeStrasse = dgv_TableSelect.SelectedRows[0].Cells[8].Value.ToString();
-            Globals.ThisAddIn.msg_parameter.NeOrt = dgv_TableSelect.SelectedRows[0].Cells[13].Value.ToString();
-            string MiTel = dgv_TableSelect.SelectedRows[0].Cells[18].Value.ToString();
-            MiTel += " / " + dgv_TableSelect.SelectedRows[0].Cells[19].Value.ToString();
+            Globals.ThisAddIn.msg_parameter.Vorname = dgv_TableSelect.SelectedRows[0].Cells["Name2"].Value.ToString();
+            Globals.ThisAddIn.msg_parameter.Name = dgv_TableSelect.SelectedRows[0].Cells["Name1"].Value.ToString();
+            Globals.ThisAddIn.msg_parameter.FolgeNr = (int)dgv_TableSelect.SelectedRows[0].Cells["Folgenummer"].Value;
+            Globals.ThisAddIn.msg_parameter.NeStrasse = dgv_TableSelect.SelectedRows[0].Cells["Strasse"].Value.ToString();
+            Globals.ThisAddIn.msg_parameter.NeOrt = dgv_TableSelect.SelectedRows[0].Cells["Ortname"].Value.ToString();
+            string MiTel = dgv_TableSelect.SelectedRows[0].Cells["Vorwahl1"].Value.ToString();
+            MiTel += " / " + dgv_TableSelect.SelectedRows[0].Cells["Telefon1"].Value.ToString();
             Globals.ThisAddIn.msg_parameter.MiTel = MiTel;
-            string MiMob = dgv_TableSelect.SelectedRows[0].Cells[25].Value.ToString();
-            MiMob += " / " + dgv_TableSelect.SelectedRows[0].Cells[26].Value.ToString();
+            string MiMob = dgv_TableSelect.SelectedRows[0].Cells["VorwahlMobil"].Value.ToString();
+            MiMob += " / " + dgv_TableSelect.SelectedRows[0].Cells["TelefonMobil"].Value.ToString();
             Globals.ThisAddIn.msg_parameter.MiMob = MiMob;
-            string MiTel2 = dgv_TableSelect.SelectedRows[0].Cells[20].Value.ToString();
-            MiTel2 += " / " + dgv_TableSelect.SelectedRows[0].Cells[21].Value.ToString();
+            string MiTel2 = dgv_TableSelect.SelectedRows[0].Cells["Vorwahl2"].Value.ToString();
+            MiTel2 += " / " + dgv_TableSelect.SelectedRows[0].Cells["Telefon2"].Value.ToString();
             Globals.ThisAddIn.msg_parameter.MiTel2 = MiTel2;
-            Globals.ThisAddIn.msg_parameter.Mandant = (int)dgv_TableSelect.SelectedRows[0].Cells[2].Value;
+            Globals.ThisAddIn.msg_parameter.Mandant = (int)dgv_TableSelect.SelectedRows[0].Cells["MandantNr"].Value;
             //Getting Etage and Fill it to Form and Global Data
             //***Begin***
             DataSet1_WOWI_SEARCH.tblWohnungDataTable wohnungTable;
@@ -360,7 +360,7 @@ namespace OutlookAddIn_MailForm
             }
             //***End***
             this.set_WE_lable();
-            Globals.ThisAddIn.msg_parameter.BriefAnrede = this.getBriefAnrede((int)dgv_TableSelect.SelectedRows[0].Cells[24].Value);            
+            Globals.ThisAddIn.msg_parameter.BriefAnrede = this.getBriefAnrede((int)dgv_TableSelect.SelectedRows[0].Cells["BriefAnrNr"].Value);            
         }
 
         private string getBriefAnrede(int BriefAnredeNr)
