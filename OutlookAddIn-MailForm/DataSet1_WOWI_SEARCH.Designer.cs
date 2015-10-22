@@ -10625,9 +10625,8 @@ ORDER BY Name1 DESC";
                   PUB.Adresse.Telefon1, PUB.Adresse.Vorwahl2, PUB.Adresse.Telefon2, PUB.Adresse.Geschlecht, PUB.Adresse.BriefAnrNr2, PUB.Adresse.BriefAnrNr, 
                   PUB.Adresse.VorwahlMobil, PUB.Adresse.TelefonMobil
 FROM     PUB.Adresse, PUB.Mieter
-WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum IS NULL OR
-                  PUB.Mieter.Auszugsdatum > CURDATE()) AND (PUB.Mieter.Einzugsdatum <= CURDATE()) AND (PUB.Mieter.Unternehmen = ?) AND (PUB.Mieter.WE = ?) AND 
-                  (PUB.Mieter.HausNr = ?) AND (PUB.Mieter.WohnNr = ?) AND (PUB.Mieter.MandantNr = ?)";
+WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Unternehmen = ?) AND (PUB.Mieter.WE = ?) AND (PUB.Mieter.HausNr = ?) AND (PUB.Mieter.WohnNr = ?) AND 
+                  (PUB.Mieter.MandantNr = ?) AND (PUB.Mieter.AdressNr <> 9999999)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("WE", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WE", global::System.Data.DataRowVersion.Current, false, null));
@@ -10670,7 +10669,7 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
 FROM     PUB.Adresse, PUB.Mieter
 WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum IS NULL OR
                   PUB.Mieter.Auszugsdatum > CURDATE()) AND (PUB.Mieter.Einzugsdatum <= CURDATE()) AND (PUB.Mieter.MandantNr = ?) AND (PUB.Mieter.Unternehmen = ?) AND 
-                  (PUB.Mieter.WE = ?)";
+                  (PUB.Mieter.WE = ?) AND (PUB.Mieter.AdressNr <> 9999999)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("MandantNr", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MandantNr", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
@@ -10685,7 +10684,7 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
 FROM     PUB.Adresse, PUB.Mieter
 WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum IS NULL OR
                   PUB.Mieter.Auszugsdatum > CURDATE()) AND (PUB.Mieter.Einzugsdatum <= CURDATE()) AND (PUB.Mieter.Unternehmen = ?) AND (PUB.Mieter.WE = ?) AND 
-                  (PUB.Mieter.HausNr = ?) AND (PUB.Mieter.MandantNr = ?)";
+                  (PUB.Mieter.HausNr = ?) AND (PUB.Mieter.MandantNr = ?) AND (PUB.Mieter.AdressNr <> 9999999)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Unternehmen", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Unternehmen", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[4].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("WE", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "WE", global::System.Data.DataRowVersion.Current, false, null));
@@ -10731,10 +10730,20 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByAdrNr(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, int AdressNr, int MandantNr) {
+        public virtual int FillByAdrNr(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, global::System.Nullable<int> AdressNr, global::System.Nullable<int> MandantNr) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AdressNr));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MandantNr));
+            if ((AdressNr.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AdressNr.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((MandantNr.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MandantNr.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -10746,10 +10755,20 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDataByAdrNr(int AdressNr, int MandantNr) {
+        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDataByAdrNr(global::System.Nullable<int> AdressNr, global::System.Nullable<int> MandantNr) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AdressNr));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MandantNr));
+            if ((AdressNr.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AdressNr.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((MandantNr.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(MandantNr.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable = new DataSet1_WOWI_SEARCH.xyMieterDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -10759,11 +10778,16 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByName1(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, int MandantNr, string Name1) {
+        public virtual int FillByName1(DataSet1_WOWI_SEARCH.xyMieterDataTable dataTable, global::System.Nullable<int> MandantNr, string Name1) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
+            if ((MandantNr.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((Name1 == null)) {
-                throw new global::System.ArgumentNullException("Name1");
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Name1));
@@ -10779,11 +10803,16 @@ WHERE  PUB.Adresse.AdressNr = PUB.Mieter.AdressNr AND (PUB.Mieter.Auszugsdatum I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDataByName1(int MandantNr, string Name1) {
+        public virtual DataSet1_WOWI_SEARCH.xyMieterDataTable GetDataByName1(global::System.Nullable<int> MandantNr, string Name1) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr));
+            if ((MandantNr.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MandantNr.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((Name1 == null)) {
-                throw new global::System.ArgumentNullException("Name1");
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Name1));

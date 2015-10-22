@@ -426,21 +426,23 @@ namespace OutlookAddIn_MailForm
             else if (this.ParentForm.mandant !=0 && this.ParentForm.objekt !=0 && this.ParentForm.HausNr !=0
                 && this.ParentForm.wohnung == 0 && this.ParentForm.Mieter == 0)
             {
+                //TODO: REMOVE MessageBox.Show("TEST POS 2 - Wo und Mieter 0");
                 this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
-                this.xyMieterTableAdapterWoWiSearch.FillByUnWeHa(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant1, this.ParentForm.mandant, this.ParentForm.objekt,
-                    this.ParentForm.HausNr);  
+                this.xyMieterTableAdapterWoWiSearch.FillByUnWeHa(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt,
+                    this.ParentForm.HausNr, this.ParentForm.mandant1);  
             }
             else if (this.ParentForm.mandant != 0 && this.ParentForm.objekt != 0 && this.ParentForm.HausNr != 0
                  && this.ParentForm.wohnung != 0 && this.ParentForm.Mieter == 0)
             {
+                //TODO: REMOVE MessageBox.Show("TEST POS 1 - Mieter 0");
                 this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
-                this.xyMieterTableAdapterWoWiSearch.FillbyUnWeHaWo(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant1, this.ParentForm.mandant, this.ParentForm.objekt,
-                    this.ParentForm.HausNr, this.ParentForm.wohnung);  
+                this.xyMieterTableAdapterWoWiSearch.FillbyUnWeHaWo(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant, this.ParentForm.objekt,
+                    this.ParentForm.HausNr, this.ParentForm.wohnung, this.ParentForm.mandant1);  
             }
             else if (this.ParentForm.Mieter != 0)
             {
                 this.dgv_TableSelect.DataSource = xyMieterBindingSource1;
-                this.xyMieterTableAdapterWoWiSearch.FillByAdrNr(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.mandant1, this.ParentForm.Mieter);  
+                this.xyMieterTableAdapterWoWiSearch.FillByAdrNr(dataSet1_WOWI_SEARCH.xyMieter, this.ParentForm.Mieter, this.ParentForm.mandant1);  
             }
              // Mieter comes by Address
             else if (this.ParentForm.txt_Adresse.Text != "")
