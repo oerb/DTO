@@ -69,13 +69,20 @@ namespace OutlookAddIn_MailForm
         private void actionOnEmailSend(object Item, ref bool Cancel)
         {
             bool saperion = false;
-            // Get the Saperion Property to determine for archiving
+            // Get the Saperion Property in an Outlook Mail-Object to determine if Saperion is set true 
             try
             {
                 Outlook.UserProperties mailUserProperties = null;                
                 MailItem mailItem = Item as Outlook.MailItem;
                 mailUserProperties = mailItem.UserProperties;
                 saperion = mailUserProperties.Find("Saperion").Value;
+                // remove Property for remail purpose without DTO Data
+                // TODO: Hold the Property and open the DTO Window on Remail instead
+                // Objekt, WE ...else has to add to the Mailobject as Properties  
+                if (saperion)
+                {
+                    mailUserProperties.Find("Saperion").Value = false;
+                }
             }
             catch 
             {
@@ -87,7 +94,6 @@ namespace OutlookAddIn_MailForm
             {
                 if (saperion)
                 {
-
                     if (Properties.Settings.Default.ask_before_archiving)
                     {
                         DialogResult result = MessageBox.Show("Soll die E-Mail auch archiviert werden?",
@@ -107,29 +113,19 @@ namespace OutlookAddIn_MailForm
 
         private void saveMailtoSaperion()
         {
-            // MessageBox.Show("Uhh you send an E-Mail by DT");
-            // Saperion Example
-            //filelocation As String, Mandant As Integer,
-            //                     Unternehmen As Integer, WE As Integer,
-            //                     HausNr As Integer, Wohnung As Integer,
-            //                     AdresseNr As Integer, DokuArt As String,
-            //                     VorgangKZ As String, Vorname As String,
-            //                     Name As String)
-
-
+            // uses DTsaperionVBNETLib to archive the Mail by the Saperion-COM-Object
             try
             {
-                Archivieren DtSap = new Archivieren();
+                Archivieren DtSap = new Archivieren(); //DTsaperionVBNETLib
+                // lokal zwischenspreicherung der Mail fuer Aufruf in DTsaperionVBNETLib
                 System.Reflection.Assembly assemblyInfo = System.Reflection.Assembly.GetExecutingAssembly();
                 string FileLocation = Path.GetDirectoryName(assemblyInfo.Location);
                 FileLocation += "mail.msg";
                 this.msg_parameter.MailItem.SaveAs(FileLocation);
+                // handout Parameters and archiving the Document
                 this.msg_parameter.filelocaiton = FileLocation;
-                //this.msg_parameter.MailItem.SaveAs(@"C:\Install\DTO\mail.msg");
-                //this.msg_parameter.filelocaiton = @"C:\Install\DTO\mail.msg";
                 string Subject = this.msg_parameter.MailItem.Subject;
                 string Memo2 = msg_parameter.KreditorAdr + " - " + msg_parameter.KreditorName;
-                // string Subject2 = Subject.Substring(0, 149);
                 DtSap.saveDokument(msg_parameter.filelocaiton, msg_parameter.Mandant, msg_parameter.Unternehmen,
                     msg_parameter.WE, msg_parameter.HausNr, msg_parameter.Wohnung, msg_parameter.FolgeNr,
                     msg_parameter.AdresseNr, msg_parameter.DokuArt, msg_parameter.VorgangKZ,
@@ -139,7 +135,7 @@ namespace OutlookAddIn_MailForm
             }
             catch (System.Exception e)
             {
-                string msgtext = "Ein Fehler ist beim Archivieren aufgetreten, ggf. war z.B. der Betreff zu lang:/n ";
+                string msgtext = "Ein Fehler ist beim Archivieren aufgetreten, ggf. war z.B. der Betreff zu lang./n/n Full Saperion-Errortext: /n ";
                 msgtext += e.ToString();
                 MessageBox.Show(msgtext);
                 throw;

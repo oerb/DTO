@@ -277,8 +277,7 @@ namespace OutlookAddIn_MailForm
         }
 
         private void btn_create_MSG_Click(object sender, EventArgs e)
-        {
-            
+        {            
             //Globals.ThisAddIn.msg_parameter = this.msg_parameter;
             if (this.txt_meldungstyp.Text != "")
             {
@@ -288,8 +287,7 @@ namespace OutlookAddIn_MailForm
             else
             {
                 MessageBox.Show("Bitte geben Sie einen Meldungstyp an!");
-            }
-            
+            }            
         }
 
         private void txt_meldungstyp_TextChanged(object sender, EventArgs e)
