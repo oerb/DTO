@@ -208,7 +208,7 @@ namespace OutlookAddIn_MailForm
                         this.ParentForm.lbl_mandant_txt.Visible = true;
                         break;
                     }
-                case "ob":
+                case "ob": //WE bzw. Objekt
                     {
                         this.ParentForm.clear_form_data();
                         this.ParentForm.mandant1 = (int)dgv_TableSelect.SelectedRows[0].Cells[5].Value;
@@ -218,8 +218,10 @@ namespace OutlookAddIn_MailForm
                         this.ParentForm.lbl_objekt_txt.Text = Text;
                         this.ParentForm.lbl_objekt_txt.Visible = true;
                         string webez = dgv_TableSelect.SelectedRows[0].Cells[1].Value.ToString();
-                        webez += " , " + dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString();
-                        Globals.ThisAddIn.msg_parameter.WeBeszeichnung = webez;
+                        //webez += " , " + dgv_TableSelect.SelectedRows[0].Cells[3].Value.ToString();
+                        //Globals.ThisAddIn.msg_parameter.WeBeszeichnung = webez;
+                        this.ParentForm.objekt = (int)dgv_TableSelect.SelectedRows[0].Cells[0].Value;
+                        this.set_WE_lable();
                         break;
                     }
                 case "kr":

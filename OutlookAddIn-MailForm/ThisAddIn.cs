@@ -33,7 +33,6 @@ namespace OutlookAddIn_MailForm
             items = outbox.Items;
             items.ItemAdd +=
                 new Outlook.ItemsEvents_ItemAddEventHandler(actionEmailSend);
-
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -79,6 +78,7 @@ namespace OutlookAddIn_MailForm
 
         #endregion
 
+        //TODO: Old Method not in use anymore
         private void actionOnEmailSend(object Item, ref bool Cancel)
         {
             bool saperion = false;
@@ -162,12 +162,6 @@ namespace OutlookAddIn_MailForm
                                 "Saperion Archiv", MessageBoxButtons.YesNo);
                                     if (result == DialogResult.Yes)
                                     {
-                                        string msgtext = "";
-                                        if (this.msg_parameter.MailItem == null)
-                                        {
-                                            msgtext = "MailItem is null";
-                                        }
-                                        MessageBox.Show(msgtext);
                                         this.msg_parameter.MailItem = mailItem;
                                         saveMailtoSaperion();
                                     }
@@ -181,7 +175,7 @@ namespace OutlookAddIn_MailForm
                     }
                 }
             }
-            catch (System.Exception e)
+            catch 
             {
                 //nothing
             }
