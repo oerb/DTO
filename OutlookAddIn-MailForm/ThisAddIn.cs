@@ -16,10 +16,24 @@ namespace OutlookAddIn_MailForm
 {
     public partial class ThisAddIn
     {
+        //private Outlook.MAPIFolder mySentFolder; 
+        private Outlook.NameSpace outlookNameSpace;
+        private Outlook.MAPIFolder outbox;        
+        private Outlook.Items items;
+
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            //Create an event handler for when items are sent
-            Application.ItemSend += new ApplicationEvents_11_ItemSendEventHandler(actionOnEmailSend);
+            //Create an event handler for when E-Mail-Items are sent
+            //Application.ItemSend += new ApplicationEvents_11_ItemSendEventHandler(actionOnEmailSend);            
+            //Howto Inbox/Outbox Event https://msdn.microsoft.com/de-de/library/ms268998.aspx
+            outlookNameSpace = this.Application.GetNamespace("MAPI");
+            outbox = outlookNameSpace.GetDefaultFolder(
+                    Outlook.OlDefaultFolders.olFolderSentMail); //for inbox use Outlook.OlDefaultFolders.olFolderInbox
+
+            items = outbox.Items;
+            items.ItemAdd +=
+                new Outlook.ItemsEvents_ItemAddEventHandler(actionEmailSend);
+
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -54,7 +68,6 @@ namespace OutlookAddIn_MailForm
         // NEW
         
         public MSG_Parameter msg_parameter;
-
         private string Sachberarbeiter = UserPrincipal.Current.DisplayName; //Environment.UserName;
         public string SachBearb
         {
@@ -109,6 +122,60 @@ namespace OutlookAddIn_MailForm
                     }
                 } 
             }
+        }
+
+        private void actionEmailSend(object Item)
+        {
+            //new Version
+            bool saperion = false;
+            Outlook.UserProperties mailUserProperties = null; 
+            Outlook.MailItem mail = (Outlook.MailItem)Item;
+            mailUserProperties = mail.UserProperties;
+            // Get the Saperion Property in an Outlook Mail-Object to determine if Saperion is set true 
+            try
+            {
+                MailItem mailItem = Item as Outlook.MailItem;
+                mailUserProperties = mailItem.UserProperties;
+                saperion = mailUserProperties.Find("Saperion").Value;
+                // remove Property for remail purpose without DTO Data
+                // TODO: Hold the Property and open the DTO Window on Remail instead
+                // Objekt, WE ...else has to add to the Mailobject as Properties  
+                if (saperion)
+                {
+                    mailUserProperties.Find("Saperion").Value = false;
+                    if (Item != null)
+                    {
+                        
+                        // Send E-Mail with or with out archiving 
+                        // and if ask for archiving or not 
+                        if (Properties.Settings.Default.autoarchiving)
+                        {
+                            if (saperion)
+                            {
+                                if (Properties.Settings.Default.ask_before_archiving)
+                                {
+                                    DialogResult result = MessageBox.Show("Soll die E-Mail auch archiviert werden?",
+                                "Saperion Archiv", MessageBoxButtons.YesNo);
+                                    if (result == DialogResult.Yes)
+                                    {
+                                        saveMailtoSaperion();
+                                    }
+                                }
+                                else
+                                {
+                                    saveMailtoSaperion();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                //nothing
+            }
+            
+            
         }
 
         private void saveMailtoSaperion()

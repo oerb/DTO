@@ -405,7 +405,6 @@ namespace OutlookAddIn_MailForm
             Globals.ThisAddIn.msg_parameter.VorgangKZ = this.cmb_vorgangkz.Text;
         }
 
-
         private void cmb_dokuart_DropDown(object sender, EventArgs e)
         {
             // This Refille have to be done because the Dropdown was 

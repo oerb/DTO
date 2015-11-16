@@ -37,12 +37,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DerrToolsRibbon1));
             this.tab2 = this.Factory.CreateRibbonTab();
             this.groupEinstellungen = this.Factory.CreateRibbonGroup();
-            this.tab1 = this.Factory.CreateRibbonTab();
-            this.DerrTool_HSM_RibbonGroup = this.Factory.CreateRibbonGroup();
             this.btn_Settings = this.Factory.CreateRibbonButton();
             this.btn_ServerSettings = this.Factory.CreateRibbonButton();
             this.btn_usersettings = this.Factory.CreateRibbonButton();
             this.btn_Info = this.Factory.CreateRibbonButton();
+            this.tab1 = this.Factory.CreateRibbonTab();
+            this.DerrTool_HSM_RibbonGroup = this.Factory.CreateRibbonGroup();
             this.btn_schadensmeldung = this.Factory.CreateRibbonButton();
             this.TabCalendar = this.Factory.CreateRibbonTab();
             this.RibGroup_HSM = this.Factory.CreateRibbonGroup();
@@ -68,21 +68,6 @@
             this.groupEinstellungen.Items.Add(this.btn_Info);
             this.groupEinstellungen.Label = "Einstellungen";
             this.groupEinstellungen.Name = "groupEinstellungen";
-            // 
-            // tab1
-            // 
-            this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
-            this.tab1.ControlId.OfficeId = "TabMail";
-            this.tab1.Groups.Add(this.DerrTool_HSM_RibbonGroup);
-            this.tab1.Label = "TabMail";
-            this.tab1.Name = "tab1";
-            // 
-            // DerrTool_HSM_RibbonGroup
-            // 
-            this.DerrTool_HSM_RibbonGroup.Items.Add(this.btn_schadensmeldung);
-            this.DerrTool_HSM_RibbonGroup.Label = "DTO";
-            this.DerrTool_HSM_RibbonGroup.Name = "DerrTool_HSM_RibbonGroup";
-            this.DerrTool_HSM_RibbonGroup.Position = this.Factory.RibbonPosition.AfterOfficeId("GroupMailNew");
             // 
             // btn_Settings
             // 
@@ -119,6 +104,21 @@
             this.btn_Info.Name = "btn_Info";
             this.btn_Info.ShowImage = true;
             this.btn_Info.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_Info_Click);
+            // 
+            // tab1
+            // 
+            this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
+            this.tab1.ControlId.OfficeId = "TabMail";
+            this.tab1.Groups.Add(this.DerrTool_HSM_RibbonGroup);
+            this.tab1.Label = "TabMail";
+            this.tab1.Name = "tab1";
+            // 
+            // DerrTool_HSM_RibbonGroup
+            // 
+            this.DerrTool_HSM_RibbonGroup.Items.Add(this.btn_schadensmeldung);
+            this.DerrTool_HSM_RibbonGroup.Label = "DTO";
+            this.DerrTool_HSM_RibbonGroup.Name = "DerrTool_HSM_RibbonGroup";
+            this.DerrTool_HSM_RibbonGroup.Position = this.Factory.RibbonPosition.AfterOfficeId("GroupMailNew");
             // 
             // btn_schadensmeldung
             // 
