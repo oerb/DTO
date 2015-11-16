@@ -136,7 +136,11 @@ namespace OutlookAddIn_MailForm
             {
                 MailItem mailItem = Item as Outlook.MailItem;
                 mailUserProperties = mailItem.UserProperties;
-                saperion = mailUserProperties.Find("Saperion").Value;
+                if (mailUserProperties.Find("Saperion") != null)
+                {
+                    saperion = mailUserProperties.Find("Saperion").Value;
+                }
+                
                 // remove Property for remail purpose without DTO Data
                 // TODO: Hold the Property and open the DTO Window on Remail instead
                 // Objekt, WE ...else has to add to the Mailobject as Properties  
@@ -158,6 +162,13 @@ namespace OutlookAddIn_MailForm
                                 "Saperion Archiv", MessageBoxButtons.YesNo);
                                     if (result == DialogResult.Yes)
                                     {
+                                        string msgtext = "";
+                                        if (this.msg_parameter.MailItem == null)
+                                        {
+                                            msgtext = "MailItem is null";
+                                        }
+                                        MessageBox.Show(msgtext);
+                                        this.msg_parameter.MailItem = mailItem;
                                         saveMailtoSaperion();
                                     }
                                 }
@@ -170,7 +181,7 @@ namespace OutlookAddIn_MailForm
                     }
                 }
             }
-            catch
+            catch (System.Exception e)
             {
                 //nothing
             }
