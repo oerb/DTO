@@ -63,16 +63,6 @@ namespace OutlookAddIn_MailForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1438712863_open_mail {
-            get {
-                object obj = ResourceManager.GetObject("1438712863_open-mail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _1438712972_document_text_edit {
             get {
                 object obj = ResourceManager.GetObject("1438712972_document_text_edit", resourceCulture);
@@ -85,7 +75,7 @@ namespace OutlookAddIn_MailForm.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap building_low {
             get {
-                object obj = ResourceManager.GetObject("building-low", resourceCulture);
+                object obj = ResourceManager.GetObject("building_low", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +105,17 @@ namespace OutlookAddIn_MailForm.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap magnifier_zoom {
             get {
-                object obj = ResourceManager.GetObject("magnifier-zoom", resourceCulture);
+                object obj = ResourceManager.GetObject("magnifier_zoom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap open_mail {
+            get {
+                object obj = ResourceManager.GetObject("open_mail", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +125,7 @@ namespace OutlookAddIn_MailForm.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap question_button {
             get {
-                object obj = ResourceManager.GetObject("question-button", resourceCulture);
+                object obj = ResourceManager.GetObject("question_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +135,7 @@ namespace OutlookAddIn_MailForm.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap server_settings_32 {
             get {
-                object obj = ResourceManager.GetObject("server_settings-32", resourceCulture);
+                object obj = ResourceManager.GetObject("server_settings_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -34,3 +34,4 @@ C:\Users\leppin\documents\visual studio 2013\Projects\OutlookAddIn-MailForm\Outl
 C:\Users\leppin\Documents\Visual Studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\OutlookAddIn_MailForm.Frm_KalenderWoReport.resources
 C:\Users\leppin\Documents\Visual Studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\RdlCompile.cache
 C:\Users\leppin\Documents\Visual Studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\RdlCompile.compiled
+C:\Users\leppin\Documents\Visual Studio 2013\Projects\OutlookAddIn-MailForm\OutlookAddIn-MailForm\obj\Debug\OutlookAddIn_MailForm.Frm_Help.resources

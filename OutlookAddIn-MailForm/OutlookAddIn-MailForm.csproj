@@ -311,6 +311,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1_WOWI_SEARCH.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Help.Designer.cs">
+      <DependentUpon>Frm_Help.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_helphtmlfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,6 +397,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WoWi_WirtschEinhDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Frm_Help.resx">
+      <DependentUpon>Frm_Help.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_helphtmlfile.resx">
       <DependentUpon>Frm_helphtmlfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -752,6 +761,8 @@
     <Content Include="Resources\new.ico" />
     <Content Include="Resources\pencil.ico" />
     <Content Include="Resources\plus_circle.ico" />
+    <Content Include="Resources\question.ico" />
+    <Content Include="Resources\question_frame.png" />
     <Content Include="Resources\server_settings-32.png" />
     <Content Include="Resources\Streamline-75-64.png" />
     <Content Include="Resources\WoWi-Access-ODBC.png" />

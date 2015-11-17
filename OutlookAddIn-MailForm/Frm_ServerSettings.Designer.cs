@@ -34,15 +34,15 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_saveChanges = new System.Windows.Forms.Button();
             this.tbp_wowinex = new System.Windows.Forms.TabPage();
-            this.btn_locationstring = new System.Windows.Forms.Button();
-            this.txb_wowi_locationstring = new System.Windows.Forms.TextBox();
-            this.lbl_serverlocationstring = new System.Windows.Forms.Label();
-            this.lbl_dsn = new System.Windows.Forms.Label();
-            this.lbl_uid = new System.Windows.Forms.Label();
-            this.lbl_pwd = new System.Windows.Forms.Label();
-            this.txt_dsn = new System.Windows.Forms.TextBox();
-            this.txt_uid = new System.Windows.Forms.TextBox();
             this.txt_pwd = new System.Windows.Forms.TextBox();
+            this.txt_uid = new System.Windows.Forms.TextBox();
+            this.txt_dsn = new System.Windows.Forms.TextBox();
+            this.txb_wowi_locationstring = new System.Windows.Forms.TextBox();
+            this.lbl_pwd = new System.Windows.Forms.Label();
+            this.lbl_uid = new System.Windows.Forms.Label();
+            this.lbl_dsn = new System.Windows.Forms.Label();
+            this.lbl_serverlocationstring = new System.Windows.Forms.Label();
+            this.btn_locationstring = new System.Windows.Forms.Button();
             this.tab_settings = new System.Windows.Forms.TabControl();
             this.tbp_wowinex.SuspendLayout();
             this.tab_settings.SuspendLayout();
@@ -82,15 +82,26 @@
             this.tbp_wowinex.Text = "wowinex";
             this.tbp_wowinex.UseVisualStyleBackColor = true;
             // 
-            // btn_locationstring
+            // txt_pwd
             // 
-            this.btn_locationstring.Location = new System.Drawing.Point(394, 40);
-            this.btn_locationstring.Name = "btn_locationstring";
-            this.btn_locationstring.Size = new System.Drawing.Size(32, 23);
-            this.btn_locationstring.TabIndex = 0;
-            this.btn_locationstring.Text = "?";
-            this.btn_locationstring.UseVisualStyleBackColor = true;
-            this.btn_locationstring.Click += new System.EventHandler(this.btn_locationstring_Click);
+            this.txt_pwd.Location = new System.Drawing.Point(11, 177);
+            this.txt_pwd.Name = "txt_pwd";
+            this.txt_pwd.Size = new System.Drawing.Size(219, 22);
+            this.txt_pwd.TabIndex = 8;
+            // 
+            // txt_uid
+            // 
+            this.txt_uid.Location = new System.Drawing.Point(11, 135);
+            this.txt_uid.Name = "txt_uid";
+            this.txt_uid.Size = new System.Drawing.Size(219, 22);
+            this.txt_uid.TabIndex = 7;
+            // 
+            // txt_dsn
+            // 
+            this.txt_dsn.Location = new System.Drawing.Point(11, 90);
+            this.txt_dsn.Name = "txt_dsn";
+            this.txt_dsn.Size = new System.Drawing.Size(219, 22);
+            this.txt_dsn.TabIndex = 6;
             // 
             // txb_wowi_locationstring
             // 
@@ -99,33 +110,7 @@
             this.txb_wowi_locationstring.ReadOnly = true;
             this.txb_wowi_locationstring.Size = new System.Drawing.Size(377, 22);
             this.txb_wowi_locationstring.TabIndex = 1;
-            // 
-            // lbl_serverlocationstring
-            // 
-            this.lbl_serverlocationstring.AutoSize = true;
-            this.lbl_serverlocationstring.Location = new System.Drawing.Point(8, 13);
-            this.lbl_serverlocationstring.Name = "lbl_serverlocationstring";
-            this.lbl_serverlocationstring.Size = new System.Drawing.Size(147, 17);
-            this.lbl_serverlocationstring.TabIndex = 2;
-            this.lbl_serverlocationstring.Text = "Server Locationstring:";
-            // 
-            // lbl_dsn
-            // 
-            this.lbl_dsn.AutoSize = true;
-            this.lbl_dsn.Location = new System.Drawing.Point(8, 66);
-            this.lbl_dsn.Name = "lbl_dsn";
-            this.lbl_dsn.Size = new System.Drawing.Size(327, 17);
-            this.lbl_dsn.TabIndex = 3;
-            this.lbl_dsn.Text = "Dsn (siehe Systemsteuerung/Datenquellen(ODBC)";
-            // 
-            // lbl_uid
-            // 
-            this.lbl_uid.AutoSize = true;
-            this.lbl_uid.Location = new System.Drawing.Point(8, 115);
-            this.lbl_uid.Name = "lbl_uid";
-            this.lbl_uid.Size = new System.Drawing.Size(98, 17);
-            this.lbl_uid.TabIndex = 4;
-            this.lbl_uid.Text = "Anmeldename";
+            this.txb_wowi_locationstring.Visible = false;
             // 
             // lbl_pwd
             // 
@@ -136,26 +121,42 @@
             this.lbl_pwd.TabIndex = 5;
             this.lbl_pwd.Text = "Passwort";
             // 
-            // txt_dsn
+            // lbl_uid
             // 
-            this.txt_dsn.Location = new System.Drawing.Point(11, 90);
-            this.txt_dsn.Name = "txt_dsn";
-            this.txt_dsn.Size = new System.Drawing.Size(219, 22);
-            this.txt_dsn.TabIndex = 6;
+            this.lbl_uid.AutoSize = true;
+            this.lbl_uid.Location = new System.Drawing.Point(8, 115);
+            this.lbl_uid.Name = "lbl_uid";
+            this.lbl_uid.Size = new System.Drawing.Size(98, 17);
+            this.lbl_uid.TabIndex = 4;
+            this.lbl_uid.Text = "Anmeldename";
             // 
-            // txt_uid
+            // lbl_dsn
             // 
-            this.txt_uid.Location = new System.Drawing.Point(11, 135);
-            this.txt_uid.Name = "txt_uid";
-            this.txt_uid.Size = new System.Drawing.Size(219, 22);
-            this.txt_uid.TabIndex = 7;
+            this.lbl_dsn.AutoSize = true;
+            this.lbl_dsn.Location = new System.Drawing.Point(8, 66);
+            this.lbl_dsn.Name = "lbl_dsn";
+            this.lbl_dsn.Size = new System.Drawing.Size(327, 17);
+            this.lbl_dsn.TabIndex = 3;
+            this.lbl_dsn.Text = "Dsn (siehe Systemsteuerung/Datenquellen(ODBC)";
             // 
-            // txt_pwd
+            // lbl_serverlocationstring
             // 
-            this.txt_pwd.Location = new System.Drawing.Point(11, 177);
-            this.txt_pwd.Name = "txt_pwd";
-            this.txt_pwd.Size = new System.Drawing.Size(219, 22);
-            this.txt_pwd.TabIndex = 8;
+            this.lbl_serverlocationstring.AutoSize = true;
+            this.lbl_serverlocationstring.Location = new System.Drawing.Point(8, 13);
+            this.lbl_serverlocationstring.Name = "lbl_serverlocationstring";
+            this.lbl_serverlocationstring.Size = new System.Drawing.Size(147, 17);
+            this.lbl_serverlocationstring.TabIndex = 2;
+            this.lbl_serverlocationstring.Text = "Server Locationstring:";
+            // 
+            // btn_locationstring
+            // 
+            this.btn_locationstring.Location = new System.Drawing.Point(356, 63);
+            this.btn_locationstring.Name = "btn_locationstring";
+            this.btn_locationstring.Size = new System.Drawing.Size(32, 23);
+            this.btn_locationstring.TabIndex = 0;
+            this.btn_locationstring.Text = "?";
+            this.btn_locationstring.UseVisualStyleBackColor = true;
+            this.btn_locationstring.Click += new System.EventHandler(this.btn_locationstring_Click);
             // 
             // tab_settings
             // 
