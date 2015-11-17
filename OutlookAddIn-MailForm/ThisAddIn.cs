@@ -163,12 +163,14 @@ namespace OutlookAddIn_MailForm
                                     if (result == DialogResult.Yes)
                                     {
                                         this.msg_parameter.MailItem = mailItem;
-                                        saveMailtoSaperion();
+                                        saveMailtoSaperion();                                        
+                                        //mailItem.Close(Outlook.OlInspectorClose.olDiscard); // Hat nicht geholfen
                                     }
                                 }
                                 else
                                 {
                                     saveMailtoSaperion();
+                                    //mailItem.Close(Outlook.OlInspectorClose.olDiscard);  // Hat nicht geholfen
                                 }
                             }
                         }
