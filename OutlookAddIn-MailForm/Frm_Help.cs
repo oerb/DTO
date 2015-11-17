@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace OutlookAddIn_MailForm
 {
@@ -24,13 +25,27 @@ namespace OutlookAddIn_MailForm
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Process.Start("https://github.com/oerb/DTO/wiki/DTO---Hilfe");
         }
 
         private void Frm_Help_Load(object sender, EventArgs e)
         {
-            linkLabel1.Links.Remove(linkLabel1.Links[0]);
-            linkLabel1.Links.Add(0, linkLabel1.Text.Length, "https://github.com/oerb/DTO/wiki/DTO---Hilfe");
+
+        }
+
+        private void llb_MeldungErstellen_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/oerb/DTO/wiki/Help-DTO---Meldung");
+        }
+
+        private void llb_MSGtypEinstellung_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/oerb/DTO/wiki/HELP---MSG-Typ-Einstellungen");
+        }
+
+        private void llb_Issues_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/oerb/DTO/issues");
         }
     }
 }

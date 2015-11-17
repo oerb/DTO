@@ -269,7 +269,14 @@ namespace OutlookAddIn_MailForm
 
         private void buttonMangelruege_Click(object sender, RibbonControlEventArgs e)
         {
+            
+        }
 
+        private void btn_Help_Click(object sender, RibbonControlEventArgs e)
+        {
+            Frm_Help frm_help = new Frm_Help();
+            frm_help.Show();
+            //DialogResult result = frm_help.ShowDialog();
         }
     }
 }
