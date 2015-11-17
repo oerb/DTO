@@ -162,7 +162,7 @@ namespace OutlookAddIn_MailForm
                                 "Saperion Archiv", MessageBoxButtons.YesNo);
                                     if (result == DialogResult.Yes)
                                     {
-                                        this.msg_parameter.MailItem = mailItem;
+                                        this.msg_parameter.MailItem = mailItem; //This coses an Ask for Save when Outlook is closed
                                         saveMailtoSaperion();                                        
                                         //mailItem.Close(Outlook.OlInspectorClose.olDiscard); // Hat nicht geholfen
                                     }
