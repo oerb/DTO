@@ -610,5 +610,23 @@ namespace OutlookAddIn_MailForm
                 //MessageBox.Show("NE. muss eine Zahl sein");
             }
         }
+
+        private void lbl_mandant_txt_MouseHover(object sender, EventArgs e)
+        {
+            //this.toolTip1.ToolTipTitle = "Tooltip";
+            Point p = lbl_mandant_txt.Location;
+            this.toolTip1.Show(this.lbl_mandant_txt.Text, this, p.X , p.Y , 1000);            
+        }
+
+        private void lbl_MouseHoverToolTip(object sender, EventArgs e)
+        {
+            if (sender is Label)
+            {
+                Label lb = (Label)sender;
+                Point p = lb.Location;
+                this.toolTip1.Show(lb.Text, this, p.X, p.Y, 1000); 
+            }
+            
+        }
     }
 }

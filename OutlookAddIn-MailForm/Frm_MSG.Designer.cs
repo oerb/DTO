@@ -95,6 +95,7 @@
             this.kreditor_KontoTableAdapter = new OutlookAddIn_MailForm.DataSet1_WoWi_KreditorTableAdapters.Kreditor_KontoTableAdapter();
             this.tblHausTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblHausTableAdapter();
             this.tblWohnungTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblWohnungTableAdapter();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tblDokuartBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1_WOWI_SEARCH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).BeginInit();
@@ -110,9 +111,9 @@
             this.lbl_Subject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Subject.Location = new System.Drawing.Point(12, 429);
             this.lbl_Subject.Name = "lbl_Subject";
-            this.lbl_Subject.Size = new System.Drawing.Size(78, 25);
+            this.lbl_Subject.Size = new System.Drawing.Size(68, 25);
             this.lbl_Subject.TabIndex = 19;
-            this.lbl_Subject.Text = "Subject";
+            this.lbl_Subject.Text = "Betreff";
             // 
             // txb_Subject
             // 
@@ -321,6 +322,7 @@
             this.lbl_mandant_txt.Text = "UN-0";
             this.lbl_mandant_txt.Visible = false;
             this.lbl_mandant_txt.Click += new System.EventHandler(this.lbl_mandant_txt_Click);
+            this.lbl_mandant_txt.MouseHover += new System.EventHandler(this.lbl_MouseHoverToolTip);
             // 
             // lbl_kreditor_txt
             // 
@@ -331,6 +333,7 @@
             this.lbl_kreditor_txt.TabIndex = 36;
             this.lbl_kreditor_txt.Text = "K-0";
             this.lbl_kreditor_txt.Visible = false;
+            this.lbl_kreditor_txt.MouseHover += new System.EventHandler(this.lbl_MouseHoverToolTip);
             // 
             // lbl_objekt_txt
             // 
@@ -341,6 +344,7 @@
             this.lbl_objekt_txt.TabIndex = 37;
             this.lbl_objekt_txt.Text = "WE-0";
             this.lbl_objekt_txt.Visible = false;
+            this.lbl_objekt_txt.MouseHover += new System.EventHandler(this.lbl_MouseHoverToolTip);
             // 
             // lbl_haus_txt
             // 
@@ -351,6 +355,7 @@
             this.lbl_haus_txt.TabIndex = 38;
             this.lbl_haus_txt.Text = "Ha-0";
             this.lbl_haus_txt.Visible = false;
+            this.lbl_haus_txt.MouseHover += new System.EventHandler(this.lbl_MouseHoverToolTip);
             // 
             // lbl_wo_txt
             // 
@@ -361,6 +366,7 @@
             this.lbl_wo_txt.TabIndex = 39;
             this.lbl_wo_txt.Text = "NE-0";
             this.lbl_wo_txt.Visible = false;
+            this.lbl_wo_txt.MouseHover += new System.EventHandler(this.lbl_MouseHoverToolTip);
             // 
             // lbl_me_txt
             // 
@@ -371,6 +377,7 @@
             this.lbl_me_txt.TabIndex = 40;
             this.lbl_me_txt.Text = "ME-typ-0";
             this.lbl_me_txt.Visible = false;
+            this.lbl_me_txt.MouseHover += new System.EventHandler(this.lbl_MouseHoverToolTip);
             // 
             // cmb_dokuart
             // 
@@ -442,6 +449,7 @@
             this.lbl_mieter_txt.TabIndex = 48;
             this.lbl_mieter_txt.Text = "M-0";
             this.lbl_mieter_txt.Visible = false;
+            this.lbl_mieter_txt.MouseHover += new System.EventHandler(this.lbl_MouseHoverToolTip);
             // 
             // btn_mieter
             // 
@@ -555,6 +563,7 @@
             this.lbl_Adresse_txt.TabIndex = 57;
             this.lbl_Adresse_txt.Text = "A-0";
             this.lbl_Adresse_txt.Visible = false;
+            this.lbl_Adresse_txt.MouseHover += new System.EventHandler(this.lbl_MouseHoverToolTip);
             // 
             // btn_Adresse
             // 
@@ -594,6 +603,7 @@
             this.lbl_mandant1_txt.TabIndex = 61;
             this.lbl_mandant1_txt.Text = "MA-0";
             this.lbl_mandant1_txt.Visible = false;
+            this.lbl_mandant1_txt.MouseHover += new System.EventHandler(this.lbl_MouseHoverToolTip);
             // 
             // btn_mandant1
             // 
@@ -648,6 +658,8 @@
             this.btn_adr_as_kreditor.Size = new System.Drawing.Size(159, 34);
             this.btn_adr_as_kreditor.TabIndex = 59;
             this.btn_adr_as_kreditor.Text = "als Kreditor übern.";
+            this.toolTip1.SetToolTip(this.btn_adr_as_kreditor, "Übernimmt die Adress-Nr. in das Kreditorfeld. Dies\r\nauch, wenn es diese als Kredi" +
+        "tor in WoWi nicht gibt.");
             this.btn_adr_as_kreditor.UseVisualStyleBackColor = false;
             this.btn_adr_as_kreditor.Click += new System.EventHandler(this.btn_adr_as_kreditor_Click);
             // 
@@ -659,6 +671,8 @@
             this.btn_adr_as_mieter.Size = new System.Drawing.Size(159, 34);
             this.btn_adr_as_mieter.TabIndex = 58;
             this.btn_adr_as_mieter.Text = "als Mieter übern.";
+            this.toolTip1.SetToolTip(this.btn_adr_as_mieter, "Übernimmt die gewählte Adresse in das Feld Mieter, \r\nwenn die Adresse Nr. als Mie" +
+        "ter existiert.");
             this.btn_adr_as_mieter.UseVisualStyleBackColor = false;
             this.btn_adr_as_mieter.Click += new System.EventHandler(this.btn_adr_as_mieter_Click);
             // 
@@ -685,6 +699,13 @@
             // tblWohnungTableAdapter
             // 
             this.tblWohnungTableAdapter.ClearBeforeFill = true;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 10000;
+            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.toolTip1.InitialDelay = 1000;
+            this.toolTip1.ReshowDelay = 500;
             // 
             // Frm_MSG
             // 
@@ -823,5 +844,6 @@
         private DataSet1_WoWi_KreditorTableAdapters.Kreditor_KontoTableAdapter kreditor_KontoTableAdapter;
         private DataSet1_WOWI_SEARCHTableAdapters.tblHausTableAdapter tblHausTableAdapter;
         private DataSet1_WOWI_SEARCHTableAdapters.tblWohnungTableAdapter tblWohnungTableAdapter;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

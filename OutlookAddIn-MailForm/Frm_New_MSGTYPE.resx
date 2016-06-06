@@ -168,9 +168,6 @@
   <metadata name="database1DataSet_MSGTYPES.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>184, 17</value>
   </metadata>
-  <metadata name="database1DataSet_MSGTYPES.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>184, 17</value>
-  </metadata>
   <metadata name="tableTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>633, 17</value>
   </metadata>
@@ -189,6 +186,17 @@
   <metadata name="cbxDatum2Anzeigen.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>268, 99</value>
+  </metadata>
+  <data name="txtDatum2Bezeichnung.ToolTip" xml:space="preserve">
+    <value>Wählbares Datumsfeld, dass in der E-Mail als 
+Variable    [Datum2]   benutzt werden kann.
+Das Datum ist erst einmal als aktuelles Datum 
+eingestellt.
+Außerdem wird diese Datumsfeld in Saperion in 
+das Indexfeld ErledigenBis eingetragen.</value>
+  </data>
   <metadata name="tblDokuartTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>479, 60</value>
   </metadata>
@@ -196,7 +204,7 @@
     <value>25, 99</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>261</value>
+    <value>231</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

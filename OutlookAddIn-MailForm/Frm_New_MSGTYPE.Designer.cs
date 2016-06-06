@@ -66,6 +66,7 @@
             this.btn_help = new System.Windows.Forms.Button();
             this.tblDokuartTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblDokuartTableAdapter();
             this.tblVorgangKZTableAdapter = new OutlookAddIn_MailForm.DataSet1_WOWI_SEARCHTableAdapters.tblVorgangKZTableAdapter();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet_MSGTYPES)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblVorgangKZBindingSource)).BeginInit();
@@ -350,6 +351,8 @@
             this.cbxDatum2Anzeigen.Size = new System.Drawing.Size(89, 21);
             this.cbxDatum2Anzeigen.TabIndex = 54;
             this.cbxDatum2Anzeigen.Text = "Anzeigen";
+            this.toolTip1.SetToolTip(this.cbxDatum2Anzeigen, "Hier legt man fest ob das Datumsfeld in der \r\nEingabemaske angezeigt wird, nachde" +
+        "m man\r\nden Medlungstyp gewählt hat.");
             this.cbxDatum2Anzeigen.UseVisualStyleBackColor = true;
             // 
             // lblDatum2
@@ -370,6 +373,7 @@
             this.txtDatum2Bezeichnung.Size = new System.Drawing.Size(185, 22);
             this.txtDatum2Bezeichnung.TabIndex = 52;
             this.txtDatum2Bezeichnung.Text = "Datum2";
+            this.toolTip1.SetToolTip(this.txtDatum2Bezeichnung, resources.GetString("txtDatum2Bezeichnung.ToolTip"));
             // 
             // cbxDatum1Anzeigen
             // 
@@ -379,6 +383,8 @@
             this.cbxDatum1Anzeigen.Size = new System.Drawing.Size(89, 21);
             this.cbxDatum1Anzeigen.TabIndex = 51;
             this.cbxDatum1Anzeigen.Text = "Anzeigen";
+            this.toolTip1.SetToolTip(this.cbxDatum1Anzeigen, "Hier legt man fest ob das Datumsfeld in der \r\nEingabemaske angezeigt wird, nachde" +
+        "m man\r\nden Medlungstyp gewählt hat.");
             this.cbxDatum1Anzeigen.UseVisualStyleBackColor = true;
             // 
             // lblDatumBezeichnung
@@ -399,6 +405,8 @@
             this.txtDatum1Bezeichnung.Size = new System.Drawing.Size(185, 22);
             this.txtDatum1Bezeichnung.TabIndex = 49;
             this.txtDatum1Bezeichnung.Text = "Datum1";
+            this.toolTip1.SetToolTip(this.txtDatum1Bezeichnung, "Wählbares Datumsfeld, dass in der E-Mail als \r\nVariable    [Datum1]   benutzt wer" +
+        "den kann.\r\nDas Datum ist erst einmal als aktuelles Datum \r\neingestellt.");
             // 
             // btn_help
             // 
@@ -418,6 +426,13 @@
             // tblVorgangKZTableAdapter
             // 
             this.tblVorgangKZTableAdapter.ClearBeforeFill = true;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 1000;
+            this.toolTip1.AutoPopDelay = 10000;
+            this.toolTip1.InitialDelay = 1000;
+            this.toolTip1.ReshowDelay = 500;
             // 
             // Frm_New_MSGTYPE
             // 
@@ -490,6 +505,7 @@
         private System.Windows.Forms.BindingSource tblVorgangKZBindingSource;
         private System.Windows.Forms.BindingSource dataSet1WOWISEARCHBindingSource;
         private DataSet1_WOWI_SEARCHTableAdapters.tblVorgangKZTableAdapter tblVorgangKZTableAdapter;
+        private System.Windows.Forms.ToolTip toolTip1;
 
     }
 }

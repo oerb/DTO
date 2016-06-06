@@ -129,12 +129,13 @@ namespace OutlookAddIn_MailForm
             //new Version
             bool saperion = false;
             Outlook.UserProperties mailUserProperties = null; 
-            Outlook.MailItem mail = (Outlook.MailItem)Item;
-            mailUserProperties = mail.UserProperties;
+            //Outlook.MailItem mail = (Outlook.MailItem)Item;
+            //mailUserProperties = mail.UserProperties;
             // Get the Saperion Property in an Outlook Mail-Object to determine if Saperion is set true 
             try
             {
-                MailItem mailItem = Item as Outlook.MailItem;
+                //MailItem mailItem = Item as Outlook.MailItem;
+                Outlook.MailItem mailItem = (Outlook.MailItem)Item;
                 mailUserProperties = mailItem.UserProperties;
                 if (mailUserProperties.Find("Saperion") != null)
                 {
@@ -146,7 +147,8 @@ namespace OutlookAddIn_MailForm
                 // Objekt, WE ...else has to add to the Mailobject as Properties  
                 if (saperion)
                 {
-                    mailUserProperties.Find("Saperion").Value = false;
+                    //mailUserProperties.Find("Saperion").Value = false;
+                    UserProperty saperiontag = mailUserProperties["Saperion"];
                     if (Item != null)
                     {
                         
@@ -162,15 +164,18 @@ namespace OutlookAddIn_MailForm
                                 "Saperion Archiv", MessageBoxButtons.YesNo);
                                     if (result == DialogResult.Yes)
                                     {
-                                        this.msg_parameter.MailItem = mailItem; //This coses an Ask for Save when Outlook is closed
-                                        saveMailtoSaperion();                                        
-                                        //mailItem.Close(Outlook.OlInspectorClose.olDiscard); // Hat nicht geholfen
+                                        saperiontag.Delete();// deletes the Property from Mail
+                                        this.msg_parameter.MailItem = mailItem; 
+                                        saveMailtoSaperion();
+                                        mailItem.Save();
                                     }
                                 }
                                 else
                                 {
+                                    saperiontag.Delete();//deletes the Property from Mail
+                                    this.msg_parameter.MailItem = mailItem; 
                                     saveMailtoSaperion();
-                                    //mailItem.Close(Outlook.OlInspectorClose.olDiscard);  // Hat nicht geholfen
+                                    mailItem.Save();
                                 }
                             }
                         }
