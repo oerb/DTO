@@ -37,17 +37,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DerrToolsRibbon1));
             this.tab2 = this.Factory.CreateRibbonTab();
             this.groupEinstellungen = this.Factory.CreateRibbonGroup();
+            this.tab1 = this.Factory.CreateRibbonTab();
+            this.DerrTool_HSM_RibbonGroup = this.Factory.CreateRibbonGroup();
+            this.TabCalendar = this.Factory.CreateRibbonTab();
+            this.RibGroup_HSM = this.Factory.CreateRibbonGroup();
             this.btn_Settings = this.Factory.CreateRibbonButton();
             this.btn_ServerSettings = this.Factory.CreateRibbonButton();
             this.btn_usersettings = this.Factory.CreateRibbonButton();
             this.btn_Info = this.Factory.CreateRibbonButton();
-            this.tab1 = this.Factory.CreateRibbonTab();
-            this.DerrTool_HSM_RibbonGroup = this.Factory.CreateRibbonGroup();
-            this.btn_schadensmeldung = this.Factory.CreateRibbonButton();
-            this.TabCalendar = this.Factory.CreateRibbonTab();
-            this.RibGroup_HSM = this.Factory.CreateRibbonGroup();
-            this.buttonMangelruege = this.Factory.CreateRibbonButton();
             this.btn_Help = this.Factory.CreateRibbonButton();
+            this.btn_weiterleitung = this.Factory.CreateRibbonButton();
+            this.btn_schadensmeldung = this.Factory.CreateRibbonButton();
+            this.buttonMangelruege = this.Factory.CreateRibbonButton();
             this.tab2.SuspendLayout();
             this.groupEinstellungen.SuspendLayout();
             this.tab1.SuspendLayout();
@@ -70,6 +71,37 @@
             this.groupEinstellungen.Items.Add(this.btn_Help);
             this.groupEinstellungen.Label = "Einstellungen";
             this.groupEinstellungen.Name = "groupEinstellungen";
+            // 
+            // tab1
+            // 
+            this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
+            this.tab1.ControlId.OfficeId = "TabMail";
+            this.tab1.Groups.Add(this.DerrTool_HSM_RibbonGroup);
+            this.tab1.Label = "TabMail";
+            this.tab1.Name = "tab1";
+            // 
+            // DerrTool_HSM_RibbonGroup
+            // 
+            this.DerrTool_HSM_RibbonGroup.Items.Add(this.btn_schadensmeldung);
+            this.DerrTool_HSM_RibbonGroup.Items.Add(this.btn_weiterleitung);
+            this.DerrTool_HSM_RibbonGroup.Label = "DTO";
+            this.DerrTool_HSM_RibbonGroup.Name = "DerrTool_HSM_RibbonGroup";
+            this.DerrTool_HSM_RibbonGroup.Position = this.Factory.RibbonPosition.AfterOfficeId("GroupMailNew");
+            // 
+            // TabCalendar
+            // 
+            this.TabCalendar.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
+            this.TabCalendar.ControlId.OfficeId = "TabCalendar";
+            this.TabCalendar.Groups.Add(this.RibGroup_HSM);
+            this.TabCalendar.Label = "TabCalendar";
+            this.TabCalendar.Name = "TabCalendar";
+            // 
+            // RibGroup_HSM
+            // 
+            this.RibGroup_HSM.Items.Add(this.buttonMangelruege);
+            this.RibGroup_HSM.Label = "DTO";
+            this.RibGroup_HSM.Name = "RibGroup_HSM";
+            this.RibGroup_HSM.Position = this.Factory.RibbonPosition.AfterOfficeId("GroupCalendarNew");
             // 
             // btn_Settings
             // 
@@ -107,45 +139,30 @@
             this.btn_Info.ShowImage = true;
             this.btn_Info.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_Info_Click);
             // 
-            // tab1
+            // btn_Help
             // 
-            this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
-            this.tab1.ControlId.OfficeId = "TabMail";
-            this.tab1.Groups.Add(this.DerrTool_HSM_RibbonGroup);
-            this.tab1.Label = "TabMail";
-            this.tab1.Name = "tab1";
+            this.btn_Help.Image = global::OutlookAddIn_MailForm.Properties.Resources.question_button;
+            this.btn_Help.Label = "Hilfe";
+            this.btn_Help.Name = "btn_Help";
+            this.btn_Help.ShowImage = true;
+            this.btn_Help.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_Help_Click);
             // 
-            // DerrTool_HSM_RibbonGroup
+            // btn_weiterleitung
             // 
-            this.DerrTool_HSM_RibbonGroup.Items.Add(this.btn_schadensmeldung);
-            this.DerrTool_HSM_RibbonGroup.Label = "DTO";
-            this.DerrTool_HSM_RibbonGroup.Name = "DerrTool_HSM_RibbonGroup";
-            this.DerrTool_HSM_RibbonGroup.Position = this.Factory.RibbonPosition.AfterOfficeId("GroupMailNew");
+            this.btn_weiterleitung.Image = global::OutlookAddIn_MailForm.Properties.Resources._1438712907_mail_fwd;
+            this.btn_weiterleitung.Label = "Weiterleitung";
+            this.btn_weiterleitung.Name = "btn_weiterleitung";
+            this.btn_weiterleitung.ShowImage = true;
+            this.btn_weiterleitung.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_weiterleitung_Click);
             // 
             // btn_schadensmeldung
             // 
-            this.btn_schadensmeldung.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             this.btn_schadensmeldung.Image = global::OutlookAddIn_MailForm.Properties.Resources.open_mail;
             this.btn_schadensmeldung.Label = "Meldung";
             this.btn_schadensmeldung.Name = "btn_schadensmeldung";
             this.btn_schadensmeldung.ScreenTip = "Eine neu Meldung mit Archivfilterinformation generieren.";
             this.btn_schadensmeldung.ShowImage = true;
             this.btn_schadensmeldung.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_schadensmeldung_Click);
-            // 
-            // TabCalendar
-            // 
-            this.TabCalendar.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
-            this.TabCalendar.ControlId.OfficeId = "TabCalendar";
-            this.TabCalendar.Groups.Add(this.RibGroup_HSM);
-            this.TabCalendar.Label = "TabCalendar";
-            this.TabCalendar.Name = "TabCalendar";
-            // 
-            // RibGroup_HSM
-            // 
-            this.RibGroup_HSM.Items.Add(this.buttonMangelruege);
-            this.RibGroup_HSM.Label = "DTO";
-            this.RibGroup_HSM.Name = "RibGroup_HSM";
-            this.RibGroup_HSM.Position = this.Factory.RibbonPosition.AfterOfficeId("GroupCalendarNew");
             // 
             // buttonMangelruege
             // 
@@ -155,14 +172,6 @@
             this.buttonMangelruege.Name = "buttonMangelruege";
             this.buttonMangelruege.ShowImage = true;
             this.buttonMangelruege.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button_HSM_Tagesbericht_Click);
-            // 
-            // btn_Help
-            // 
-            this.btn_Help.Image = global::OutlookAddIn_MailForm.Properties.Resources.question_button;
-            this.btn_Help.Label = "Hilfe";
-            this.btn_Help.Name = "btn_Help";
-            this.btn_Help.ShowImage = true;
-            this.btn_Help.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_Help_Click);
             // 
             // DerrToolsRibbon1
             // 
@@ -202,6 +211,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup RibGroup_HSM;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonMangelruege;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_Help;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_weiterleitung;
     }
 
     partial class ThisRibbonCollection

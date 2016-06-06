@@ -35,9 +35,47 @@ namespace OutlookAddIn_MailForm
             DialogResult result = frm_MSG.ShowDialog();
             if (result == DialogResult.OK)
             {
-                CreateMail(frm_MSG);
+                Outlook.Application application = Globals.ThisAddIn.Application;
+                Outlook.MailItem myMailItem = (Outlook.MailItem)application.CreateItem(Outlook.OlItemType.olMailItem);
+                CreateMail(frm_MSG, false, myMailItem);
             }
            
+        }
+
+        private void btn_weiterleitung_Click(object sender, RibbonControlEventArgs e)
+        {
+            //Get the Marked E-Mail in current Folder and Make an DTO Forward Mail
+            try
+            {
+                Outlook.Application application = Globals.ThisAddIn.Application;
+                if (application.ActiveExplorer().Selection.Count > 0)
+                {
+                    Object selObject = application.ActiveExplorer().Selection[1];
+                    if (selObject is Outlook.MailItem)
+                    {
+                        Outlook.MailItem myMailItem = (selObject as Outlook.MailItem);
+                        myMailItem = myMailItem.Forward();
+                        //opens Schadensmeldung dialog form
+                        //Schadensmeldung sam = new Schadensmeldung();
+                        //DialogResult result = sam.ShowDialog();
+
+                        // TODO: TESTING BUTTON REMOVE
+                        Frm_MSG frm_MSG = new Frm_MSG();
+                        DialogResult result = frm_MSG.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            CreateMail(frm_MSG, true, myMailItem);
+                        }
+                    }
+                }
+            }
+
+
+            catch (Exception ex)
+            {
+                string expMessage = ex.Message;
+                MessageBox.Show(expMessage);
+            }
         }
 
         private void button6_Click(object sender, RibbonControlEventArgs e)
@@ -107,20 +145,23 @@ namespace OutlookAddIn_MailForm
             myMailItem.Display();
         }
 
-        private void CreateMail(Frm_MSG frm_MSG)
+        private void CreateMail(Frm_MSG frm_MSG, bool forward, Outlook.MailItem myMailItem)
         {
             Outlook.UserProperties mailUserProperties = null;
             Outlook.UserProperty mailUserProperty = null;
             //Globals.ThisAddIn.msg_parameter = frm_MSG.msg_parameter;
             Outlook.Application application = Globals.ThisAddIn.Application;
             Outlook.ExchangeUser currentUser = application.Session.CurrentUser.AddressEntry.GetExchangeUser();
-            Outlook.MailItem myMailItem = (Outlook.MailItem)application.CreateItem(Outlook.OlItemType.olMailItem);
+            //Outlook.MailItem myMailItem = (Outlook.MailItem)application.CreateItem(Outlook.OlItemType.olMailItem);
+            if (forward)
+            {
+                myMailItem = myMailItem.Forward();
+            }
             try
             {
                 // load a Outlook Predesign by an Outlook Filetyp MSG
                 Outlook.MailItem myStorageItem = (Outlook.MailItem)application.Session.OpenSharedItem(frm_MSG.filelocation);
-                myMailItem.HTMLBody = myStorageItem.HTMLBody;
-
+                myMailItem.HTMLBody =  myStorageItem.HTMLBody + myMailItem.HTMLBody; //TEST
                 // give the MailItem a new Property that marks it for archiving
                 mailUserProperties = myMailItem.UserProperties;
                 mailUserProperty = mailUserProperties.Add("Saperion", Outlook.OlUserPropertyType.olYesNo, false);
@@ -278,5 +319,7 @@ namespace OutlookAddIn_MailForm
             frm_help.Show();
             //DialogResult result = frm_help.ShowDialog();
         }
+
+
     }
 }
